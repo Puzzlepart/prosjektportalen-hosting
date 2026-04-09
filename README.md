@@ -81,7 +81,8 @@ malpakkenavn-1.0.0.pppkg
 ├── thumbnail.png              # Forhåndsvisningsbilde (16:9, min 600×338px)
 │
 ├── provisioning/              # sp-js-provisioning filer
-│   ├── template.json          # Hoved-provisjoneringsmal (valgfri – ikke påkrevd for frittstående innhold)
+│   ├── hub-template.json      # Hub-level: taxonomy, felter, innholdstyper, lister, filer
+│   ├── template.json          # Prosjekt-level: provisjonering av nye prosjektområder
 │   └── extensions/            # Prosjekttillegg
 │       ├── extension-a.json
 │       └── extension-b.json
@@ -91,22 +92,13 @@ malpakkenavn-1.0.0.pppkg
 │   ├── planner-tasks.json     # Planneroppgaver
 │   └── ...
 │
-├── schema/                    # Felt-, innholdstype- og listedefinisjoner
-│   ├── fields.json            # Egendefinerte felter
-│   ├── content-types.json     # Innholdstyper
-│   ├── lists.json             # Lister som skal opprettes på hub
-│   └── files.json             # Filer som skal kopieres/installeres på hub
-│
-├── taxonomy/                  # Termsett-definisjoner (managed metadata)
-│   └── termsets.json          # Termsett med forhåndsdefinerte IDer og termhierarki
-│
-└── assets/                    # Filer referert fra files.json (maler, dokumenter, bilder etc.)
+└── assets/                    # Filer referert fra hub-template.json og template.json (maler, dokumenter, bilder etc.)
     └── ...
 ```
 
 ### 4.2 `manifest.json`
 
-Manifestet er pakkens sentrale konfigurasjonsfil. Den inneholder all metadata samt innholdskonfigurasjon (inkl. content-mapping), slik at man slipper separate config-filer.
+Manifestet er pakkens sentrale konfigurasjonsfil. Den inneholder all metadata samt innholdskonfigurasjon (inkl. content-mapping), slik at man slipper separate config-filer. Alle hub-level artefakter (taxonomy, felter, innholdstyper, lister, filer) samles i én sp-js-provisioning mal (`hub-template.json`), mens prosjekt-level provisjonering ligger i `template.json`.
 
 ```json
 {
@@ -123,6 +115,7 @@ Manifestet er pakkens sentrale konfigurasjonsfil. Den inneholder all metadata sa
   "type": "template",
 
   "provisioning": {
+    "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",
     "extensions": [
       {
@@ -158,17 +151,6 @@ Manifestet er pakkens sentrale konfigurasjonsfil. Den inneholder all metadata sa
     ]
   },
 
-  "schema": {
-    "fields": "schema/fields.json",
-    "contentTypes": "schema/content-types.json",
-    "lists": "schema/lists.json",
-    "files": "schema/files.json"
-  },
-
-  "taxonomy": {
-    "termsets": "taxonomy/termsets.json"
-  },
-
   "changelog": "CHANGELOG.md"
 }
 ```
@@ -181,102 +163,96 @@ Manifestet er pakkens sentrale konfigurasjonsfil. Den inneholder all metadata sa
 | `extension` | Frittstående prosjekttillegg |
 | `content` | Frittstående standardinnhold |
 
-### 4.3 `schema/files.json`
+### 4.3 `provisioning/hub-template.json`
 
-Definerer filer som skal kopieres til hub-nivå ved installasjon. Refererer til filer under `assets/`.
+Hub-templaten samler **alt** som skal provisjoneres på hub-nivå i én sp-js-provisioning-fil: taxonomy (termsett), felter, innholdstyper, lister og filer. Ved å bruke standard sp-js-provisioning-format kan `provisionTemplate()` gjenbrukes direkte – ingen custom provisjoneringslogikk.
+
+Templaten utvider sp-js-provisioning-formatet med en ny `Taxonomy`-seksjon. `provisionTemplate()` håndterer denne internt og kjører den **før** felter, slik at managed metadata-felter kan referere til termsett-IDer fra steg 1.
 
 ```json
 {
-  "files": [
-    {
-      "source": "assets/prosjektrapport-mal.docx",
-      "target": "Malfiler/prosjektrapport-mal.docx",
-      "description": "Dokumentmal for prosjektrapporter"
+  "Taxonomy": {
+    "TermGroup": {
+      "Name": "Prosjektportalen",
+      "Id": "ab12cd34-ef56-7890-ab12-cd34ef567890"
     },
-    {
-      "source": "assets/logo-placeholder.png",
-      "target": "SiteAssets/logo-placeholder.png",
-      "description": "Plassholder-logo for nye prosjekter"
-    }
-  ]
-}
-```
-
-### 4.4 `taxonomy/termsets.json`
-
-Definerer termsett med forhåndsdefinerte IDer. Faste IDer er avgjørende fordi managed metadata-felter refererer til termsett via GUID – uten stabile IDer ville feltene ikke finne riktig termsett etter provisjonering.
-
-```json
-{
-  "termGroup": {
-    "name": "Prosjektportalen",
-    "id": "ab12cd34-ef56-7890-ab12-cd34ef567890"
-  },
-  "termSets": [
-    {
-      "id": "11111111-2222-3333-4444-555555555555",
-      "name": "Prosjektfaser",
-      "description": "Faser i prosjektets livssyklus",
-      "isOpenForTermCreation": false,
-      "terms": [
-        {
-          "id": "aaaa1111-bbbb-cccc-dddd-eeee11111111",
-          "name": "Konsept",
-          "sortOrder": 0,
-          "customProperties": {
-            "PpPhaseLevel": "1"
-          }
-        },
-        {
-          "id": "aaaa1111-bbbb-cccc-dddd-eeee22222222",
-          "name": "Planlegge",
-          "sortOrder": 1,
-          "customProperties": {
-            "PpPhaseLevel": "2"
-          }
-        },
-        {
-          "id": "aaaa1111-bbbb-cccc-dddd-eeee33333333",
-          "name": "Gjennomføre",
-          "sortOrder": 2,
-          "customProperties": {
-            "PpPhaseLevel": "3"
+    "TermSets": [
+      {
+        "Id": "11111111-2222-3333-4444-555555555555",
+        "Name": "Prosjektfaser",
+        "Description": "Faser i prosjektets livssyklus",
+        "IsOpenForTermCreation": false,
+        "Terms": [
+          {
+            "Id": "aaaa1111-bbbb-cccc-dddd-eeee11111111",
+            "Name": "Konsept",
+            "SortOrder": 0,
+            "CustomProperties": { "PpPhaseLevel": "1" }
           },
-          "terms": [
-            {
-              "id": "aaaa1111-bbbb-cccc-dddd-ffff11111111",
-              "name": "Gjennomføre - Delfase 1",
-              "sortOrder": 0
-            }
-          ]
-        },
-        {
-          "id": "aaaa1111-bbbb-cccc-dddd-eeee44444444",
-          "name": "Avslutte",
-          "sortOrder": 3,
-          "customProperties": {
-            "PpPhaseLevel": "4"
+          {
+            "Id": "aaaa1111-bbbb-cccc-dddd-eeee22222222",
+            "Name": "Planlegge",
+            "SortOrder": 1,
+            "CustomProperties": { "PpPhaseLevel": "2" }
+          },
+          {
+            "Id": "aaaa1111-bbbb-cccc-dddd-eeee33333333",
+            "Name": "Gjennomføre",
+            "SortOrder": 2,
+            "CustomProperties": { "PpPhaseLevel": "3" },
+            "Terms": [
+              {
+                "Id": "aaaa1111-bbbb-cccc-dddd-ffff11111111",
+                "Name": "Gjennomføre - Delfase 1",
+                "SortOrder": 0
+              }
+            ]
+          },
+          {
+            "Id": "aaaa1111-bbbb-cccc-dddd-eeee44444444",
+            "Name": "Avslutte",
+            "SortOrder": 3,
+            "CustomProperties": { "PpPhaseLevel": "4" }
           }
-        }
-      ]
+        ]
+      },
+      {
+        "Id": "22222222-3333-4444-5555-666666666666",
+        "Name": "Prosjekttype",
+        "Description": "Klassifisering av prosjekttyper",
+        "IsOpenForTermCreation": true,
+        "Terms": [
+          {
+            "Id": "bbbb1111-cccc-dddd-eeee-ffff11111111",
+            "Name": "Internt prosjekt",
+            "SortOrder": 0
+          },
+          {
+            "Id": "bbbb1111-cccc-dddd-eeee-ffff22222222",
+            "Name": "Kundeprosjekt",
+            "SortOrder": 1
+          }
+        ]
+      }
+    ]
+  },
+  "SiteFields": [
+    "... (egendefinerte felter – managed metadata-felter refererer til termsett-IDer over)"
+  ],
+  "ContentTypes": [
+    "... (innholdstyper som bruker feltene)"
+  ],
+  "Lists": [
+    "... (lister som skal opprettes på hub)"
+  ],
+  "Files": [
+    {
+      "Src": "assets/prosjektrapport-mal.docx",
+      "Dest": "Malfiler/prosjektrapport-mal.docx"
     },
     {
-      "id": "22222222-3333-4444-5555-666666666666",
-      "name": "Prosjekttype",
-      "description": "Klassifisering av prosjekttyper",
-      "isOpenForTermCreation": true,
-      "terms": [
-        {
-          "id": "bbbb1111-cccc-dddd-eeee-ffff11111111",
-          "name": "Internt prosjekt",
-          "sortOrder": 0
-        },
-        {
-          "id": "bbbb1111-cccc-dddd-eeee-ffff22222222",
-          "name": "Kundeprosjekt",
-          "sortOrder": 1
-        }
-      ]
+      "Src": "assets/logo-placeholder.png",
+      "Dest": "SiteAssets/logo-placeholder.png"
     }
   ]
 }
@@ -286,43 +262,48 @@ Definerer termsett med forhåndsdefinerte IDer. Faste IDer er avgjørende fordi 
 
 Alle termsett og termer har forhåndsdefinerte IDer i pakken. Dette sikrer:
 
-- **Feltkobling:** Managed metadata-felter i `fields.json` kan referere til `TermSetId` direkte. Feltene fungerer umiddelbart etter provisjonering.
+- **Feltkobling:** Managed metadata-felter i `SiteFields` kan referere til `TermSetId` direkte. Feltene fungerer umiddelbart etter provisjonering.
 - **Kryssreferanser:** Standardinnhold (f.eks. fasesjekkliste-elementer) kan referere til termer via ID.
 - **Idempotens:** Ved re-installasjon eller oppdatering kan eksisterende termsett gjenkjennes og oppdateres i stedet for dupliseres.
 - **Konsistens på tvers av tenanter:** Alle installasjoner av samme malpakke bruker identiske IDer, noe som forenkler support og dokumentasjon.
 
-### 4.5 Utvidelse av sp-js-provisioning – `provisionTermSets()`
+### 4.4 Utvidelse av sp-js-provisioning – Taxonomy-handler
 
-Taxonomy-provisjonering implementeres som en **separat funksjon** i sp-js-provisioning, adskilt fra den vanlige template-provisjoneringen. Funksjonen tar inn termsett-definisjonen (fra `termsets.json`) og provisjonerer mot term store via Microsoft Graph API.
+sp-js-provisioning utvides med en intern **Taxonomy-handler** som provisjonerer termsett via Microsoft Graph API. Handleren aktiveres automatisk når en template inneholder en `Taxonomy`-seksjon, og kjøres som første steg – før `SiteFields` – slik at managed metadata-felter kan referere til termsett-IDer som nettopp er opprettet.
 
 #### API-design
 
 ```typescript
-import { provisionTermSets } from 'sp-js-provisioning';
+import { provisionTemplate } from 'sp-js-provisioning';
 
-// Kalles separat, før template-provisjonering
-await provisionTermSets(context, {
-  source: termSetsJson,         // Innholdet fra taxonomy/termsets.json
-  graphClient: msGraphClient,   // MSGraphClientV3 fra SPFx-kontekst
-  onProgress: (message) => {    // Valgfri callback for fremdriftsvisning
+// Hub-provisjonering: taxonomy + felter + innholdstyper + lister + filer
+await provisionTemplate(hubContext, hubTemplateJson, {
+  graphClient: msGraphClient,   // MSGraphClientV3 – påkrevd når Taxonomy-seksjon finnes
+  onProgress: (message) => {
     console.log(message);
   }
 });
 
-// Deretter kjøres vanlig provisjonering som før
-await provisionTemplate(context, templateJson);
+// Prosjekt-provisjonering: felter + innholdstyper + lister + filer
+await provisionTemplate(projectContext, projectTemplateJson);
 ```
 
-#### Hvorfor separat funksjon
+Samme `provisionTemplate()`-funksjon brukes for både hub og prosjekt. Forskjellen er kun kontekst (hub-site vs prosjektområde) og at hub-templaten typisk har en `Taxonomy`-seksjon.
 
-- **Tydelig ansvarsfordeling:** Taxonomy-provisjonering har egne avhengigheter (Graph API, Term Store-tillatelser) som skiller seg fra resten av sp-js-provisioning
-- **Fleksibel rekkefølge:** Kalleren styrer eksplisitt at termsett opprettes *før* template-provisjonering, uten at sp-js-provisioning trenger intern rekkefølgelogikk for dette
-- **Kan brukes uavhengig:** Funksjonen kan kalles alene – f.eks. for pakker av typen `content` som bare trenger termsett uten en full provisjoneringsmal
-- **Enklere testing:** Kan enhetstestes isolert uten å sette opp full provisjoneringsflyt
+#### Options-utvidelse
+
+```typescript
+interface ProvisionOptions {
+  graphClient?: MSGraphClientV3;  // Påkrevd hvis template har Taxonomy-seksjon
+  onProgress?: (message: string) => void;
+}
+```
+
+Dersom `Taxonomy`-seksjon finnes i templaten men `graphClient` ikke er satt, kastes en tydelig feil.
 
 #### Underliggende API: Microsoft Graph Taxonomy
 
-Funksjonen bruker Graph Taxonomy API under panseret:
+Handleren bruker Graph Taxonomy API:
 
 ```
 GET    /sites/{siteId}/termStore/groups                          → Finn/opprett termgruppe
@@ -336,10 +317,14 @@ PATCH  /sites/{siteId}/termStore/sets/{setId}/children/{termId}   → Oppdater t
 
 Tilgjengelig fra SPFx via `MSGraphClientV3`. Krever `TermStore.ReadWrite.All` (delegated).
 
-#### Intern flyt i `provisionTermSets()`
+#### Intern flyt i Taxonomy-handleren
 
 ```
-provisionTermSets(context, options)
+provisionTemplate(context, template, { graphClient })
+│
+├─ 0. Har template Taxonomy-seksjon?
+│     Ja → kjør Taxonomy-handler (nedenfor)
+│     Nei → hopp til SiteFields som vanlig
 │
 ├─ 1. Hent term store for site
 │     GET /sites/{siteId}/termStore
@@ -349,28 +334,18 @@ provisionTermSets(context, options)
 │     POST .../termStore/groups → opprett hvis ikke finnes
 │
 ├─ 3. For hvert termsett i definisjonen:
-│     │
 │     ├─ 3a. Sjekk om termsett finnes (by ID)
-│     │       GET .../groups/{groupId}/sets
-│     │
 │     ├─ 3b. Opprett hvis ikke finnes
-│     │       POST .../groups/{groupId}/sets  { id, name, description, ... }
-│     │
 │     ├─ 3c. Oppdater hvis finnes og navn/beskrivelse er endret
-│     │       PATCH .../sets/{setId}
-│     │
 │     └─ 3d. Synkroniser termer (rekursivt for hierarki)
-│             │
-│             ├─ Hent eksisterende termer
-│             │   GET .../sets/{setId}/children
-│             │
-│             ├─ For hver term i definisjonen:
-│             │   ├─ Finnes med riktig ID? → Oppdater hvis endret
-│             │   └─ Finnes ikke?          → Opprett med definert ID
-│             │
-│             └─ Termer som finnes lokalt men ikke i pakken → Behold
+│             ├─ Finnes med riktig ID? → Oppdater hvis endret
+│             ├─ Finnes ikke? → Opprett med definert ID
+│             └─ Finnes lokalt men ikke i pakken → Behold
 │
-└─ 4. Rapporter resultat (opprettet/oppdatert/uendret per termsett)
+├─ 4. SiteFields (standard sp-js-provisioning)
+├─ 5. ContentTypes
+├─ 6. Lists
+└─ 7. Files
 ```
 
 #### Feilhåndtering
@@ -380,50 +355,57 @@ provisionTermSets(context, options)
 | Manglende `TermStore.ReadWrite.All` | Avbryt med tydelig melding: "Du trenger Term Store-tillatelser. Kontakt din IT-administrator." |
 | Bruker er ikke Term Store Admin | Avbryt med melding om manglende rettigheter |
 | Term store finnes ikke på site | Avbryt med forklaring |
+| `Taxonomy`-seksjon uten `graphClient` | Kast feil: "graphClient er påkrevd for taxonomy-provisjonering" |
 | Rate limiting (429) | Retry med eksponentiell backoff (maks 3 forsøk) |
 | Nettverksfeil | Retry én gang, deretter avbryt med feilmelding |
 | Termsett-ID-konflikt (annen termgruppe) | Logg advarsel, forsøk å bruke eksisterende |
 
 #### Logging og fremdrift
 
-Funksjonen rapporterer fremdrift via `onProgress`-callback som SPFx-wizarden kan bruke til å vise status:
+Handleren rapporterer fremdrift via `onProgress`-callback:
 
 ```
 📋 Oppretter termgruppe "Prosjektportalen"...
 📋 Termsett "Prosjektfaser" – oppretter 4 termer...
 📋 Termsett "Prosjekttype" – finnes allerede, oppdaterer 1 term...
 ✅ Taxonomy-provisjonering fullført (2 termsett, 6 termer)
+📋 Provisjonerer felter...
+📋 Provisjonerer innholdstyper...
+...
 ```
 
-### 4.6 Provisjoneringsrekkefølge
+### 4.5 Provisjoneringsrekkefølge
 
-Med `provisionTermSets()` som separat funksjon blir den fullstendige provisjoneringssekvensen ved malpakkeinstallasjon:
+Den fullstendige provisjoneringssekvensen ved malpakkeinstallasjon:
 
 ```
-┌─ provisionTermSets() ──────────────────────────────────────┐
+┌─ provisionTemplate(hubContext, hubTemplate) ───────────────┐
 │  1. Taxonomy     → Opprett termgruppe og termsett           │
 │                    (med faste IDer, via Graph API)           │
-└─────────────────────────────────────────────────────────────┘
-         ↓  Fullført uten feil
-┌─ provisionTemplate() ──────────────────────────────────────┐
 │  2. Fields       → Opprett site columns                     │
 │                    (managed metadata-felter refererer        │
 │                     til termsett-IDer fra steg 1)            │
 │  3. ContentTypes → Opprett innholdstyper                    │
 │  4. Lists        → Opprett lister med innholdstyper         │
 │  5. Files        → Kopier filer til hub                     │
-│  6. Content      → Kopier standardinnhold til lister        │
+└─────────────────────────────────────────────────────────────┘
+         ↓  Fullført uten feil
+┌─ provisionTemplate(projectContext, template) ──────────────┐
+│  6. Fields       → Opprett prosjekt-spesifikke felter       │
+│  7. ContentTypes → Opprett innholdstyper                    │
+│  8. Lists        → Opprett lister                           │
+│  9. Content      → Kopier standardinnhold til lister        │
 └─────────────────────────────────────────────────────────────┘
          ↓  Fullført uten feil
 ┌─ Pakkeinstallasjon (SPFx) ─────────────────────────────────┐
-│  7. Extensions   → Kjør evt. prosjekttillegg                │
-│  8. Metadata     → Oppdater Maloppsett + stemple område     │
+│  10. Extensions  → Kjør evt. prosjekttillegg                │
+│  11. Metadata    → Oppdater Maloppsett + stemple område     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-Ansvaret for rekkefølgen ligger hos SPFx-komponenten (malpakkekatalogen / oppsettveiviseren), ikke inne i sp-js-provisioning. Dette gir full kontroll over feilhåndtering mellom stegene.
+Samme `provisionTemplate()`-funksjon brukes for både hub og prosjekt. Taxonomy-handleren aktiveres kun når template inneholder en `Taxonomy`-seksjon (typisk bare hub-template). Ansvaret for å kalle hub først og deretter prosjekt ligger hos SPFx-komponenten, som gir full kontroll over feilhåndtering mellom stegene.
 
-### 4.7 Idempotens og oppdatering av termsett
+### 4.6 Idempotens og oppdatering av termsett
 
 Ved installasjon og oppdatering av malpakker må taxonomy-provisjoneringen håndtere at termsett allerede kan eksistere:
 
@@ -438,7 +420,7 @@ Ved installasjon og oppdatering av malpakker må taxonomy-provisjoneringen hånd
 
 Prinsipp: *Additivt og ikke-destruktivt.* Pakken legger til og oppdaterer, men sletter aldri termer som allerede finnes – kunden kan ha utvidet termsettet lokalt.
 
-### 4.8 Tillatelser
+### 4.7 Tillatelser
 
 Taxonomy-provisjonering krever at brukeren som installerer malpakken har tilstrekkelige rettigheter:
 
@@ -447,7 +429,7 @@ Taxonomy-provisjonering krever at brukeren som installerer malpakken har tilstre
 
 SPFx-komponenten bør sjekke tilgangsnivå før taxonomy-provisjonering starter, og gi en tydelig feilmelding dersom brukeren mangler rettigheter.
 
-### 4.9 Bygging av .pppkg
+### 4.8 Bygging av .pppkg
 
 I første omgang bygges pakkene lokalt, tilsvarende hvordan Prosjektportalen i dag bygger malfiler (JSON). En enkel build-script samler filer, validerer manifest og lager zip:
 
@@ -481,9 +463,8 @@ prosjektportalen-hosting/
 │   │   ├── README.md
 │   │   ├── CHANGELOG.md
 │   │   ├── thumbnail.png
-│   │   ├── provisioning/
+│   │   ├── provisioning/     # hub-template.json + template.json + extensions/
 │   │   ├── content/
-│   │   ├── schema/
 │   │   └── assets/
 │   ├── byggeprosjekt/
 │   │   └── ...
@@ -683,8 +664,8 @@ Wizarden er designet for administratorer som ikke nødvendigvis er tekniske. Fok
 
 1. `.pppkg` lastes ned fra GitHub
 2. Pakken pakkes ut og innholdet provisjoneres:
-   a. **`provisionTermSets()`** → Termgrupper og termsett opprettes/oppdateres (Graph API, med faste IDer)
-   b. **`provisionTemplate()`** → Felter, innholdstyper, lister, filer og innhold provisjoneres (sp-js-provisioning)
+   a. **`provisionTemplate(hubContext, hubTemplate, { graphClient })`** → Taxonomy, felter, innholdstyper, lister og filer provisjoneres på hub (sp-js-provisioning med Taxonomy-handler)
+   b. **`provisionTemplate(projectContext, template)`** → Prosjekt-level provisjonering
    c. **Prosjekttillegg** → Legges i Prosjekttillegg-listen
    d. **Standardinnhold** → Kopieres til relevante lister
 3. Maloppsett-element opprettes/oppdateres med `PpPkgType = Importert` og versjonsinformasjon
@@ -794,11 +775,10 @@ Full CI/CD med automatisk bygging, release-opprettelse og `catalog.json`-oppdate
 ### Fase 1 – Fundament
 
 - Definere og implementere `.pppkg`-format og JSON Schema for manifest
-- Definere `termsets.json`-format
-- Implementere `provisionTermSets()` som separat funksjon i sp-js-provisioning (Graph API)
+- Utvide sp-js-provisioning med Taxonomy-handler (Graph API, intern i `provisionTemplate()`)
 - Sette opp mappestruktur i hosting-repoet
 - Lage lokale build-script (`build:packages`)
-- Publisere `catalog.json` og første malpakke(r)
+- Publisere `catalog.json` og første malpakke(r) med `hub-template.json` og `template.json`
 - Utvide Maloppsett-listen med pakkemetadata-felter
 
 ### Fase 2 – SPFx malpakkekatalog
