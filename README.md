@@ -1,7 +1,7 @@
 # Prosjektportalen – Sentral hosting av malpakker
 
 > **Om:** Utkast til spesifikasjon for sentral hosting av malpakker i Prosjektportalen
-> **Status:** Utkast v4  
+> **Status:** Utkast v5  
 > **Sist oppdatert:** 2026-04-09  
 > **Repo:** [prosjektportalen-hosting](https://github.com/Puzzlepart/prosjektportalen-hosting)
 
@@ -808,12 +808,16 @@ Full CI/CD med automatisk bygging, release-opprettelse og `catalog.json`-oppdate
 
 ---
 
-## 12. Åpne spørsmål
+## 12. Beslutninger og avklaringer
 
-1. **Begrepsavklaring maltyper:** Er Lokal / Importert / Sentral de riktige navnene? Andre kandidater: "Lokal" → "Egendefinert"? "Sentral" → "Skytilkoblet" / "Oppdatert"?
-2. **Granularitet av files.json:** Trenger vi støtte for filoperasjoner utover ren kopiering (f.eks. erstatt-i-eksisterende-fil, eller bare "kopier hvis ikke finnes")?
-3. **CDN/proxy for sentrale maler:** Bør vi ha en mellomtjeneste foran GitHub for pålitelighet og ytelse, eller holder raw.githubusercontent.com?
-4. **Oppdateringsstrategi for importerte maler:** Bør oppdatering av en importert mal overskrive alt blindt, eller bør det finnes en merge/diff-visning?
-5. **Tilgangsstyring for sentrale maler:** Er det scenarioer der man vil begrense hvilke sentrale maler som er tilgjengelige per tenant (f.eks. en premium-katalog)?
-6. **Taxonomy-konflikter:** Hva om to malpakker definerer termsett med ulike IDer for samme konsept (f.eks. begge har "Prosjektfaser" men med ulik ID)? Bør vi ha et sentralt register over "kjente" termsett-IDer som pakker skal gjenbruke?
-7. **Eksisterende termsett:** Kunder som allerede har Prosjektportalen har termsett med sine IDer. Trenger vi en migreringsmekanisme eller mapping for å koble eksisterende termsett til pakke-IDer?
+Følgende spørsmål er avklart:
+
+| # | Spørsmål | Beslutning |
+|---|---|---|
+| 1 | **Begrepsavklaring maltyper** – Er Lokal / Importert / Sentral de riktige navnene? | Ja, navnene beholdes som de er. |
+| 2 | **Granularitet av files.json** – Trenger vi mer enn ren kopiering? | Hold det enkelt – kun kopiering, men med `overwrite`-flagg (`true`/`false`) per fil. |
+| 3 | **CDN/proxy for sentrale maler** – Mellomtjeneste foran GitHub? | Nei, gå direkte mot raw.githubusercontent.com. |
+| 4 | **Oppdateringsstrategi for importerte maler** – Overskriv alt eller merge/diff? | Overskriv alt ved oppdatering. |
+| 5 | **Tilgangsstyring for sentrale maler** – Begrense per tenant? | Ikke aktuelt per nå. |
+| 6 | **Taxonomy-konflikter** – Hva om to pakker definerer samme termsett ulikt? | Lukes ut i byggeprosessen. Flere maler kan peke på samme termsett, men en pakke kan ikke definere samme ID for ulike navn eller omvendt. |
+| 7 | **Eksisterende termsett** – Migreringsmekanisme for eksisterende kunder? | Ikke nødvendig – vi har kontroll på alle termsett og IDer som Prosjektportalen har innført. Ved import av en mal sjekkes om termsettet allerede finnes i tenanten. Hvis det finnes, hoppes import av termsettet over – eksisterende termer skal ikke opprettes eller endres. |
