@@ -1,0 +1,42 @@
+[
+  {
+    "Title": "Opprett prosjektplan",
+    "GtTaskPriority": "Høy",
+    "GtTaskDueDate": null
+  },
+  {
+    "Title": "Identifiser interessenter",
+    "GtTaskPriority": "Høy",
+    "GtTaskDueDate": null
+  },
+  {
+    "Title": "Utarbeid kommunikasjonsplan",
+    "GtTaskPriority": "Normal",
+    "GtTaskDueDate": null
+  },
+  {
+    "Title": "Gjennomfør kickoff-møte",
+    "GtTaskPriority": "Høy",
+    "GtTaskDueDate": null
+  },
+  {
+    "Title": "Etabler styringsmodell",
+    "GtTaskPriority": "Normal",
+    "GtTaskDueDate": null
+  },
+  {
+    "Title": "Utarbeid risikovurdering",
+    "GtTaskPriority": "Høy",
+    "GtTaskDueDate": null
+  },
+  {
+    "Title": "Definer suksesskriterier",
+    "GtTaskPriority": "Normal",
+    "GtTaskDueDate": null
+  },
+  {
+    "Title": "Sett opp rapporteringsrutiner",
+    "GtTaskPriority": "Normal",
+    "GtTaskDueDate": null
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/schema/catalog.schema.json",
+  "lastUpdated": "2026-05-08T14:25:12.213Z",
+  "packages": [
+    {
+      "id": "pp-standardmal",
+      "name": "Standardmal",
+      "description": "Komplett prosjektmal med fasesjekkliste, interessentregister, usikkerhetshåndtering, leveransestyring og dokumenthåndtering. Inkluderer integrasjon med Microsoft Planner for oppgavestyring.",
+      "version": "1.0.0",
+      "type": "template",
+      "author": "Puzzlepart",
+      "tags": [
+        "standard",
+        "prosjektledelse",
+        "SharePoint"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/dummy-prosjektmal/thumbnail.png",
+      "downloadUrl": "https://github.com/Puzzlepart/prosjektportalen-hosting/releases/download/v1.0.0/dummy-prosjektmal-1.0.0.pppkg",
+      "minPPVersion": "1.10.0",
+      "publishedDate": "2026-05-08",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/dummy-prosjektmal/CHANGELOG.md"
+    }
+  ]
+}

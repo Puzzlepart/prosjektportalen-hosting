@@ -1,0 +1,3 @@
+PLACEHOLDER - Prosjektportalen Logo
+Dette er en placeholder-fil som representerer en logo eller ikon-fil.
+I en ekte pakke ville dette vært en faktisk bildefil (.png, .svg, etc.)

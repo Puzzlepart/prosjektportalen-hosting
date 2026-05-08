@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/schema/catalog.schema.json",
+  "title": "Prosjektportalen Package Catalog",
+  "description": "Schema for validating the central package catalog (catalog.json) that indexes all available template packages",
+  "type": "object",
+  "required": ["lastUpdated", "packages"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "URL to this JSON Schema"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "description": "Timestamp of last catalog update (ISO 8601 format)",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{3})?Z$"
+    },
+    "packages": {
+      "type": "array",
+      "description": "List of all available packages",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "version", "type", "author", "downloadUrl"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique package identifier (matches manifest.json)",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "minLength": 3
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable package name",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief description of the package",
+            "maxLength": 500
+          },
+          "version": {
+            "type": "string",
+            "description": "Package version in semver format",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+          },
+          "type": {
+            "type": "string",
+            "description": "Package type",
+            "enum": ["template", "extension", "content"]
+          },
+          "author": {
+            "type": "string",
+            "description": "Package author/publisher name",
+            "minLength": 1
+          },
+          "tags": {
+            "type": "array",
+            "description": "Tags for categorization and filtering",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "thumbnail": {
+            "type": "string",
+            "description": "Full URL to thumbnail image (GitHub raw URL)",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "downloadUrl": {
+            "type": "string",
+            "description": "Full URL to download the .pppkg file (GitHub release URL)",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "minPPVersion": {
+            "type": "string",
+            "description": "Minimum required Prosjektportalen version (semver)",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+          },
+          "publishedDate": {
+            "type": "string",
+            "description": "Date when this version was published (YYYY-MM-DD)",
+            "format": "date",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "changelogUrl": {
+            "type": "string",
+            "description": "Full URL to the package's CHANGELOG.md (GitHub raw URL)",
+            "format": "uri",
+            "pattern": "^https?://"
+          }
+        }
+      }
+    }
+  }
+}
