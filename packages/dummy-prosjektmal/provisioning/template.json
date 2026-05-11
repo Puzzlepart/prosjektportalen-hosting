@@ -76,7 +76,7 @@
     "QuickLaunch": [
       {
         "Title": "Hjem",
-        "Url": "SitePages/Home.aspx",
+        "Url": "SitePages/ProjectHome.aspx",
         "IsExternal": false
       },
       {

@@ -156,7 +156,7 @@ Full CI/CD ved merge til `main`:
 - [x] Skrive `pppkg-manifest.schema.json`
 - [x] Skrive `catalog.schema.json`
 - [x] Implementere `scripts/build-packages.js` (validering + zip + catalog-oppdatering)
-- [ ] Implementere `scripts/validate-manifest.js` (frittstående validering)
+- [x] Implementere `scripts/validate-manifest.js` (frittstående validering)
 - [x] Sette opp `package.json` med `build:packages` og `build:package` scripts
 - [x] Opprette første malpakke under `packages/` (f.eks. `standard-prosjektmal`)
 - [x] Generere initial `catalog.json`

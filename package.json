@@ -6,7 +6,11 @@
   "scripts": {
     "build:packages": "node scripts/build-packages.js",
     "build:package": "node scripts/build-packages.js",
-    "validate": "node scripts/validate-manifest.js"
+    "build:dev": "node scripts/build-packages.js --base-ref=dev",
+    "build:main": "node scripts/build-packages.js --base-ref=main",
+    "validate": "node scripts/validate-manifest.js",
+    "validate:dev": "node scripts/validate-manifest.js --base-ref=dev",
+    "validate:main": "node scripts/validate-manifest.js --base-ref=main"
   },
   "repository": {
     "type": "git",

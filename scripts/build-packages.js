@@ -2,29 +2,28 @@
  * Build script for Prosjektportalen template packages
  * 
  * Usage:
- *   npm run build:packages              # Build all packages
- *   npm run build:package -- --name=package-name  # Build specific package
+ *   npm run build:packages                            # Build all packages (validate against main)
+ *   npm run build:dev                                 # Build all (validate against dev)
+ *   npm run build:main                                # Build all (validate against main)
+ *   npm run build:package -- --name=package-name      # Build specific package
+ * 
+ * Direct usage:
+ *   node scripts/build-packages.js [--name=package-name] [--base-ref=main]
  */
 
 const fs = require('fs');
 const path = require('path');
 const archiver = require('archiver');
-const Ajv = require('ajv');
-const addFormats = require('ajv-formats');
 const chalk = require('chalk');
+const validator = require('./validate-manifest');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const PACKAGES_DIR = path.join(ROOT_DIR, 'packages');
 const DIST_DIR = path.join(ROOT_DIR, 'dist');
-const SCHEMA_DIR = path.join(ROOT_DIR, 'schema');
 const CATALOG_PATH = path.join(ROOT_DIR, 'catalog.json');
-const MANIFEST_SCHEMA_PATH = path.join(SCHEMA_DIR, 'pppkg-manifest.schema.json');
 const GITHUB_REPO = 'Puzzlepart/prosjektportalen-hosting';
 const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/main`;
 const GITHUB_RELEASE_BASE = `https://github.com/${GITHUB_REPO}/releases/download`;
-
-const ajv = new Ajv({ allErrors: true, strict: false });
-addFormats(ajv);
 
 /**
  * Parse command line arguments
@@ -32,7 +31,8 @@ addFormats(ajv);
 function parseArgs() {
   const args = process.argv.slice(2);
   const options = {
-    packageName: null
+    packageName: null,
+    baseRef: 'main'
   };
 
   for (const arg of args) {
@@ -43,6 +43,8 @@ function parseArgs() {
       if (idx !== -1 && args[idx + 1]) {
         options.packageName = args[idx + 1];
       }
+    } else if (arg.startsWith('--base-ref=')) {
+      options.baseRef = arg.substring('--base-ref='.length);
     }
   }
 
@@ -82,91 +84,25 @@ function getPackagesToBuild(packageName = null) {
 }
 
 /**
- * Load and validate manifest.json
+ * Load and validate manifest.json using shared validator
  */
-function validateManifest(packagePath, manifestPath) {
-  if (!fs.existsSync(manifestPath)) {
-    throw new Error(`manifest.json not found in ${packagePath}`);
-  }
-
-  let manifest;
-  try {
-    const manifestContent = fs.readFileSync(manifestPath, 'utf8');
-    manifest = JSON.parse(manifestContent);
-  } catch (error) {
-    throw new Error(`Failed to parse manifest.json: ${error.message}`);
-  }
-
-  const schemaContent = fs.readFileSync(MANIFEST_SCHEMA_PATH, 'utf8');
-  const schema = JSON.parse(schemaContent);
-
-  const validate = ajv.compile(schema);
-  const valid = validate(manifest);
-
-  if (!valid) {
-    const errors = validate.errors.map(err => {
-      return `  - ${err.instancePath || '/'}: ${err.message}`;
-    }).join('\n');
+function loadAndValidateManifest(packagePath, manifestPath) {
+  const validation = validator.validateManifest(packagePath, manifestPath);
+  
+  if (!validation.valid) {
+    const errors = validation.errors.map(err => `  - ${err}`).join('\n');
     throw new Error(`Manifest validation failed:\n${errors}`);
   }
 
-  return manifest;
+  return validation.manifest;
 }
 
 /**
- * Check that all referenced files exist
+ * Check that all referenced files exist using shared validator
  */
-function validateReferencedFiles(packagePath, manifest) {
-  const errors = [];
-
-  if (manifest.thumbnail) {
-    const thumbnailPath = path.join(packagePath, manifest.thumbnail);
-    if (!fs.existsSync(thumbnailPath)) {
-      errors.push(`Thumbnail not found: ${manifest.thumbnail}`);
-    }
-  }
-
-  if (manifest.provisioning) {
-    if (manifest.provisioning.hubTemplate) {
-      const hubTemplatePath = path.join(packagePath, manifest.provisioning.hubTemplate);
-      if (!fs.existsSync(hubTemplatePath)) {
-        errors.push(`Hub template not found: ${manifest.provisioning.hubTemplate}`);
-      }
-    }
-
-    if (manifest.provisioning.template) {
-      const templatePath = path.join(packagePath, manifest.provisioning.template);
-      if (!fs.existsSync(templatePath)) {
-        errors.push(`Template not found: ${manifest.provisioning.template}`);
-      }
-    }
-
-    if (manifest.provisioning.extensions) {
-      for (const ext of manifest.provisioning.extensions) {
-        const extPath = path.join(packagePath, ext.file);
-        if (!fs.existsSync(extPath)) {
-          errors.push(`Extension file not found: ${ext.file}`);
-        }
-      }
-    }
-  }
-
-  if (manifest.content && manifest.content.items) {
-    for (const item of manifest.content.items) {
-      const contentPath = path.join(packagePath, item.sourceFile);
-      if (!fs.existsSync(contentPath)) {
-        errors.push(`Content file not found: ${item.sourceFile}`);
-      }
-    }
-  }
-
-  if (manifest.changelog) {
-    const changelogPath = path.join(packagePath, manifest.changelog);
-    if (!fs.existsSync(changelogPath)) {
-      errors.push(`Changelog not found: ${manifest.changelog}`);
-    }
-  }
-
+function checkReferencedFiles(packagePath, manifest) {
+  const errors = validator.validateReferencedFiles(packagePath, manifest);
+  
   const readmePath = path.join(packagePath, 'README.md');
   if (!fs.existsSync(readmePath)) {
     errors.push('README.md not found');
@@ -273,7 +209,7 @@ function updateCatalog(packageName, manifest) {
 /**
  * Build a single package
  */
-async function buildPackage(packageName) {
+async function buildPackage(packageName, options) {
   console.log(chalk.cyan(`\n📦 Building package: ${packageName}`));
   
   const packagePath = path.join(PACKAGES_DIR, packageName);
@@ -281,12 +217,32 @@ async function buildPackage(packageName) {
 
   try {
     console.log(chalk.gray('  ↳ Validating manifest.json...'));
-    const manifest = validateManifest(packagePath, manifestPath);
+    const manifest = loadAndValidateManifest(packagePath, manifestPath);
     console.log(chalk.green(`  ✓ Manifest valid (${manifest.name} v${manifest.version})`));
 
     console.log(chalk.gray('  ↳ Validating referenced files...'));
-    validateReferencedFiles(packagePath, manifest);
+    checkReferencedFiles(packagePath, manifest);
     console.log(chalk.green('  ✓ All referenced files exist'));
+
+    console.log(chalk.gray('  ↳ Checking version bump...'));
+    const versionCheck = validator.validateVersionBump(
+      packageName,
+      packagePath,
+      manifest,
+      options.baseRef
+    );
+
+    if (versionCheck.errors.length > 0) {
+      const errors = versionCheck.errors.map(err => `  - ${err}`).join('\n');
+      throw new Error(`Version validation failed:\n${errors}`);
+    }
+    console.log(chalk.green('  ✓ Version validation passed'));
+
+    if (versionCheck.warnings.length > 0) {
+      versionCheck.warnings.forEach(warn => {
+        console.log(chalk.yellow(`  ⚠ ${warn}`));
+      });
+    }
 
     console.log(chalk.gray('  ↳ Creating .pppkg archive...'));
     const result = await createPackage(packageName, packagePath, manifest);
@@ -321,7 +277,7 @@ async function main() {
   let failCount = 0;
 
   for (const packageName of packages) {
-    const success = await buildPackage(packageName);
+    const success = await buildPackage(packageName, options);
     if (success) {
       successCount++;
     } else {

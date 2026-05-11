@@ -1,9 +1,9 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/schema/pppkg-manifest.schema.json",
+  "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-standardmal",
   "name": "Standardmal",
   "description": "Komplett prosjektmal med fasesjekkliste, interessentregister, usikkerhetshåndtering, leveransestyring og dokumenthåndtering. Inkluderer integrasjon med Microsoft Planner for oppgavestyring.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Puzzlepart",
   "license": "MIT",
   "minPPVersion": "1.10.0",
