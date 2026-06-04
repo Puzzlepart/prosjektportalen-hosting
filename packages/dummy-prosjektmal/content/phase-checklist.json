@@ -1,0 +1,86 @@
+[
+  {
+    "Title": "Prosjektmandat godkjent",
+    "GtProjectPhase": "-1;#Konsept|99e85650-33de-4af4-b8db-edffbc8a310b",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 10,
+    "GtComment": "Sikre at prosjektmandatet er godkjent av styringsgruppen"
+  },
+  {
+    "Title": "Business case utarbeidet",
+    "GtProjectPhase": "-1;#Konsept|99e85650-33de-4af4-b8db-edffbc8a310b",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 20,
+    "GtComment": "Dokumenter forventet nytte og kostnader"
+  },
+  {
+    "Title": "Interessentanalyse gjennomført",
+    "GtProjectPhase": "-1;#Konsept|99e85650-33de-4af4-b8db-edffbc8a310b",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 30,
+    "GtComment": "Identifiser og analyser nøkkelinteressenter"
+  },
+  {
+    "Title": "Prosjektplan godkjent",
+    "GtProjectPhase": "-1;#Planlegging|cda4f1e1-3488-4e57-8a04-6973df239689",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 10,
+    "GtComment": "Komplett prosjektplan godkjent av prosjekteier"
+  },
+  {
+    "Title": "Ressurser allokert",
+    "GtProjectPhase": "-1;#Planlegging|cda4f1e1-3488-4e57-8a04-6973df239689",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 20,
+    "GtComment": "Sikre at nødvendige ressurser er tilgjengelige"
+  },
+  {
+    "Title": "Budsjett fastlagt",
+    "GtProjectPhase": "-1;#Planlegging|cda4f1e1-3488-4e57-8a04-6973df239689",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 30,
+    "GtComment": "Detaljbudsjett utarbeidet og godkjent"
+  },
+  {
+    "Title": "Risikovurdering gjennomført",
+    "GtProjectPhase": "-1;#Planlegging|cda4f1e1-3488-4e57-8a04-6973df239689",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 40,
+    "GtComment": "Identifiser og vurder prosjektrisiko"
+  },
+  {
+    "Title": "Kickoff-møte avholdt",
+    "GtProjectPhase": "-1;#Gjennomføring|99d7765a-c786-4792-a1a1-866ef0f982b9",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 10,
+    "GtComment": "Oppstartsmøte med alle nøkkelpersoner"
+  },
+  {
+    "Title": "Statusrapportering etablert",
+    "GtProjectPhase": "-1;#Gjennomføring|99d7765a-c786-4792-a1a1-866ef0f982b9",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 20,
+    "GtComment": "Rutiner for statusrapportering på plass"
+  },
+  {
+    "Title": "Leveranser kvalitetssikret",
+    "GtProjectPhase": "-1;#Gjennomføring|99d7765a-c786-4792-a1a1-866ef0f982b9",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 30,
+    "GtComment": "Kvalitetssikre alle leveranser før overlevering"
+  },
+  {
+    "Title": "Sluttrapport utarbeidet",
+    "GtProjectPhase": "-1;#Avslutning|30e03c52-8c3e-4cfe-9b18-ca71593ce130",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 10,
+    "GtComment": "Komplett sluttrapport med erfaringer"
+  },
+  {
+    "Title": "Evalueringsmøte gjennomført",
+    "GtProjectPhase": "-1;#Avslutning|30e03c52-8c3e-4cfe-9b18-ca71593ce130",
+    "GtChecklistStatus": "Ikke startet",
+    "GtSortOrder": 20,
+    "GtComment": "Evalueringsmøte med prosjektgruppen"
+  }
+]

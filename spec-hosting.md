@@ -152,14 +152,14 @@ Full CI/CD ved merge til `main`:
 
 ### Fase 1
 
-- [ ] Opprette mappestruktur (`packages/`, `dist/`, `schema/`, `scripts/`)
-- [ ] Skrive `pppkg-manifest.schema.json`
-- [ ] Skrive `catalog.schema.json`
-- [ ] Implementere `scripts/build-packages.js` (validering + zip + catalog-oppdatering)
-- [ ] Implementere `scripts/validate-manifest.js` (frittstående validering)
-- [ ] Sette opp `package.json` med `build:packages` og `build:package` scripts
-- [ ] Opprette første malpakke under `packages/` (f.eks. `standard-prosjektmal`)
-- [ ] Generere initial `catalog.json`
+- [x] Opprette mappestruktur (`packages/`, `dist/`, `schema/`, `scripts/`)
+- [x] Skrive `pppkg-manifest.schema.json`
+- [x] Skrive `catalog.schema.json`
+- [x] Implementere `scripts/build-packages.js` (validering + zip + catalog-oppdatering)
+- [x] Implementere `scripts/validate-manifest.js` (frittstående validering)
+- [x] Sette opp `package.json` med `build:packages` og `build:package` scripts
+- [x] Opprette første malpakke under `packages/` (f.eks. `standard-prosjektmal`)
+- [x] Generere initial `catalog.json`
 - [ ] Opprette `.github/workflows/validate-pr.yml` for PR-validering
 
 ### Fase 4
