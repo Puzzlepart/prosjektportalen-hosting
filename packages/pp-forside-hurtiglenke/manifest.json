@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-forside-hurtiglenke",
+  "name": "Forside med hurtiglenker",
+  "description": "Prosjekttillegg som legger til hurtiglenke-webdelen på prosjektets forside. Tilpass tillegget med dine egne lenker.",
+  "version": "1.0.0",
+  "author": "Puzzlepart",
+  "license": "MIT",
+  "minPPVersion": "1.10.0",
+  "thumbnail": "thumbnail.png",
+  "tags": ["forside", "navigasjon", "tillegg"],
+  "type": "extension",
+  "provisioning": {
+    "extensions": [
+      {
+        "id": "forside-hurtiglenke",
+        "name": "Forside med hurtiglenker",
+        "description": "Legger hurtiglenke-webdelen på prosjektets forside (ProjectHome.aspx)",
+        "file": "provisioning/extensions/ForsideHurtiglenke.json",
+        "optional": false,
+        "defaultSelected": true
+      }
+    ]
+  },
+  "changelog": "CHANGELOG.md"
+}

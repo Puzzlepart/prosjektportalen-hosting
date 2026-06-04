@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-04T12:00:00.000Z",
+  "lastUpdated": "2026-06-04T13:00:00.000Z",
   "packages": [
     {
       "id": "pp-byggprosjekt",
@@ -19,6 +19,60 @@
       "minPPVersion": "1.10.0",
       "publishedDate": "2026-05-20",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-byggprosjekt/CHANGELOG.md"
+    },
+    {
+      "id": "pp-dokumentbibliotek-flat",
+      "name": "Dokumentbibliotek – flat visning",
+      "description": "Prosjekttillegg som legger til en flat dokumentvisning (uten mapper) i biblioteket Dokumenter, med kolonnen Bane som viser mappestrukturen til hvert dokument.",
+      "version": "1.0.0",
+      "type": "extension",
+      "author": "Puzzlepart",
+      "tags": [
+        "dokumenter",
+        "visning",
+        "tillegg"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/thumbnail.png",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-dokumentbibliotek-flat-1.0.0.pppkg",
+      "minPPVersion": "1.10.0",
+      "publishedDate": "2026-06-04",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/CHANGELOG.md"
+    },
+    {
+      "id": "pp-fasesider",
+      "name": "Fasesider",
+      "description": "Prosjekttillegg som legger til unike prosjektforsider for hver prosjektfase (Konsept, Planlegge, Gjennomføre, Avslutte og Realisere). Tilpass tillegget med dine egne faser og innhold.",
+      "version": "1.0.0",
+      "type": "extension",
+      "author": "Puzzlepart",
+      "tags": [
+        "faser",
+        "forside",
+        "tillegg"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-fasesider/thumbnail.png",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-fasesider-1.0.0.pppkg",
+      "minPPVersion": "1.10.0",
+      "publishedDate": "2026-06-04",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-fasesider/CHANGELOG.md"
+    },
+    {
+      "id": "pp-forside-hurtiglenke",
+      "name": "Forside med hurtiglenker",
+      "description": "Prosjekttillegg som legger til hurtiglenke-webdelen på prosjektets forside. Tilpass tillegget med dine egne lenker.",
+      "version": "1.0.0",
+      "type": "extension",
+      "author": "Puzzlepart",
+      "tags": [
+        "forside",
+        "navigasjon",
+        "tillegg"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forside-hurtiglenke/thumbnail.png",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forside-hurtiglenke-1.0.0.pppkg",
+      "minPPVersion": "1.10.0",
+      "publishedDate": "2026-06-04",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forside-hurtiglenke/CHANGELOG.md"
     },
     {
       "id": "pp-it-prosjekt",

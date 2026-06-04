@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-dokumentbibliotek-flat",
+  "name": "Dokumentbibliotek – flat visning",
+  "description": "Prosjekttillegg som legger til en flat dokumentvisning (uten mapper) i biblioteket Dokumenter, med kolonnen Bane som viser mappestrukturen til hvert dokument.",
+  "version": "1.0.0",
+  "author": "Puzzlepart",
+  "license": "MIT",
+  "minPPVersion": "1.10.0",
+  "thumbnail": "thumbnail.png",
+  "tags": ["dokumenter", "visning", "tillegg"],
+  "type": "extension",
+  "provisioning": {
+    "extensions": [
+      {
+        "id": "dokumentbibliotek-flat-bane",
+        "name": "Flat dokumentvisning med bane",
+        "description": "Legger til visningen «Flat struktur» i biblioteket Dokumenter med kolonnen Bane (FileDirRef)",
+        "file": "provisioning/extensions/DokumentbibliotekFlatBane.json",
+        "optional": false,
+        "defaultSelected": true
+      }
+    ]
+  },
+  "changelog": "CHANGELOG.md"
+}
