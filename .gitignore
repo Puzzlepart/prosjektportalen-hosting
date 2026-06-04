@@ -2,8 +2,8 @@
 node_modules/
 package-lock.json
 
-# Build output
-dist/*.pppkg
+# Build output: the .pppkg files in dist/ are intentionally committed so they can
+# be served (with CORS) via raw.githubusercontent.com — see scripts/build-packages.js.
 
 # OS files
 .DS_Store

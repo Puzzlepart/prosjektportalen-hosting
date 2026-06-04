@@ -23,7 +23,11 @@ const DIST_DIR = path.join(ROOT_DIR, 'dist');
 const CATALOG_PATH = path.join(ROOT_DIR, 'catalog.json');
 const GITHUB_REPO = 'Puzzlepart/prosjektportalen-hosting';
 const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/main`;
-const GITHUB_RELEASE_BASE = `https://github.com/${GITHUB_REPO}/releases/download`;
+// The .pppkg is served from the committed `dist/` folder via raw.githubusercontent.com,
+// which is CORS-enabled (`Access-Control-Allow-Origin: *`). GitHub *release* download
+// URLs (github.com/.../releases/download/...) are NOT CORS-enabled and are blocked by
+// the browser when the SPFx catalog fetches them, so we do not use them.
+const GITHUB_DIST_BASE = `${GITHUB_RAW_BASE}/dist`;
 
 /**
  * Parse command line arguments
@@ -179,7 +183,7 @@ function updateCatalog(packageName, manifest) {
     thumbnail: manifest.thumbnail 
       ? `${GITHUB_RAW_BASE}/packages/${packageName}/${manifest.thumbnail}`
       : undefined,
-    downloadUrl: `${GITHUB_RELEASE_BASE}/v${manifest.version}/${packageName}-${manifest.version}.pppkg`,
+    downloadUrl: `${GITHUB_DIST_BASE}/${packageName}-${manifest.version}.pppkg`,
     minPPVersion: manifest.minPPVersion,
     publishedDate: new Date().toISOString().split('T')[0],
     changelogUrl: manifest.changelog 
