@@ -1,0 +1,35 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-risikobibliotek",
+  "name": "Risikobibliotek",
+  "description": "Innholdspakke med et standard bibliotek av vanlige prosjektrisikoer og tilhørende tiltak. Legges til i usikkerhets- og tiltakslistene som utgangspunkt for risikovurdering.",
+  "version": "1.0.0",
+  "author": "Puzzlepart",
+  "license": "MIT",
+  "minPPVersion": "1.10.0",
+  "thumbnail": "thumbnail.png",
+  "tags": ["risiko", "kvalitet", "innhold"],
+  "type": "content",
+  "content": {
+    "items": [
+      {
+        "id": "risikobibliotek",
+        "name": "Risikobibliotek",
+        "description": "Standard prosjektrisikoer",
+        "sourceFile": "content/risikobibliotek.json",
+        "targetList": "Usikkerhet",
+        "optional": false
+      },
+      {
+        "id": "tiltaksbibliotek",
+        "name": "Tiltaksbibliotek",
+        "description": "Forslag til risikoreduserende tiltak",
+        "sourceFile": "content/tiltaksbibliotek.json",
+        "targetList": "Tiltak",
+        "optional": true,
+        "defaultSelected": true
+      }
+    ]
+  },
+  "changelog": "CHANGELOG.md"
+}

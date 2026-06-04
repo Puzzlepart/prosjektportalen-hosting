@@ -1,0 +1,8 @@
+[
+  { "Title": "Etabler produktbacklog", "GtSprintStatus": "Backlog" },
+  { "Title": "Definer Definition of Done", "GtSprintStatus": "Backlog" },
+  { "Title": "Sett opp CI/CD-pipeline", "GtSprintStatus": "Pågår" },
+  { "Title": "Planlegg sprint 1", "GtSprintStatus": "Pågår" },
+  { "Title": "Gjennomfør sprint review", "GtSprintStatus": "Backlog" },
+  { "Title": "Gjennomfør retrospektiv", "GtSprintStatus": "Backlog" }
+]

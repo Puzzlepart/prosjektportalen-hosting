@@ -44,3 +44,24 @@ For eksempel: `standard-prosjektmal-1.2.0.pppkg`
 _(Kommer snart)_
 
 Frittstående valideringscript for bruk i CI/CD-pipelines.
+
+## generate-placeholder-thumbnails.js
+
+Genererer enkle plassholder-thumbnails (16:9, 640×360 PNG) for hver pakke under
+`packages/`. Bruker kun Node sin innebygde `zlib` (ingen avhengigheter) og lager
+et deterministisk to-tone «kort»-bilde basert på pakkenavnet, slik at hver mal får
+et eget gjenkjennbart bilde å starte med.
+
+```bash
+# Generer thumbnails for alle pakker (hopper over ekte bilder som allerede finnes)
+npm run generate:thumbnails
+
+# Overskriv eksisterende
+node scripts/generate-placeholder-thumbnails.js --force
+
+# Kun én pakke
+node scripts/generate-placeholder-thumbnails.js --name=pp-byggprosjekt
+```
+
+> Bildene er plassholdere. Erstatt `thumbnail.png` med ekte grafikk før en pakke
+> publiseres for produksjon.

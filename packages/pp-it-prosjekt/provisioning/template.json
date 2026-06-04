@@ -1,0 +1,11 @@
+{
+  "Version": "1.0",
+  "Lists": [
+    {
+      "Title": "Planneroppgaver",
+      "Description": "Sprintoppgaver og backlog",
+      "Template": 100,
+      "ContentTypesEnabled": false
+    }
+  ]
+}

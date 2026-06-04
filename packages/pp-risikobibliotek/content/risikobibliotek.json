@@ -1,0 +1,8 @@
+[
+  { "Title": "Forsinket leveranse fra underleverandør", "GtRiskProbability": 3, "GtRiskConsequence": 4 },
+  { "Title": "Uklare eller endrede krav", "GtRiskProbability": 4, "GtRiskConsequence": 3 },
+  { "Title": "Manglende ressurser/kompetanse", "GtRiskProbability": 3, "GtRiskConsequence": 4 },
+  { "Title": "Budsjettoverskridelse", "GtRiskProbability": 3, "GtRiskConsequence": 5 },
+  { "Title": "Lav forankring hos interessenter", "GtRiskProbability": 2, "GtRiskConsequence": 4 },
+  { "Title": "Tekniske avhengigheter ikke avklart", "GtRiskProbability": 3, "GtRiskConsequence": 3 }
+]

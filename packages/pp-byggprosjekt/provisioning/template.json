@@ -1,0 +1,11 @@
+{
+  "Version": "1.0",
+  "Lists": [
+    {
+      "Title": "Fasesjekkliste",
+      "Description": "Sjekkpunkter per byggfase",
+      "Template": 100,
+      "ContentTypesEnabled": false
+    }
+  ]
+}

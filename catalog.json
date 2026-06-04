@@ -1,7 +1,61 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-05-11T09:19:36.921Z",
+  "lastUpdated": "2026-06-04T12:00:00.000Z",
   "packages": [
+    {
+      "id": "pp-byggprosjekt",
+      "name": "Byggprosjekt",
+      "description": "Prosjektmal tilpasset bygg- og anleggsprosjekter med fasesjekklister for prosjektering og utførelse, dokumentmaler for entreprise og taksonomi for byggfaser.",
+      "version": "1.0.0",
+      "type": "template",
+      "author": "Puzzlepart",
+      "tags": [
+        "bygg",
+        "anlegg",
+        "prosjektledelse"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-byggprosjekt/thumbnail.png",
+      "downloadUrl": "https://github.com/Puzzlepart/prosjektportalen-hosting/releases/download/v1.0.0/pp-byggprosjekt-1.0.0.pppkg",
+      "minPPVersion": "1.10.0",
+      "publishedDate": "2026-05-20",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-byggprosjekt/CHANGELOG.md"
+    },
+    {
+      "id": "pp-it-prosjekt",
+      "name": "IT-prosjekt",
+      "description": "Prosjektmal for IT- og systemutviklingsprosjekter med smidig oppsett: sprintoppgaver, backlog-håndtering og kvalitetssjekkliste for leveranser.",
+      "version": "1.1.0",
+      "type": "template",
+      "author": "Puzzlepart",
+      "tags": [
+        "IT",
+        "smidig",
+        "prosjektledelse"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-it-prosjekt/thumbnail.png",
+      "downloadUrl": "https://github.com/Puzzlepart/prosjektportalen-hosting/releases/download/v1.1.0/pp-it-prosjekt-1.1.0.pppkg",
+      "minPPVersion": "1.11.0",
+      "publishedDate": "2026-06-01",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-it-prosjekt/CHANGELOG.md"
+    },
+    {
+      "id": "pp-risikobibliotek",
+      "name": "Risikobibliotek",
+      "description": "Innholdspakke med et standard bibliotek av vanlige prosjektrisikoer og tilhørende tiltak. Legges til i usikkerhets- og tiltakslistene som utgangspunkt for risikovurdering.",
+      "version": "1.0.0",
+      "type": "content",
+      "author": "Puzzlepart",
+      "tags": [
+        "risiko",
+        "kvalitet",
+        "innhold"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/thumbnail.png",
+      "downloadUrl": "https://github.com/Puzzlepart/prosjektportalen-hosting/releases/download/v1.0.0/pp-risikobibliotek-1.0.0.pppkg",
+      "minPPVersion": "1.10.0",
+      "publishedDate": "2026-04-15",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/CHANGELOG.md"
+    },
     {
       "id": "pp-standardmal",
       "name": "Standardmal",

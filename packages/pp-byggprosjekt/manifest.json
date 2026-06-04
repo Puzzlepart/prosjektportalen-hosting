@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-byggprosjekt",
+  "name": "Byggprosjekt",
+  "description": "Prosjektmal tilpasset bygg- og anleggsprosjekter med fasesjekklister for prosjektering og utførelse, dokumentmaler for entreprise og taksonomi for byggfaser.",
+  "version": "1.0.0",
+  "author": "Puzzlepart",
+  "license": "MIT",
+  "minPPVersion": "1.10.0",
+  "thumbnail": "thumbnail.png",
+  "tags": ["bygg", "anlegg", "prosjektledelse"],
+  "type": "template",
+  "provisioning": {
+    "hubTemplate": "provisioning/hub-template.json",
+    "template": "provisioning/template.json",
+    "extensions": [
+      {
+        "id": "byggfaser-meny",
+        "name": "Byggfaser venstremeny",
+        "description": "Venstremeny tilpasset fasene i et byggeprosjekt",
+        "file": "provisioning/extensions/Byggfaser.json",
+        "optional": true,
+        "defaultSelected": true
+      }
+    ]
+  },
+  "content": {
+    "items": [
+      {
+        "id": "fasesjekkliste-bygg",
+        "name": "Fasesjekkliste (bygg)",
+        "description": "Sjekkpunkter for prosjektering, utførelse og overlevering",
+        "sourceFile": "content/fasesjekkliste-bygg.json",
+        "targetList": "Fasesjekkliste",
+        "optional": false
+      },
+      {
+        "id": "dokumentmaler-bygg",
+        "name": "Dokumentmaler (bygg)",
+        "description": "Standard dokumentmaler for byggeprosjekter",
+        "sourceFile": "content/dokumentmaler-bygg.json",
+        "targetList": "Dokumentmaler",
+        "optional": true,
+        "defaultSelected": true
+      }
+    ]
+  },
+  "changelog": "CHANGELOG.md"
+}

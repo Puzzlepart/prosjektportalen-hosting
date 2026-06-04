@@ -10,7 +10,8 @@
     "build:main": "node scripts/build-packages.js --base-ref=main",
     "validate": "node scripts/validate-manifest.js",
     "validate:dev": "node scripts/validate-manifest.js --base-ref=dev",
-    "validate:main": "node scripts/validate-manifest.js --base-ref=main"
+    "validate:main": "node scripts/validate-manifest.js --base-ref=main",
+    "generate:thumbnails": "node scripts/generate-placeholder-thumbnails.js"
   },
   "repository": {
     "type": "git",

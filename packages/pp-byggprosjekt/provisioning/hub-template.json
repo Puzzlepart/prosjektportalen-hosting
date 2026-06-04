@@ -1,0 +1,26 @@
+{
+  "Version": "1.0",
+  "Taxonomy": {
+    "TermGroup": {
+      "Name": "Prosjektportalen",
+      "Id": "ab12cd34-ef56-7890-ab12-cd34ef567890"
+    },
+    "TermSets": [
+      {
+        "Id": "2c1a130d-3bc2-4f6b-8320-2df3ebc460f0",
+        "Name": "Byggfaser",
+        "Description": "Faser i et bygg- og anleggsprosjekt",
+        "IsOpenForTermCreation": false,
+        "Terms": [
+          { "Id": "3b3538eb-e911-4e8d-aee6-e71e82d93894", "Name": "Skisseprosjekt", "SortOrder": 0 },
+          { "Id": "5fe62719-c800-4538-9424-b7a64dc61dae", "Name": "Forprosjekt", "SortOrder": 1 },
+          { "Id": "d69ff7b7-67f3-49a8-975e-b7e86a51df10", "Name": "Detaljprosjekt", "SortOrder": 2 },
+          { "Id": "ab295ce5-6007-4108-8018-dee7fe6ba9fc", "Name": "Utførelse", "SortOrder": 3 }
+        ]
+      }
+    ]
+  },
+  "SiteFields": [
+    "<Field Type=\"TaxonomyFieldType\" DisplayName=\"Byggfase\" InternalName=\"GtByggfase\" Name=\"GtByggfase\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" ID=\"{0c8f24dd-b8ba-4acf-b8a0-56417b415a58}\" />"
+  ]
+}
