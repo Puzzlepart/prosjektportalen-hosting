@@ -1,0 +1,37 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-enkel-prosjektmal",
+  "name": "Enkel prosjektmal",
+  "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer en egen prosjektinnholdstype på hub-området og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
+  "version": "1.0.0",
+  "author": "Puzzlepart",
+  "license": "MIT",
+  "minPPVersion": "1.10.0",
+  "thumbnail": "thumbnail.png",
+  "tags": ["enkel", "prosjektledelse", "oppstart"],
+  "type": "template",
+  "provisioning": {
+    "hubTemplate": "provisioning/hub-template.json",
+    "template": "provisioning/template.json",
+    "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C01",
+    "extensions": [
+      {
+        "id": "enkelt-prosjekt",
+        "name": "Enkelt prosjekt",
+        "description": "Forenklet prosjektforside og venstremeny for enkle prosjekter",
+        "file": "provisioning/extensions/EnkeltProsjekt.json",
+        "optional": true,
+        "defaultSelected": false
+      },
+      {
+        "id": "enkel-venstremeny",
+        "name": "Enkel venstremeny",
+        "description": "Forenklet venstremeny med de viktigste prosjektkoblingene",
+        "file": "provisioning/extensions/EnkelVenstremeny.json",
+        "optional": true,
+        "defaultSelected": true
+      }
+    ]
+  },
+  "changelog": "CHANGELOG.md"
+}

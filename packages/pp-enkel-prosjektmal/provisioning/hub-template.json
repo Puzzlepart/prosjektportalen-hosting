@@ -1,0 +1,57 @@
+{
+  "ContentTypes": [
+    {
+      "ID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C01",
+      "Name": "Enkel prosjektmal",
+      "Description": "Prosjektinnholdstype for enkle prosjekter. Basert på den innebygde Prosjekt-innholdstypen.",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        { "Name": "Title", "Hidden": true },
+        { "Name": "GtProjectFinanceName" },
+        { "Name": "GtProjectNumber" },
+        { "Name": "GtArchiveReference" },
+        { "Name": "GtProjectServiceArea" },
+        { "Name": "GtProjectType" },
+        { "Name": "GtUNSustDevGoals" },
+        { "Name": "GtProjectPhase" },
+        { "Name": "GtProjectManager" },
+        { "Name": "GtProjectOwner" },
+        { "Name": "GtProjectSupport" },
+        { "Name": "GtGainsResponsible" },
+        { "Name": "GtStartDate" },
+        { "Name": "GtEndDate" },
+        { "Name": "GtProjectGoals" },
+        { "Name": "GtGroupId" },
+        { "Name": "GtSiteId" },
+        { "Name": "GtSiteUrl" },
+        { "Name": "GtLastSyncTime" },
+        { "Name": "GtProjectLifecycleStatus" },
+        { "Name": "GtProjectPhaseText" },
+        { "Name": "GtProjectServiceAreaText" },
+        { "Name": "GtProjectTypeText" },
+        { "Name": "GtUNSustDevGoalsText" },
+        { "Name": "GtProjectAdminRoles" },
+        { "Name": "GtProjectTemplate" },
+        { "Name": "GtProjectExtensions" },
+        { "Name": "GtProjectListContent" },
+        { "Name": "GtParentProjects" },
+        { "Name": "GtChildProjects" },
+        { "Name": "GtIsParentProject" },
+        { "Name": "GtIsProgram" },
+        { "Name": "GtInstalledVersion" },
+        { "Name": "GtCurrentVersion" }
+      ]
+    }
+  ],
+  "Lists": [
+    {
+      "Title": "Prosjekter",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        { "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C01" }
+      ]
+    }
+  ]
+}

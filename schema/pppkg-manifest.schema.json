@@ -80,6 +80,11 @@
           "description": "Relative path to project-level provisioning template (sp-js-provisioning format)",
           "pattern": "^provisioning/.+\\.json$"
         },
+        "projectContentTypeId": {
+          "type": "string",
+          "description": "Content type ID (defined by hubTemplate) to set as GtProjectContentType on the Maloppsett item when imported",
+          "pattern": "^0x[0-9A-Fa-f]+$"
+        },
         "extensions": {
           "type": "array",
           "description": "Project extensions (prosjekttillegg)",

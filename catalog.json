@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-04T13:00:00.000Z",
+  "lastUpdated": "2026-06-05T09:00:00.000Z",
   "packages": [
     {
       "id": "pp-byggprosjekt",
@@ -37,6 +37,24 @@
       "minPPVersion": "1.10.0",
       "publishedDate": "2026-06-04",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/CHANGELOG.md"
+    },
+    {
+      "id": "pp-enkel-prosjektmal",
+      "name": "Enkel prosjektmal",
+      "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer en egen prosjektinnholdstype på hub-området og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
+      "version": "1.0.0",
+      "type": "template",
+      "author": "Puzzlepart",
+      "tags": [
+        "enkel",
+        "prosjektledelse",
+        "oppstart"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/thumbnail.png",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-enkel-prosjektmal-1.0.0.pppkg",
+      "minPPVersion": "1.10.0",
+      "publishedDate": "2026-06-05",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/CHANGELOG.md"
     },
     {
       "id": "pp-fasesider",
@@ -109,24 +127,6 @@
       "minPPVersion": "1.10.0",
       "publishedDate": "2026-04-15",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/CHANGELOG.md"
-    },
-    {
-      "id": "pp-standardmal",
-      "name": "Standardmal",
-      "description": "Komplett prosjektmal med fasesjekkliste, interessentregister, usikkerhetshåndtering, leveransestyring og dokumenthåndtering. Inkluderer integrasjon med Microsoft Planner for oppgavestyring.",
-      "version": "1.0.1",
-      "type": "template",
-      "author": "Puzzlepart",
-      "tags": [
-        "standard",
-        "prosjektledelse",
-        "SharePoint"
-      ],
-      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-standardmal/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-standardmal-1.0.1.pppkg",
-      "minPPVersion": "1.10.0",
-      "publishedDate": "2026-05-11",
-      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-standardmal/CHANGELOG.md"
     }
   ]
 }
