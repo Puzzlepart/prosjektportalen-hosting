@@ -8,6 +8,7 @@
       "description": "Prosjektmal tilpasset bygg- og anleggsprosjekter med fasesjekklister for prosjektering og utførelse, dokumentmaler for entreprise og taksonomi for byggfaser.",
       "version": "1.0.0",
       "type": "template",
+      "icon": "ConstructionCone",
       "author": "Puzzlepart",
       "tags": [
         "bygg",
@@ -26,6 +27,7 @@
       "description": "Prosjekttillegg som legger til en flat dokumentvisning (uten mapper) i biblioteket Dokumenter, med kolonnen Bane som viser mappestrukturen til hvert dokument.",
       "version": "1.0.0",
       "type": "extension",
+      "icon": "DocumentSet",
       "author": "Puzzlepart",
       "tags": [
         "dokumenter",
@@ -44,6 +46,7 @@
       "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer en egen prosjektinnholdstype på hub-området og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
       "version": "1.0.0",
       "type": "template",
+      "icon": "Page",
       "author": "Puzzlepart",
       "tags": [
         "enkel",
@@ -62,6 +65,7 @@
       "description": "Prosjekttillegg som legger til unike prosjektforsider for hver prosjektfase (Konsept, Planlegge, Gjennomføre, Avslutte og Realisere). Tilpass tillegget med dine egne faser og innhold.",
       "version": "1.0.0",
       "type": "extension",
+      "icon": "Step",
       "author": "Puzzlepart",
       "tags": [
         "faser",
@@ -80,6 +84,7 @@
       "description": "Prosjekttillegg som legger til hurtiglenke-webdelen på prosjektets forside. Tilpass tillegget med dine egne lenker.",
       "version": "1.0.0",
       "type": "extension",
+      "icon": "Link",
       "author": "Puzzlepart",
       "tags": [
         "forside",
@@ -98,6 +103,7 @@
       "description": "Prosjektmal for IT- og systemutviklingsprosjekter med smidig oppsett: sprintoppgaver, backlog-håndtering og kvalitetssjekkliste for leveranser.",
       "version": "1.1.0",
       "type": "template",
+      "icon": "Code",
       "author": "Puzzlepart",
       "tags": [
         "IT",
@@ -116,6 +122,7 @@
       "description": "Innholdspakke med et standard bibliotek av vanlige prosjektrisikoer og tilhørende tiltak. Legges til i usikkerhets- og tiltakslistene som utgangspunkt for risikovurdering.",
       "version": "1.0.0",
       "type": "content",
+      "icon": "Shield",
       "author": "Puzzlepart",
       "tags": [
         "risiko",

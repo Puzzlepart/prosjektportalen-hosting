@@ -50,6 +50,10 @@
             "description": "Package type",
             "enum": ["template", "extension", "content"]
           },
+          "icon": {
+            "type": "string",
+            "description": "Fluent UI icon name shown next to the package title (e.g. 'Page', 'BuildDefinition')"
+          },
           "author": {
             "type": "string",
             "description": "Package author/publisher name",
