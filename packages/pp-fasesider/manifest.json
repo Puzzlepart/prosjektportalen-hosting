@@ -2,7 +2,7 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-fasesider",
   "name": "Fasesider",
-  "description": "Prosjekttillegg som legger til unike prosjektforsider for hver prosjektfase (Konsept, Planlegge, Gjennomføre, Avslutte og Realisere). Tilpass tillegget med dine egne faser og innhold.",
+  "description": "Egne sider for de ulike standardfasene i Prosjektportalen til bruk sammen med dynamisk forside-funksjonaliteten. Dette tillegget inneholder sider for Konsept, Planlegge, Gjennomføre, Avslutte og Realisere.",
   "version": "1.0.0",
   "author": "Puzzlepart",
   "license": "MIT",
@@ -18,7 +18,7 @@
         "description": "Egne prosjektforsider per fase: Konsept, Planlegge, Gjennomføre, Avslutte og Realisere",
         "file": "provisioning/extensions/Fasesider.json",
         "optional": false,
-        "defaultSelected": true
+        "defaultSelected": false
       }
     ]
   },
