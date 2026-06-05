@@ -52,6 +52,10 @@
       "description": "Relative path to thumbnail image (16:9, min 600x338px)",
       "pattern": "^[^/].*\\.(png|jpg|jpeg|webp)$"
     },
+    "icon": {
+      "type": "string",
+      "description": "Fluent UI icon name used as the Maloppsett item icon (IconName) on import (e.g. 'Page', 'BuildDefinition')"
+    },
     "tags": {
       "type": "array",
       "description": "Tags for categorization and filtering",

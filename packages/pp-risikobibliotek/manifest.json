@@ -8,6 +8,7 @@
   "license": "MIT",
   "minPPVersion": "1.10.0",
   "thumbnail": "thumbnail.png",
+  "icon": "Shield",
   "tags": ["risiko", "kvalitet", "innhold"],
   "type": "content",
   "content": {

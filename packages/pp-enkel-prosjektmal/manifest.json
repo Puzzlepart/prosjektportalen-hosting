@@ -8,6 +8,7 @@
   "license": "MIT",
   "minPPVersion": "1.10.0",
   "thumbnail": "thumbnail.png",
+  "icon": "Page",
   "tags": ["enkel", "prosjektledelse", "oppstart"],
   "type": "template",
   "provisioning": {

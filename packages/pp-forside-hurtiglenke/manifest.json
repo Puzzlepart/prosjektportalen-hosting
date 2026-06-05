@@ -8,6 +8,7 @@
   "license": "MIT",
   "minPPVersion": "1.10.0",
   "thumbnail": "thumbnail.png",
+  "icon": "Link",
   "tags": ["forside", "navigasjon", "tillegg"],
   "type": "extension",
   "provisioning": {

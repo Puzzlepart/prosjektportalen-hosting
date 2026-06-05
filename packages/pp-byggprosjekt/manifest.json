@@ -8,6 +8,7 @@
   "license": "MIT",
   "minPPVersion": "1.10.0",
   "thumbnail": "thumbnail.png",
+  "icon": "ConstructionCone",
   "tags": ["bygg", "anlegg", "prosjektledelse"],
   "type": "template",
   "provisioning": {
