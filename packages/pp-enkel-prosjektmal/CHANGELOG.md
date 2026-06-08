@@ -12,6 +12,7 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Listen «Enkel Fasesjekkliste» på hub-området, med 15 ferdige sjekkpunkter fordelt på fasene Idé, Konsept, Planlegge, Gjennomføre, Avslutte og Realisere (basert på den fullstendige fasesjekklisten i Prosjektportalen)
 - Sjekkpunktene provisjoneres som `DataRows` (krever sp-js-provisioning ≥ 1.3.10), og demonstrerer utfylling av tekst-, tall- og termfelt (`GtProjectPhase`)
 - Listeinnholdskonfigurasjon «Enkel fasesjekkliste» som kobles automatisk til Maloppsett-oppføringen ved import, slik at sjekkpunktene kopieres fra hub-listen til prosjektets «Fasesjekkliste» under prosjektoppsett
+- Merket som `cloudCompatible: false` fordi malen definerer en innholdstype på hub-området som knyttes til «Prosjekter»-listen. Tillegg og listeinnhold fungerer som skymal, men hub-innholdstypen provisjoneres ikke – katalogen og oppsettveiviseren varsler «på eget ansvar»
 
 ## [1.0.0] - 05/06/2026
 

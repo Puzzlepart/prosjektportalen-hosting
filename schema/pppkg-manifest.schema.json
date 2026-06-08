@@ -70,6 +70,11 @@
       "description": "Package type",
       "enum": ["template", "extension", "content"]
     },
+    "cloudCompatible": {
+      "type": "boolean",
+      "description": "Whether the package can run as a skymal (cloud template) — applied to a project entirely from the .pppkg with nothing provisioned to the hub. Set false for packages that need hub-side provisioning (a content type bound to the Prosjekter list, hub site columns, taxonomy, etc.). Absent = true. When false, the catalog and setup wizard warn 'at own risk' but do not block.",
+      "default": true
+    },
     "provisioning": {
       "type": "object",
       "description": "Provisioning configuration",

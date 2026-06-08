@@ -19,7 +19,7 @@
         "description": "Legger hurtiglenke-webdelen på prosjektets forside (ProjectHome.aspx)",
         "file": "provisioning/extensions/ForsideHurtiglenke.json",
         "optional": false,
-        "defaultSelected": true
+        "defaultSelected": false
       }
     ]
   },

@@ -19,7 +19,7 @@
         "description": "Legger til visningen «Flat struktur» i biblioteket Dokumenter med kolonnen Bane (FileDirRef)",
         "file": "provisioning/extensions/DokumentbibliotekFlatBane.json",
         "optional": false,
-        "defaultSelected": true
+        "defaultSelected": false
       }
     ]
   },

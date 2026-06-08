@@ -11,6 +11,7 @@
   "icon": "Page",
   "tags": ["enkel", "prosjektledelse", "oppstart"],
   "type": "template",
+  "cloudCompatible": false,
   "provisioning": {
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",

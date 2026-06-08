@@ -178,6 +178,7 @@ function updateCatalog(packageName, manifest) {
     description: manifest.description || '',
     version: manifest.version,
     type: manifest.type,
+    cloudCompatible: manifest.cloudCompatible,
     icon: manifest.icon,
     author: manifest.author,
     tags: manifest.tags || [],
