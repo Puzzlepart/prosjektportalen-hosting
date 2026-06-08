@@ -32,6 +32,17 @@
         "optional": true,
         "defaultSelected": true
       }
+    ],
+    "listContent": [
+      {
+        "title": "Enkel fasesjekkliste",
+        "description": "Forenklede fasesjekkpunkter for enkle prosjekter",
+        "sourceList": "Enkel Fasesjekkliste",
+        "destinationList": "Fasesjekkliste",
+        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "default": true,
+        "hidden": false
+      }
     ]
   },
   "changelog": "CHANGELOG.md"

@@ -127,6 +127,53 @@
               }
             }
           }
+        },
+        "listContent": {
+          "type": "array",
+          "description": "List content configurations (Listeinnhold) created on the hub and linked to the Maloppsett item. Each config copies rows from a hub sourceList into a project's destinationList during project setup.",
+          "items": {
+            "type": "object",
+            "required": ["title", "sourceList"],
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "Title of the Listeinnhold item (also the upsert key)",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "description": "List content description (GtDescription)"
+              },
+              "sourceList": {
+                "type": "string",
+                "description": "Hub list to copy rows from (GtLccSourceList) — typically a list provisioned by this package's hubTemplate",
+                "minLength": 1
+              },
+              "destinationList": {
+                "type": "string",
+                "description": "Project list to copy rows into (GtLccDestinationList). Defaults to sourceList when omitted."
+              },
+              "fields": {
+                "type": "string",
+                "description": "Comma-separated internal names of the columns to copy (GtLccFields), or '-' for none"
+              },
+              "default": {
+                "type": "boolean",
+                "description": "Selected by default in the setup wizard (GtLccDefault)",
+                "default": false
+              },
+              "hidden": {
+                "type": "boolean",
+                "description": "Hidden from the setup wizard (GtLccHidden)",
+                "default": false
+              },
+              "locked": {
+                "type": "boolean",
+                "description": "Locked (cannot be deselected) in the setup wizard (GtLccLocked)",
+                "default": false
+              }
+            }
+          }
         }
       }
     },
