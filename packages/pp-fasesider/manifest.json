@@ -3,13 +3,14 @@
   "id": "pp-fasesider",
   "name": "Fasesider",
   "description": "Egne sider for de ulike standardfasene i Prosjektportalen til bruk sammen med dynamisk forside-funksjonaliteten. Dette tillegget inneholder sider for Konsept, Planlegge, Gjennomføre, Avslutte og Realisere.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Puzzlepart",
   "license": "MIT",
   "minPPVersion": "1.7.2",
   "icon": "Step",
   "tags": ["faser", "forside", "tillegg"],
   "type": "extension",
+  "screenshots": ["assets/screenshots/fasesider.png"],
   "provisioning": {
     "extensions": [
       {

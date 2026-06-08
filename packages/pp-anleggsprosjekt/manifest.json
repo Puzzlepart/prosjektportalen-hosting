@@ -3,13 +3,17 @@
   "id": "pp-anleggsprosjekt",
   "name": "Anleggsprosjekt",
   "description": "Prosjektmal for anleggsprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365. Provisjonerer taksonomi for anleggsfaser, bygg/anlegg-kolonner og -innholdstyper på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Puzzlepart",
   "license": "MIT",
   "minPPVersion": "1.12.0",
   "thumbnail": "thumbnail.png",
   "icon": "ConstructionCone",
-  "tags": ["anlegg", "bygg", "prosjektledelse"],
+  "tags": [
+    "anlegg",
+    "bygg",
+    "prosjektledelse"
+  ],
   "type": "template",
   "cloudCompatible": false,
   "provisioning": {
@@ -32,6 +36,15 @@
         "sourceList": "Planneroppgaver Anlegg",
         "destinationList": "Planneroppgaver",
         "fields": "GtSortOrder,Title,GtCategory,GtChecklist",
+        "default": true,
+        "hidden": false
+      },
+      {
+        "title": "Standarddokumenter (anlegg)",
+        "description": "Standard mappestruktur for prosjektdokumenter, kopieres fra hub-listen «Standarddokumenter Anlegg»",
+        "sourceList": "Standarddokumenter Anlegg",
+        "destinationList": "Dokumenter",
+        "fields": "Title",
         "default": true,
         "hidden": false
       }

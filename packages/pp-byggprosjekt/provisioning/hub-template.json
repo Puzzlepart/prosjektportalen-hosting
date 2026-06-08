@@ -352,6 +352,303 @@
       ]
     },
     {
+      "Title": "Prosjektdata",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA"
+        }
+      ]
+    },
+    {
+      "Title": "Prosjektkolonner",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "GtInternalName",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 360,
+            "Title": "Opprinnelig overtakelsesdato",
+            "GtInternalName": "GtBAEndDateOriginal",
+            "GtManagedProperty": "GtBAEndDateOriginalOWSDATE",
+            "GtFieldDataType": "Date",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 370,
+            "Title": "HP-fase",
+            "GtInternalName": "GtBAProjectInvestementPhase",
+            "GtManagedProperty": "GtBAProjectInvestementPhaseOWSCHCS",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 380,
+            "Title": "Siste politiske vedtak",
+            "GtInternalName": "GtBAProjectPolitical",
+            "GtManagedProperty": "GtBAProjectPoliticalOWSDATE",
+            "GtFieldDataType": "Date",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 390,
+            "Title": "Kommentar, siste politiske vedtak",
+            "GtInternalName": "GtBAProjectPoliticalComment",
+            "GtManagedProperty": "GtBAProjectPoliticalCommentOWSMTXT",
+            "GtFieldDataType": "Note",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 400,
+            "Title": "Lenke til siste politiske vedtak",
+            "GtInternalName": "GtBAProjectPoliticalLink",
+            "GtManagedProperty": "GtBAProjectPoliticalLinkOWSURLH",
+            "GtFieldDataType": "URL",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 410,
+            "Title": "Status tilskudd",
+            "GtInternalName": "GtBAProjectSupport",
+            "GtManagedProperty": "GtBAProjectSupportOWSCHCS",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 420,
+            "Title": "Kommentar, tilskudd",
+            "GtInternalName": "GtBAProjectSupportComment",
+            "GtManagedProperty": "GtBAProjectSupportCommentOWSMTXT",
+            "GtFieldDataType": "Note",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 430,
+            "Title": "Status SHA",
+            "GtInternalName": "GtBAProjectSHA",
+            "GtManagedProperty": "GtBAProjectSHAOWSCHCS",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 440,
+            "Title": "Kommentar, SHA",
+            "GtInternalName": "GtBAProjectSHAComment",
+            "GtManagedProperty": "GtBAProjectSHACommentOWSMTXT",
+            "GtFieldDataType": "Note",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 450,
+            "Title": "Status miljø",
+            "GtInternalName": "GtBAProjectEnv",
+            "GtManagedProperty": "GtBAProjectEnvOWSCHCS",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 460,
+            "Title": "Kommentar, miljø",
+            "GtInternalName": "GtBAProjectEnvComment",
+            "GtManagedProperty": "GtBAProjectEnvCommentOWSMTXT",
+            "GtFieldDataType": "Note",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 470,
+            "Title": "Status plan- og byggesak",
+            "GtInternalName": "GtBAProjectStatusCase",
+            "GtManagedProperty": "GtBAProjectStatusCaseOWSCHCS",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 480,
+            "Title": "Kommentar, plan- og byggesak",
+            "GtInternalName": "GtBAProjectStatusCaseComment",
+            "GtManagedProperty": "GtBAProjectStatusCaseCommentOWSMTXT",
+            "GtFieldDataType": "Note",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": false,
+            "GtShowFieldFrontpage": false,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Prosjektkolonnekonfigurasjon",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "Title": "Status SHA (Ingen)",
+            "GtPortfolioColumn": 43,
+            "GtPortfolioColumnValue": "Ingen hendelser siste måned",
+            "GtPortfolioColumnColor": "#2da748",
+            "GtPortfolioColumnIconName": "CircleFill"
+          },
+          {
+            "Title": "Status SHA (Hendelse)",
+            "GtPortfolioColumn": 43,
+            "GtPortfolioColumnValue": "Hendelse registrert siste måned",
+            "GtPortfolioColumnColor": "#e9b359",
+            "GtPortfolioColumnIconName": "CircleFill"
+          },
+          {
+            "Title": "Status miljø (Ingen)",
+            "GtPortfolioColumn": 45,
+            "GtPortfolioColumnValue": "Ingen hendelser siste måned",
+            "GtPortfolioColumnColor": "#2da748",
+            "GtPortfolioColumnIconName": "CircleFill"
+          },
+          {
+            "Title": "Status miljø (Hendelse)",
+            "GtPortfolioColumn": 45,
+            "GtPortfolioColumnValue": "Hendelse registrert siste måned",
+            "GtPortfolioColumnColor": "#e9b359",
+            "GtPortfolioColumnIconName": "CircleFill"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Statusseksjoner",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "GtSecFieldName",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 80,
+            "Title": "Tilskudd",
+            "GtSecIcon": "AddWork",
+            "GtSecShowInNavbar": false,
+            "GtSecShowInStatusSection": true,
+            "GtSecShowAsSection": true,
+            "GtSecFieldName": "GtBAProjectSupport",
+            "ContentTypeId": "0x01004CEFE616A94A3A48A27D9DEBDF5EC82802"
+          },
+          {
+            "GtSortOrder": 90,
+            "Title": "SHA",
+            "GtSecIcon": "Health",
+            "GtSecShowInNavbar": false,
+            "GtSecShowInStatusSection": true,
+            "GtSecShowAsSection": true,
+            "GtSecFieldName": "GtBAProjectSHA",
+            "ContentTypeId": "0x01004CEFE616A94A3A48A27D9DEBDF5EC82802"
+          },
+          {
+            "GtSortOrder": 100,
+            "Title": "Miljø",
+            "GtSecIcon": "Globe",
+            "GtSecShowInNavbar": false,
+            "GtSecShowInStatusSection": true,
+            "GtSecShowAsSection": true,
+            "GtSecFieldName": "GtBAProjectEnv",
+            "ContentTypeId": "0x01004CEFE616A94A3A48A27D9DEBDF5EC82802"
+          },
+          {
+            "GtSortOrder": 110,
+            "Title": "Plan- og byggesak",
+            "GtSecIcon": "BuildDefinition",
+            "GtSecShowInNavbar": false,
+            "GtSecShowInStatusSection": true,
+            "GtSecShowAsSection": true,
+            "GtSecFieldName": "GtBAProjectStatusCase",
+            "ContentTypeId": "0x01004CEFE616A94A3A48A27D9DEBDF5EC82802"
+          }
+        ]
+      }
+    },
+    {
       "Title": "Fasesjekkliste Bygg",
       "Description": "Sjekkpunkter per prosjektfase.",
       "Template": 100,
@@ -1243,6 +1540,196 @@
           }
         ]
       }
+    },
+    {
+      "Title": "Standarddokumenter Bygg",
+      "Description": "Standard mappestruktur for prosjektdokumenter.",
+      "Template": 101,
+      "ContentTypesEnabled": false,
+      "AdditionalSettings": {
+        "EnableVersioning": true,
+        "EnableFolderCreation": true
+      },
+      "Views": [
+        {
+          "Title": "Alle dokumenter",
+          "ViewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Title",
+            "Modified",
+            "Editor"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 30,
+            "Paged": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+            "JSLink": "clienttemplates.js"
+          }
+        }
+      ],
+      "Folders": [
+        {
+          "Name": "100 Grunnlag",
+          "Folders": [
+            {
+              "Name": "110 Off. forhold-tillatelser"
+            },
+            {
+              "Name": "120 Politisk behandling"
+            },
+            {
+              "Name": "130 Media (info)"
+            },
+            {
+              "Name": "140 Oppdrag og grunnlagsdata"
+            },
+            {
+              "Name": "150 Avtaler (ekskl. leverandøravtaler)"
+            },
+            {
+              "Name": "160 Prosjektplaner-fullmakter"
+            },
+            {
+              "Name": "170 Notater- erfaringer"
+            },
+            {
+              "Name": "180 Adresselister"
+            }
+          ]
+        },
+        {
+          "Name": "200 Anskaffelser",
+          "Folders": [
+            {
+              "Name": "210 Rådgivere og Arkitekter"
+            },
+            {
+              "Name": "220 Byggeledelse"
+            },
+            {
+              "Name": "230 Entreprenører"
+            }
+          ]
+        },
+        {
+          "Name": "300 Økonomi- fremdrift",
+          "Folders": [
+            {
+              "Name": "310 Budsjett"
+            },
+            {
+              "Name": "320 Fakturaer"
+            },
+            {
+              "Name": "330 Endringer"
+            },
+            {
+              "Name": "340 Fremdrift"
+            },
+            {
+              "Name": "350 Rapportering"
+            }
+          ]
+        },
+        {
+          "Name": "400 Korrespondanse",
+          "Folders": [
+            {
+              "Name": "410 Kommune"
+            },
+            {
+              "Name": "420 Eksterne myndigheter"
+            },
+            {
+              "Name": "430 Informasjon"
+            },
+            {
+              "Name": "440 Arkitekter og Rådgivere"
+            },
+            {
+              "Name": "450 Entreprenører"
+            },
+            {
+              "Name": "460 Byggeleder"
+            },
+            {
+              "Name": "470 Grunneiere"
+            },
+            {
+              "Name": "480 Andre"
+            }
+          ]
+        },
+        {
+          "Name": "500 Møter",
+          "Folders": [
+            {
+              "Name": "510 Byggherremøter"
+            },
+            {
+              "Name": "520 Prosjektering"
+            },
+            {
+              "Name": "530 Byggemøter"
+            },
+            {
+              "Name": "540 Fremdriftsmøter"
+            },
+            {
+              "Name": "550 Særmøter"
+            },
+            {
+              "Name": "560 Andre møter"
+            }
+          ]
+        },
+        {
+          "Name": "600 KS, SHA, Miljø, Risiko",
+          "Folders": [
+            {
+              "Name": "610 KS"
+            },
+            {
+              "Name": "620 SHA"
+            },
+            {
+              "Name": "630 Miljø"
+            },
+            {
+              "Name": "640 Risiko"
+            }
+          ]
+        },
+        {
+          "Name": "700 Tegninger og Rapporter",
+          "Folders": [
+            {
+              "Name": "710 Tegninger"
+            },
+            {
+              "Name": "720 Bilder og video"
+            },
+            {
+              "Name": "730 Fagrapporter"
+            }
+          ]
+        },
+        {
+          "Name": "800 FDV",
+          "Folders": [
+            {
+              "Name": "810 FDV Bygg"
+            },
+            {
+              "Name": "820 FDV Anlegg"
+            },
+            {
+              "Name": "830 Protokoller- sluttrapport"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

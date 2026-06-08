@@ -3,13 +3,13 @@
   "id": "pp-dokumentbibliotek-flat",
   "name": "Dokumentbibliotek – flat visning",
   "description": "Prosjekttillegg som legger til en flat dokumentvisning (uten mapper) i biblioteket Dokumenter, med kolonnen Bane som viser mappestrukturen til hvert dokument.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Puzzlepart",
   "license": "MIT",
   "minPPVersion": "1.10.0",
   "icon": "DocumentSet",
   "tags": ["dokumenter", "visning", "tillegg"],
-  "screenshots": ["flatdokument.png"],
+  "screenshots": ["assets/screenshots/flatdokument.png"],
   "type": "extension",
   "provisioning": {
     "extensions": [
