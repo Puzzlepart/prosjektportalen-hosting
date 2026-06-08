@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-05T09:00:00.000Z",
+  "lastUpdated": "2026-06-08T08:54:51.857Z",
   "packages": [
     {
       "id": "pp-byggprosjekt",
@@ -43,8 +43,8 @@
     {
       "id": "pp-enkel-prosjektmal",
       "name": "Enkel prosjektmal",
-      "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer en egen prosjektinnholdstype på hub-området og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
-      "version": "1.0.0",
+      "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer en egen prosjektinnholdstype på hub-området, en enkel fasesjekkliste med ferdige sjekkpunkter, og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
+      "version": "1.1.0",
       "type": "template",
       "icon": "Page",
       "author": "Puzzlepart",
@@ -54,9 +54,9 @@
         "oppstart"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-enkel-prosjektmal-1.0.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-enkel-prosjektmal-1.1.0.pppkg",
       "minPPVersion": "1.10.0",
-      "publishedDate": "2026-06-05",
+      "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/CHANGELOG.md"
     },
     {
