@@ -54,6 +54,14 @@
             "type": "boolean",
             "description": "Whether the package can run as a skymal (cloud template). False = needs hub-side provisioning the cloud path can't reproduce; the catalog/wizard warn 'at own risk'. Absent = true."
           },
+          "requiresBestillingsportalen": {
+            "type": "boolean",
+            "description": "Whether the package requires Bestillingsportalen for full use. Shown as a dependency tag. Absent = not required."
+          },
+          "requiresEntra": {
+            "type": "boolean",
+            "description": "Whether the package requires Microsoft Entra resources for full use. Shown as a dependency tag. Absent = not required."
+          },
           "icon": {
             "type": "string",
             "description": "Fluent UI icon name shown next to the package title (e.g. 'Page', 'BuildDefinition')"

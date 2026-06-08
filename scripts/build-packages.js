@@ -179,6 +179,8 @@ function updateCatalog(packageName, manifest) {
     version: manifest.version,
     type: manifest.type,
     cloudCompatible: manifest.cloudCompatible,
+    requiresBestillingsportalen: manifest.requiresBestillingsportalen,
+    requiresEntra: manifest.requiresEntra,
     icon: manifest.icon,
     author: manifest.author,
     tags: manifest.tags || [],
