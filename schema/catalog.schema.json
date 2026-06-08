@@ -86,6 +86,15 @@
             "format": "uri",
             "pattern": "^https?://"
           },
+          "screenshots": {
+            "type": "array",
+            "description": "Full URLs (GitHub raw) to screenshot images, shown as a carousel with a full-size lightbox in the details pane",
+            "items": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https?://"
+            }
+          },
           "downloadUrl": {
             "type": "string",
             "description": "Full URL to download the .pppkg file (GitHub release URL)",

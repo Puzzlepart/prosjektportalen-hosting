@@ -32,6 +32,13 @@ const MANIFEST_SCHEMA_PATH = path.join(SCHEMA_DIR, 'pppkg-manifest.schema.json')
 const ajv = new Ajv({ allErrors: true, strict: false });
 addFormats(ajv);
 
+// Compile the manifest schema once and reuse the validator. Compiling on every
+// call re-registers the schema's $id and throws "schema with key or id ...
+// already exists" the second time validateManifest runs in the same process
+// (e.g. when build-packages.js builds every package in one go).
+const manifestSchema = JSON.parse(fs.readFileSync(MANIFEST_SCHEMA_PATH, 'utf8'));
+const validateManifestSchema = ajv.compile(manifestSchema);
+
 /**
  * Parse command line arguments
  */
@@ -100,14 +107,10 @@ function validateManifest(packagePath, manifestPath) {
         return { valid: false, errors, manifest: null };
     }
 
-    const schemaContent = fs.readFileSync(MANIFEST_SCHEMA_PATH, 'utf8');
-    const schema = JSON.parse(schemaContent);
-
-    const validate = ajv.compile(schema);
-    const valid = validate(manifest);
+    const valid = validateManifestSchema(manifest);
 
     if (!valid) {
-        validate.errors.forEach(err => {
+        validateManifestSchema.errors.forEach(err => {
             errors.push(`${err.instancePath || '/'}: ${err.message}`);
         });
         return { valid: false, errors, manifest };
@@ -126,6 +129,14 @@ function validateReferencedFiles(packagePath, manifest) {
         const thumbnailPath = path.join(packagePath, manifest.thumbnail);
         if (!fs.existsSync(thumbnailPath)) {
             errors.push(`Thumbnail not found: ${manifest.thumbnail}`);
+        }
+    }
+
+    if (Array.isArray(manifest.screenshots)) {
+        for (const shot of manifest.screenshots) {
+            if (!fs.existsSync(path.join(packagePath, shot))) {
+                errors.push(`Screenshot not found: ${shot}`);
+            }
         }
     }
 

@@ -1,13 +1,34 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-08T12:40:19.972Z",
+  "lastUpdated": "2026-06-08T14:19:28.079Z",
   "packages": [
+    {
+      "id": "pp-anleggsprosjekt",
+      "name": "Anleggsprosjekt",
+      "description": "Prosjektmal for anleggsprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365. Provisjonerer taksonomi for anleggsfaser, bygg/anlegg-kolonner og -innholdstyper på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+      "version": "1.0.0",
+      "type": "template",
+      "cloudCompatible": false,
+      "icon": "ConstructionCone",
+      "author": "Puzzlepart",
+      "tags": [
+        "anlegg",
+        "bygg",
+        "prosjektledelse"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-anleggsprosjekt/thumbnail.png",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-anleggsprosjekt-1.0.0.pppkg",
+      "minPPVersion": "1.12.0",
+      "publishedDate": "2026-06-08",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-anleggsprosjekt/CHANGELOG.md"
+    },
     {
       "id": "pp-byggprosjekt",
       "name": "Byggprosjekt",
-      "description": "Prosjektmal tilpasset bygg- og anleggsprosjekter med fasesjekklister for prosjektering og utførelse, dokumentmaler for entreprise og taksonomi for byggfaser.",
-      "version": "1.0.0",
+      "description": "Prosjektmal for byggeprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365. Provisjonerer taksonomi for byggfaser, bygg/anlegg-kolonner og -innholdstyper på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+      "version": "2.0.0",
       "type": "template",
+      "cloudCompatible": false,
       "icon": "ConstructionCone",
       "author": "Puzzlepart",
       "tags": [
@@ -16,9 +37,9 @@
         "prosjektledelse"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-byggprosjekt/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-byggprosjekt-1.0.0.pppkg",
-      "minPPVersion": "1.10.0",
-      "publishedDate": "2026-05-20",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-byggprosjekt-2.0.0.pppkg",
+      "minPPVersion": "1.12.0",
+      "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-byggprosjekt/CHANGELOG.md"
     },
     {
@@ -34,10 +55,12 @@
         "visning",
         "tillegg"
       ],
-      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/thumbnail.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/flatdokument.png"
+      ],
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-dokumentbibliotek-flat-1.0.0.pppkg",
       "minPPVersion": "1.10.0",
-      "publishedDate": "2026-06-04",
+      "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/CHANGELOG.md"
     },
     {
@@ -63,7 +86,7 @@
     {
       "id": "pp-fasesider",
       "name": "Fasesider",
-      "description": "Prosjekttillegg som legger til unike prosjektforsider for hver prosjektfase (Konsept, Planlegge, Gjennomføre, Avslutte og Realisere). Tilpass tillegget med dine egne faser og innhold.",
+      "description": "Egne sider for de ulike standardfasene i Prosjektportalen til bruk sammen med dynamisk forside-funksjonaliteten. Dette tillegget inneholder sider for Konsept, Planlegge, Gjennomføre, Avslutte og Realisere.",
       "version": "1.0.0",
       "type": "extension",
       "icon": "Step",
@@ -73,10 +96,9 @@
         "forside",
         "tillegg"
       ],
-      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-fasesider/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-fasesider-1.0.0.pppkg",
-      "minPPVersion": "1.10.0",
-      "publishedDate": "2026-06-04",
+      "minPPVersion": "1.7.2",
+      "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-fasesider/CHANGELOG.md"
     },
     {
@@ -92,10 +114,12 @@
         "navigasjon",
         "tillegg"
       ],
-      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forside-hurtiglenke/thumbnail.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forside-hurtiglenke/hurtiglenker.png"
+      ],
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forside-hurtiglenke-1.0.0.pppkg",
       "minPPVersion": "1.10.0",
-      "publishedDate": "2026-06-04",
+      "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forside-hurtiglenke/CHANGELOG.md"
     },
     {
@@ -114,7 +138,7 @@
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-it-prosjekt/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-it-prosjekt-1.1.0.pppkg",
       "minPPVersion": "1.11.0",
-      "publishedDate": "2026-06-01",
+      "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-it-prosjekt/CHANGELOG.md"
     },
     {
@@ -133,7 +157,7 @@
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-risikobibliotek-1.0.0.pppkg",
       "minPPVersion": "1.10.0",
-      "publishedDate": "2026-04-15",
+      "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/CHANGELOG.md"
     }
   ]

@@ -1,0 +1,41 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-anleggsprosjekt",
+  "name": "Anleggsprosjekt",
+  "description": "Prosjektmal for anleggsprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365. Provisjonerer taksonomi for anleggsfaser, bygg/anlegg-kolonner og -innholdstyper på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+  "version": "1.0.0",
+  "author": "Puzzlepart",
+  "license": "MIT",
+  "minPPVersion": "1.12.0",
+  "thumbnail": "thumbnail.png",
+  "icon": "ConstructionCone",
+  "tags": ["anlegg", "bygg", "prosjektledelse"],
+  "type": "template",
+  "cloudCompatible": false,
+  "provisioning": {
+    "hubTemplate": "provisioning/hub-template.json",
+    "template": "provisioning/template.json",
+    "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA",
+    "listContent": [
+      {
+        "title": "Fasesjekkliste (anlegg)",
+        "description": "Sjekkpunkter for anleggsfasene, kopieres fra hub-listen «Fasesjekkliste Anlegg»",
+        "sourceList": "Fasesjekkliste Anlegg",
+        "destinationList": "Fasesjekkliste",
+        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "default": true,
+        "hidden": false
+      },
+      {
+        "title": "Planneroppgaver (anlegg)",
+        "description": "Standardoppgaver for anleggsfasene, kopieres fra hub-listen «Planneroppgaver Anlegg»",
+        "sourceList": "Planneroppgaver Anlegg",
+        "destinationList": "Planneroppgaver",
+        "fields": "GtSortOrder,Title,GtCategory,GtChecklist",
+        "default": true,
+        "hidden": false
+      }
+    ]
+  },
+  "changelog": "CHANGELOG.md"
+}

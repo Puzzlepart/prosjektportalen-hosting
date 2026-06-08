@@ -184,9 +184,15 @@ function updateCatalog(packageName, manifest) {
     icon: manifest.icon,
     author: manifest.author,
     tags: manifest.tags || [],
-    thumbnail: manifest.thumbnail 
+    thumbnail: manifest.thumbnail
       ? `${GITHUB_RAW_BASE}/packages/${packageName}/${manifest.thumbnail}`
       : undefined,
+    screenshots:
+      manifest.screenshots && manifest.screenshots.length > 0
+        ? manifest.screenshots.map(
+            (shot) => `${GITHUB_RAW_BASE}/packages/${packageName}/${shot}`
+          )
+        : undefined,
     downloadUrl: `${GITHUB_DIST_BASE}/${packageName}-${manifest.version}.pppkg`,
     minPPVersion: manifest.minPPVersion,
     publishedDate: new Date().toISOString().split('T')[0],

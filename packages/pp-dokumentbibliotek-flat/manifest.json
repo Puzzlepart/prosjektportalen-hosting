@@ -7,9 +7,9 @@
   "author": "Puzzlepart",
   "license": "MIT",
   "minPPVersion": "1.10.0",
-  "thumbnail": "thumbnail.png",
   "icon": "DocumentSet",
   "tags": ["dokumenter", "visning", "tillegg"],
+  "screenshots": ["flatdokument.png"],
   "type": "extension",
   "provisioning": {
     "extensions": [

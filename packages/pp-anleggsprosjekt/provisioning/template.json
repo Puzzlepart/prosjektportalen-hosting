@@ -2,7 +2,7 @@
   "Version": "1.0",
   "Lists": [
     {
-      "Title": "Standarddokumenter Bygg",
+      "Title": "Standarddokumenter Anlegg",
       "Description": "Standard mappestruktur for prosjektdokumenter.",
       "Template": 101,
       "ContentTypesEnabled": false,
@@ -48,7 +48,7 @@
               "Name": "150 Avtaler (ekskl. leverandøravtaler)"
             },
             {
-              "Name": "160 Prosjektplaner-fullmakter"
+              "Name": "160 Prosjektplaner- fullmakter"
             },
             {
               "Name": "170 Notater- erfaringer"

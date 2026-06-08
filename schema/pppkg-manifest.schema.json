@@ -52,6 +52,15 @@
       "description": "Relative path to thumbnail image (16:9, min 600x338px)",
       "pattern": "^[^/].*\\.(png|jpg|jpeg|webp)$"
     },
+    "screenshots": {
+      "type": "array",
+      "description": "Relative paths to screenshot images bundled in the package (e.g. 'assets/screenshots/forside.png'). Resolved to absolute raw URLs in catalog.json and shown as a carousel with a full-size lightbox in the catalog details pane.",
+      "items": {
+        "type": "string",
+        "pattern": "^[^/].*\\.(png|jpg|jpeg|webp|gif)$"
+      },
+      "uniqueItems": true
+    },
     "icon": {
       "type": "string",
       "description": "Fluent UI icon name used as the Maloppsett item icon (IconName) on import (e.g. 'Page', 'BuildDefinition')"

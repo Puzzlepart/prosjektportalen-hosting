@@ -1,0 +1,960 @@
+{
+  "Version": "1.0",
+  "Taxonomy": {
+    "TermGroup": {
+      "Name": "Prosjektportalen",
+      "Id": "c56bb677-f782-4cf6-a6d6-17685ee9f19d"
+    },
+    "TermSets": [
+      {
+        "Id": "cc6cdd18-c7d5-42e1-8d19-a336dd78f3f2",
+        "Name": "Fase (Anlegg)",
+        "Terms": [
+          {
+            "Id": "84d5fe32-ac24-4c7c-a3f7-45975ef3c901",
+            "Name": "Idé",
+            "SortOrder": 1,
+            "CustomProperties": {
+              "ShowOnFrontpage": "false"
+            }
+          },
+          {
+            "Id": "b20372b0-cf28-4a68-becd-e57bbebdb1c2",
+            "Name": "Flere faser",
+            "SortOrder": 2,
+            "CustomProperties": {
+              "ShowOnFrontpage": "false"
+            }
+          },
+          {
+            "Id": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+            "Name": "Initiering",
+            "SortOrder": 3,
+            "CustomProperties": {
+              "ShowOnFrontpage": "true",
+              "PhaseLevel": "Portfolio",
+              "PhaseSubText": "Identifisering av behov og oppstart",
+              "PhaseDescription": "Initieringsfasen er den innledende fasen av anleggsprosjektet, der man identifiserer behovet for prosjektet og starter planleggingsprosessen."
+            }
+          },
+          {
+            "Id": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+            "Name": "Prosjektering og kontrahering",
+            "SortOrder": 4,
+            "CustomProperties": {
+              "ShowOnFrontpage": "true",
+              "PhaseLevel": "Project",
+              "PhaseSubText": "Utforming av prosjektet og inngåelse av kontrakter",
+              "PhaseDescription": "I denne fasen blir prosjektet grundig planlagt og de nødvendige kontraktene inngås med relevante parter."
+            }
+          },
+          {
+            "Id": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+            "Name": "Anleggsfase",
+            "SortOrder": 5,
+            "CustomProperties": {
+              "ShowOnFrontpage": "true",
+              "PhaseLevel": "Project",
+              "PhaseSubText": "Realisering av konstruksjonen",
+              "PhaseDescription": "I denne fasen blir selve konstruksjonen gjennomført i tråd med de planene som er utarbeidet i forrige fase."
+            }
+          },
+          {
+            "Id": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+            "Name": "Overtakelse og overlevering",
+            "SortOrder": 6,
+            "CustomProperties": {
+              "ShowOnFrontpage": "true",
+              "PhaseLevel": "Project",
+              "PhaseSubText": "Test og formell avslutning av prosjektet",
+              "PhaseDescription": "Her gjennomføres nødvendige tester og inspeksjoner før prosjektet formelt avsluttes og overleveres til den ansvarlige parten."
+            }
+          },
+          {
+            "Id": "2f757e1c-7e2b-4be6-9eba-ecafe37531b6",
+            "Name": "Bruks og driftsfase",
+            "SortOrder": 7,
+            "CustomProperties": {
+              "ShowOnFrontpage": "true",
+              "PhaseLevel": "Portfolio",
+              "PhaseSubText": "Implementering av drifts- og vedlikeholdsprosedyrer",
+              "PhaseDescription": "Denne fasen fokuserer på å implementere rutiner og prosedyrer for en effektiv drift og vedlikehold av anlegget i bruk."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "SiteFields": [
+    "<Field ID=\"{b02982d3-9e9f-4172-a576-34bcbe3b8332}\" Name=\"GtBAEndDateOriginal\" DisplayName=\"Opprinnelig overtakelsesdato\" Type=\"DateTime\" Format=\"DateOnly\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Hva er (planlagt) overtakelsesdato hvor bestiller overtar prosjektleveransene\" StaticName=\"GtBAEndDateOriginal\" />",
+    "<Field ID=\"{df96c2a2-d85c-4d10-ac1f-c5d9bf87873c}\" Name=\"GtBAProjectEnv\" DisplayName=\"Status miljø\" Type=\"Choice\" Format=\"RadioButtons\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Har det vært hendelser knyttet til miljø i siste periode?\" StaticName=\"GtBAProjectEnv\"><CHOICES><CHOICE>Ingen hendelser siste måned</CHOICE><CHOICE>Hendelse registrert siste måned</CHOICE></CHOICES></Field>",
+    "<Field Type=\"Note\" DisplayName=\"Kommentar, miljø\" Description=\"Oppsummer kort det totale miljø-bildet for prosjektet og hvilke tiltak det planlegges for i neste periode\" RichText=\"FALSE\" ID=\"{cf7714a7-bec5-4c94-aa8a-e624148972a2}\" StaticName=\"GtBAProjectEnvComment\" UnlimitedLengthInDocumentLibrary=\"TRUE\" Name=\"GtBAProjectEnvComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />",
+    "<Field ID=\"{3060379a-34d5-4bfb-a97d-f6efa834ff69}\" Name=\"GtBAProjectInvestementPhase\" Hidden=\"true\" DisplayName=\"HP-fase\" Type=\"Choice\" Format=\"Dropdown\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"\" FillInChoice=\"TRUE\" StaticName=\"GtBAProjectInvestementPhase\"><CHOICES><CHOICE>F0</CHOICE><CHOICE>F1</CHOICE><CHOICE>F2</CHOICE><CHOICE>F3</CHOICE><CHOICE>S (Sekkepost)</CHOICE><CHOICE>Ikke relevant</CHOICE></CHOICES></Field>",
+    "<Field ID=\"{f2a206c4-3b95-426b-9d46-dc9f283ed453}\" Name=\"GtBAProjectPolitical\" DisplayName=\"Siste politiske vedtak\" Type=\"DateTime\" Format=\"DateOnly\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Når ble siste politiske vedtak som påvirker prosjektet fattet?\" StaticName=\"GtBAProjectPolitical\" />",
+    "<Field Type=\"Note\" DisplayName=\"Kommentar, siste politiske vedtak\" Description=\"Kommentar til hvordan siste politiske vedtak påvirker prosjektet\" RichText=\"FALSE\" ID=\"{884d1db9-b8a5-4949-b74d-57d1ae0a2cf9}\" StaticName=\"GtBAProjectPoliticalComment\" UnlimitedLengthInDocumentLibrary=\"TRUE\" Name=\"GtBAProjectPoliticalComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />",
+    "<Field ID=\"{c3ef03c1-b6b8-4b9f-a0e5-3e119d23522f}\" Name=\"GtBAProjectPoliticalLink\" DisplayName=\"Lenke til siste politiske vedtak\" Type=\"URL\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Lenke til f. eks dokument/artikkel om siste politiske vedtak\" Format=\"Hyperlink\" StaticName=\"GtBAProjectPoliticalLink\" />",
+    "<Field ID=\"{165b92ca-3224-4a86-a749-3b06d315947f}\" Name=\"GtBAProjectPrognosisThisYear\" DisplayName=\"Prognose i år\" Type=\"Number\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Prognosen for dette året for prosjektet?\" StaticName=\"GtBAProjectPrognosisThisYear\" />",
+    "<Field ID=\"{58947845-13c8-4cb4-892c-90ea727e22a4}\" Name=\"GtBAProjectSHA\" DisplayName=\"Status SHA\" Type=\"Choice\" Format=\"RadioButtons\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Har det vært hendelser knyttet til SHA (Sikkerhet, helse, arbeidsmiljø) i siste periode?\" StaticName=\"GtBAProjectSHA\"><CHOICES><CHOICE>Ingen hendelser siste måned</CHOICE><CHOICE>Hendelse registrert siste måned</CHOICE></CHOICES></Field>",
+    "<Field Type=\"Note\" DisplayName=\"Kommentar, SHA\" Description=\"Oppsummer kort det totale SHA-bildet for prosjektet og hvilke tiltak det planlegges for i neste periode\" RichText=\"FALSE\" ID=\"{150c9db0-b582-4997-978a-c76f8a2cd8f5}\" StaticName=\"GtBAProjectSHAComment\" UnlimitedLengthInDocumentLibrary=\"TRUE\" Name=\"GtBAProjectSHAComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />",
+    "<Field ID=\"{f73a2025-53ba-468e-a18f-3714a2a6c71e}\" Name=\"GtBAProjectStatusCase\" DisplayName=\"Status plan- og byggesak\" Type=\"Choice\" Format=\"Dropdown\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Hva er status på plan- og byggsak for prosjektet?\" FillInChoice=\"TRUE\" StaticName=\"GtBAProjectStatusCase\"><CHOICES><CHOICE>Reguleringsplan annonsert</CHOICE><CHOICE>Reguleringsplan 1.gangsbehandlet</CHOICE><CHOICE>Reguleringsplan godkjent</CHOICE><CHOICE>Forhåndskonferanse avholdt</CHOICE><CHOICE>Rammesøknad under utarbeidelse</CHOICE><CHOICE>Rammesøknad sendt</CHOICE><CHOICE>Rammetillatelse gitt</CHOICE><CHOICE>IG sendt</CHOICE><CHOICE>IG gitt</CHOICE><CHOICE>Klage under behandling</CHOICE></CHOICES></Field>",
+    "<Field Type=\"Note\" DisplayName=\"Kommentar, plan- og byggesak\" Description=\"Beskriv eventuelle utfordringer knyttet til plan- og byggesak, samt planlagte tiltak for neste periode\" RichText=\"FALSE\" ID=\"{3a998841-f6a1-4445-ab71-94f650287f9c}\" StaticName=\"GtBAProjectStatusCaseComment\" Name=\"GtBAProjectStatusCaseComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />",
+    "<Field ID=\"{c3cfcba3-299d-42e8-827b-a593ada04abc}\" Name=\"GtBAProjectSupport\" DisplayName=\"Status tilskudd\" Type=\"Choice\" Format=\"Dropdown\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Hva er status på eventuelle tilskuddsmuligheter for prosjektet?\" FillInChoice=\"TRUE\" StaticName=\"GtBAProjectSupport\"><CHOICES><CHOICE>Skal undersøkes/vurderes</CHOICE><CHOICE>Ikke aktuelt</CHOICE><CHOICE>Dialog med tilskuddsyter opprettet</CHOICE><CHOICE>Har søkt</CHOICE><CHOICE>Har fått tilsagn</CHOICE><CHOICE>Har fått avslag</CHOICE><CHOICE>Søkt utbetaling</CHOICE><CHOICE>Har fått utbetalt</CHOICE></CHOICES></Field>",
+    "<Field Type=\"Note\" DisplayName=\"Kommentar, tilskudd\" Description=\"Hvis relevant, beskriv hvor i søknadsprosessen prosjektet er og hva som er planlagt for neste periode\" RichText=\"FALSE\" ID=\"{b8c0ad18-467b-4e7d-8d6b-9ca37171f07b}\" StaticName=\"GtBAProjectSupportComment\" UnlimitedLengthInDocumentLibrary=\"TRUE\" Name=\"GtBAProjectSupportComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />",
+    "<Field ID=\"{dfbde199-879c-4de9-aac4-6a3f0dbb22c3}\" Name=\"GtBAStakeholderGroup\" DisplayName=\"Interessentgruppe\" Type=\"Choice\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Hvilken interessentgruppe tilhører interessenten?\" StaticName=\"GtBAStakeholderGroup\"><CHOICES><CHOICE>Politisk</CHOICE><CHOICE>Kommuneadministrasjon</CHOICE><CHOICE>Virksomheter</CHOICE><CHOICE>Samarbeidspartnere</CHOICE><CHOICE>Råd og utvalg</CHOICE><CHOICE>Tillitsvalgte</CHOICE><CHOICE>Foreninger (eksterne)</CHOICE><CHOICE>Offentlige myndigheter</CHOICE><CHOICE>Tilsyn og vesener</CHOICE><CHOICE>Nettleverandører</CHOICE><CHOICE>Transport</CHOICE><CHOICE>Naboer</CHOICE><CHOICE>Brukere</CHOICE><CHOICE>Andre aktører</CHOICE></CHOICES></Field>"
+  ],
+  "ContentTypes": [
+    {
+      "ID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA",
+      "Name": "Prosjekt (ByggAnlegg)",
+      "Description": "Prosjekt innholdstype for bygg- og anleggsprosjekter",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        {
+          "Name": "Title",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectFinanceName"
+        },
+        {
+          "Name": "GtProjectNumber"
+        },
+        {
+          "Name": "GtArchiveReference"
+        },
+        {
+          "Name": "GtProjectServiceArea"
+        },
+        {
+          "Name": "GtProjectType"
+        },
+        {
+          "Name": "GtUNSustDevGoals"
+        },
+        {
+          "Name": "GtProjectPhase"
+        },
+        {
+          "Name": "GtProjectManager"
+        },
+        {
+          "Name": "GtProjectOwner"
+        },
+        {
+          "Name": "GtProjectSupport"
+        },
+        {
+          "Name": "GtGainsResponsible"
+        },
+        {
+          "Name": "GtStartDate"
+        },
+        {
+          "Name": "GtBAEndDateOriginal"
+        },
+        {
+          "Name": "GtEndDate"
+        },
+        {
+          "Name": "GtProjectGoals"
+        },
+        {
+          "Name": "GtBAProjectInvestementPhase",
+          "Hidden": true
+        },
+        {
+          "Name": "GtBAProjectPolitical"
+        },
+        {
+          "Name": "GtBAProjectPoliticalComment"
+        },
+        {
+          "Name": "GtBAProjectPoliticalLink"
+        },
+        {
+          "Name": "GtGroupId"
+        },
+        {
+          "Name": "GtSiteId"
+        },
+        {
+          "Name": "GtSiteUrl"
+        },
+        {
+          "Name": "GtLastSyncTime"
+        },
+        {
+          "Name": "GtProjectLifecycleStatus"
+        },
+        {
+          "Name": "GtProjectPhaseText"
+        },
+        {
+          "Name": "GtProjectTypeText"
+        },
+        {
+          "Name": "GtUNSustDevGoalsText"
+        },
+        {
+          "Name": "GtProjectAdminRoles"
+        },
+        {
+          "Name": "GtProjectTemplate"
+        },
+        {
+          "Name": "GtParentProjects"
+        },
+        {
+          "Name": "GtChildProjects"
+        },
+        {
+          "Name": "GtIsParentProject"
+        },
+        {
+          "Name": "GtIsProgram"
+        },
+        {
+          "Name": "GtInstalledVersion"
+        },
+        {
+          "Name": "GtCurrentVersion"
+        }
+      ]
+    },
+    {
+      "ID": "0x010022252E35737A413FB56A1BA53862F6D5BA",
+      "Name": "Prosjektstatus (ByggAnlegg)",
+      "Description": "Prosjektstatus innholdstype for bygg- og anleggsprosjekter",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        {
+          "Name": "Title",
+          "Hidden": true
+        },
+        {
+          "Name": "GtOverallStatus",
+          "Required": true
+        },
+        {
+          "Name": "GtBudgetTotal"
+        },
+        {
+          "Name": "GtCostsTotal"
+        },
+        {
+          "Name": "GtProjectForecast"
+        },
+        {
+          "Name": "GtBudgetLastReportDate"
+        },
+        {
+          "Name": "GtStatusTime",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusTimeComment"
+        },
+        {
+          "Name": "GtStatusBudget",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusBudgetComment"
+        },
+        {
+          "Name": "GtStatusQuality",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusQualityComment"
+        },
+        {
+          "Name": "GtStatusRisk",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusRiskComment"
+        },
+        {
+          "Name": "GtStatusOpportunities",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusOpportunitiesComment"
+        },
+        {
+          "Name": "GtStatusGainAchievement"
+        },
+        {
+          "Name": "GtStatusGainAchievementComment"
+        },
+        {
+          "Name": "GtBAProjectSupport",
+          "Required": true
+        },
+        {
+          "Name": "GtBAProjectSupportComment"
+        },
+        {
+          "Name": "GtBAProjectSHA",
+          "Required": true
+        },
+        {
+          "Name": "GtBAProjectSHAComment"
+        },
+        {
+          "Name": "GtBAProjectEnv",
+          "Required": true
+        },
+        {
+          "Name": "GtBAProjectEnvComment"
+        },
+        {
+          "Name": "GtBAProjectStatusCase",
+          "Required": true
+        },
+        {
+          "Name": "GtBAProjectStatusCaseComment"
+        },
+        {
+          "Name": "GtModerationStatus"
+        },
+        {
+          "Name": "GtSiteId"
+        },
+        {
+          "Name": "GtLastReportDate"
+        }
+      ]
+    }
+  ],
+  "Lists": [
+    {
+      "Title": "Prosjekter",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA"
+        }
+      ]
+    },
+    {
+      "Title": "Prosjektstatus",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x010022252E35737A413FB56A1BA53862F6D5BA"
+        }
+      ]
+    },
+    {
+      "Title": "Fasesjekkliste Anlegg",
+      "Description": "Sjekkpunkter per prosjektfase.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": true,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "Alle elementer",
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "Modified",
+            "Editor"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"GtSortOrder\" /></OrderBy>",
+            "JSLink": "hierarchytaskslist.js"
+          }
+        }
+      ],
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "Title": "Er oppdragsbestilling signert og mottatt?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 10
+          },
+          {
+            "Title": "Er omfanget entydig beskrevet?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 20
+          },
+          {
+            "Title": "Er grunnlagsdokumenter vedlagt (rapporter, undersøkelser, tegninger)?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 30
+          },
+          {
+            "Title": "Er forhold til myndigheter avklart (reguleringsplaner, etc.)?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 40
+          },
+          {
+            "Title": "Er interessentanalyse gjennomført?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 50
+          },
+          {
+            "Title": "Er kontrakten signert av begge parter?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 60
+          },
+          {
+            "Title": "Er prosjektorganiseringen (oppdragsgiver/utførende) entydig? ",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 70
+          },
+          {
+            "Title": "Er miljøkrav for prosjektet definert?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 80
+          },
+          {
+            "Title": "Er økonomisk ramme rimelig i forhold til oppdragets omfang?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 90
+          },
+          {
+            "Title": "Er det søkt tilskudd av spillemidler til prosjektet? Er det i så fall avtalt hvordan dette skal konteres?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 100
+          },
+          {
+            "Title": "Er det andre finansierings-kilder i prosjektet? Er det i så fall avtalt hvordan dette skal konteres?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 110
+          },
+          {
+            "Title": "Er det avklart om prosjektet har rett på 100% mva. fradrag?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 120
+          },
+          {
+            "Title": "Er det utarbeidet fremdriftsplan for oppdraget?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 130
+          },
+          {
+            "Title": "Er det tatt høyde for saksbehandlingstid hos eksterne aktører? (politisk P og B, fylkesmann, Hafslund, NVE, Statens vegvesen, andre)?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 140
+          },
+          {
+            "Title": "Er krav til universell utforming definert?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 150
+          },
+          {
+            "Title": "Er alle arkivverdige dokumenter lagret i arkivsystemet?",
+            "GtProjectPhase": {
+              "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
+              "label": "Initiering"
+            },
+            "GtSortOrder": 160
+          },
+          {
+            "Title": "Er grunnbok for tinglyste rettigheter sjekket og OK?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 170
+          },
+          {
+            "Title": "Er det sjekket med fylkeskommunen om det er registrert eller skal registreres kulturminner på anleggsområdet?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 180
+          },
+          {
+            "Title": "Er det sjekket med fylkeskommunen om det er krav om arkeologiske registreringer på anleggsområdet (må gjøres i sommerhalvåret)?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 190
+          },
+          {
+            "Title": "Er det sjekket at det er gjort naturtyperegistreringer på anleggsområdet (må gjøres i sommerhalvåret)?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 200
+          },
+          {
+            "Title": "Er alle relevante interessenter kontaktet? Inklusive KTA – drift, naboer/ grunneiere og kabelselskapene?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 210
+          },
+          {
+            "Title": "Er alle rettighetsforhold avklar med grunneiere?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 220
+          },
+          {
+            "Title": "Er mva fordelingsnøkkel avtalt med KTA og lagt inn i Agresso?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 230
+          },
+          {
+            "Title": "Er det skrevet avtale om SHA- koordinering prosjektering (KP)?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 240
+          },
+          {
+            "Title": "Er det skrevet avtale om SHA- koordinering utførelse (KU)?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 250
+          },
+          {
+            "Title": "Er søknad om rammetillatelse godkjent?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 260
+          },
+          {
+            "Title": "Er konkurransegrunnlaget kvalitetssikret?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 270
+          },
+          {
+            "Title": "Er det mottatt utfylte egenrapporteringsskjema for lønns og arbeidsvilkår?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 280
+          },
+          {
+            "Title": "Er alle arkivverdige dokumenter lagret i arkivsystemet?",
+            "GtProjectPhase": {
+              "termId": "1c286a0e-da40-451a-bab2-9e0583392ee3",
+              "label": "Prosjektering og kontrahering"
+            },
+            "GtSortOrder": 290
+          },
+          {
+            "Title": "Er det sendt forhåndsmelding til arbeidstilsynet?",
+            "GtProjectPhase": {
+              "termId": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+              "label": "Anleggsfase"
+            },
+            "GtSortOrder": 300
+          },
+          {
+            "Title": "Er tiltak fra interessent analyse og ev. kommunikasjonsplan gjennomført?",
+            "GtProjectPhase": {
+              "termId": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+              "label": "Anleggsfase"
+            },
+            "GtSortOrder": 310
+          },
+          {
+            "Title": "Er søknad om IG (igangsettelse) godkjent?",
+            "GtProjectPhase": {
+              "termId": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+              "label": "Anleggsfase"
+            },
+            "GtSortOrder": 320
+          },
+          {
+            "Title": "Er risikovurdering og SHA- plan oppdatert?",
+            "GtProjectPhase": {
+              "termId": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+              "label": "Anleggsfase"
+            },
+            "GtSortOrder": 330
+          },
+          {
+            "Title": "Er miljøplan oppdatert og fulgt opp?",
+            "GtProjectPhase": {
+              "termId": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+              "label": "Anleggsfase"
+            },
+            "GtSortOrder": 340
+          },
+          {
+            "Title": "Er FDV-/sluttdokumentasjon påbegynt?",
+            "GtProjectPhase": {
+              "termId": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+              "label": "Anleggsfase"
+            },
+            "GtSortOrder": 350
+          },
+          {
+            "Title": "Er alle arkivverdige dokumenter lagret i arkivsystemet?",
+            "GtProjectPhase": {
+              "termId": "9b45a1ca-ae8c-4f4a-baa3-40353b7dd8fc",
+              "label": "Anleggsfase"
+            },
+            "GtSortOrder": 360
+          },
+          {
+            "Title": "Er all FDV-/sluttdokumentasjon mottatt?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 370
+          },
+          {
+            "Title": "Er alle feil og mangler rettet?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 380
+          },
+          {
+            "Title": "Har driftspersonale og brukere fått nødvendig opplæring?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 390
+          },
+          {
+            "Title": "Er overtagelsesprotokoll signert?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 400
+          },
+          {
+            "Title": "Er overleveringsprotokoll til KTA signert?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 410
+          },
+          {
+            "Title": "Er det skrevet sluttrapport med sluttregnskap?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 420
+          },
+          {
+            "Title": "Er det skrevet evalueringsrapporter av entreprenørene?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 430
+          },
+          {
+            "Title": "Er alle innestående beløp utbetalt til entreprenøren?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 440
+          },
+          {
+            "Title": "Er alle arkivverdige dokumenter lagret i arkivsystemet?",
+            "GtProjectPhase": {
+              "termId": "1807d6c2-b4bd-415f-98aa-a4a2ccff8d11",
+              "label": "Overtakelse og overlevering"
+            },
+            "GtSortOrder": 450
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Planneroppgaver Anlegg",
+      "Description": "Standardoppgaver per prosjektfase.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": true,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x01000F43B5C9E86B4D7D9808100EC27E844A"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "Alle elementer",
+          "ViewFields": [
+            "GtSortOrder",
+            "Title",
+            "GtCategory",
+            "GtChecklist",
+            "GtPlannerTags",
+            "GtAttachments",
+            "GtPlannerPreviewType",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"ID\" Ascending=\"TRUE\" /></OrderBy>",
+            "JSLink": "clienttemplates.js"
+          }
+        }
+      ],
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "Title": "Støtte oppdragsgiver (KTA) i å definere krav og rammer etter behov",
+            "GtCategory": "Initiering",
+            "GtChecklist": "Sørge for signert oppdragsbestilling;Avklare økonomiske rammer/erfaringstall",
+            "GtSortOrder": 10
+          },
+          {
+            "Title": "Innhente tilgjengelig grunnlagsinformasjon",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 20
+          },
+          {
+            "Title": "Beskrive tiltaket",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 30
+          },
+          {
+            "Title": "Kontrahere konsulenter",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtChecklist": "Utføre sidemannskontroll av oppdragsbeskrivelse",
+            "GtSortOrder": 40
+          },
+          {
+            "Title": "Etablere prosjektorganisasjon",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 50
+          },
+          {
+            "Title": "Gjennomføre forprosjekt",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtChecklist": "Vurdere behov for forhåndskonferanse eller rammesøknad;Foreløpig kalkyle;Gjennomføre miljøgjennomgang og ev. skrive miljøplan;Gjennomføre Risikoanalyse (intern)",
+            "GtSortOrder": 60
+          },
+          {
+            "Title": "Dialog med interessenter",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 70
+          },
+          {
+            "Title": "Etablere SHA- Plan for prosjekteringsfasen",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 80
+          },
+          {
+            "Title": "Gjennomføre detaljprosjekt",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtChecklist": "Ferdigstille anbudstegninegr og kravspesifikasjon;Søknad på rammetillatelse skal utformes og sendes Plan og bygg for godkjenning;Utarbeide komplett kalkyle;Gjennomføre ekstern ROS analyse (for prosjekt over 10 mill);Fremme politisk sak",
+            "GtSortOrder": 90
+          },
+          {
+            "Title": "Dokumenter som skal produseres i prosjekteringsfasen",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtChecklist": "Organisasjonsplan/ prosjektplaner;Plandokumenter;Endring av oppdragsbeskrivelsen;Innsendt søknad på byggetillatelse (Rammesøknad eller 1. trinns søknad);SHA- plan (med vedlegg);Sjekkliste SHA-koordinator Prosjektering (KP);Risikovurdering prosjekt (Excel- skjema);Komplett Kalkyle;Forprosjektrapport;Søknad om forhåndsgodkjenning av spillemidler;Politisk saksfremlegg;Interessentanalyse;Avtaler med kabelselskapene;Signert grunneieravtaler ;Naboinformasjon (sendt ut);Grunnlag for utlysning av konkurranse (i Doffin);(Foreløpig) fremdriftsplan",
+            "GtSortOrder": 100
+          },
+          {
+            "Title": "Utarbeide konkurransegrunnlag inkl. kravspesifikasjon og anbudstegninger",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtChecklist": "Utføre sidemannskontroll av konkurransegrunnlaget;Kontroll av mengdebeskrivelse og anbudsdokumenter",
+            "GtSortOrder": 110
+          },
+          {
+            "Title": "Utlyse konkurranse(r)",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 120
+          },
+          {
+            "Title": "Evaluere tilbud",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 130
+          },
+          {
+            "Title": "Avholde kontraktsmøte",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 140
+          },
+          {
+            "Title": "Utforme og signere avtaledokument",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtSortOrder": 150
+          },
+          {
+            "Title": "Dokumenter som skal produseres i kontraheringsfasen",
+            "GtCategory": "Prosjektering og kontrahering",
+            "GtChecklist": "Konkurransegrunnlag- anlegg;Anskaffelsesprotokoll over 500.000 kr. (med evalueringsrapport);Åpningsprotokoll;Protokoll fra tilbudsbefaring;Avtale om SHA- koordinering utførelse (KU);Meddelelse til tilbydere;Signert kontrakt(er) ;Utfylt egenrapporteringsskjema for lønns og arbeidsvilkår;Budsjett",
+            "GtSortOrder": 160
+          },
+          {
+            "Title": "Sende søknad om igangsettelse (IG)",
+            "GtCategory": "Anleggsfase",
+            "GtSortOrder": 170
+          },
+          {
+            "Title": "Avholde oppstartsmøte",
+            "GtCategory": "Anleggsfase",
+            "GtSortOrder": 180
+          },
+          {
+            "Title": "Definere organisasjon og roller",
+            "GtCategory": "Anleggsfase",
+            "GtSortOrder": 190
+          },
+          {
+            "Title": "Dokumenter som skal produseres i anleggsfasen",
+            "GtCategory": "Anleggsfase",
+            "GtChecklist": "Forhåndsmelding til arbeidstilsynet;Organisasjonsplan/ prosjektplaner ;Fremdriftsplan (oppdatert);SHA- plan med vedlegg (oppdatert);Miljøplan- anleggsprosjekter (Utarbeides i prosjekteringsfasen; videreutvikles og følges opp i gjennomføringsfasen);Arbeidstegninger;Stikningsdata;Korrespondanse;Ev. oppdatert Interessentanalyse ;Ev. oppdatert informasjon til naboer og grunneiere;Ev. oppdatert budsjett;FDV-/ sluttdokumentasjon",
+            "GtSortOrder": 200
+          },
+          {
+            "Title": "Forbefaring",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 210
+          },
+          {
+            "Title": "Ferdigbefaring",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 220
+          },
+          {
+            "Title": "Prøvedrift",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 230
+          },
+          {
+            "Title": "Overtakelse (fra entreprenør til prosjekt)",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 240
+          },
+          {
+            "Title": "Overlevering (fra prosjekt til oppdragsgiver)",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 250
+          },
+          {
+            "Title": "Utarbeide FDV dokumentasjon",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 260
+          },
+          {
+            "Title": "Økonomisk avslutning",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 270
+          },
+          {
+            "Title": "Ferdigmelding",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtSortOrder": 280
+          },
+          {
+            "Title": "Dokumenter som skal produseres i overleveringsfasen",
+            "GtCategory": "Overtakelse og overlevering",
+            "GtChecklist": "Referat fra ferdigbefaring;Signert Overtakelsesprotokoll;Evalueringsrapporter;Referat fra møte om økonomisk sluttoppgjør;Signert Overleveringsprotokoll;Ferdigstilt FDV-/ sluttdokumentasjon;Sluttrapport med sluttregnskap;Sluttregnskap og ferdigattest som grunnlag for søknad om sluttutbetaling av spillemidlene.",
+            "GtSortOrder": 290
+          },
+          {
+            "Title": "Garantiperiode",
+            "GtCategory": "Bruks og driftsfase",
+            "GtSortOrder": 300
+          },
+          {
+            "Title": "Forvaltning, drift og vedlikehold",
+            "GtCategory": "Bruks og driftsfase",
+            "GtSortOrder": 310
+          }
+        ]
+      }
+    }
+  ]
+}
