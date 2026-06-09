@@ -10,6 +10,7 @@
   "icon": "TestBeaker",
   "tags": ["forskning", "FoU", "prosjektledelse"],
   "type": "template",
+  "languages": ["nb-NO", "en-US"],
   "provisioning": {
     "template": "provisioning/template.json"
   },

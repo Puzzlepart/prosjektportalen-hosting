@@ -131,6 +131,10 @@
       "description": "Prosjektmal for forsknings- og utviklingsprosjekter med struktur for hypoteser, milepæler, etiske vurderinger og forskningsleveranser.",
       "version": "0.1.0",
       "type": "template",
+      "languages": [
+        "nb-NO",
+        "en-US"
+      ],
       "icon": "TestBeaker",
       "author": "Prosjektportalen-teamet",
       "tags": [
@@ -149,6 +153,8 @@
       "description": "Prosjektmal for leverandørsamhandling og innkjøpsprosjekter med oppfølging av kontrakter, leveranser og samhandlingsaktiviteter mellom oppdragsgiver og leverandør.",
       "version": "0.1.0",
       "type": "template",
+      "requiresBestillingsportalen": true,
+      "requiresEntra": true,
       "icon": "People",
       "author": "Prosjektportalen-teamet",
       "tags": [
