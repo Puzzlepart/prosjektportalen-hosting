@@ -21,55 +21,76 @@ Dette dokumentet er den felles innledningen og overordnede spesifikasjonen. Deta
 Diagrammet under viser hvordan de fire repoene/systemene henger sammen – fra publisering av malpakker i hosting-repoet, via offentlig forhåndsvisning og SPFx-katalogen, til provisjonering og stempling av nye prosjektområder.
 
 ```mermaid
-%%{init: {"theme": "neutral"}}%%
+%%{init: {"theme":"base","htmlLabels":false,"themeVariables":{"fontFamily":"Segoe UI, Helvetica, Arial, sans-serif","fontSize":"14px","lineColor":"#7a8691","primaryBorderColor":"#c9d1d9"},"flowchart":{"curve":"basis","nodeSpacing":35,"rankSpacing":50,"padding":6,"htmlLabels":false}}}%%
 flowchart TB
-    subgraph HOST["prosjektportalen-hosting / GitHub"]
-        PKG["packages/*<br/>manifest.json, README, CHANGELOG<br/>provisioning, content, assets, thumbnail"]
-        SCHEMA["schema/<br/>pppkg-manifest + catalog schema"]
-        BUILD["scripts/build-packages.js<br/>valider, zip, oppdater katalog"]
-        DIST["dist/*.pppkg<br/>bygde pakker"]
-        CAT["catalog.json<br/>indeks over alle pakker"]
-        CI["CI: validate-pr.yml<br/>+ release ved merge til main"]
-        PKG -->|bygges av| BUILD
-        SCHEMA -.validerer.-> BUILD
-        BUILD --> DIST
-        BUILD --> CAT
-        CI -.kjorer.-> BUILD
+    subgraph TOP [" "]
+        direction LR
+        subgraph HOST["📦 prosjektportalen-hosting / GitHub"]
+            direction TB
+            PKG["packages/*<br/>manifest, README, provisioning, content, assets"]
+            SCHEMA["schema/<br/>manifest + catalog"]
+            VALIDATE["validate-manifest.js<br/>schema · filer · versjon"]
+            BUILD["build-packages.js<br/>valider · zip · katalog"]
+            DIST["dist/*.pppkg<br/>GitHub Raw (CORS)"]
+            CAT["catalog.json<br/>pakkeindeks"]
+            PAGES["docs/index.html<br/>GitHub Pages-katalog"]
+            CI["GitHub Actions<br/>validering + bygg"]
+            SCHEMA -.validerer.-> VALIDATE
+            VALIDATE --> BUILD
+            PKG -->|bygges av| BUILD
+            BUILD --> DIST
+            BUILD --> CAT
+            CAT -->|GitHub Raw| PAGES
+            CI -.-> VALIDATE
+        end
+        subgraph PP365["⚙️ prosjektportalen365 — SPFx i kundens tenant"]
+            direction TB
+            WIZARDCAT["Malpakkekatalog<br/>ListView Command Set"]
+            MALOPP["Maloppsett-liste<br/>type · versjon · kilde · status"]
+            SETUP["Oppsettveiviser<br/>provisjonerer prosjektområder"]
+            SITE["Prosjektområde<br/>stemplet: id · version · type"]
+            WIZARDCAT -->|Modus A: importer| MALOPP
+            WIZARDCAT -->|Modus B: sentral mal| MALOPP
+            MALOPP --> SETUP
+            SETUP --> SITE
+        end
     end
 
-    subgraph WEB["prosjektportalen.no / browse-side"]
-        PREVIEW["Offentlig katalogvisning<br/>grid + detaljer, ingen innlogging"]
-    end
+    PREVIEW["🌐 prosjektportalen.no<br/>offentlig katalogvisning"]
 
-    subgraph PP365["prosjektportalen365 - SPFx i kundens tenant"]
-        WIZARDCAT["Malpakkekatalog<br/>ListView Command Set pa Maloppsett"]
-        MALOPP["Maloppsett-liste<br/>PpPkgType: Lokal / Importert / Sentral<br/>+ versjon, kilde, status"]
-        SETUP["Oppsettveiviser<br/>provisjonerer nye prosjektomrader"]
-        SITE["Prosjektomrade<br/>stemplet: pp_pkg_id, _version, _type"]
-    end
-
-    subgraph PROV["sp-js-provisioning"]
-        PT["provisionTemplate()<br/>Taxonomy, Fields, ContentTypes,<br/>Lists, Files / Content"]
+    subgraph PROV["🧩 sp-js-provisioning"]
+        direction LR
+        PT["provisionTemplate()<br/>Taxonomy, Fields, CT, Lists, Files"]
         TAX["Taxonomy-handler"]
+        GRAPH["☁️ MS Graph<br/>termStore API"]
         PT --> TAX
+        TAX -->|termsett m/ faste IDer| GRAPH
     end
 
-    GRAPH["MS Graph<br/>Taxonomy / termStore API"]
-
+    PKG ~~~ WIZARDCAT
     CAT -->|GitHub Raw| PREVIEW
-    CAT -->|GitHub Raw, cache 24t| WIZARDCAT
+    CAT -->|GitHub Raw · cache 24t| WIZARDCAT
     DIST -->|last ned .pppkg| WIZARDCAT
-
-    WIZARDCAT -->|Modus A: Importer til hub| MALOPP
-    WIZARDCAT -->|Modus B: Bruk som sentral mal| MALOPP
+    SETUP -->|hent .pppkg runtime| DIST
     WIZARDCAT -->|Modus A: provisjoner hub| PT
-
-    MALOPP --> SETUP
-    SETUP -->|Sentral mal: hent .pppkg runtime| DIST
     SETUP -->|provisjoner prosjekt| PT
-    SETUP --> SITE
 
-    TAX -->|opprett/oppdater termsett med faste IDer| GRAPH
+    classDef host fill:#e8f1fb,stroke:#1f6feb,color:#0b3d91;
+    classDef spfx fill:#eafaf0,stroke:#1a7f37,color:#0f5323;
+    classDef prov fill:#fff4e5,stroke:#d97706,color:#7a4100;
+    classDef msgraph fill:#f3effb,stroke:#8250df,color:#4b277f;
+    classDef web fill:#eef9fb,stroke:#0a7ea4,color:#08566e;
+
+    class PKG,SCHEMA,VALIDATE,BUILD,DIST,CAT,PAGES,CI host;
+    class WIZARDCAT,MALOPP,SETUP,SITE spfx;
+    class PT,TAX prov;
+    class GRAPH msgraph;
+    class PREVIEW web;
+
+    style HOST fill:#f5f9ff,stroke:#1f6feb,stroke-width:2px;
+    style PP365 fill:#f3fbf6,stroke:#1a7f37,stroke-width:2px;
+    style PROV fill:#fffaf2,stroke:#d97706,stroke-width:2px;
+    style TOP fill:none,stroke:none;
 ```
 
 ---
