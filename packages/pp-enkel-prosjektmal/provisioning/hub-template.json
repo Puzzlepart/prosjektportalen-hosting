@@ -6,40 +6,162 @@
       "Description": "Prosjektinnholdstype for enkle prosjekter. Basert på den innebygde Prosjekt-innholdstypen.",
       "Group": "Prosjektportalen innholdstyper",
       "FieldRefs": [
-        { "Name": "Title", "Hidden": true },
-        { "Name": "GtProjectFinanceName" },
-        { "Name": "GtProjectNumber" },
-        { "Name": "GtArchiveReference" },
-        { "Name": "GtProjectServiceArea" },
-        { "Name": "GtProjectType" },
-        { "Name": "GtUNSustDevGoals" },
-        { "Name": "GtProjectPhase" },
-        { "Name": "GtProjectManager" },
-        { "Name": "GtProjectOwner" },
-        { "Name": "GtProjectSupport" },
-        { "Name": "GtGainsResponsible" },
-        { "Name": "GtStartDate" },
-        { "Name": "GtEndDate" },
-        { "Name": "GtProjectGoals" },
-        { "Name": "GtGroupId" },
-        { "Name": "GtSiteId" },
-        { "Name": "GtSiteUrl" },
-        { "Name": "GtLastSyncTime" },
-        { "Name": "GtProjectLifecycleStatus" },
-        { "Name": "GtProjectPhaseText" },
-        { "Name": "GtProjectServiceAreaText" },
-        { "Name": "GtProjectTypeText" },
-        { "Name": "GtUNSustDevGoalsText" },
-        { "Name": "GtProjectAdminRoles" },
-        { "Name": "GtProjectTemplate" },
-        { "Name": "GtProjectExtensions" },
-        { "Name": "GtProjectListContent" },
-        { "Name": "GtParentProjects" },
-        { "Name": "GtChildProjects" },
-        { "Name": "GtIsParentProject" },
-        { "Name": "GtIsProgram" },
-        { "Name": "GtInstalledVersion" },
-        { "Name": "GtCurrentVersion" }
+        {
+          "Name": "Title",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectFinanceName"
+        },
+        {
+          "Name": "GtProjectNumber"
+        },
+        {
+          "Name": "GtArchiveReference"
+        },
+        {
+          "Name": "GtProjectServiceArea"
+        },
+        {
+          "Name": "GtProjectType"
+        },
+        {
+          "Name": "GtUNSustDevGoals"
+        },
+        {
+          "Name": "GtProjectPhase"
+        },
+        {
+          "Name": "GtProjectManager"
+        },
+        {
+          "Name": "GtProjectOwner"
+        },
+        {
+          "Name": "GtProjectSupport"
+        },
+        {
+          "Name": "GtGainsResponsible"
+        },
+        {
+          "Name": "GtStartDate"
+        },
+        {
+          "Name": "GtEndDate"
+        },
+        {
+          "Name": "GtProjectGoals"
+        },
+        {
+          "Name": "GtGroupId"
+        },
+        {
+          "Name": "GtSiteId"
+        },
+        {
+          "Name": "GtSiteUrl"
+        },
+        {
+          "Name": "GtLastSyncTime"
+        },
+        {
+          "Name": "GtProjectLifecycleStatus"
+        },
+        {
+          "Name": "GtProjectPhaseText"
+        },
+        {
+          "Name": "GtProjectServiceAreaText"
+        },
+        {
+          "Name": "GtProjectTypeText"
+        },
+        {
+          "Name": "GtUNSustDevGoalsText"
+        },
+        {
+          "Name": "GtProjectAdminRoles"
+        },
+        {
+          "Name": "GtProjectTemplate"
+        },
+        {
+          "Name": "GtProjectExtensions"
+        },
+        {
+          "Name": "GtProjectListContent"
+        },
+        {
+          "Name": "GtParentProjects"
+        },
+        {
+          "Name": "GtChildProjects"
+        },
+        {
+          "Name": "GtIsParentProject"
+        },
+        {
+          "Name": "GtIsProgram"
+        },
+        {
+          "Name": "GtInstalledVersion"
+        },
+        {
+          "Name": "GtCurrentVersion"
+        }
+      ]
+    },
+    {
+      "ID": "0x010022252E35737A413FB56A1BA53862F6D501",
+      "Name": "Enkel prosjektstatus",
+      "Description": "Forenklet prosjektstatus-innholdstype for enkle prosjekter. Basert på den innebygde Prosjektstatus-innholdstypen.",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        {
+          "Name": "Title",
+          "Hidden": true
+        },
+        {
+          "Name": "GtOverallStatus",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusTime",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusTimeComment"
+        },
+        {
+          "Name": "GtStatusBudget",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusBudgetComment"
+        },
+        {
+          "Name": "GtStatusQuality",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusQualityComment"
+        },
+        {
+          "Name": "GtStatusRisk",
+          "Required": true
+        },
+        {
+          "Name": "GtStatusRiskComment"
+        },
+        {
+          "Name": "GtModerationStatus"
+        },
+        {
+          "Name": "GtSiteId"
+        },
+        {
+          "Name": "GtLastReportDate"
+        }
       ]
     }
   ],
@@ -50,7 +172,20 @@
       "ContentTypesEnabled": true,
       "RemoveExistingContentTypes": false,
       "ContentTypeBindings": [
-        { "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C01" }
+        {
+          "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C01"
+        }
+      ]
+    },
+    {
+      "Title": "Prosjektstatus",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x010022252E35737A413FB56A1BA53862F6D501"
+        }
       ]
     },
     {
@@ -60,7 +195,9 @@
       "ContentTypesEnabled": true,
       "RemoveExistingContentTypes": false,
       "ContentTypeBindings": [
-        { "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C" }
+        {
+          "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C"
+        }
       ],
       "AdditionalSettings": {
         "EnableVersioning": true
@@ -68,7 +205,13 @@
       "Views": [
         {
           "Title": "Alle elementer",
-          "ViewFields": ["GtSortOrder", "LinkTitle", "GtProjectPhase", "GtChecklistStatus", "GtComment"],
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "GtChecklistStatus",
+            "GtComment"
+          ],
           "AdditionalSettings": {
             "RowLimit": 50,
             "ViewQuery": "<OrderBy><FieldRef Name=\"GtSortOrder\" /><FieldRef Name=\"ID\" /></OrderBy>"
@@ -79,21 +222,126 @@
         "KeyColumn": "Title",
         "UpdateBehavior": "Skip",
         "Rows": [
-          { "Title": "Er det en tydelig definert problemstilling som synliggjør behovet for nærmere utredning?", "GtProjectPhase": { "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32", "label": "Idé" }, "GtSortOrder": 10 },
-          { "Title": "Er det mest riktig å gjennomføre tiltaket som et prosjekt eller som en linjeoppgave?", "GtProjectPhase": { "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32", "label": "Idé" }, "GtSortOrder": 20 },
-          { "Title": "Skal vi gå videre til konseptfasen og utrede ulike konsepter for et mulig prosjekt?", "GtProjectPhase": { "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32", "label": "Idé" }, "GtSortOrder": 30 },
-          { "Title": "Er prosjektet realistisk og gjennomførbart?", "GtProjectPhase": { "termId": "99e85650-33de-4af4-b8db-edffbc8a310b", "label": "Konsept" }, "GtSortOrder": 40 },
-          { "Title": "Er det etablert et prosjektstyre?", "GtProjectPhase": { "termId": "99e85650-33de-4af4-b8db-edffbc8a310b", "label": "Konsept" }, "GtSortOrder": 50 },
-          { "Title": "Støtter prosjektforslaget opp under virksomhetens mål og strategier?", "GtProjectPhase": { "termId": "99e85650-33de-4af4-b8db-edffbc8a310b", "label": "Konsept" }, "GtSortOrder": 60 },
-          { "Title": "Er prosjektet fortsatt ønskelig og i tråd med virksomhetens strategiske mål?", "GtProjectPhase": { "termId": "cda4f1e1-3488-4e57-8a04-6973df239689", "label": "Planlegge" }, "GtSortOrder": 70 },
-          { "Title": "Er det gjennomført interessentanalyse?", "GtProjectPhase": { "termId": "cda4f1e1-3488-4e57-8a04-6973df239689", "label": "Planlegge" }, "GtSortOrder": 80 },
-          { "Title": "Er kritiske suksessfaktorer identifisert?", "GtProjectPhase": { "termId": "cda4f1e1-3488-4e57-8a04-6973df239689", "label": "Planlegge" }, "GtSortOrder": 90 },
-          { "Title": "Er prosjektets leveranser i overensstemmelse med definerte resultatmål?", "GtProjectPhase": { "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9", "label": "Gjennomføre" }, "GtSortOrder": 100 },
-          { "Title": "Er leveranser dokumentert og levert i henhold til plan?", "GtProjectPhase": { "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9", "label": "Gjennomføre" }, "GtSortOrder": 110 },
-          { "Title": "Er prosjektets hovedresultat (produkt, kost, tid, kvalitet, ressursbruk) dokumentert?", "GtProjectPhase": { "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130", "label": "Avslutte" }, "GtSortOrder": 120 },
-          { "Title": "Er positive og negative erfaringer dokumentert for erfaringsoverføring?", "GtProjectPhase": { "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130", "label": "Avslutte" }, "GtSortOrder": 130 },
-          { "Title": "Er prosjektdokumentene forsvarlig arkivert?", "GtProjectPhase": { "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130", "label": "Avslutte" }, "GtSortOrder": 140 },
-          { "Title": "Er planlagte målinger og tiltak gjennomført?", "GtProjectPhase": { "termId": "b7ba84f0-70b9-45c4-8c50-8f73bf15bbec", "label": "Realisere" }, "GtSortOrder": 150 }
+          {
+            "Title": "Er det en tydelig definert problemstilling som synliggjør behovet for nærmere utredning?",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idé"
+            },
+            "GtSortOrder": 10
+          },
+          {
+            "Title": "Er det mest riktig å gjennomføre tiltaket som et prosjekt eller som en linjeoppgave?",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idé"
+            },
+            "GtSortOrder": 20
+          },
+          {
+            "Title": "Skal vi gå videre til konseptfasen og utrede ulike konsepter for et mulig prosjekt?",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idé"
+            },
+            "GtSortOrder": 30
+          },
+          {
+            "Title": "Er prosjektet realistisk og gjennomførbart?",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Konsept"
+            },
+            "GtSortOrder": 40
+          },
+          {
+            "Title": "Er det etablert et prosjektstyre?",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Konsept"
+            },
+            "GtSortOrder": 50
+          },
+          {
+            "Title": "Støtter prosjektforslaget opp under virksomhetens mål og strategier?",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Konsept"
+            },
+            "GtSortOrder": 60
+          },
+          {
+            "Title": "Er prosjektet fortsatt ønskelig og i tråd med virksomhetens strategiske mål?",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planlegge"
+            },
+            "GtSortOrder": 70
+          },
+          {
+            "Title": "Er det gjennomført interessentanalyse?",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planlegge"
+            },
+            "GtSortOrder": 80
+          },
+          {
+            "Title": "Er kritiske suksessfaktorer identifisert?",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planlegge"
+            },
+            "GtSortOrder": 90
+          },
+          {
+            "Title": "Er prosjektets leveranser i overensstemmelse med definerte resultatmål?",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Gjennomføre"
+            },
+            "GtSortOrder": 100
+          },
+          {
+            "Title": "Er leveranser dokumentert og levert i henhold til plan?",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Gjennomføre"
+            },
+            "GtSortOrder": 110
+          },
+          {
+            "Title": "Er prosjektets hovedresultat (produkt, kost, tid, kvalitet, ressursbruk) dokumentert?",
+            "GtProjectPhase": {
+              "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130",
+              "label": "Avslutte"
+            },
+            "GtSortOrder": 120
+          },
+          {
+            "Title": "Er positive og negative erfaringer dokumentert for erfaringsoverføring?",
+            "GtProjectPhase": {
+              "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130",
+              "label": "Avslutte"
+            },
+            "GtSortOrder": 130
+          },
+          {
+            "Title": "Er prosjektdokumentene forsvarlig arkivert?",
+            "GtProjectPhase": {
+              "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130",
+              "label": "Avslutte"
+            },
+            "GtSortOrder": 140
+          },
+          {
+            "Title": "Er planlagte målinger og tiltak gjennomført?",
+            "GtProjectPhase": {
+              "termId": "b7ba84f0-70b9-45c4-8c50-8f73bf15bbec",
+              "label": "Realisere"
+            },
+            "GtSortOrder": 150
+          }
         ]
       }
     }

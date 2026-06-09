@@ -4,9 +4,349 @@
     "ProvisionSiteFields": "Kolonner for Prosjektportalen (Prosjekt)",
     "CustomSiteFields": "Egendefinerte kolonner for Prosjektportalen",
     "ProjectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C01",
-    "ProjectStatusContentTypeId": "0x010022252E35737A413FB56A1BA53862F6D5",
+    "ProjectStatusContentTypeId": "0x010022252E35737A413FB56A1BA53862F6D501",
     "TermSetIds": {
       "GtProjectPhase": "abcfc9d9-a263-4abb-8234-be973c46258a"
     }
-  }
+  },
+  "Lists": [
+    {
+      "Title": "Fasesjekkliste",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": true,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "Alle elementer",
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "GtChecklistStatus",
+            "GtComment"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 50,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"GtSortOrder\" /><FieldRef Name=\"ID\" /></OrderBy><Where><Neq><FieldRef Name=\"GtChecklistStatus\" /><Value Type=\"Text\">Arkivert</Value></Neq>\n</Where>"
+          }
+        },
+        {
+          "Title": "Arkivert",
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "GtComment"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 50,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"GtSortOrder\" /><FieldRef Name=\"ID\" /></OrderBy><Where><Eq><FieldRef Name=\"GtChecklistStatus\" /><Value Type=\"Text\">Arkivert</Value></Eq>\n</Where>"
+          }
+        },
+        {
+          "Title": "Etter status",
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "GtComment"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 50,
+            "ViewQuery": "<GroupBy Collapse=\"TRUE\" GroupLimit=\"30\"><FieldRef Name=\"GtChecklistStatus\" Ascending=\"FALSE\" />\n</GroupBy>\n<OrderBy><FieldRef Name=\"GtSortOrder\" /><FieldRef Name=\"ID\" />\n</OrderBy>"
+          }
+        }
+      ]
+    },
+    {
+      "Title": "Usikkerhet",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": true,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100A87AE71CBF2643A6BC9D0948BD2EE89701"
+        },
+        {
+          "ContentTypeID": "0x0100A87AE71CBF2643A6BC9D0948BD2EE89702"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "Alle elementer",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskDescription",
+            "GtRiskProbability",
+            "GtRiskConsequence",
+            "GtRiskFactor",
+            "GtRiskStatus",
+            "GtRiskStrategy",
+            "GtRiskAction",
+            "GtRiskProbabilityPostAction",
+            "GtRiskConsequencePostAction",
+            "GtRiskFactorPostAction",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<FieldRef Name=\"GtRiskFactor\" Ascending=\"FALSE\" />"
+          }
+        },
+        {
+          "Title": "Aktuelle risikoer",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskProximity",
+            "GtRiskAction",
+            "GtRiskStrategy",
+            "GtRiskFactor",
+            "GtRiskFactorPostAction"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<GroupBy Collapse= \"TRUE\" GroupLimit= \"30\"><FieldRef Name= \"GtRiskStatus\" Ascending= \"FALSE\" /></GroupBy><OrderBy><FieldRef Name= \"GtRiskFactor\" Ascending= \"FALSE\" /></OrderBy><Where><And><Neq><FieldRef Name= \"GtRiskStatus\" /><Value Type= \"Text\">Ikke lenger aktuell</Value></Neq><Eq><FieldRef Name= \"ContentType\" /><Value Type= \"Computed\">Risiko</Value></Eq></And></Where>"
+          }
+        },
+        {
+          "Title": "Aktuelle muligheter",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskProximity",
+            "GtRiskAction",
+            "GtRiskStrategy",
+            "GtRiskFactor",
+            "GtRiskFactorPostAction"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<GroupBy Collapse= \"TRUE\" GroupLimit= \"30\"><FieldRef Name= \"GtRiskStatus\" Ascending= \"FALSE\" /></GroupBy><OrderBy><FieldRef Name= \"GtRiskFactor\" Ascending= \"FALSE\" /></OrderBy><Where><And><Neq><FieldRef Name= \"GtRiskStatus\" /><Value Type= \"Text\">Ikke lenger aktuell</Value></Neq><Eq><FieldRef Name= \"ContentType\" /><Value Type= \"Computed\">Mulighet</Value></Eq></And></Where>"
+          }
+        },
+        {
+          "Title": "Uakseptable risikoer",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskDescription",
+            "GtRiskProbability",
+            "GtRiskConsequence",
+            "GtRiskFactor",
+            "GtRiskStatus",
+            "GtRiskStrategy",
+            "GtRiskAction",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<GroupBy Collapse= \"TRUE\" GroupLimit= \"30\"><FieldRef Name= \"GtRiskStatus\" Ascending= \"FALSE\" /></GroupBy><OrderBy><FieldRef Name= \"GtRiskFactor\" Ascending= \"FALSE\" /></OrderBy><Where><And><And><Neq><FieldRef Name= \"GtRiskStatus\" /><Value Type= \"Text\">Ikke lenger aktuell</Value></Neq><Gt><FieldRef Name= \"GtRiskFactor\" /><Value Type= \"Number\">10</Value></Gt></And><Eq><FieldRef Name= \"ContentType\" /><Value Type= \"Computed\">Risiko</Value></Eq></And></Where>"
+          }
+        },
+        {
+          "Title": "Avklart risiko",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskDescription",
+            "GtRiskProbability",
+            "GtRiskConsequence",
+            "GtRiskFactor",
+            "GtRiskStatus",
+            "GtRiskStrategy",
+            "GtRiskAction",
+            "GtRiskProbabilityPostAction",
+            "GtRiskConsequencePostAction",
+            "GtRiskFactorPostAction",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<OrderBy><FieldRef Name= \"GtRiskFactor\" Ascending= \"FALSE\" /></OrderBy><Where><And><Neq><FieldRef Name= \"GtRiskStatus\" /><Value Type= \"Text\">Ikke lenger aktuell</Value></Neq><Eq><FieldRef Name= \"ContentType\" /><Value Type= \"Computed\">Risiko</Value></Eq></And></Where>"
+          }
+        },
+        {
+          "Title": "Uten ansvarlig",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskDescription",
+            "GtRiskFactor",
+            "GtRiskStatus",
+            "GtRiskAction",
+            "GtActionResponsible",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": " <OrderBy><FieldRef Name=\"GtRiskFactor\" Ascending=\"FALSE\" /></OrderBy><Where><IsNull><FieldRef Name=\"GtActionResponsible\" /></IsNull></Where>"
+          }
+        },
+        {
+          "Title": "Kun risikoer",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskDescription",
+            "GtRiskProbability",
+            "GtRiskConsequence",
+            "GtRiskFactor",
+            "GtRiskStatus",
+            "GtRiskStrategy",
+            "GtRiskAction",
+            "GtRiskProbabilityPostAction",
+            "GtRiskConsequencePostAction",
+            "GtRiskFactorPostAction",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<Where><Eq><FieldRef Name=\"ContentType\" /><Value Type=\"Computed\">Risiko</Value></Eq></Where>"
+          }
+        },
+        {
+          "Title": "Kun muligheter",
+          "ViewFields": [
+            "ID",
+            "LinkTitle",
+            "GtRiskDescription",
+            "GtRiskProbability",
+            "GtRiskConsequence",
+            "GtRiskFactor",
+            "GtRiskStatus",
+            "GtRiskStrategy",
+            "GtRiskAction",
+            "GtRiskProbabilityPostAction",
+            "GtRiskConsequencePostAction",
+            "GtRiskFactorPostAction",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": "<Where><Eq><FieldRef Name=\"ContentType\" /><Value Type=\"Computed\">Mulighet</Value></Eq></Where>"
+          }
+        },
+        {
+          "Title": "Gjeldende fase",
+          "ViewFields": [
+            "ID",
+            "LinkTitle"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "ViewQuery": ""
+          }
+        }
+      ]
+    }
+  ],
+  "ClientSidePages": [
+    {
+      "Name": "Oppgaver.aspx",
+      "Title": "Oppgaver",
+      "PageLayoutType": "SingleWebPartAppPage",
+      "CommentsDisabled": true,
+      "Sections": [
+        {
+          "Columns": [
+            {
+              "Factor": 12,
+              "Controls": [
+                {
+                  "Id": "39c4c1c2-63fa-41be-8cc2-f6c0b49b253d",
+                  "Properties": {
+                    "plannerViewMode": "board"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Prosjektstatus.aspx",
+      "Title": "Prosjektstatus",
+      "PageLayoutType": "SingleWebPartAppPage",
+      "CommentsDisabled": true,
+      "Sections": [
+        {
+          "Columns": [
+            {
+              "Factor": 12,
+              "Controls": [
+                {
+                  "Id": "681ad0dc-ddb5-4dba-a5d6-a42f6d1c90a6",
+                  "Properties": {
+                    "title": "Prosjektstatus",
+                    "riskMatrix": {
+                      "calloutTemplate": "<h3>{Title}</h3>\n<p><strong>Risiko strategi: </strong>{GtRiskStrategy}</p>\n<p><strong>Risiko nærhet: </strong>{GtRiskProximity}</p>\n<p><strong>Risiko status: </strong>{GtRiskStatus}</p>",
+                      "width": 800
+                    },
+                    "opportunityMatrix": {
+                      "calloutTemplate": "<h3>{Title}</h3>\n<p><strong>Risiko strategi: </strong>{GtRiskStrategy}</p>\n<p><strong>Risiko nærhet: </strong>{GtRiskProximity}</p>\n<p><strong>Risiko status: </strong>{GtRiskStatus}</p>",
+                      "width": 800
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Prosjekttidslinje.aspx",
+      "Title": "Prosjekttidslinje",
+      "PageLayoutType": "SingleWebPartAppPage",
+      "CommentsDisabled": true,
+      "Sections": [
+        {
+          "Columns": [
+            {
+              "Factor": 12,
+              "Controls": [
+                {
+                  "Id": "d156652b-9121-47af-89ae-1fe8427c53da",
+                  "Properties": {
+                    "listName": "Tidslinjeinnhold",
+                    "showTimeline": true,
+                    "showTimelineListCommands": true,
+                    "showTimelineList": true,
+                    "showProjectDeliveries": false,
+                    "projectDeliveriesListName": "Prosjektleveranser",
+                    "configItemTitle": "Prosjektleveranse"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,7 +1,0 @@
-[
-  { "Title": "Kodegjennomgang gjennomført", "GtSortOrder": 1 },
-  { "Title": "Enhetstester dekker ny funksjonalitet", "GtSortOrder": 2 },
-  { "Title": "Akseptansekriterier verifisert", "GtSortOrder": 3 },
-  { "Title": "Dokumentasjon oppdatert", "GtSortOrder": 4 },
-  { "Title": "Sikkerhetsgjennomgang utført", "GtSortOrder": 5 }
-]

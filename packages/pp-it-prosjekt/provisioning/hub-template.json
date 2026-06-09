@@ -1,7 +1,0 @@
-{
-  "Version": "1.0",
-  "SiteFields": [
-    "<Field Type=\"Choice\" DisplayName=\"Sprintstatus\" InternalName=\"GtSprintStatus\" Name=\"GtSprintStatus\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" ID=\"{9598cec2-392e-4571-89bc-d304b7fc77c7}\"><CHOICES><CHOICE>Backlog</CHOICE><CHOICE>Pågår</CHOICE><CHOICE>Test</CHOICE><CHOICE>Ferdig</CHOICE></CHOICES></Field>",
-    "<Field Type=\"Number\" DisplayName=\"Story points\" InternalName=\"GtStoryPoints\" Name=\"GtStoryPoints\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" ID=\"{e9f060e4-1f6b-49a3-bd00-0761fa163f41}\" />"
-  ]
-}

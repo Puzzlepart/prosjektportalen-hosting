@@ -94,6 +94,15 @@
       "description": "Whether the package requires Microsoft Entra resources (app registrations, permissions, etc.) for full use. Shown as a dependency tag in the catalog. Absent = not required.",
       "default": false
     },
+    "languages": {
+      "type": "array",
+      "description": "Locales the package is available in, as BCP-47 codes (e.g. 'nb-NO', 'en-US'). Shown as an availability tag in the catalog. Absent = treated as Norwegian only ('nb-NO').",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+      },
+      "uniqueItems": true
+    },
     "provisioning": {
       "type": "object",
       "description": "Provisioning configuration",

@@ -62,6 +62,15 @@
             "type": "boolean",
             "description": "Whether the package requires Microsoft Entra resources for full use. Shown as a dependency tag. Absent = not required."
           },
+          "languages": {
+            "type": "array",
+            "description": "Locales the package is available in, as BCP-47 codes (e.g. 'nb-NO', 'en-US'). Shown as an availability tag in the catalog details. Absent = Norwegian only.",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+            },
+            "uniqueItems": true
+          },
           "icon": {
             "type": "string",
             "description": "Fluent UI icon name shown next to the package title (e.g. 'Page', 'BuildDefinition')"

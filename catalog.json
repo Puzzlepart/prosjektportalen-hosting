@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-09T07:54:08.798Z",
+  "lastUpdated": "2026-06-09T09:25:15.630Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -10,7 +10,7 @@
       "type": "template",
       "cloudCompatible": false,
       "icon": "ConstructionCone",
-      "author": "Puzzlepart",
+      "author": "Prosjektportalen-teamet",
       "tags": [
         "anlegg",
         "bygg",
@@ -30,7 +30,7 @@
       "type": "template",
       "cloudCompatible": false,
       "icon": "ConstructionCone",
-      "author": "Puzzlepart",
+      "author": "Prosjektportalen-teamet",
       "tags": [
         "bygg",
         "anlegg",
@@ -49,7 +49,7 @@
       "version": "1.0.1",
       "type": "extension",
       "icon": "DocumentSet",
-      "author": "Puzzlepart",
+      "author": "Prosjektportalen-teamet",
       "tags": [
         "dokumenter",
         "visning",
@@ -66,19 +66,19 @@
     {
       "id": "pp-enkel-prosjektmal",
       "name": "Enkel prosjektmal",
-      "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer en egen prosjektinnholdstype på hub-området, en enkel fasesjekkliste med ferdige sjekkpunkter, og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
-      "version": "1.2.0",
+      "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer egne, forenklede prosjekt- og prosjektstatus-innholdstyper på hub-området, en enkel fasesjekkliste med ferdige sjekkpunkter, prosjektsider (status, oppgaver, tidslinje) og lister (Usikkerhet, Fasesjekkliste), og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
+      "version": "1.3.0",
       "type": "template",
       "cloudCompatible": true,
       "icon": "Page",
-      "author": "Puzzlepart",
+      "author": "Prosjektportalen-teamet",
       "tags": [
         "enkel",
         "prosjektledelse",
         "oppstart"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-enkel-prosjektmal-1.2.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-enkel-prosjektmal-1.3.0.pppkg",
       "minPPVersion": "1.10.0",
       "publishedDate": "2026-06-09",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/CHANGELOG.md"
@@ -90,7 +90,7 @@
       "version": "1.1.0",
       "type": "extension",
       "icon": "Step",
-      "author": "Puzzlepart",
+      "author": "Prosjektportalen-teamet",
       "tags": [
         "faser",
         "forside",
@@ -111,7 +111,7 @@
       "version": "1.0.1",
       "type": "extension",
       "icon": "Link",
-      "author": "Puzzlepart",
+      "author": "Prosjektportalen-teamet",
       "tags": [
         "forside",
         "navigasjon",
@@ -126,23 +126,40 @@
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forside-hurtiglenke/CHANGELOG.md"
     },
     {
-      "id": "pp-it-prosjekt",
-      "name": "IT-prosjekt",
-      "description": "Prosjektmal for IT- og systemutviklingsprosjekter med smidig oppsett: sprintoppgaver, backlog-håndtering og kvalitetssjekkliste for leveranser.",
-      "version": "1.1.0",
+      "id": "pp-forskningsprosjekt",
+      "name": "Forskningsprosjekt",
+      "description": "Prosjektmal for forsknings- og utviklingsprosjekter med struktur for hypoteser, milepæler, etiske vurderinger og forskningsleveranser.",
+      "version": "0.1.0",
       "type": "template",
-      "icon": "Code",
-      "author": "Puzzlepart",
+      "icon": "TestBeaker",
+      "author": "Prosjektportalen-teamet",
       "tags": [
-        "IT",
-        "smidig",
+        "forskning",
+        "FoU",
         "prosjektledelse"
       ],
-      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-it-prosjekt/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-it-prosjekt-1.1.0.pppkg",
-      "minPPVersion": "1.11.0",
-      "publishedDate": "2026-06-08",
-      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-it-prosjekt/CHANGELOG.md"
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forskningsprosjekt-0.1.0.pppkg",
+      "minPPVersion": "1.12.0",
+      "publishedDate": "2026-06-09",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forskningsprosjekt/CHANGELOG.md"
+    },
+    {
+      "id": "pp-leverandorsamhandling",
+      "name": "Leverandørsamhandling",
+      "description": "Prosjektmal for leverandørsamhandling og innkjøpsprosjekter med oppfølging av kontrakter, leveranser og samhandlingsaktiviteter mellom oppdragsgiver og leverandør.",
+      "version": "0.1.0",
+      "type": "template",
+      "icon": "People",
+      "author": "Prosjektportalen-teamet",
+      "tags": [
+        "leverandør",
+        "samhandling",
+        "innkjøp"
+      ],
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-leverandorsamhandling-0.1.0.pppkg",
+      "minPPVersion": "1.12.0",
+      "publishedDate": "2026-06-09",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-leverandorsamhandling/CHANGELOG.md"
     },
     {
       "id": "pp-risikobibliotek",
@@ -151,7 +168,7 @@
       "version": "1.0.0",
       "type": "content",
       "icon": "Shield",
-      "author": "Puzzlepart",
+      "author": "Prosjektportalen-teamet",
       "tags": [
         "risiko",
         "kvalitet",
@@ -162,6 +179,42 @@
       "minPPVersion": "1.10.0",
       "publishedDate": "2026-06-08",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/CHANGELOG.md"
+    },
+    {
+      "id": "pp-smidig",
+      "name": "Smidig",
+      "description": "Prosjektmal for smidige prosjekter med produktkø, sprintplanlegging og kontinuerlig leveranseoppfølging.",
+      "version": "0.1.0",
+      "type": "template",
+      "icon": "Sprint",
+      "author": "Prosjektportalen-teamet",
+      "tags": [
+        "smidig",
+        "agile",
+        "prosjektledelse"
+      ],
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-smidig-0.1.0.pppkg",
+      "minPPVersion": "1.12.0",
+      "publishedDate": "2026-06-09",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-smidig/CHANGELOG.md"
+    },
+    {
+      "id": "pp-veiprosjekt",
+      "name": "Veiprosjekt",
+      "description": "Prosjektmal for veg- og samferdselsprosjekter med faseinndeling, sjekklister og oppfølging av anleggsleveranser.",
+      "version": "0.1.0",
+      "type": "template",
+      "icon": "ConstructionConeSolid",
+      "author": "Prosjektportalen-teamet",
+      "tags": [
+        "vei",
+        "samferdsel",
+        "anlegg"
+      ],
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-veiprosjekt-0.1.0.pppkg",
+      "minPPVersion": "1.12.0",
+      "publishedDate": "2026-06-09",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-veiprosjekt/CHANGELOG.md"
     }
   ]
 }

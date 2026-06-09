@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-leverandorsamhandling",
+  "name": "Leverandørsamhandling",
+  "description": "Prosjektmal for leverandørsamhandling og innkjøpsprosjekter med oppfølging av kontrakter, leveranser og samhandlingsaktiviteter mellom oppdragsgiver og leverandør.",
+  "version": "0.1.0",
+  "author": "Prosjektportalen-teamet",
+  "license": "MIT",
+  "minPPVersion": "1.12.0",
+  "icon": "People",
+  "tags": ["leverandør", "samhandling", "innkjøp"],
+  "type": "template",
+  "provisioning": {
+    "template": "provisioning/template.json"
+  },
+  "changelog": "CHANGELOG.md"
+}
