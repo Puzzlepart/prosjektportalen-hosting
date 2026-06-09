@@ -3,7 +3,7 @@
   "id": "pp-veiprosjekt",
   "name": "Veiprosjekt",
   "description": "Prosjektmal for veg- og samferdselsprosjekter med faseinndeling, sjekklister og oppfølging av anleggsleveranser.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.12.0",

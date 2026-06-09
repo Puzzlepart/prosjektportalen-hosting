@@ -3,7 +3,7 @@
   "id": "pp-forskningsprosjekt",
   "name": "Forskningsprosjekt",
   "description": "Prosjektmal for forsknings- og utviklingsprosjekter med struktur for hypoteser, milepæler, etiske vurderinger og forskningsleveranser.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.12.0",
