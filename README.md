@@ -16,6 +16,64 @@ Dette dokumentet er den felles innledningen og overordnede spesifikasjonen. Deta
 
 ---
 
+## Systemoversikt
+
+Diagrammet under viser hvordan de fire repoene/systemene henger sammen – fra publisering av malpakker i hosting-repoet, via offentlig forhåndsvisning og SPFx-katalogen, til provisjonering og stempling av nye prosjektområder.
+
+```mermaid
+%%{init: {"theme": "neutral"}}%%
+flowchart TB
+    subgraph HOST["prosjektportalen-hosting / GitHub"]
+        PKG["packages/*<br/>manifest.json, README, CHANGELOG<br/>provisioning, content, assets, thumbnail"]
+        SCHEMA["schema/<br/>pppkg-manifest + catalog schema"]
+        BUILD["scripts/build-packages.js<br/>valider, zip, oppdater katalog"]
+        DIST["dist/*.pppkg<br/>bygde pakker"]
+        CAT["catalog.json<br/>indeks over alle pakker"]
+        CI["CI: validate-pr.yml<br/>+ release ved merge til main"]
+        PKG -->|bygges av| BUILD
+        SCHEMA -.validerer.-> BUILD
+        BUILD --> DIST
+        BUILD --> CAT
+        CI -.kjorer.-> BUILD
+    end
+
+    subgraph WEB["prosjektportalen.no / browse-side"]
+        PREVIEW["Offentlig katalogvisning<br/>grid + detaljer, ingen innlogging"]
+    end
+
+    subgraph PP365["prosjektportalen365 - SPFx i kundens tenant"]
+        WIZARDCAT["Malpakkekatalog<br/>ListView Command Set pa Maloppsett"]
+        MALOPP["Maloppsett-liste<br/>PpPkgType: Lokal / Importert / Sentral<br/>+ versjon, kilde, status"]
+        SETUP["Oppsettveiviser<br/>provisjonerer nye prosjektomrader"]
+        SITE["Prosjektomrade<br/>stemplet: pp_pkg_id, _version, _type"]
+    end
+
+    subgraph PROV["sp-js-provisioning"]
+        PT["provisionTemplate()<br/>Taxonomy, Fields, ContentTypes,<br/>Lists, Files / Content"]
+        TAX["Taxonomy-handler"]
+        PT --> TAX
+    end
+
+    GRAPH["MS Graph<br/>Taxonomy / termStore API"]
+
+    CAT -->|GitHub Raw| PREVIEW
+    CAT -->|GitHub Raw, cache 24t| WIZARDCAT
+    DIST -->|last ned .pppkg| WIZARDCAT
+
+    WIZARDCAT -->|Modus A: Importer til hub| MALOPP
+    WIZARDCAT -->|Modus B: Bruk som sentral mal| MALOPP
+    WIZARDCAT -->|Modus A: provisjoner hub| PT
+
+    MALOPP --> SETUP
+    SETUP -->|Sentral mal: hent .pppkg runtime| DIST
+    SETUP -->|provisjoner prosjekt| PT
+    SETUP --> SITE
+
+    TAX -->|opprett/oppdater termsett med faste IDer| GRAPH
+```
+
+---
+
 ## 1. Bakgrunn og motivasjon
 
 Prosjektportalen er et åpent kildekode-verktøy for M365/SharePoint som installeres i kundens egen tenant. Ved oppsett av nye prosjektområder brukes en oppsettveiviser (SPFx Application Customizer) som provisjonerer innhold basert på maler, prosjekttillegg og standardinnhold via `sp-js-provisioning`.
