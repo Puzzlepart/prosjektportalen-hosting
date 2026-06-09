@@ -58,7 +58,7 @@
       "Description": "Forenklet fasesjekkliste for enkle prosjekter. Et utvalg punkter hentet fra den fullstendige fasesjekklisten i Prosjektportalen.",
       "Template": 100,
       "ContentTypesEnabled": true,
-      "RemoveExistingContentTypes": true,
+      "RemoveExistingContentTypes": false,
       "ContentTypeBindings": [
         { "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C" }
       ],

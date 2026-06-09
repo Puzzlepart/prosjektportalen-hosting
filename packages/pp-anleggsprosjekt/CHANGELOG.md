@@ -5,6 +5,16 @@ Alle viktige endringer i denne malpakken dokumenteres i denne filen.
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 09/06/2026
+
+### Lagt til
+
+- Termsettet «Fase (Anlegg)» fyller nå inn manglende egendefinerte termegenskaper på eksisterende termer ved import (`UpdateExistingTerms: true`). Egenskaper som `PhaseSubText` og `PhaseDescription` legges til når de mangler – eksisterende verdier overskrives ikke (selv om de avviker fra malen), og termer ble tidligere hoppet helt over. Forutsetter at taksonomi-provisjonering er aktivert.
+
+### Rettet
+
+- Hub-listene «Fasesjekkliste Anlegg» og «Planneroppgaver Anlegg» fjerner ikke lenger eksisterende innholdstyper (`RemoveExistingContentTypes: false`). Tidligere feilet importen mot en hub som allerede hadde disse listene fra en tidligere installasjon, fordi en innholdstype som er i bruk ikke kan fjernes («Innholdstypen er fremdeles i bruk»).
+
 ## [1.1.0] - 08/06/2026
 
 ### Lagt til

@@ -1,3 +1,12 @@
 {
-  "Version": "1.0"
+  "Version": "1.0",
+  "Parameters": {
+    "ProvisionSiteFields": "Kolonner for Prosjektportalen (Prosjekt)",
+    "CustomSiteFields": "Egendefinerte kolonner for Prosjektportalen",
+    "ProjectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C01",
+    "ProjectStatusContentTypeId": "0x010022252E35737A413FB56A1BA53862F6D5",
+    "TermSetIds": {
+      "GtProjectPhase": "abcfc9d9-a263-4abb-8234-be973c46258a"
+    }
+  }
 }

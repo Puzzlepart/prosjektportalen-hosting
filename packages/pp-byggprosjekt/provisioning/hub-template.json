@@ -81,7 +81,8 @@
               "PhaseDescription": "Denne fasen fokuserer på en strukturert overføring av prosjektet til driftsfasen, inkludert implementering av forvaltnings- og vedlikeholdsprosedyrer."
             }
           }
-        ]
+        ],
+        "UpdateExistingTerms": true
       }
     ]
   },
@@ -653,7 +654,7 @@
       "Description": "Sjekkpunkter per prosjektfase.",
       "Template": 100,
       "ContentTypesEnabled": true,
-      "RemoveExistingContentTypes": true,
+      "RemoveExistingContentTypes": false,
       "ContentTypeBindings": [
         {
           "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C"
@@ -1196,7 +1197,7 @@
       "Description": "Standardoppgaver per prosjektfase.",
       "Template": 100,
       "ContentTypesEnabled": true,
-      "RemoveExistingContentTypes": true,
+      "RemoveExistingContentTypes": false,
       "ContentTypeBindings": [
         {
           "ContentTypeID": "0x01000F43B5C9E86B4D7D9808100EC27E844A"
