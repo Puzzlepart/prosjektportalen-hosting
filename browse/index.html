@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prosjektportalen – Malpakkekatalog</title>
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text: #1b1f24;
+      --muted: #5c6770;
+      --border: #e1e5ea;
+      --accent: #1f6feb;
+      --shadow: 0 1px 3px rgba(27, 31, 36, 0.08), 0 4px 12px rgba(27, 31, 36, 0.06);
+      --shadow-hover: 0 4px 8px rgba(27, 31, 36, 0.12), 0 12px 28px rgba(27, 31, 36, 0.12);
+      --type-template: #1f6feb;
+      --type-extension: #8250df;
+      --type-content: #1a7f37;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    header.hero {
+      margin-bottom: 28px;
+    }
+
+    header.hero h1 {
+      font-size: 2rem;
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    header.hero p.lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0 0 12px;
+      max-width: 720px;
+    }
+
+    .meta-line {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 20px;
+      align-items: center;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .filter-btn:hover { border-color: var(--accent); }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .filter-btn .count {
+      opacity: 0.7;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.18s, transform 0.18s;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-img {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #eef1f5;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-img .placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      color: #fff;
+      font-weight: 600;
+      background: linear-gradient(135deg, #4c6fff 0%, #8250df 100%);
+    }
+
+    .card-img .placeholder .initial {
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+
+    .card-img .placeholder .icon-name {
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .type-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+      backdrop-filter: blur(2px);
+    }
+
+    .type-badge.template { background: var(--type-template); }
+    .type-badge.extension { background: var(--type-extension); }
+    .type-badge.content { background: var(--type-content); }
+
+    .cloud-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #0b3d2e;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .card-body {
+      padding: 16px 16px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .card-body h2 {
+      font-size: 1.12rem;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .card-body .desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: #f0f2f5;
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 14px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-meta strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover { text-decoration: underline; }
+
+    .state {
+      padding: 48px 24px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .state.error {
+      background: #fff4f4;
+      border: 1px solid #ffd2d2;
+      border-radius: var(--radius);
+      color: #8a1f1f;
+    }
+
+    .state.error code {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      word-break: break-all;
+      color: #5c1010;
+    }
+
+    .spinner {
+      width: 28px;
+      height: 28px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .hidden { display: none !important; }
+
+    footer.page-footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer.page-footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>Malpakkekatalog</h1>
+      <p class="lead">
+        Oversikt over tilgjengelige malpakker i Prosjektportalen – maler, prosjekttillegg og
+        standardinnhold. Dataene hentes direkte fra <code>catalog.json</code> i hosting-repoet.
+      </p>
+      <p class="meta-line" id="meta-line"></p>
+    </header>
+
+    <div class="toolbar" id="toolbar" role="group" aria-label="Filtrer på type"></div>
+
+    <div id="state" class="state">
+      <div class="spinner"></div>
+      Henter katalog …
+    </div>
+
+    <main class="grid hidden" id="grid"></main>
+
+    <footer class="page-footer">
+      Kilde:
+      <a href="https://github.com/Puzzlepart/prosjektportalen-hosting" target="_blank" rel="noopener">
+        Puzzlepart/prosjektportalen-hosting
+      </a>
+      · Denne siden endrer ikke <code>catalog.json</code>; den leser bare innholdet.
+    </footer>
+  </div>
+
+  <script>
+    const CATALOG_URL =
+      "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/catalog.json";
+
+    const TYPE_LABELS = {
+      template: "Mal",
+      extension: "Utvidelse",
+      content: "Standardinnhold",
+    };
+
+    const stateEl = document.getElementById("state");
+    const gridEl = document.getElementById("grid");
+    const toolbarEl = document.getElementById("toolbar");
+    const metaLineEl = document.getElementById("meta-line");
+
+    function escapeHtml(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function formatDate(iso) {
+      if (!iso) return "";
+      const d = new Date(iso);
+      if (isNaN(d)) return escapeHtml(iso);
+      return d.toLocaleDateString("no-NO", { year: "numeric", month: "long", day: "numeric" });
+    }
+
+    function imageUrl(pkg) {
+      if (pkg.thumbnail) return pkg.thumbnail;
+      if (Array.isArray(pkg.screenshots) && pkg.screenshots.length) return pkg.screenshots[0];
+      return null;
+    }
+
+    function onImageError(img) {
+      const div = document.createElement("div");
+      div.className = "placeholder";
+      const initial = document.createElement("span");
+      initial.className = "initial";
+      initial.textContent = img.dataset.initial || "?";
+      div.appendChild(initial);
+      if (img.dataset.icon) {
+        const iconName = document.createElement("span");
+        iconName.className = "icon-name";
+        iconName.textContent = img.dataset.icon;
+        div.appendChild(iconName);
+      }
+      img.replaceWith(div);
+    }
+
+    function placeholderMarkup(pkg) {
+      const initial = (pkg.name || "?").trim().charAt(0).toUpperCase();
+      const iconName = pkg.icon ? `<span class="icon-name">${escapeHtml(pkg.icon)}</span>` : "";
+      return `<div class="placeholder"><span class="initial">${escapeHtml(initial)}</span>${iconName}</div>`;
+    }
+
+    function cardMarkup(pkg) {
+      const type = pkg.type || "";
+      const typeLabel = TYPE_LABELS[type] || type || "Pakke";
+      const img = imageUrl(pkg);
+      const placeholder = placeholderMarkup(pkg);
+
+      const initial = (pkg.name || "?").trim().charAt(0).toUpperCase();
+      const imgInner = img
+        ? `<img src="${escapeHtml(img)}" alt="${escapeHtml(pkg.name)}" loading="lazy"
+             data-initial="${escapeHtml(initial)}" data-icon="${escapeHtml(pkg.icon || "")}"
+             onerror="onImageError(this)">`
+        : placeholder;
+
+      const cloudBadge =
+        pkg.cloudCompatible === true
+          ? `<span class="cloud-badge" title="Fungerer i skyen">☁ Sky</span>`
+          : "";
+
+      const tags = Array.isArray(pkg.tags)
+        ? pkg.tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")
+        : "";
+
+      const metaParts = [];
+      if (pkg.version) metaParts.push(`<span><strong>v${escapeHtml(pkg.version)}</strong></span>`);
+      if (pkg.author) metaParts.push(`<span>${escapeHtml(pkg.author)}</span>`);
+      if (pkg.minPPVersion)
+        metaParts.push(`<span>Krever PP ${escapeHtml(pkg.minPPVersion)}</span>`);
+
+      const links = [];
+      if (pkg.downloadUrl)
+        links.push(
+          `<a href="${escapeHtml(pkg.downloadUrl)}" target="_blank" rel="noopener">Last ned</a>`
+        );
+      if (pkg.changelogUrl)
+        links.push(
+          `<a href="${escapeHtml(pkg.changelogUrl)}" target="_blank" rel="noopener">Endringslogg</a>`
+        );
+
+      return `
+        <article class="card" data-type="${escapeHtml(type)}">
+          <div class="card-img">
+            ${imgInner}
+            <span class="type-badge ${escapeHtml(type)}">${escapeHtml(typeLabel)}</span>
+            ${cloudBadge}
+          </div>
+          <div class="card-body">
+            <h2>${escapeHtml(pkg.name)}</h2>
+            <p class="desc">${escapeHtml(pkg.description)}</p>
+            <div class="tags">${tags}</div>
+          </div>
+          <div class="card-footer">
+            <div class="footer-meta">${metaParts.join("")}</div>
+            ${links.length ? `<div class="footer-links">${links.join("")}</div>` : ""}
+          </div>
+        </article>`;
+    }
+
+    function buildToolbar(packages) {
+      const counts = { all: packages.length };
+      packages.forEach((p) => {
+        counts[p.type] = (counts[p.type] || 0) + 1;
+      });
+
+      const buttons = [{ key: "all", label: "Alle" }];
+      Object.keys(TYPE_LABELS).forEach((key) => {
+        if (counts[key]) buttons.push({ key, label: TYPE_LABELS[key] });
+      });
+
+      toolbarEl.innerHTML = buttons
+        .map(
+          (b, i) =>
+            `<button class="filter-btn ${i === 0 ? "active" : ""}" data-filter="${b.key}">
+               ${b.label} <span class="count">${counts[b.key] || 0}</span>
+             </button>`
+        )
+        .join("");
+
+      toolbarEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        toolbarEl.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+        gridEl.querySelectorAll(".card").forEach((card) => {
+          const show = filter === "all" || card.dataset.type === filter;
+          card.classList.toggle("hidden", !show);
+        });
+      });
+    }
+
+    function render(catalog) {
+      const packages = Array.isArray(catalog.packages) ? catalog.packages : [];
+
+      const updated = formatDate(catalog.lastUpdated);
+      metaLineEl.textContent =
+        `${packages.length} pakke${packages.length === 1 ? "" : "r"}` +
+        (updated ? ` · sist oppdatert ${updated}` : "");
+
+      if (!packages.length) {
+        stateEl.className = "state";
+        stateEl.textContent = "Katalogen inneholder ingen pakker.";
+        return;
+      }
+
+      buildToolbar(packages);
+      gridEl.innerHTML = packages.map(cardMarkup).join("");
+      stateEl.classList.add("hidden");
+      gridEl.classList.remove("hidden");
+    }
+
+    function showError(err) {
+      stateEl.className = "state error";
+      stateEl.innerHTML =
+        `<strong>Kunne ikke hente katalogen.</strong><br>` +
+        `Sjekk at du er tilkoblet internett og at <code>catalog.json</code> er publisert på <code>main</code>.<br>` +
+        `<code>${escapeHtml(String(err && err.message ? err.message : err))}</code><br>` +
+        `<code>${escapeHtml(CATALOG_URL)}</code>`;
+    }
+
+    fetch(CATALOG_URL, { cache: "no-cache" })
+      .then((res) => {
+        if (!res.ok) throw new Error("HTTP " + res.status + " " + res.statusText);
+        return res.json();
+      })
+      .then(render)
+      .catch(showError);
+  </script>
+</body>
+</html>
