@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-veiprosjekt",
+  "name": "Veiprosjekt",
+  "description": "Prosjektmal for veg- og samferdselsprosjekter med faseinndeling, sjekklister og oppfølging av anleggsleveranser.",
+  "version": "1.0.0",
+  "author": "Prosjektportalen-teamet",
+  "license": "MIT",
+  "minPPVersion": "1.12.0",
+  "thumbnail": "thumbnail.png",
+  "icon": "ConstructionConeSolid",
+  "tags": ["vei", "samferdsel", "anlegg"],
+  "type": "template",
+  "provisioning": {
+    "template": "provisioning/template.json"
+  },
+  "changelog": "CHANGELOG.md"
+}

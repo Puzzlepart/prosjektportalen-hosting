@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-forskningsprosjekt",
+  "name": "Forskningsprosjekt",
+  "description": "Prosjektmal for forsknings- og utviklingsprosjekter med struktur for hypoteser, milepæler, etiske vurderinger og forskningsleveranser.",
+  "version": "1.0.0",
+  "author": "Prosjektportalen-teamet",
+  "license": "MIT",
+  "minPPVersion": "1.12.0",
+  "thumbnail": "thumbnail.png",
+  "icon": "TestBeaker",
+  "tags": ["forskning", "FoU", "prosjektledelse"],
+  "type": "template",
+  "languages": ["nb-NO", "en-US"],
+  "provisioning": {
+    "template": "provisioning/template.json"
+  },
+  "changelog": "CHANGELOG.md"
+}
