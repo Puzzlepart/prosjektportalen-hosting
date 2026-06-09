@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-09T11:40:38.173Z",
+  "lastUpdated": "2026-06-09T11:46:25.399Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -142,6 +142,7 @@
         "FoU",
         "prosjektledelse"
       ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forskningsprosjekt/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forskningsprosjekt-0.1.0.pppkg",
       "minPPVersion": "1.12.0",
       "publishedDate": "2026-06-09",
@@ -162,6 +163,7 @@
         "samhandling",
         "innkjøp"
       ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-leverandorsamhandling/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-leverandorsamhandling-0.1.0.pppkg",
       "minPPVersion": "1.12.0",
       "publishedDate": "2026-06-09",
@@ -199,6 +201,7 @@
         "agile",
         "prosjektledelse"
       ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-smidig/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-smidig-0.1.0.pppkg",
       "minPPVersion": "1.12.0",
       "publishedDate": "2026-06-09",
@@ -217,6 +220,7 @@
         "samferdsel",
         "anlegg"
       ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-veiprosjekt/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-veiprosjekt-0.1.0.pppkg",
       "minPPVersion": "1.12.0",
       "publishedDate": "2026-06-09",
