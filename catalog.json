@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-09T09:25:15.630Z",
+  "lastUpdated": "2026-06-09T11:40:38.173Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -60,7 +60,7 @@
       ],
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-dokumentbibliotek-flat-1.0.1.pppkg",
       "minPPVersion": "1.10.0",
-      "publishedDate": "2026-06-08",
+      "publishedDate": "2026-06-09",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/CHANGELOG.md"
     },
     {
@@ -101,7 +101,7 @@
       ],
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-fasesider-1.1.0.pppkg",
       "minPPVersion": "1.7.2",
-      "publishedDate": "2026-06-08",
+      "publishedDate": "2026-06-09",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-fasesider/CHANGELOG.md"
     },
     {
@@ -122,7 +122,7 @@
       ],
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forside-hurtiglenke-1.0.1.pppkg",
       "minPPVersion": "1.10.0",
-      "publishedDate": "2026-06-08",
+      "publishedDate": "2026-06-09",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forside-hurtiglenke/CHANGELOG.md"
     },
     {
@@ -183,7 +183,7 @@
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/thumbnail.png",
       "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-risikobibliotek-1.0.0.pppkg",
       "minPPVersion": "1.10.0",
-      "publishedDate": "2026-06-08",
+      "publishedDate": "2026-06-09",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-risikobibliotek/CHANGELOG.md"
     },
     {
