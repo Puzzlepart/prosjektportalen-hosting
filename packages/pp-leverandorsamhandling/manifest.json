@@ -2,7 +2,7 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-leverandorsamhandling",
   "name": "Leverandørsamhandling",
-  "description": "Prosjektmal for leverandørsamhandling og innkjøpsprosjekter med oppfølging av kontrakter, leveranser og samhandlingsaktiviteter mellom oppdragsgiver og leverandør.",
+  "description": "Prosjektmal for leverandørsamhandling mellom byggherre og entreprenør (leverandør, konsulent, ekstern part). Støtte for formelle prosesser, dialog, godkjenninger, historikk, varsling og arkivering i overganger.",
   "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
