@@ -122,6 +122,11 @@
           "description": "Content type ID (defined by hubTemplate) to set as GtProjectContentType on the Maloppsett item when imported",
           "pattern": "^0x[0-9A-Fa-f]+$"
         },
+        "projectPhaseTermSetId": {
+          "type": "string",
+          "description": "Term set ID (provisioned by hubTemplate) to set as GtProjectPhaseTermId on the Maloppsett item when imported, so projects created from this template use this template's phase term set instead of the standard one",
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+        },
         "extensions": {
           "type": "array",
           "description": "Project extensions (prosjekttillegg)",

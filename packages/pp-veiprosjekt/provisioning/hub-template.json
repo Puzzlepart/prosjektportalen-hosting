@@ -1,0 +1,1879 @@
+{
+  "Version": "1.0",
+  "Taxonomy": {
+    "TermGroup": {
+      "Name": "Prosjektportalen",
+      "Id": "c56bb677-f782-4cf6-a6d6-17685ee9f19d"
+    },
+    "TermSets": [
+      {
+        "Id": "7ccff67b-acca-4abb-8426-c6a38ec69233",
+        "Name": "Fase (Vei)",
+        "Terms": [
+          {
+            "Id": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+            "Name": "Planlegge",
+            "SortOrder": 1
+          },
+          {
+            "Id": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+            "Name": "Prosjektere",
+            "SortOrder": 2
+          },
+          {
+            "Id": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+            "Name": "Bygge",
+            "SortOrder": 3
+          },
+          {
+            "Id": "91a42992-cc2c-4d0f-944d-88ae39aba7cf",
+            "Name": "Avslutte",
+            "SortOrder": 4
+          }
+        ],
+        "UpdateExistingTerms": true
+      },
+      {
+        "Id": "85485162-b98a-4097-8364-34ad5468fc4f",
+        "Name": "Fag (Vei)",
+        "Terms": [
+          {
+            "Id": "6189c95d-aacf-4ee4-b16d-9ab6b2af1fbc",
+            "Name": "Andre tekniske anlegg"
+          },
+          {
+            "Id": "4888ca8b-1acd-487c-82fd-a29606deb8b1",
+            "Name": "Anslag"
+          },
+          {
+            "Id": "c198d441-138d-4a0e-8b5e-f15430ad8a56",
+            "Name": "Drenering"
+          },
+          {
+            "Id": "fb6c7606-4626-4a35-8468-1cb38e7cd4cc",
+            "Name": "Elektro"
+          },
+          {
+            "Id": "10bd7021-aed0-4dbc-b1de-7966b7307177",
+            "Name": "Geologi og geoteknikk"
+          },
+          {
+            "Id": "1acbd38f-f084-4130-b263-127de0141c14",
+            "Name": "Grunnerverv"
+          },
+          {
+            "Id": "e503ab3e-c6ad-4288-97d3-aca1af78e65b",
+            "Name": "Konstruksjoner"
+          },
+          {
+            "Id": "f2480a9e-24c2-43d8-a4d9-6bf20dbe87d7",
+            "Name": "Kulturminner"
+          },
+          {
+            "Id": "c6f956c5-995f-4bfc-af45-ee4ef372e2c4",
+            "Name": "Landmåling"
+          },
+          {
+            "Id": "69f0b572-85ec-43df-8ac8-dcad79471fba",
+            "Name": "Landskap"
+          },
+          {
+            "Id": "03b86a0f-14a9-4ad9-b46a-f2c3565fff38",
+            "Name": "Natur ＆ miljø"
+          },
+          {
+            "Id": "5233fc30-68c8-4095-8507-49f183f1441d",
+            "Name": "ROS"
+          },
+          {
+            "Id": "6fd9b07e-430c-4149-821d-31e71d910276",
+            "Name": "Signal"
+          },
+          {
+            "Id": "4fd8949f-de2c-4c3f-9270-683de7fd960e",
+            "Name": "Støy"
+          },
+          {
+            "Id": "cd870121-692c-49b4-9e3a-cb7c8844b486",
+            "Name": "Teknisk tegning"
+          },
+          {
+            "Id": "50d2701b-4f84-49eb-8ab9-a8eb3995f9a1",
+            "Name": "Trafikk"
+          },
+          {
+            "Id": "7f52896a-076f-4b91-ab8b-24666c590ab5",
+            "Name": "TS"
+          },
+          {
+            "Id": "73b2afcc-4293-4259-870a-908c7a004e2b",
+            "Name": "Tunnel"
+          },
+          {
+            "Id": "1d2c5dbf-d0b4-47ed-a21a-b3e8aad3a966",
+            "Name": "VA"
+          },
+          {
+            "Id": "5ee9a448-7a1f-4cf8-a238-d938b62a1057",
+            "Name": "Veg"
+          }
+        ]
+      },
+      {
+        "Id": "f475345f-ad4e-41ae-bfc0-0cee934b3f2b",
+        "Name": "Emne (Vei)",
+        "Terms": [
+          {
+            "Id": "09130034-a0e8-4033-ac3b-467a3d83abdd",
+            "Name": "Bildedokumentasjon"
+          },
+          {
+            "Id": "b3b825e7-e75c-4da5-af19-9e173efec148",
+            "Name": "Fag"
+          },
+          {
+            "Id": "2b6586c3-1e36-4bb2-be00-8585153438ee",
+            "Name": "Grunnlag"
+          },
+          {
+            "Id": "b4698f69-8379-41c1-8f1f-93976c580d77",
+            "Name": "Kvalitet"
+          },
+          {
+            "Id": "03e3f55f-88af-4c16-9b8e-df84c75865c8",
+            "Name": "Leveranse"
+          },
+          {
+            "Id": "d3dba7ec-8d9e-4b6a-9896-d539a77f3137",
+            "Name": "Møter"
+          },
+          {
+            "Id": "56f9d159-def2-4dfc-bddd-e88130783140",
+            "Name": "Prosjektstyring"
+          },
+          {
+            "Id": "a6e316e3-6efc-44ed-9904-0162fd71e0f6",
+            "Name": "SHA ＆ YM"
+          },
+          {
+            "Id": "a752165c-4331-48b9-a755-10672f83e747",
+            "Name": "Økonomi"
+          }
+        ]
+      }
+    ]
+  },
+  "SiteFields": [
+    "<Field DisplayName=\"Forankret i\" Type=\"Choice\" Required=\"FALSE\" ID=\"{a37d88ef-1caa-4436-aabd-5bbd21aaaff7}\" StaticName=\"GtVeiAnchored\" Name=\"GtVeiAnchored\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" CustomFormatter=\"{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;flex-wrap&quot;:&quot;wrap&quot;,&quot;display&quot;:&quot;flex&quot;},&quot;children&quot;:[{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;box-sizing&quot;:&quot;border-box&quot;,&quot;padding&quot;:&quot;4px 8px 5px 8px&quot;,&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;border-radius&quot;:&quot;16px&quot;,&quot;height&quot;:&quot;24px&quot;,&quot;align-items&quot;:&quot;center&quot;,&quot;white-space&quot;:&quot;nowrap&quot;,&quot;margin&quot;:&quot;4px 4px 4px 4px&quot;},&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;R760&quot;]},&quot;sp-css-backgroundColor-BgCornflowerBlue sp-field-fontSizeSmall sp-css-color-CornflowerBlueFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Byggherreforskriften&quot;]},&quot;sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;PBL&quot;]},&quot;sp-css-backgroundColor-BgGold sp-field-fontSizeSmall sp-css-color-GoldFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,&quot;sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary&quot;]}]}]}]}},&quot;txtContent&quot;:&quot;@currentField&quot;}],&quot;templateId&quot;:&quot;BgColorChoicePill&quot;}\" EnforceUniqueValues=\"FALSE\" FillInChoice=\"FALSE\" Format=\"Dropdown\" Indexed=\"FALSE\"><CHOICES><CHOICE>R760</CHOICE><CHOICE>Byggherreforskriften</CHOICE><CHOICE>PBL</CHOICE></CHOICES></Field>",
+    "<Field DisplayName=\"Byggeleder\" Description=\"Byggeleder er leder for Byggefasen\" Type=\"User\" Required=\"FALSE\" List=\"UserInfo\" ID=\"{488f6e6e-29dd-42bb-b34b-de19779db581}\" StaticName=\"GtVeiConstructionManager\" Name=\"GtVeiConstructionManager\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" CustomFormatter=\"\" EnforceUniqueValues=\"FALSE\" UserSelectionMode=\"PeopleOnly\" ShowField=\"ImnName\" UserSelectionScope=\"0\" />",
+    "<Field DisplayName=\"Planleggingsleder\" Description=\"Planleggingsleder er leder for Planleggingsfasen\" Type=\"User\" Required=\"FALSE\" List=\"UserInfo\" ID=\"{685c865b-0487-4a0d-8264-3a2af9e145f2}\" StaticName=\"GtVeiPlanningManager\" Name=\"GtVeiPlanningManager\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" CustomFormatter=\"\" EnforceUniqueValues=\"FALSE\" UserSelectionMode=\"PeopleOnly\" ShowField=\"ImnName\" UserSelectionScope=\"0\" />",
+    "<Field DisplayName=\"Prosjekteringsleder\" Description=\"Prosjekteringsleder er leder for Prosjekteringsfasen\" Type=\"User\" Required=\"FALSE\" List=\"UserInfo\" ID=\"{0b2733be-58af-4cbf-a94c-1362d1f34134}\" StaticName=\"GtVeiProjectingManager\" Name=\"GtVeiProjectingManager\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" CustomFormatter=\"\" EnforceUniqueValues=\"FALSE\" UserSelectionMode=\"PeopleOnly\" ShowField=\"ImnName\" UserSelectionScope=\"0\" />",
+    "<Field DisplayName=\"Unik datanøkkel\" ShowInNewForm=\"FALSE\" ShowInEditForm=\"FALSE\" Description=\"Unik nøkkel for å håndtere oppdatering av Prosjektportalen med moduler\" Type=\"Text\" Required=\"FALSE\" ID=\"{c70ca705-d503-4d3c-a28e-078e7d61c4c2}\" StaticName=\"GtDataRowUniqueKey\" Name=\"GtDataRowUniqueKey\" Group=\"Kolonner for Prosjektportalen (Portefølje)\"></Field>"
+  ],
+  "ContentTypes": [
+    {
+      "ID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E",
+      "Name": "Prosjekt (Vei)",
+      "Description": "Innholdstype for veiprosjekt",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        {
+          "Name": "Title",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectFinanceName"
+        },
+        {
+          "Name": "GtProjectNumber"
+        },
+        {
+          "Name": "GtArchiveReference"
+        },
+        {
+          "Name": "GtProjectServiceArea"
+        },
+        {
+          "Name": "GtProjectType"
+        },
+        {
+          "Name": "GtUNSustDevGoals"
+        },
+        {
+          "Name": "GtProjectPhase"
+        },
+        {
+          "Name": "GtProjectManager"
+        },
+        {
+          "Name": "GtProjectOwner"
+        },
+        {
+          "Name": "GtProjectSupport"
+        },
+        {
+          "Name": "GtVeiPlanningManager"
+        },
+        {
+          "Name": "GtVeiProjectingManager"
+        },
+        {
+          "Name": "GtVeiConstructionManager"
+        },
+        {
+          "Name": "GtStartDate"
+        },
+        {
+          "Name": "GtEndDate"
+        },
+        {
+          "Name": "GtProjectGoals"
+        },
+        {
+          "Name": "GtBudgetTotal",
+          "Hidden": true
+        },
+        {
+          "Name": "GtCostsTotal",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectForecast",
+          "Hidden": true
+        },
+        {
+          "Name": "GtBudgetLastReportDate",
+          "Hidden": true
+        },
+        {
+          "Name": "GtGroupId"
+        },
+        {
+          "Name": "GtSiteId"
+        },
+        {
+          "Name": "GtSiteUrl"
+        },
+        {
+          "Name": "GtLastSyncTime"
+        },
+        {
+          "Name": "GtProjectLifecycleStatus"
+        },
+        {
+          "Name": "GtProjectPhaseText"
+        },
+        {
+          "Name": "GtProjectServiceAreaText"
+        },
+        {
+          "Name": "GtProjectTypeText"
+        },
+        {
+          "Name": "GtUNSustDevGoalsText"
+        },
+        {
+          "Name": "GtProjectAdminRoles"
+        },
+        {
+          "Name": "GtGainsResponsible",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectTemplate"
+        },
+        {
+          "Name": "GtParentProjects"
+        },
+        {
+          "Name": "GtChildProjects"
+        },
+        {
+          "Name": "GtIsParentProject"
+        },
+        {
+          "Name": "GtIsProgram"
+        }
+      ]
+    }
+  ],
+  "Lists": [
+    {
+      "Title": "Prosjekter",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E"
+        }
+      ]
+    },
+    {
+      "Title": "Prosjektkolonner",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 350,
+            "Title": "Planleggingsleder",
+            "GtInternalName": "GtVeiPlanningManager",
+            "GtManagedProperty": "RefinableString80",
+            "GtFieldDataType": "User",
+            "GtColMinWidth": 100,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 340,
+            "Title": "Prosjekteringsleder",
+            "GtInternalName": "GtVeiProjectingManager",
+            "GtManagedProperty": "RefinableString81",
+            "GtFieldDataType": "User",
+            "GtColMinWidth": 100,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 360,
+            "Title": "Byggeleder",
+            "GtInternalName": "GtVeiConstructionManager",
+            "GtManagedProperty": "RefinableString82",
+            "GtFieldDataType": "User",
+            "GtColMinWidth": 100,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Porteføljevisninger",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 100,
+            "Title": "Veiprosjekter",
+            "GtSearchQuery": "ContentTypeId:0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E*",
+            "GtPortfolioIsDefaultView": false,
+            "GtPortfolioFabricIcon": "Car"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Fasesjekkliste Vei",
+      "Description": "Sjekkpunkter per prosjektfase for veiprosjekter.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C"
+        }
+      ],
+      "FieldRefs": [
+        {
+          "ID": "a37d88ef-1caa-4436-aabd-5bbd21aaaff7",
+          "Name": "GtVeiAnchored",
+          "DisplayName": "Forankret i"
+        },
+        {
+          "ID": "c70ca705-d503-4d3c-a28e-078e7d61c4c2",
+          "Name": "GtDataRowUniqueKey",
+          "DisplayName": "Unik datanøkkel"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "Alle elementer",
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "GtVeiAnchored",
+            "Modified",
+            "Editor"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "DefaultView": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"GtSortOrder\" /></OrderBy>",
+            "JSLink": "hierarchytaskslist.js"
+          }
+        }
+      ],
+      "DataRows": {
+        "KeyColumn": "GtDataRowUniqueKey",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "Title": "Opprette BIM kontakt",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Ta kontakt med BIM ansvarlige før prosjektbestillingen signeres for å vurdere hvor mye BIM som trengs i prosjektet. Vil det trenges opplæring i prosjektgruppa?",
+            "GtSortOrder": 10,
+            "GtDataRowUniqueKey": "d8d7484d-d677-470d-b710-253e2d716a24"
+          },
+          {
+            "Title": "Prosjektbestilling",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Ved oppstart av planarbeidet",
+            "GtSortOrder": 20,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "d37dab8e-f54a-42b3-8c58-42894b2d2f4c"
+          },
+          {
+            "Title": "Sentralt styringsdokument (SDD)",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Før oppstart av planarbeidet. Skal løpende oppdateres ved endringer.",
+            "GtSortOrder": 30,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "956862b4-fcb3-42c3-9bdf-c660a6e74805"
+          },
+          {
+            "Title": "Kvalitetsplan inkludert SHA og YM",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Utarbeides i startfase av prosjektet. Ved bruk av konsulent, skal både konsulent og fylkeskommunen utarbeide egne kvalitetsplaner. SHA utgår i planfase, YM og ROS kan inkluderes som kapittel i planbeskrivelse.",
+            "GtSortOrder": 40,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "12ab5eeb-4c07-4f8b-be49-d48817740f4b"
+          },
+          {
+            "Title": "Byggherrens representant",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Før oppstart av planarbeidet skal skriftlig avtale signeres. Prosjektleder skal tildeles rollen.",
+            "GtSortOrder": 50,
+            "GtVeiAnchored": "Byggherreforskriften",
+            "GtDataRowUniqueKey": "70ad2a44-5f1b-43fc-b040-df7b74b23547"
+          },
+          {
+            "Title": "Koordinator planlegging",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Før oppstart av planarbeidet skal skriftlig avtale signeres. Planleggingsleder tildeles rollen.",
+            "GtSortOrder": 60,
+            "GtVeiAnchored": "Byggherreforskriften",
+            "GtDataRowUniqueKey": "44752550-7b2f-411a-beb9-b92d670239fd"
+          },
+          {
+            "Title": "YM-koordinator",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Før oppstart av planarbeidet skal YM-koordinator utnevnes. Planleggingsleder tildeles rollen",
+            "GtSortOrder": 70,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "89cbae6e-3d8b-4c09-bbce-177f929fbeb3"
+          },
+          {
+            "Title": "TS Revisjon",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 80,
+            "GtDataRowUniqueKey": "0816822f-a945-490f-9d20-89fde3003386"
+          },
+          {
+            "Title": "Prosessevaluering planlegging",
+            "GtProjectPhase": {
+              "termId": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
+              "label": "Planlegge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Ved avslutning av planfasen, og før overlevering til neste fase skal en en faseevaluering gjøres.",
+            "GtSortOrder": 90,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "24233a0e-dfa9-40a8-a268-1dba43bf98c9"
+          },
+          {
+            "Title": "Opprette BIM kontakt",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Ta kontakt med BIM ansvarlige før prosjektbestillingen oppdateres for å vurdere hvor mye BIM som trengs i prosjektet. Vil det trenges opplæring i prosjektgruppa?",
+            "GtSortOrder": 100,
+            "GtDataRowUniqueKey": "07b90bed-f6b7-4cb7-a42a-cd1d206626cd"
+          },
+          {
+            "Title": "Sjekk prosjektbestillingen",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Sjekk om prosjektet har relevant og godkjent prosjektbestilling",
+            "GtSortOrder": 110,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "930b586d-031d-4505-b1b6-4f5c3cb777ff"
+          },
+          {
+            "Title": "Oppdatere sentralt styringsdokument (SSD)",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 120,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "8f0bbdd3-efdb-4469-837f-3b4cc5a4e155"
+          },
+          {
+            "Title": "Oppdatere kvalitetsplan",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 130,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "18051e4c-56ce-48cf-92f6-e59144bd7b3f"
+          },
+          {
+            "Title": "Prosessovergang til prosjektering",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Møte skal avholdes for å gjennomgå læringspunkt fra \"prosessevaluering planlegging\", gå gjennom fasesjekklista til planleggingsfasen og offisielt skifte fase til \"prosjektering\"",
+            "GtSortOrder": 140,
+            "GtDataRowUniqueKey": "f4e639aa-7f94-4d5f-b49f-6e8139ce49a5"
+          },
+          {
+            "Title": "Byggherrens representant",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 150,
+            "GtVeiAnchored": "Byggherreforskriften",
+            "GtDataRowUniqueKey": "ab6da151-2f3c-4771-8e27-76790e96ee4c"
+          },
+          {
+            "Title": "Koordinator prosjektering (KP)",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 160,
+            "GtVeiAnchored": "Byggherreforskriften",
+            "GtDataRowUniqueKey": "46e86291-f40a-4bda-9ce8-1870dd115573"
+          },
+          {
+            "Title": "YM-koordinator",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 170,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "8c4ad551-9292-457e-a94d-98f486c88b9d"
+          },
+          {
+            "Title": "Politisk godkjenning",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Prosjekt over 100 millioner inkl. mva må godkjennes i bl.a. fylkestinget, dette må være på plass før et prosjekt kan lyses ut.",
+            "GtSortOrder": 180,
+            "GtDataRowUniqueKey": "000f899f-1f66-47b8-967d-c01d1a79635b"
+          },
+          {
+            "Title": "Kvalitetssikre konkurransegrunnlag og prosjekt",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 190,
+            "GtDataRowUniqueKey": "b2223fe7-f85e-4cd6-b1f1-4b67eb377f02"
+          },
+          {
+            "Title": "Prosessevaluering prosjektering",
+            "GtProjectPhase": {
+              "termId": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
+              "label": "Prosjektere"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Ikkje faseevaluering",
+            "GtSortOrder": 200,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "468c942e-5544-4efd-b71c-aed0a972114e"
+          },
+          {
+            "Title": "Opprette BIM kontakt",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 210,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "6fa9e43e-7965-4d04-aa47-7281d34cc954"
+          },
+          {
+            "Title": "Oppdatert prosjektbestilling",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Har forutsetningene endret seg?",
+            "GtSortOrder": 220,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "7d828f14-088f-407a-a65c-c88320ecf106"
+          },
+          {
+            "Title": "Oppdatere sentralt styringsdokument (SSD)",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 230,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "de598a64-b01c-48cd-95cb-4afdd77cdb42"
+          },
+          {
+            "Title": "Oppdatere kvalitetsplan",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 240,
+            "GtDataRowUniqueKey": "738f959d-6f8e-4037-af2e-164b02f52869"
+          },
+          {
+            "Title": "Prosessovergang til bygging",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 250,
+            "GtDataRowUniqueKey": "89d8c877-7a66-4c0d-b410-2ba4188bc25a"
+          },
+          {
+            "Title": "Byggherrens representant",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Før oppstart av planarbeidet skal skriftlig avtale signeres. Prosjektleder skal tildeles rollen.",
+            "GtSortOrder": 260,
+            "GtVeiAnchored": "Byggherreforskriften",
+            "GtDataRowUniqueKey": "05fc9d22-1dc5-4314-ae82-84b2489f0bd8"
+          },
+          {
+            "Title": "Koordinator utførelse (KU)",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 270,
+            "GtDataRowUniqueKey": "806f417a-79ed-492a-836c-824a95c0c1d5"
+          },
+          {
+            "Title": "Drift og vedlikehold",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Avklare grensesnitt mot drift og vedlikehold",
+            "GtSortOrder": 280,
+            "GtDataRowUniqueKey": "fc30fc33-dd40-4306-aeec-cfe0b2221732"
+          },
+          {
+            "Title": "TS inspeksjon",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 290,
+            "GtDataRowUniqueKey": "921eeb1f-b9e3-4518-a2b4-ec9c5f3a0a3a"
+          },
+          {
+            "Title": "Sluttrapport",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 300,
+            "GtVeiAnchored": "R760",
+            "GtDataRowUniqueKey": "f3623724-a55d-4c63-ba2f-cfb995c393ec"
+          },
+          {
+            "Title": "Avslutte kontrakt med entreprenør",
+            "GtProjectPhase": {
+              "termId": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
+              "label": "Bygge"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 310,
+            "GtDataRowUniqueKey": "3dd9df0f-db73-40f2-86c5-0a34fb3cb3a4"
+          },
+          {
+            "Title": "Prosessovergang til 'avslutte'",
+            "GtProjectPhase": {
+              "termId": "91a42992-cc2c-4d0f-944d-88ae39aba7cf",
+              "label": "Avslutte"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "Er all informasjon fra byggeprosjektet klar",
+            "GtSortOrder": 320,
+            "GtDataRowUniqueKey": "2aac53fc-7dc6-43db-9eb8-de81699a98d6"
+          },
+          {
+            "Title": "Håndtering garandiperiode",
+            "GtProjectPhase": {
+              "termId": "91a42992-cc2c-4d0f-944d-88ae39aba7cf",
+              "label": "Avslutte"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 330,
+            "GtDataRowUniqueKey": "4a50c4a5-54ab-4666-8cb4-def66fefcfa9"
+          },
+          {
+            "Title": "Eiendomsovertakelse",
+            "GtProjectPhase": {
+              "termId": "91a42992-cc2c-4d0f-944d-88ae39aba7cf",
+              "label": "Avslutte"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 340,
+            "GtDataRowUniqueKey": "3a79c5da-79da-47b2-8e8f-b7574ac8910b"
+          },
+          {
+            "Title": "Ferdig dokumentasjon",
+            "GtProjectPhase": {
+              "termId": "91a42992-cc2c-4d0f-944d-88ae39aba7cf",
+              "label": "Avslutte"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtComment": "NVDB, FDV, Bru, tunnel",
+            "GtSortOrder": 350,
+            "GtDataRowUniqueKey": "4f55515b-227b-4875-9969-2272557c1a82"
+          },
+          {
+            "Title": "Overtakelsesprotokoll - ansvar til DV",
+            "GtProjectPhase": {
+              "termId": "91a42992-cc2c-4d0f-944d-88ae39aba7cf",
+              "label": "Avslutte"
+            },
+            "GtChecklistStatus": "Åpen",
+            "GtSortOrder": 360,
+            "GtDataRowUniqueKey": "e64ef202-c95a-489a-9452-0ee5e562948b"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Planneroppgaver Vei",
+      "Description": "Standardoppgaver per prosjektfase for veiprosjekter.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x01000F43B5C9E86B4D7D9808100EC27E844A"
+        }
+      ],
+      "FieldRefs": [
+        {
+          "ID": "0e82c395-9ed9-43f9-871a-208215b18558",
+          "Name": "GtSortOrder",
+          "DisplayName": "Sorteringsrekkefølge"
+        },
+        {
+          "ID": "c70ca705-d503-4d3c-a28e-078e7d61c4c2",
+          "Name": "GtDataRowUniqueKey",
+          "DisplayName": "Unik datanøkkel"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "Alle elementer",
+          "ViewFields": [
+            "GtSortOrder",
+            "Title",
+            "GtDescription",
+            "GtCategory",
+            "GtChecklist",
+            "GtPlannerTags",
+            "GtAttachments",
+            "GtPlannerPreviewType",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "DefaultView": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"ID\" Ascending=\"TRUE\" /></OrderBy>",
+            "JSLink": "clienttemplates.js"
+          }
+        }
+      ],
+      "DataRows": {
+        "KeyColumn": "GtDataRowUniqueKey",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 10,
+            "Title": "01 Signert prosjektbestilling",
+            "GtDescription": "Utarbeides av prosjekteier, signeres av prosjektleder og prosjekteier",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Milepæl;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "59afaf10-9a44-4be6-adc5-5537f63e18fc"
+          },
+          {
+            "GtSortOrder": 20,
+            "Title": "02 Interne fagressurser",
+            "GtDescription": "Vurder hvilke fagressurser som er nødvendige inn i prosjektet. Kvitter ut med dem som ikke er relevante.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Opprette BIM-kontakt;Vegplanlegger;Arealplanlegger;Grunnerverv;Geoteknikk;Geologi;Kulturminne;Natur og miljø;Vann og avløp;Teknisk tegner;Konstruksjon;Landskapsarkitekt;Mobilitetsplanlegger;Støy;ROS;Landmåler;Trafikksignal og trafikkteknisk;Trafikksikkerhet",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "03a83b93-bd6c-4f43-a625-d3c25da6ca66"
+          },
+          {
+            "GtSortOrder": 30,
+            "Title": "03 Signert SSD",
+            "GtDescription": "Utarbeides av prosjektleder, signeres av prosjekteier og prosjektleder",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Milepæl;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "ae73df98-2bf1-4bf4-8cd8-fa9826a65fcc"
+          },
+          {
+            "GtSortOrder": 40,
+            "Title": "04 Oppdatere SSD",
+            "GtDescription": "SSD må oppdateres ved større endringer i prosjektet, enten mtp. fremdrift, prosjektmedarbeidere og/eller økonomi.",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Løpende oppgave;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "48bdc611-76ab-430a-ad40-a0e7d0a0cb67"
+          },
+          {
+            "GtSortOrder": 50,
+            "Title": "05 Interne prosjektoppgaver",
+            "GtDescription": "Prosjektnummer fås av seksjonens byggherrestøtte. Interaxo bestilles hos seksjonens superbruker.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Prosjektnummer;Prosjektkalkyle;Prosjektportal;Interaxo;Prosjektprognose;Elements",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "76a2c48c-abe4-484a-bc62-672aa1087df9"
+          },
+          {
+            "GtSortOrder": 60,
+            "Title": "06 Prosjektorganisering eksternt",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Kontakte anskaffelse;Direkteavrop/konkurranse;Oppstartsmøte konsulent;Inngå kontrakt",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "598ede4f-1c6e-4ea9-bf4e-d3dcfbe3973c"
+          },
+          {
+            "GtSortOrder": 70,
+            "Title": "07 Prosjektgruppen",
+            "GtDescription": "Jevnlig oppdatering av organisasjonskartet i SSD. Fyll inn navn i sjekklisten under. Ev. kan det lages et vedlegg som oppdateres jevnlig",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Prosjektleder: navn;Planleggingsleder: navn;Vegplanlegger: navn;Arealplanlegger: navn;Landskapsarkitekt: navn;VA-planlegger: navn;Trafikksikkerhetsplanlegger: navn;Prosjekteringsleder/byggeleder: navn;Kulturarv: navn;Naturmiljø og -ressurser: navn;Signalanlegg: navn;Mobilitetsplanlegger: navn;ROS-analyser: navn;Støy: navn;Geologi og geoteknikk: navn;Konstruksjon: navn;Elektro: navn;Drift og vedlikehold: navn;Lurftforurensing: navn;Andre relevante fag...",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "e5a1c845-fd4d-46cb-927d-089ea9a9ed89"
+          },
+          {
+            "GtSortOrder": 80,
+            "Title": "08 Månedsrapportering og prosjektstyring",
+            "GtDescription": "Planleggingsleder sørger for at månedsrapporter lagres fortløpende i Elements. Månedlig rapportering til prosjektleder gjøres gjennom ISY.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Månedsrapport i ISY;Lagre dokumenter løpende i Elements og i Teams",
+            "GtPlannerTags": "Løpende oppgave;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "0f9862a5-2aff-452b-bba4-7d6ad4c42a2c"
+          },
+          {
+            "GtSortOrder": 90,
+            "Title": "09 Ferdig utarbeidet kvalitetsplan",
+            "GtDescription": "Kvalitetsplan skal utarbeides i hvert prosjekt. Innen 2 måneder etter prosjektstart skal det foreligge en kvalitetsplan. Planleggingsleder er ansvarlig for å utarbeide kvalitetsplan. Ved bruk av ekstern konsulent, skal det foreligge både en kvalitetsplan fra konsulent og en intern kvalitetsplan for fylkeskommunen. Kvalitetsplan oppdateres jevnlig ved endringer, og gjøres kjent for prosjektets medarbeidere. Den skal lagres i Teams.",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Milepæl;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "e4f2bbde-d4b0-416a-bf77-8b8f7b3d2dd7"
+          },
+          {
+            "GtSortOrder": 100,
+            "Title": "10 Kvalitetsplan",
+            "GtDescription": "Kvalitetsplanen skal oppdateres jevnlig i prosjektet ved viktige endringer, og lagres i Elements. Den skal gjøres kjent for prosjektets medarbeideres.",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Løpende oppgave;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "67173edc-9ce1-43e3-aa12-cd1bfda68a06"
+          },
+          {
+            "GtSortOrder": 110,
+            "Title": "11 Oppstartsmøte med kommunen",
+            "GtDescription": "Før reguleringsarbeid igangsettes skal utbygger be om et møte med kommunen. I dette møtet avklares de viktigste forholdene vedrørende den aktuelle reguleringsplanen. Forut for møtet skal forslagsstiller sende inn et planinitiativ med en redegjørelse i samsvar med forskrift om behandling av private planforslag til detaljregulering etter pbl. Det skal avklares om det skal utarbeides en konsekvensutredning for tiltaket etter bestemmelser i plan- og bygningsloven, og behov for utbyggingsavtale og saksgang for denne. Det skal klargjøres hvem som er kontaktperson, heretter kalt forslagsstiller. Forslagsstiller skal få oppgitt kommunens saksbehandler/kontaktperson for det videre arbeidet. Kommunen skal skrive referat fra møtet jfr. forskriften § 3. Oppstartsmøtet bør finne sted senest 14 dager etter forslagsstillers henvendelse til kommunen. Dersom det er uenighet på vesentlige punkter i oppstartsmøtet om det videre planarbeidet, kan forslagsstilleren kreve spørsmålet forelagt kommunestyret eller til et utvalg som har fått delegert oppgaven, til vurdering.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Møte med kommunen;Stadfeste prosjektnavn og tildeling av PlanID;Motta startpakke;Vurdere planprosess etter PBL § 3.7",
+            "GtPlannerTags": "Møte;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "575b227a-19ed-49e3-9020-ffc78ced21e0"
+          },
+          {
+            "GtSortOrder": 120,
+            "Title": "12 Vurdere KU-plikten",
+            "GtDescription": "Forskrift: https: //lovdata.no/dokument/SF/forskrift/2017-06-21-854Skjema",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Fyll ut excel-arket;Lagre PDF i prosjektmappa",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "8539f200-8b4a-4293-a636-debf784935d4"
+          },
+          {
+            "GtSortOrder": 130,
+            "Title": "13 Forberedende arbeid",
+            "GtDescription": "Vurder bruk av interne fagressurser i gjennomgang av sjekklisten under",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Innhente korrekt kartgrunnlag;Utarbeide grunneierliste;Vurdere og bestille kulturminneundersøkelser;Vurdere og bestille grunnundersøkelser;Vurdere og beststille andre registreringer;Utarbeide planavgrensning med SOSI-fil",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "fe342d2a-8094-45c2-b679-1a23438984a3"
+          },
+          {
+            "GtSortOrder": 140,
+            "Title": "14 Sende over varsel om oppstart av planarbeid",
+            "GtDescription": "Noen av disse oppgavene kan legges til konsulent om konsulent er innleid i prosjektet",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Utarbeide brev til varsel om oppstart av planarbeid;Kontakte kommunikasjonsansvarlig i samferdselsavdelingen;Avisannonse;Sak til fylkeskommunen sine nettsider;Vurdere behov for planprogram",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "3fa51159-6768-40ea-bbe1-f8dd7e498970"
+          },
+          {
+            "GtSortOrder": 150,
+            "Title": "15 Varsel om oppstart",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Milepæl;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "66ff0b06-817c-4b07-982a-11cc01c3703e"
+          },
+          {
+            "GtSortOrder": 160,
+            "Title": "16 Utarbeide modeller",
+            "GtDescription": "I samarbeid med BIM kontakt og ev. BIM ansvarlig i prosjektgruppa, ved intern prosjektorganisering",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Modellering av veg: Navn;Modellering av landskap: Navn;Modellering av VA/OV: Navn;Modellering av elektro: Navn;Faseplaner: Navn;Støy: Navn;Utkast av modell og tegninger;Kvalitetssikring",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "0fe2b2ef-47bf-4384-b063-f9e0c6212d7a"
+          },
+          {
+            "GtSortOrder": 170,
+            "Title": "17 Merknadsbehandling - Varsel om oppstart av planarbeid",
+            "GtDescription": "Forslag til mal for oppsummering av merknader skal ligge i malbiblioteket. Det lages et nytt hefte for merkandsfase, slett sider som ikke er aktuelle i heftet. Merknader fra andre interne avdelinger som sendes i høringsfasen, skal kommenteres i merknadsheftet, (Ideelt sett skal slike avklaringer være ferdig før høringsfasen).",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Arkiver alle merknader i Elements;Oppsummer alle innkomne merkander i eget hefte;Svar ut merknader;Grunneiermøter;Informasjonsmøte;Lagre PDF av merknadsheftet",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "9cfc04ab-f786-4bbf-a756-d51212f9600c"
+          },
+          {
+            "GtSortOrder": 180,
+            "Title": "18 Plandokumenter",
+            "GtDescription": "Listen er ikke fullstendig. Legg til rapporter/planer etter behov.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Planbeskrivelse;Plankart;Planbestemmelser;Støy-rapport;ROS-rapport;VA-rammeplan (BGF?)",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "34ed9be7-f640-4367-82e3-a30c7b6c7fee"
+          },
+          {
+            "GtSortOrder": 190,
+            "Title": "19 Intern gjennomgang",
+            "GtDescription": "Alle planer skal sendes på gjennomlesing hos aktuelle interne avdelinger og seksjoner, for avklaring av interessekonflikter i forkant av offisiell høringsfase.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Plan-, Miljø- og Samfunnsavdelingen;Kulturminneforvaltning;Forvaltning (samferdselsavdelingen);Drift og vedlikehold (samferdselsavdelingen)",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "4fbe25b3-9e72-4bbf-870f-83b5c11971ac"
+          },
+          {
+            "GtSortOrder": 200,
+            "Title": "20 Tegningshefte til førstegangsbehandling",
+            "GtDescription": "Skriv inn navn på de som er ansvarlige for å utføre tegningen. Slett de som ikke er aktuelle, og ev. legg til andre som er aktuelle. Andre tegninger som kan være relevante: L-tegninger (skilt og oppmerking), M-tegninger (siganlanlegg), N-tegninger (belysning), P-teninger (mengder), T-tegninger (visuell presentasjon), V-tegninger (geoteknikk og geologi), X-tegninger (Ytre miljø og naturressurser), Y-tegninger (faseplaner). Se vedlagt link til tegningshefte for forklaring og andre tegninger.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "A-tegninger (forside, innholdsfortegnelser og bakside): Navn;B-tegninger (oversikt plan og profil): Navn;C-tegninger (primærtegninger, plan og profil): Navn;D-tegninger (sekundærtegninger, plan og profil): Navn;E-tegninger (vegkryss og avkjørsler): Navn;F-tegninger (normalprofil og overbygning): Navn;G-tegninger (Drenering og vannbehandling): Navn;H-tegninger (VA-ledninger): Navn;I-tegninger (kabler og linjer): Navn;J-tegninger (byggetekniske detaljer): Navn;K-tegninger (konstruksjoner): Navn;O-tegninger (landskap): Navn;W-tegninger (grunnervev): Navn",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "6c4c715b-5475-44e6-8d51-276f780791f0"
+          },
+          {
+            "GtSortOrder": 210,
+            "Title": "21 Trafikksikkehetsrevisjon (TS)",
+            "GtDescription": "Der er egen rammeavtale på TS-revisjon",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Bestille TS-revisjon;Gjennomføre og utarbeide rapport;Avklaringer og ev. endringer i plan;Godkjent TS-revisjon",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "c83f3a7f-9b1c-4ca1-9b87-364797fe149c"
+          },
+          {
+            "GtSortOrder": 220,
+            "Title": "22 Fravvikssøknad",
+            "GtDescription": "Fylkeskommunen er selv 1. instans for behandling av fravik2. instans er samferdselsutvalgetSe rutiner i vedlegg",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Se vedleggene",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "6a69570a-dfd0-4d18-828b-8899c61aab51"
+          },
+          {
+            "GtSortOrder": 230,
+            "Title": "23 Kostnadsanslag",
+            "GtDescription": "Kontakt intern anslagskoordinator på Samferdselsavdelingen",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Bestille anslag (skaffe prisgivere, prosessleder og datastøtte);Utarbeide grunnlag for anslag - planleggingsnotat (2 uker i forkant av møte);Gjennomføre anslagssamling;Gjennomlesning av anslag;Godkjenne anslagsrapport;Godkjenning av kostnadsanslag i regional kostnadgruppe",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "cfd0bd9f-be56-4b33-84fe-ebb24435fdd3"
+          },
+          {
+            "GtSortOrder": 240,
+            "Title": "24 Kvalitetssikring og gjennomsyn",
+            "GtDescription": "Interne dokumenter kvalitetssikres internt. Eksterne plandokumenter skal være ferdig kvalitetssikret av konsulent, og skal bare til gjennomsyn internt. Listen er ikke fullstendig, legg til ved behov.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Planbeskrivelse;Planbestemmelser;Plankart",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "d3d304f8-6dee-4922-bb9a-8f687fe31d8c"
+          },
+          {
+            "GtSortOrder": 250,
+            "Title": "25 Sende over planforslaget til kommunen via Elements",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Førstegangsbehandling i kommunen;Opprett en journalpost i Elements - utgående brev;Tittel: Detaljregulering for fv. xx navn, plan-ID xxx - Oversendelse til førstegangsbehandling;Til: postmottak i kommunen, sjekk at organisasjonsnummeret står slik at de får det elektronisk;Rediger, last opp vedleggene. Vedleggene heter planidnummer_gjeldende dok. (eks: 2020_plankart);SOSI-fil og wordfiler kan ikke sendes via Elements;Rediger word-filen, og skriv oversendelsesbrev. Se vedlegg for mal. ;Flett metadata;Send til godkjenning - skriv seksjonsslederens navn;Send mail til seksjonsleder med Astrid Eide på kopi og informer om godkjenning av plan og videresend;Ekspeder;Opprett mappe i Teams - del med saksbehandler. Mappenavn: Førstegangsbehandling_delt-med-kommunen;SOSI-fil og word fil av planbeskrivelse og bestemmelse legges med her sammen med PDF av planforslag;Fjern delt koblingen etter 2 uker.",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "c7d19414-0ed6-4474-9a51-2221a4726c29"
+          },
+          {
+            "GtSortOrder": 260,
+            "Title": "26 Førstegangsbehandling kommunen",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Milepæl;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "6117702d-caf0-4d62-9561-97adfc4519e0"
+          },
+          {
+            "GtSortOrder": 270,
+            "Title": "27 Merknadsbehandling - Høring og offentlig ettersyn",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Oppsummer alle innkomne merkander i eget hefte;Svar ut alle merkandene;Lagre PDF",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "86241c71-42b7-4924-9b8a-86ed5a0fe3a1"
+          },
+          {
+            "GtSortOrder": 280,
+            "Title": "28 Revidere plandokumenter",
+            "GtDescription": "Listen er ikke fullstendig. Legg til ved behov",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Planbeskrivelse;Plankart;Planbestemmelser;Støyrapport;ROS rapport;VA-rammeplan (BGF?)",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "74b6548f-bf0c-48cd-b5dd-708f8ba5ffea"
+          },
+          {
+            "GtSortOrder": 290,
+            "Title": "29 Tegningshefte til andregangsbehanlding",
+            "GtDescription": "Listen er ikke fullstendig. Legg til ved behov",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "REVISJON: A-tegninger (forside, innholdsfortegnelser og bakside): Navn;REVISJON: C-tegninger (primærtegninger, plan og profil): Navn;REVISJON: W-tegninger (grunnervev): Navn",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "fc7fd393-1bf6-49df-aea0-20ae7cdafe5c"
+          },
+          {
+            "GtSortOrder": 300,
+            "Title": "30 Sende over planforslaget til kommunen via Elements",
+            "GtDescription": "Vurder å bestille kake",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Se fremgangsmåte under Milepælen til førstegangsbehandling;Andregangsbehandling;Sluttbehandling i kommunestyret;Klagebehandling",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "f1bff5ba-8d1b-4fab-bdf9-bd4b993f0a64"
+          },
+          {
+            "GtSortOrder": 310,
+            "Title": "31 Vedtatt plan",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Milepæl;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "c7a4e5de-3eaf-4ef7-b780-8f39ababd984"
+          },
+          {
+            "GtSortOrder": 320,
+            "Title": "32 Endelig plankart og bestemmelser",
+            "GtDescription": "Kommunen sender over vedtatt plandokumenter og plankart",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "SOSI-fil av plankart;Plankart i PDF;Bestemmelsene må sjekkes opp mot endelig plankart;Bestemmelsene må lagres i PDF og i word (husk sporing i wordfilen for endringer siden 1gbh!)",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "5f7928c6-82e6-4089-bf8c-30e85c249af3"
+          },
+          {
+            "GtSortOrder": 330,
+            "Title": "33 Prosessevaluering",
+            "GtDescription": "Prosesslederen skriver en evaluering av prosessen i sin fase",
+            "GtCategory": "Planlegge",
+            "GtPlannerTags": "Milepæl;Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "66afdda4-cab7-47f4-b2ae-310b13117e66"
+          },
+          {
+            "GtSortOrder": 340,
+            "Title": "34 Rydde prosjektkatalogen",
+            "GtDescription": "Samle dokumentasjon som skal til neste fase i egen mappe, i forbindelse med fasesjekkliste.",
+            "GtCategory": "Planlegge",
+            "GtChecklist": "Fjerne unødvendige filer;Flytt/slett lokalt lagrede filer;Gjøre tydelig hva som siste revisjon ;Samle dokumentasjon som skal til neste fase i egen mappe;Lagring i elements ;Avslutte elements-saken",
+            "GtPlannerTags": "Planlegge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "87fa2c8c-c166-4cae-91ff-db80ca0a25ec"
+          },
+          {
+            "GtSortOrder": 350,
+            "Title": "01 Oppdatere SSD",
+            "GtDescription": "SSD må oppdateres ved større endringer i prosjektet, enten mtp. fremdrift, prosjektmedarbeidere og/eller økonomi.",
+            "GtCategory": "Prosjektere",
+            "GtPlannerTags": "Løpende oppgave;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "2a34c56c-9137-4dbb-98d4-7626719041f9"
+          },
+          {
+            "GtSortOrder": 360,
+            "Title": "02 Signert SSD",
+            "GtDescription": "Finnes uoffisiell sjekkliste i dokumentbiblioteket.",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Er kontraktsstrategi bestemt?",
+            "GtPlannerTags": "Milepæl;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "707aa403-a8a5-4156-aeb0-708ad4ea78e5"
+          },
+          {
+            "GtSortOrder": 370,
+            "Title": "03 Gjennomgang økonomi",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Når var forrige anslag?;Prisutvikling siden forrige anslag;Fordeling av felleskostnader;Planleggingskostnader;Prosjekteringskostnader",
+            "GtPlannerTags": "Løpende oppgave;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "d952409d-2637-4aab-8dc7-d6541975e7dd"
+          },
+          {
+            "GtSortOrder": 380,
+            "Title": "04 Oppdatere kvalitetsplan",
+            "GtDescription": "Oppdatere plan utarbeidet i tidligere faser.",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Rutiner;Kontrollplan;Sjekklister",
+            "GtPlannerTags": "Milepæl;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "93d7cb6b-a915-448f-a1e3-b7a7011f90aa"
+          },
+          {
+            "GtSortOrder": 390,
+            "Title": "05 Sjekk av reguleringsplan",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Hva er gjenstående usikkerheter?;Hva må avdekkes?;Gjennomgang av fagene, VA, veg, elektro, geologi, geoteknikk;Massehåndtering;Anleggsgjennomføring;Hva er kritisk linje / Hva er de store tekniske utfordringene som kommer til å definere framdriften?;Er fartsgrense og fartsnivå, og konsekvensene av dette avklart?",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "882351a9-fc75-4fd0-92ed-b908aaed8a5e"
+          },
+          {
+            "GtSortOrder": 400,
+            "Title": "06 Faseovergang",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Gjennomgå ferdig prosessevaluering fra planfasen;Er prosjektbestilling godkjent?;Er SSD godkjent?;Er kvalitetsplan godkjent?;Er kontraktsstrategi bestemt?;Felles befaring med planressurser",
+            "GtPlannerTags": "Milepæl;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "8653efcf-5731-42b5-a498-f8f534eba519"
+          },
+          {
+            "GtSortOrder": 410,
+            "Title": "07 Lage møteplan for prosjektet",
+            "GtDescription": "Sjekk krav i kontrakten. Prosjekteringsmøte gjennomføres ved totalentreprise.",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Særmøter fag;Økonomimøter;Samarbeidsmøter;Kontraktsmøter med eksterne;Prosjekteringsmøter;Interne statusmøter",
+            "GtPlannerTags": "Løpende oppgave;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "cf2db5f1-2e3c-4c7b-bbf5-dab77b83f216"
+          },
+          {
+            "GtSortOrder": 420,
+            "Title": "08 Prosjektgruppen",
+            "GtDescription": "Jevnlig oppdatering av organisasjonskartet. Fyll inn navn i sjekklisten under. Ev. kan det lages et vedlegg som oppdateres jevnlig",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Prosjektleder: navn;Prosjekteringsleder: navn;Planleggingsleder: navn;Vegplanlegger: navn;Arealplanlegger: navn;Landskapsarkitekt: navn;VA-planlegger: navn;Trafikksikkerhetsplanlegger: navn;Kulturarv: navn;Naturmiljø og -ressurser: navn;Mobilitetsplanlegger: navn;ROS-analyser: navn;Støy: navn;Geologi: navn;Konstruksjon: navn;Elektro: navn;Drift og vedlikehold: navn;Lurftforurensing: navn;Byggeleder: navn;Geoteknikk: navn",
+            "GtPlannerTags": "Løpende oppgave;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "961e43bd-cb96-420b-9af0-12c896fd0418"
+          },
+          {
+            "GtSortOrder": 430,
+            "Title": "09 Prosjektorganisering eksternt",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Kontakte anskaffelse;Direkteavrop/konkurranse;Oppstartsmøte konsulent;Inngå kontrakt;Opprette prosjektrom i Interaxo;Avtale samhandling;Trimble connect?;Innmålinger og teknisk underlag",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "9e070cc8-5f47-4528-9d61-ee1d4992fd82"
+          },
+          {
+            "GtSortOrder": 440,
+            "Title": "10 Kontakt/involvèr/informer D/V",
+            "GtDescription": "Avklar med drift og vedlikehold i hvilken grad og hyppighet de skal involveres i prosjektetProsjektet og prosjektert løsning sjekkes mot kontinuerlig mot dokumentet 'drift og vedlikehold i prosjekterings- og byggefasen SVV - 11.18'  (vedlagt under dokumenter)",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Generelt;Er valgte løsninger/materialer lagervare for å kunne reparere skader innen rimelig tid?;Er vegreferanse på plass og korrekt?;Er det tenkt på drift av omkjøringsveier?;Renhold av tilstøtende vegnett som en del av bygging. ;Driftsgrensesnitt - Hvem har driftsansvar for de enkelte delene av prosjektet?;G/S-veg;Er det sikret tilstrekkelig sideareal langs g/s-veg (eiendomsgrense min. 1m fra grusskulder);Er g/s-veg og bruer dimensjonert for tyngre vedlikeholdsmaskiner?;Fortau og g/s-veg bør ha 2x3cm asfalt for å kunne tåle vedlikeholdsmaskiner og lapping.;Skjermer;Er det standard størrelse på glassfelt i skjermer?;Er det tilkomst til skjermene?;Er planter montert med gittervegg som forenkler vedlikehold?;Skal skjermen vedlikeholdes på begge sider må fri sone på 1m med i grunnavtale.;Pileskjermer har lav bestandighet, utsatt for hærverk i ferdselsveier;Sjekk dokumentet for videre sjekkpunkt",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "15e5f6a4-372f-46c0-bedc-1537d5bd424c"
+          },
+          {
+            "GtSortOrder": 450,
+            "Title": "11 Livsløpskostnader - Vurdering mot drift",
+            "GtDescription": "Prosesskoden skal følges",
+            "GtCategory": "Prosjektere",
+            "GtPlannerTags": "Løpende oppgave;KRAV;Prosjektere;Planlegge;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "0b2de7b7-0315-4697-99fc-f53c47dec9d5"
+          },
+          {
+            "GtSortOrder": 460,
+            "Title": "12 Interne prosjektoppgaver",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Kontakt BIM ansvarlig;Prosjektnummer;Prosjektkalkyle;Prosjektportal;Interaxo;Interne fagressurser;Prosjektprognose;Elements;Informere interne seksjoner om prosjektstatus - PMS, forvaltning, D/V, trans og mob, kulturarv",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "9786215b-8581-4868-8963-da5bc81ca370"
+          },
+          {
+            "GtSortOrder": 470,
+            "Title": "13 Eksterne etater",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Identifisere aktuelle etater som er påvirket;Orienteringsmøter;BHR- eller videresalgsmodell",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "c14b2754-9528-490c-80d9-e884c880e0c1"
+          },
+          {
+            "GtSortOrder": 480,
+            "Title": "14 Godkjenninger",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Tiltak i forurensede grunnforhold;Byggesøknader;Trefellingstillatelser;Utslippstillatelser;Tiltak i vassdrag;Inngrep i kantvegetasjon;Rivesøknader",
+            "GtPlannerTags": "KRAV;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "ac5a8bad-700a-419a-ab3d-034dd224e4e8"
+          },
+          {
+            "GtSortOrder": 490,
+            "Title": "15 Tilstandsregistrering av bygg og konstruksjoner",
+            "GtDescription": "Sprengningsarbeid, spunting, peling, usikre grunnforhold, usikker fundamentering, dype grøfter tett inntil bygg. Dette bør utføres av en nøytral tredjeperson hvor det foreligger en rapport man kan bruke som basis dersom grunneier mener hus/eiendom er påført skade pga anleggsarbeidene. Det er mange, mange prosjekt hvor det ikke er aktuelt, men i bynære strøk kan det være veldig viktig.",
+            "GtCategory": "Prosjektere",
+            "GtPlannerTags": "KRAV;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "f6d6c5b7-61ed-4c40-88ab-ba68d8a795b7"
+          },
+          {
+            "GtSortOrder": 500,
+            "Title": "16 TS-revisjon/inspeksjon",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Sjekk TS-retningslinjene;Er det en TS-revisjon fra planfasen?;Er alle aksjonspunkta fra forrige TS-revisjon sjekket ut?;Hvordan klargjøre for TS-inspeksjonen i bygging?",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "f61af17d-546c-401c-b329-2e54cdd35baa"
+          },
+          {
+            "GtSortOrder": 510,
+            "Title": "17 Opprette prosjekt i datafangst/NVDB",
+            "GtDescription": "Opprette prosjekt og klargjøre objektliste for utbygging",
+            "GtCategory": "Prosjektere",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "6eb246cf-c292-4e66-89e2-8fd4b85ced77"
+          },
+          {
+            "GtSortOrder": 520,
+            "Title": "18 Kostnadsanslag",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Bestille anslag (skaffe prisgivere, prosessleder og datastøtte);Utarbeide grunnlag for anslag - planleggingsnotat (2 uker i forkant av møte);Gjennomføre anslagssamling;Gjennomlesning av anslag;Godkjenne anslagsrapport;Godkjenning av kostnadsanslag i regional kostnadgruppe",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "b68725c7-8ab3-4951-993d-e089562d5e61"
+          },
+          {
+            "GtSortOrder": 530,
+            "Title": "19 Restrisiko",
+            "GtDescription": "Er resterende risiko kartlagt og akseptert?Kan resterende risiko håndteres i bygging?Er prosjektet klart for utlysing?",
+            "GtCategory": "Prosjektere",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "c7d24d7d-d1cb-4936-85bd-810c0d70db56"
+          },
+          {
+            "GtSortOrder": 540,
+            "Title": "20 Utarbeide konkurransegrunnlag",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Sette opp dokument fra mal;Gjøre prosjektgruppe kjent med mal;Fordele oppgaver internt;Samhandle med eksterne (A,B,C,D kapittel?);Førsteutkast;Sidemannskontroll;Andreutkast;Teknisk KS;Fullføre dokument",
+            "GtPlannerTags": "Løpende oppgave;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "a2735e13-4a0f-4974-8983-cbfb2fff9294"
+          },
+          {
+            "GtSortOrder": 550,
+            "Title": "21 Kvalitetssjekke konkurransegrunnlag",
+            "GtDescription": "Kvalitetssjekke konkurransegrunnlag inkludert beskrivelse, teknisk underlag og vedlegg",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "KS eksternt konkurransegrunnlag ;KS ekstern beskrivelse;KS eksternt teknisk underlag;KS eksterne vedlegg;Ekstern KS på internt konkurransegrunnlag;KS Jurist;KS Anskaffelse",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "9f89663a-5033-495b-b18b-1be70e54ef12"
+          },
+          {
+            "GtSortOrder": 560,
+            "Title": "22 Utlysing",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Kontakte anskaffelse for å avklare rutiner for utlysingen",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "1999edeb-33ad-4a30-aa5c-c4274e0e751a"
+          },
+          {
+            "GtSortOrder": 570,
+            "Title": "23 Prosessevaluering",
+            "GtCategory": "Prosjektere",
+            "GtPlannerTags": "Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "990fc851-c35f-44ef-b09a-68e0060efea5"
+          },
+          {
+            "GtSortOrder": 580,
+            "Title": "24 Rydde prosjektkatalogen",
+            "GtCategory": "Prosjektere",
+            "GtChecklist": "Fjerne unødvendige filer;Gjøre tydelig hva som siste revisjon;Lagring i elements ;Avslutte elements-saken",
+            "GtPlannerTags": "Løpende oppgave;Prosjektere",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "feb3459b-5a33-4a00-9f29-61aa2e0430b3"
+          },
+          {
+            "GtSortOrder": 590,
+            "Title": "01 Signert SSD",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "68638f02-c614-4ba4-8cb2-5066196773f9"
+          },
+          {
+            "GtSortOrder": 600,
+            "Title": "02 Avklare drift av vegnett tilhørende anlegg, inkl. omkjøringsvei",
+            "GtDescription": "Avklare med DV om hvem som skal gjennomføre for eksempel vinterdrift og kantslått, av omkjøring ol. i anleggsperiode.",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "KRAV;Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "38171506-b8f6-49b6-bbbf-67ec6b1fe64f"
+          },
+          {
+            "GtSortOrder": 610,
+            "Title": "03 PU prosjekt skal ikke love eller bestille utførelse som skal ivaretas/bekostes av DV.",
+            "GtDescription": "Det hender at Inv sier til grunneier at de ikke har budsjett, og at det må tas med drift. Dette skal ikke forekomme.",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Løpende oppgave;KRAV",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "c6e3c321-4bd7-4e80-94e6-4fe9f2fd7aee"
+          },
+          {
+            "GtSortOrder": 620,
+            "Title": "04 Hold DV informert om fremdrift",
+            "GtDescription": "DV varslet om fremdrift for å sikre at driftsentreprenør kan overta ansvar for drift på gitt tidspunkt",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Løpende oppgave",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "2a23ec8c-8397-4624-a2f5-a6654d3d2b14"
+          },
+          {
+            "GtSortOrder": 630,
+            "Title": "05 Prosjektgruppen",
+            "GtDescription": "Jevnlig oppdatering av organisasjonskartet. Fyll inn navn i sjekklisten under. Ev. kan det lages et vedlegg som oppdateres jevnlig",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Prosjektleder: navn;Byggeleder 1: navn;Byggeleder 2: navn;Kontrollingeniør 1: navn;Kontrollingeniør 2: navn;Nabokontakt: navn;Grunnerverv: navn;Natur og miljø: navn;Drift og vedlikehold veg: navn;Drift og vedlikehold elektro: navn;Drift og vedlikehold konstruksjon: navn",
+            "GtPlannerTags": "Løpende oppgave;Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "0aac6377-6051-4108-9c0e-a5f46c46fbba"
+          },
+          {
+            "GtSortOrder": 640,
+            "Title": "06 Kontrahere entreprenør",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Lyse ut konkurranse på anbud i samarbeid med anskaffelse;Tildele kontrakt;Signert kontrakt foreligger",
+            "GtPlannerTags": "Milepæl;Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "dfd9f343-2cdf-4eba-9f47-4c6e8b39e863"
+          },
+          {
+            "GtSortOrder": 650,
+            "Title": "07 Samhandling og oppstartsmøte entreprenør",
+            "GtDescription": "Se kapittel C2 i konkurransegrunnlag.",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "12d769a9-95c6-4006-94fb-a733e9823ee2"
+          },
+          {
+            "GtSortOrder": 660,
+            "Title": "08 Oppstartsmøte eksterne etater",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Nær ved-avtaler (strøm, bane nor etc);Kontaktpersoner;Rutiner;Avtale om kostnadsfordeling",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "39679134-d2fe-4db1-af3c-02fb16749dd5"
+          },
+          {
+            "GtSortOrder": 670,
+            "Title": "09 Utpeke SHA-koordinator",
+            "GtDescription": "Det skal lages en skriftlig avtale mellom byggherren og en utvalgt SHA-koordinator som skal ivareta dette gjennom byggefasen. Se byggherreforskriften §13",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "KRAV;Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "702455eb-bb0e-48b9-a14b-8d5cbd011027"
+          },
+          {
+            "GtSortOrder": 680,
+            "Title": "10 Sende forhåndsmelding",
+            "GtDescription": "Senest én uke for oppstart av anleggsarbeid må forhåndsmelding sendes til arbeidstilsynet via Altinn. Se byggherreforskriften §10",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "KRAV;Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "18da28e0-532e-4586-adec-11536c321bfb"
+          },
+          {
+            "GtSortOrder": 690,
+            "Title": "11 Oppdatere kvalitetsplan",
+            "GtDescription": "Oppdatere plan utarbeidet i tidligere faser. SHA- og YM-plan skal nå fungere som egne, selvstendige dokument.",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Rutiner;Kontrollplan;Sjekklister",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "af2a3860-3a83-4260-8425-bf9c63ab8837"
+          },
+          {
+            "GtSortOrder": 700,
+            "Title": "12 Lage SHA-plan",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "29bd87a0-dac1-43ee-b140-6a47b25a527f"
+          },
+          {
+            "GtSortOrder": 710,
+            "Title": "13 Lage YM-plan",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "b93c181e-5ee9-4842-9aca-52fdd18b1fe5"
+          },
+          {
+            "GtSortOrder": 720,
+            "Title": "14 Varsling om oppstart av arbeid",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Berørte naboer;Skoler;Næringsliv;Annet - vurder særskilt",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "98139ccb-0d6e-413f-84ee-87703b49a35e"
+          },
+          {
+            "GtSortOrder": 730,
+            "Title": "15 Lage møteplan for prosjektet",
+            "GtDescription": "Sjekk krav i kontrakten. Prosjekteringsmøte gjennomføres ved totalentreprise.",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Byggemøter;Økonomimøter;Samarbeidsmøter;Andre møter;Ev. prosjekteringsmøter",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "2521c006-dbc8-4965-9987-9af4a6297a94"
+          },
+          {
+            "GtSortOrder": 740,
+            "Title": "16 Opprette prosjekt i HMSREG",
+            "GtDescription": "Se rutiner for opprettelse av HMSREG i QM+.",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "7ade0b70-50fe-4a4a-a9db-a609784be7b1"
+          },
+          {
+            "GtSortOrder": 750,
+            "Title": "17 TS-revisjon før vegåpning",
+            "GtDescription": "Det skal gjennomføres TS-inspeksjon (revisjon trinn 3 fra V720) før åpning av alle vegprosjekt over 5 millioner. Rutine for dette ble vedtatt i avdelingsledermøte 05.11.2020.",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "53a489e7-a1d5-4610-9f40-084350048396"
+          },
+          {
+            "GtSortOrder": 760,
+            "Title": "18 Avslutte kontrakt med entreprenør",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Motta og gjennomgå sluttdokumentasjon;Motta, gjennomgå og lukke en sluttoppstilling/sluttoppgjør;Arkivere alle relevante dokument;Evalueringsprosess med entreprenør",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "abafba75-3149-4de7-9b42-6cd53f0281c1"
+          },
+          {
+            "GtSortOrder": 770,
+            "Title": "19 Vegåpning",
+            "GtDescription": "Dette er ofte mer omfattende enn først tenkt. Det må avklares hvem som skal inviteres (politikere?), når skal det holdes, hvor skal det holdes, det skal bestilles kake, taler skal holdes. Dette er selvfølgelig avhengig av størrelse på prosjektet som ferdigstilles. Lillian Vikra kjenner til prosedyrene her.",
+            "GtCategory": "Bygge",
+            "GtChecklist": "Invitasjon til vegåpning;Servering (hva, og hvor mange kommer?);Lydoppsett og strøm;Annet",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "2b213ce1-ccd3-46a4-81c3-39ca15af791c"
+          },
+          {
+            "GtSortOrder": 780,
+            "Title": "20 Utarbeide sluttrapport",
+            "GtCategory": "Bygge",
+            "GtPlannerTags": "Bygge",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "0ceb06f8-1fd8-472d-bc21-c1e0655628fe"
+          },
+          {
+            "GtSortOrder": 790,
+            "Title": "01 Håndtering garantiperiode",
+            "GtDescription": "- Avklar ressurs for å ivareta garantiperioden, inkludert grensesnittavklaring mot DV og den juridiske oppfølgingen av PU-kontrakten angående garanti. -Avklar med DV hvordan objekter skal driftes i garantiperioden, da spesielt PU-entreprenør sitt ansvar for grøntanlegg. DV må bli avklares nå driften skal overdras til DV fra PU-entreprenør.",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "b28b7b84-4f82-4dd8-8967-972c463f9370"
+          },
+          {
+            "GtSortOrder": 800,
+            "Title": "02 Eiendomsovertakelse",
+            "GtDescription": "Alle eiendomsforhold skal være avklarte. De skal være avsluttet, utbetalt og matrikkel oppdatert før overlevering. Drift skal bli opplyst om eventuelle klausuler før overtakelse.",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "eedc2fa0-db23-4048-8722-ec6386072847"
+          },
+          {
+            "GtSortOrder": 810,
+            "Title": "03 FDV dokumentasjon",
+            "GtDescription": "FDV på alle objekt tilgjengeliggjort for DV? inkl. flater, utstillingsobjekt, metaller ol",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "383faa97-d9af-46f2-96ab-9b1242ef85a9"
+          },
+          {
+            "GtSortOrder": 820,
+            "Title": "04 Ferdigstilling av dokumentasjon/søknader",
+            "GtDescription": "Er alle dokumenter ferdigstilt og tilgjengeliggjort for DV? inkl. godkjenning på alle søknader, sikkerhetsgodkjenning ol.",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "17153c4d-ce61-4d61-b586-e912ccb756b6"
+          },
+          {
+            "GtSortOrder": 830,
+            "Title": "05 Registrering av kabler",
+            "GtDescription": "Er alle avdekkede kabler håndtert iht Kabel forskrift?",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "dc44836e-9258-41a4-bf11-240d2f957e5a"
+          },
+          {
+            "GtSortOrder": 840,
+            "Title": "06 Oppdatert dokumentasjon på elektro",
+            "GtDescription": "Elektro - Plania - dokumentasjon og godkjenning fra tredjepart",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "7db86862-2384-47e0-a686-a5e6ecd1086d"
+          },
+          {
+            "GtSortOrder": 850,
+            "Title": "07 As-buildt tegninger og kart.",
+            "GtDescription": "As-buildt tegninger tilgjengeliggjort for DV på systematisk vis- min 2 uker før befaring",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "7f87d312-0aa2-4341-a63a-182da54145ec"
+          },
+          {
+            "GtSortOrder": 860,
+            "Title": "08 Oppdatert dokumentasjon tunnel",
+            "GtDescription": "Plania - tunnel - godkjent brukstillatelse, Trygg tunnel",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "6030bff8-73b4-411a-af41-67c19b0baeaa"
+          },
+          {
+            "GtSortOrder": 870,
+            "Title": "09 Oppdatert dokumentasjon bru",
+            "GtDescription": "Brutus dokumentasjon skal være oppdatert",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "b51cde9e-08a1-40c0-8d3d-38b775c2e4a7"
+          },
+          {
+            "GtSortOrder": 880,
+            "Title": "10 Oppdatert NVDB",
+            "GtDescription": "Alle objekter skal være registrert/målt inn/fjernet iht retningslinjer. Det skal ikke gjennomføres ferdigbefaring/overlevering til DV før all registreringen er gjort. Skal være registrert fra Datafangst til NVDB - liste med endring skal overleveres DV 2 uker før befaring ved oppgraderingsprosjekter. Det skal gjøres tilknytning til alle relevante DV-kontraktsområder i NVDB. DV skal ha informasjon om omfang før ferdigbefaring, slik at driftsentreprenør kan være klar til overta driftsansvar ved signert overtakelsesprotokoll. Strekket skal registreres med tilhørende driftskontrakter (f.eks dk og el), og avklart vinterdriftsklasse og renholdsfrekvens. Kravene må avklares med drift",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "7854288c-47b2-4e59-9301-f434e1e33f86"
+          },
+          {
+            "GtSortOrder": 890,
+            "Title": "11 Informer VTS?",
+            "GtDescription": "Åpning av veg må avklares med VTS.",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "46eeae16-7f82-4f4c-affd-f1d1aaf6dc19"
+          },
+          {
+            "GtSortOrder": 900,
+            "Title": "12 Overtakelse av ansvar til DV",
+            "GtDescription": "Hva er behovet for befaring? Hvordan skal avvik fra DV håndteres av PU prosjekt. Det skal signeres Overtakelsesprotokoll fra PU til DV. Dette er ikke den samme protokollen som signeres fra Utbygger entreprenør til PU.",
+            "GtCategory": "Avslutte",
+            "GtPlannerTags": "KRAV;Avslutte - til drift",
+            "GtPlannerPreviewType": "Sjekkliste (checklist)",
+            "GtDataRowUniqueKey": "e53042b0-cfee-4c58-bc8c-8b445e6ff6b0"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Standarddokumenter Vei",
+      "Description": "Standard mappestruktur for prosjektdokumenter i veiprosjekter.",
+      "Template": 101,
+      "ContentTypesEnabled": false,
+      "RemoveExistingContentTypes": false,
+      "FieldRefs": [
+        {
+          "ID": "325543a5-815d-485d-a9a5-e0773ad762e9",
+          "Name": "GtProjectPhase",
+          "DisplayName": "Fase"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true,
+        "EnableAttachments": false
+      },
+      "Views": [
+        {
+          "Title": "Alle dokumenter",
+          "ViewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Title",
+            "GtProjectPhase",
+            "Modified",
+            "Editor"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 30,
+            "Paged": true,
+            "DefaultView": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+            "JSLink": "clienttemplates.js"
+          }
+        }
+      ],
+      "Folders": [
+        {
+          "Name": "01_Planlegge",
+          "Folders": [
+            {
+              "Name": "00_Kontrakter og avtaler"
+            },
+            {
+              "Name": "10_Styringsdokumenter"
+            },
+            {
+              "Name": "20_Logg"
+            },
+            {
+              "Name": "30_Økonomi og fremdrift"
+            },
+            {
+              "Name": "40_Møter"
+            },
+            {
+              "Name": "50_Grunnlagsdata og Arbeidsmapper fag"
+            },
+            {
+              "Name": "60_Leveranser"
+            },
+            {
+              "Name": "70_Grunnlagsmateriale til neste fase og faseevaulering"
+            },
+            {
+              "Name": "80_Bilder"
+            }
+          ]
+        },
+        {
+          "Name": "02_Prosjektere",
+          "Folders": [
+            {
+              "Name": "00_Kontrakter og avtaler"
+            },
+            {
+              "Name": "10_Styringsdokumenter"
+            },
+            {
+              "Name": "20_Logg"
+            },
+            {
+              "Name": "30_Økonomi og fremdrift"
+            },
+            {
+              "Name": "40_Møter"
+            },
+            {
+              "Name": "50_Arbeidsmappe fag"
+            },
+            {
+              "Name": "60_Leveranser"
+            },
+            {
+              "Name": "70_Grunnlagsmateriale til neste fase og faseevaluering"
+            },
+            {
+              "Name": "80_Bilder"
+            }
+          ]
+        },
+        {
+          "Name": "03_Bygge",
+          "Folders": [
+            {
+              "Name": "00_Kontrakter og avtaler"
+            },
+            {
+              "Name": "10_Styringsdokumenter"
+            },
+            {
+              "Name": "20_Logg"
+            },
+            {
+              "Name": "30_Økonomi og fremdrift"
+            },
+            {
+              "Name": "40_Møter"
+            },
+            {
+              "Name": "50_Kvalitet"
+            },
+            {
+              "Name": "60_SHA og YM"
+            },
+            {
+              "Name": "70_Sluttdokumentasjon og faseevaluering"
+            },
+            {
+              "Name": "80_Bilder"
+            }
+          ]
+        },
+        {
+          "Name": "04_Avslutte",
+          "Folders": [
+            {
+              "Name": "00_Sluttrapport"
+            },
+            {
+              "Name": "10_Overleveringsmøte til drift og vedlikehold"
+            },
+            {
+              "Name": "20_Dokumentasjon"
+            },
+            {
+              "Name": "30_Bilder"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

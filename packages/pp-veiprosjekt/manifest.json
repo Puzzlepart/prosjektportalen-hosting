@@ -2,17 +2,50 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-veiprosjekt",
   "name": "Veiprosjekt",
-  "description": "Prosjektmal for veg- og samferdselsprosjekter med faseinndeling, sjekklister og oppfølging av anleggsleveranser.",
-  "version": "1.0.0",
+  "description": "Prosjektmal for veg- og samferdselsprosjekter, basert på veimodulen til Prosjektportalen 365 (utviklet av Rogaland fylkeskommune). Provisjonerer egne veifaser (Planlegge, Prosjektere, Bygge, Avslutte), Prosjekt (Vei)-innholdstype og -kolonner på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+  "version": "1.1.3",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.12.0",
   "thumbnail": "thumbnail.png",
-  "icon": "ConstructionConeSolid",
-  "tags": ["vei", "samferdsel", "anlegg"],
+  "icon": "Car",
+  "tags": ["vei", "samferdsel", "anlegg", "prosjektledelse"],
   "type": "template",
+  "cloudCompatible": false,
   "provisioning": {
-    "template": "provisioning/template.json"
+    "hubTemplate": "provisioning/hub-template.json",
+    "template": "provisioning/template.json",
+    "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E",
+    "projectPhaseTermSetId": "7ccff67b-acca-4abb-8426-c6a38ec69233",
+    "listContent": [
+      {
+        "title": "Fasesjekkpunkter Vei",
+        "description": "Fasesjekkpunkter for veiprosjekter, kopieres fra hub-listen «Fasesjekkliste Vei»",
+        "sourceList": "Fasesjekkliste Vei",
+        "destinationList": "Fasesjekkliste",
+        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "default": true,
+        "hidden": false
+      },
+      {
+        "title": "Planneroppgaver Vei",
+        "description": "Prosjektoppgaver for veiprosjekter, kopieres fra hub-listen «Planneroppgaver Vei»",
+        "sourceList": "Planneroppgaver Vei",
+        "destinationList": "Planneroppgaver",
+        "fields": "GtSortOrder,Title,GtCategory,GtChecklist",
+        "default": true,
+        "hidden": false
+      },
+      {
+        "title": "Standarddokumenter Vei",
+        "description": "Standard mappestruktur for prosjektdokumenter, kopieres fra hub-listen «Standarddokumenter Vei»",
+        "sourceList": "Standarddokumenter Vei",
+        "destinationList": "Dokumenter",
+        "fields": "Title",
+        "default": true,
+        "hidden": false
+      }
+    ]
   },
   "changelog": "CHANGELOG.md"
 }
