@@ -2,18 +2,50 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-forskningsprosjekt",
   "name": "Forskningsprosjekt",
-  "description": "Prosjektmal for forsknings- og utviklingsprosjekter med struktur for hypoteser, milepæler, etiske vurderinger og forskningsleveranser.",
-  "version": "1.0.0",
+  "description": "Prosjektmal for forsknings- og utviklingsprosjekter, basert på forskningsmalen til Prosjektportalen 365 (utviklet av Høgskolen i Innlandet). Provisjonerer innholdstypen Prosjekt (Forskning), forskningskolonner og taksonomi (finansiør, fakultet, institutt, forskergruppe) på hub-området, og setter opp en fasesjekkliste for forskningsprosjekter. Tilgjengelig på norsk og engelsk.",
+  "version": "1.0.1",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.12.0",
   "thumbnail": "thumbnail.png",
-  "icon": "TestBeaker",
+  "icon": "TestPlan",
   "tags": ["forskning", "FoU", "prosjektledelse"],
   "type": "template",
   "languages": ["nb-NO", "en-US"],
+  "cloudCompatible": false,
   "provisioning": {
-    "template": "provisioning/template.json"
+    "hubTemplate": "provisioning/hub-template.json",
+    "template": "provisioning/template.json",
+    "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09",
+    "listContent": [
+      {
+        "title": "Fasesjekkpunkter Forskning",
+        "description": "Fasesjekkpunkter for forskningsprosjekter, kopieres fra hub-listen «Fasesjekkliste forskning»",
+        "sourceList": "Fasesjekkliste forskning",
+        "destinationList": "Fasesjekkliste",
+        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "default": true,
+        "hidden": false
+      }
+    ],
+    "localized": {
+      "en-US": {
+        "name": "Research Project",
+        "description": "Project template for research and development projects, based on the Project Portal 365 research template (developed by Inland Norway University of Applied Sciences). Provisions the Project (Research) content type, research columns and taxonomy (financier, faculty, institute, research group) on the hub, and sets up a research phase checklist. Available in Norwegian and English.",
+        "hubTemplate": "provisioning/hub-template.en-US.json",
+        "listContent": [
+          {
+            "title": "Phase checkpoints Research",
+            "description": "Phase checkpoints for research projects, copied from the hub list \"Phase Checklist Research\"",
+            "sourceList": "Phase Checklist Research",
+            "destinationList": "Phase Checklist",
+            "fields": "GtSortOrder,Title,GtProjectPhase",
+            "default": true,
+            "hidden": false
+          }
+        ]
+      }
+    }
   },
   "changelog": "CHANGELOG.md"
 }

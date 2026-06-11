@@ -212,6 +212,41 @@
               }
             }
           }
+        },
+        "localized": {
+          "type": "object",
+          "description": "Per-locale provisioning overrides, keyed by BCP-47 code (e.g. 'en-US'). When the hub's language matches a key, Prosjektportalen applies that locale's hubTemplate/template/listContent and uses its name/description on the Maloppsett item; otherwise the base (top-level) provisioning is used. Combine with the top-level 'languages' field.",
+          "propertyNames": { "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Localized package/template name (used as the Maloppsett Title on a matching-language hub)"
+              },
+              "description": {
+                "type": "string",
+                "description": "Localized description (used as the Maloppsett GtDescription on a matching-language hub)"
+              },
+              "hubTemplate": {
+                "type": "string",
+                "description": "Locale-specific hub-level provisioning template",
+                "pattern": "^provisioning/.+\\.json$"
+              },
+              "template": {
+                "type": "string",
+                "description": "Locale-specific project-level provisioning template",
+                "pattern": "^provisioning/.+\\.json$"
+              },
+              "listContent": {
+                "type": "array",
+                "description": "Locale-specific list content configurations (replace the base list content on a matching-language hub)",
+                "items": {
+                  "$ref": "#/properties/provisioning/properties/listContent/items"
+                }
+              }
+            }
+          }
         }
       }
     },

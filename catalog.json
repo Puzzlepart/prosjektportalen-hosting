@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-10T13:14:09.997Z",
+  "lastUpdated": "2026-06-11T07:17:35.174Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -128,14 +128,15 @@
     {
       "id": "pp-forskningsprosjekt",
       "name": "Forskningsprosjekt",
-      "description": "Prosjektmal for forsknings- og utviklingsprosjekter med struktur for hypoteser, milepæler, etiske vurderinger og forskningsleveranser.",
-      "version": "1.0.0",
+      "description": "Prosjektmal for forsknings- og utviklingsprosjekter, basert på forskningsmalen til Prosjektportalen 365 (utviklet av Høgskolen i Innlandet). Provisjonerer innholdstypen Prosjekt (Forskning), forskningskolonner og taksonomi (finansiør, fakultet, institutt, forskergruppe) på hub-området, og setter opp en fasesjekkliste for forskningsprosjekter. Tilgjengelig på norsk og engelsk.",
+      "version": "1.0.1",
       "type": "template",
+      "cloudCompatible": false,
       "languages": [
         "nb-NO",
         "en-US"
       ],
-      "icon": "TestBeaker",
+      "icon": "TestPlan",
       "author": "Prosjektportalen-teamet",
       "tags": [
         "forskning",
@@ -143,9 +144,9 @@
         "prosjektledelse"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forskningsprosjekt/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forskningsprosjekt-1.0.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forskningsprosjekt-1.0.1.pppkg",
       "minPPVersion": "1.12.0",
-      "publishedDate": "2026-06-09",
+      "publishedDate": "2026-06-11",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forskningsprosjekt/CHANGELOG.md"
     },
     {

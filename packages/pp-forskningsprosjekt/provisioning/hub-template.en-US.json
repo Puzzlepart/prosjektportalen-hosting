@@ -1,0 +1,848 @@
+{
+  "Version": "1.0",
+  "Taxonomy": {
+    "TermGroup": {
+      "Name": "Prosjektportalen",
+      "Id": "c56bb677-f782-4cf6-a6d6-17685ee9f19d"
+    },
+    "TermSets": [
+      {
+        "Id": "4986b1b9-c4b0-4df2-845e-0ac872ad8355",
+        "Name": "Finansiør",
+        "Terms": [
+          {
+            "Id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+            "Name": "Research Council of Norway"
+          },
+          {
+            "Id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+            "Name": "EU/Horizon Europe"
+          },
+          {
+            "Id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+            "Name": "Regional Research Funds (RRF)"
+          },
+          {
+            "Id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+            "Name": "Innovation Norway"
+          },
+          {
+            "Id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+            "Name": "Ministry of Health and Care Services"
+          },
+          {
+            "Id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+            "Name": "Savings Bank Foundation"
+          }
+        ]
+      },
+      {
+        "Id": "943ff631-bd9c-47e6-940f-8c950d33c010",
+        "Name": "Fakultet",
+        "Terms": [
+          {
+            "Id": "080630e1-617f-4d82-bcb4-2ad3ac9509ee",
+            "Name": "Applied Ecology, Agriculture and Biotechnology"
+          },
+          {
+            "Id": "d2e987aa-5268-4f72-9876-917418f2c56e",
+            "Name": "Central Administration"
+          },
+          {
+            "Id": "e6e168f9-289a-48a0-ba48-b3b819478315",
+            "Name": "Teacher Education and Pedagogy"
+          },
+          {
+            "Id": "ec0a88d0-631b-4492-a647-eb329d168d88",
+            "Name": "Economics and Social Sciences"
+          }
+        ]
+      },
+      {
+        "Id": "5a7fbf6e-7786-4043-b929-4786de700856",
+        "Name": "Institutt",
+        "Terms": [
+          {
+            "Id": "cf2ed6e6-eae1-4cc5-ba20-85443a3c14f1",
+            "Name": "Biotechnology"
+          },
+          {
+            "Id": "0dd4c17c-6a16-423d-871a-4c124f33919f",
+            "Name": "English"
+          },
+          {
+            "Id": "17cc6b82-a816-4297-96e8-68301dc9ec22",
+            "Name": "Public Health and Sports Sciences"
+          },
+          {
+            "Id": "8d50f702-0142-4386-ba26-45b02e905d4e",
+            "Name": "Health and Nursing Sciences"
+          },
+          {
+            "Id": "66f03e99-37f9-4dc6-8fb1-25bc034e9c0a",
+            "Name": "Agricultural Sciences"
+          },
+          {
+            "Id": "d2c83221-83f4-4f73-a550-c910f50c9ef5",
+            "Name": "Arts and Cultural Studies"
+          },
+          {
+            "Id": "0bd2f00d-7def-42d6-894e-f49eaf5039b9",
+            "Name": "Mathematics, Natural Sciences and Physical Education"
+          },
+          {
+            "Id": "10db1b4d-36fc-48f7-a975-61cf673805dd",
+            "Name": "Nordic Language and Literature"
+          },
+          {
+            "Id": "6000ed21-95eb-4a06-a768-35f66bfb7ce8",
+            "Name": "Economics"
+          },
+          {
+            "Id": "560bd727-7bfb-438d-9ae3-d1470c1173a7",
+            "Name": "Organization and Management"
+          },
+          {
+            "Id": "9a5cbe2b-b901-4547-83a1-25233519f61c",
+            "Name": "Pedagogy"
+          },
+          {
+            "Id": "a00e1d61-eea9-4c60-8197-1d6bc691690b",
+            "Name": "Pedagogy in Teacher Education"
+          },
+          {
+            "Id": "e11b2f49-3ac4-421b-940a-5df11991e3ab",
+            "Name": "Psychology"
+          },
+          {
+            "Id": "466fb6cd-643e-4c8a-9812-44f158102ffb",
+            "Name": "Law, Philosophy and International Studies"
+          },
+          {
+            "Id": "79f0a672-6045-4b9e-89bc-7eca2956b9dc",
+            "Name": "Social Studies, Religion and Ethics"
+          },
+          {
+            "Id": "3d1c997d-2305-4872-9f0d-dd7ad34a5e22",
+            "Name": "Forestry and Outdoor Sciences"
+          },
+          {
+            "Id": "3916e7ee-79e2-4c18-b0d3-515c5f7780ea",
+            "Name": "Social Sciences and Counseling"
+          },
+          {
+            "Id": "3d2eca44-99c5-49e0-8b30-001c7c0befc1",
+            "Name": "Game Education"
+          },
+          {
+            "Id": "428cfefe-ecca-4eef-a497-ce839c1e2f07",
+            "Name": "TV Education"
+          }
+        ]
+      },
+      {
+        "Id": "15f5bff7-06e6-4e99-a26c-956d59dcbe91",
+        "Name": "Forskergruppe",
+        "Terms": [
+          {
+            "Id": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+            "Name": "Sustainable Development and Climate"
+          },
+          {
+            "Id": "2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e",
+            "Name": "Digital Transformation"
+          },
+          {
+            "Id": "3c4d5e6f-7a8b-4c9d-0e1f-2a3b4c5d6e7f",
+            "Name": "Public Health and Quality of Life"
+          },
+          {
+            "Id": "4d5e6f7a-8b9c-4d0e-1f2a-3b4c5d6e7f8a",
+            "Name": "Innovation and Entrepreneurship"
+          },
+          {
+            "Id": "5e6f7a8b-9c0d-4e1f-2a3b-4c5d6e7f8a9b",
+            "Name": "Learning and Educational Quality"
+          },
+          {
+            "Id": "6f7a8b9c-0d1e-4f2a-3b4c-5d6e7f8a9b0c",
+            "Name": "Society and Democracy"
+          }
+        ]
+      }
+    ]
+  },
+  "SiteFields": [
+    "<Field DisplayName=\"Publication Channel\" Description=\"Where is the publication published?\" Name=\"GtcPubChannel\" RichText=\"FALSE\" RichTextMode=\"Compatible\" Type=\"Note\" ID=\"{cd6b78ee-9af7-4b9c-9e46-d9e9a67f00e6}\" Group=\"Project Portal Columns (Project)\" StaticName=\"GtcPubChannel\" />",
+    "<Field DisplayName=\"Publication Date\" Description=\"When is the publication planned/published\" FriendlyDisplayFormat=\"Relative\" Format=\"DateOnly\" Name=\"GtcPubDate\" Type=\"DateTime\" ID=\"{90d297eb-1b8a-4db7-bc07-2422abb4f1e4}\" Group=\"Project Portal Columns (Project)\" StaticName=\"GtcPubDate\" />",
+    "<Field DisplayName=\"Is Publication Published?\" Description=\"Is the publication published?\" Name=\"GtcPubIsPublished\" Type=\"Boolean\" ID=\"{9d2d9ec7-3218-4d16-be3a-de6d8525affa}\" Group=\"Project Portal Columns (Project)\" StaticName=\"GtcPubIsPublished\"><Default>0</Default></Field>",
+    "<Field DisplayName=\"URL link to Nasjonalt vitenarkiv (NVA)\" Description=\"Find the publication at Nasjonalt vitenarkiv (NVA), and copy the full link here. Include HTTPS://.\" Format=\"Hyperlink\" Name=\"GtcPubLink\" Type=\"URL\" ID=\"{2f5a2d76-8910-4fb7-a3b3-ebb529f97ab2}\" Group=\"Project Portal Columns (Project)\" StaticName=\"GtcPubLink\" />",
+    "<Field DisplayName=\"Nasjonalt vitenarkiv (NVA) Result ID\" Description=\"What is the Nasjonalt vitenarkiv (NVA) result ID for the publication?\" MaxLength=\"255\" Name=\"GtcPubResultId\" Type=\"Text\" ID=\"{99fda828-0bfc-44fc-898e-7c941b9252da}\" Group=\"Project Portal Columns (Project)\" StaticName=\"GtcPubResultId\" />",
+    "<Field DisplayName=\"Role in Publication\" Description=\"Are employees first, last or co-authored? Enter name and role.\" Name=\"GtcPubRole\" RichText=\"FALSE\" RichTextMode=\"Compatible\" Type=\"Note\" ID=\"{0173a845-a466-444d-adbc-e5f2ecfe075f}\" Group=\"Project Portal Columns (Project)\" StaticName=\"GtcPubRole\" />",
+    "<Field DisplayName=\"Announcement\" Description=\"Title for announcement\" Format=\"Hyperlink\" Name=\"GtcAnnouncement\" Type=\"URL\" ID=\"{cbe2eb6b-d976-4456-b865-45e8ab43a06b}\" Group=\"Project Portal Columns (Custom)\" StaticName=\"GtcAnnouncement\" />",
+    "<Field ID=\"{ee0875de-9b5f-4661-bd99-9bb72e34abeb}\" DisplayName=\"Application Status\" Description=\"Current status of the application\" Name=\"GtcApplicationStatus\" Type=\"Choice\" Group=\"Project Portal Columns (Custom)\" StaticName=\"GtcApplicationStatus\"><CHOICES><CHOICE>Under Development</CHOICE><CHOICE>Sent</CHOICE><CHOICE>Allocated</CHOICE><CHOICE>Signed</CHOICE><CHOICE>Rejected</CHOICE></CHOICES></Field>",
+    "<Field Decimals=\"0\" DisplayName=\"Application Amount\" Description=\"Amount for the application\" Group=\"Project Portal Columns (Custom)\" ID=\"{093b17a0-8dfa-4bd3-b84b-6a397b43d841}\" LCID=\"1044\" Min=\"0\" Name=\"GtcApplicationSum\" StaticName=\"GtcApplicationSum\" Type=\"Currency\" />",
+    "<Field DisplayName=\"Nasjonalt vitenarkiv (NVA) Project Code\" Description=\"\" Group=\"Project Portal Columns (Custom)\" ID=\"{5adbe057-ef1f-4009-9ab8-515c6c099b4d}\" Name=\"GtcCristinCode\" StaticName=\"GtcCristinCode\" Type=\"Text\" />",
+    "<Field ID=\"{6e720f3e-e344-488e-bb86-b98f8efd3ac3}\" Name=\"GtcDeadline\" DisplayName=\"Application Deadline\" Description=\"Date for application deadline\" Type=\"DateTime\" Group=\"Project Portal Columns (Custom)\" Format=\"DateOnly\" StaticName=\"GtcDeadline\" />",
+    "<Field DisplayName=\"Delivery Number\" Description=\"\" Group=\"Project Portal Columns (Project)\" ID=\"{33001fe3-bfea-4a82-9219-d535ddff4001}\" Name=\"GtcDeliveryNumber\" StaticName=\"GtcDeliveryNumber\" Type=\"Text\" />",
+    "<Field DisplayName=\"Faculty (Text)\" Description=\"\" Group=\"Project Portal Columns (Custom)\" ID=\"{82c9ee56-d428-4009-9274-369450c9b719}\" Name=\"GtcFacultyText\" StaticName=\"GtcFacultyText\" Type=\"Text\" ShowInEditForm=\"FALSE\" />",
+    "<Field DisplayName=\"Financier (Other)\" Description=\"If the financier was not found in the list, you can specify it here.\" Group=\"Project Portal Columns (Custom)\" ID=\"{781dc764-d5dc-40d4-8199-7a9167eba3b7}\" Name=\"GtcFinancierOther\" StaticName=\"GtcFinancierOther\" Type=\"Text\" />",
+    "<Field DisplayName=\"Financier (Text)\" Description=\"\" Group=\"Project Portal Columns (Custom)\" ID=\"{facaf7c2-0f03-415e-b83f-94fbc4e75e4d}\" Name=\"GtcFinancierText\" StaticName=\"GtcFinancierText\" Type=\"Text\" ShowInEditForm=\"FALSE\" />",
+    "<Field DisplayName=\"Institute (Text)\" Description=\"\" Group=\"Project Portal Columns (Custom)\" ID=\"{4f7c4ecb-bf53-4ac5-b6c6-b28aa81eb8cc}\" Name=\"GtcInstituteText\" StaticName=\"GtcInstituteText\" Type=\"Text\" ShowInEditForm=\"FALSE\" />",
+    "<Field DisplayName=\"Reference\" Description=\"Reference for the checkpoint\" Format=\"Hyperlink\" Name=\"GtcPhaseReference\" Type=\"URL\" ID=\"{0ef193a1-84bd-4913-993e-df2751f5c827}\" Group=\"Project Portal Columns (Project)\" StaticName=\"GtcPhaseReference\" />",
+    "<Field ID=\"{9cea97d4-a5a4-432d-a367-f8fdf626f49b}\" Name=\"GtcProjectRole\" DisplayName=\"Role in Project\" Description=\"Role for the current project\" Type=\"Choice\" Group=\"Project Portal Columns (Custom)\" StaticName=\"GtcProjectRole\"><CHOICES><CHOICE>Coordinator</CHOICE><CHOICE>Partner</CHOICE><CHOICE>Mono Beneficiary</CHOICE></CHOICES></Field>",
+    "<Field Decimals=\"0\" DisplayName=\"Amount to University\" Description=\"The amount going to the university\" Group=\"Project Portal Columns (Custom)\" ID=\"{977af78d-32c1-4fff-b614-8920c07ddcaf}\" LCID=\"1044\" Min=\"0\" Name=\"GtcProjectSum\" StaticName=\"GtcProjectSum\" Type=\"Currency\" />",
+    "<Field DisplayName=\"Research Group (Other)\" Description=\"If the research group was not found in the list, you can specify it here.\" Group=\"Project Portal Columns (Custom)\" ID=\"{663a2150-c250-4a7b-8e49-690dca0cba3f}\" Name=\"GtcResearchGroupOther\" StaticName=\"GtcResearchGroupOther\" Type=\"Text\" />",
+    "<Field DisplayName=\"Research Group (Text)\" Description=\"\" Group=\"Project Portal Columns (Custom)\" ID=\"{7b4c6408-0816-421c-8d47-3b95734d162e}\" Name=\"GtcResearchGroupText\" StaticName=\"GtcResearchGroupText\" Type=\"Text\" ShowInEditForm=\"FALSE\" />",
+    "<Field ID=\"{8bce3087-6668-475c-bf00-037f6079b60b}\" Name=\"GtcStartupDate\" DisplayName=\"Startup Date\" Description=\"Start date for project implementation upon allocation of funds. Marked as a milestone on the Timeline.\" Type=\"DateTime\" Group=\"Project Portal Columns (Custom)\" Format=\"DateOnly\" StaticName=\"GtcStartupDate\" />"
+  ],
+  "ContentTypes": [
+    {
+      "ID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09",
+      "Name": "Project (Research)",
+      "Description": "Content type for research projects",
+      "Group": "Project Portal Content Types",
+      "FieldRefs": [
+        {
+          "Name": "Title",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectFinanceName"
+        },
+        {
+          "Name": "GtProjectNumber"
+        },
+        {
+          "Name": "GtcFinancierOther"
+        },
+        {
+          "Name": "GtcAnnouncement"
+        },
+        {
+          "Name": "GtcApplicationSum"
+        },
+        {
+          "Name": "GtcProjectSum"
+        },
+        {
+          "Name": "GtcDeadline"
+        },
+        {
+          "Name": "GtArchiveReference"
+        },
+        {
+          "Name": "GtProjectServiceArea"
+        },
+        {
+          "Name": "GtProjectType"
+        },
+        {
+          "Name": "GtUNSustDevGoals"
+        },
+        {
+          "Name": "GtProjectPhase"
+        },
+        {
+          "Name": "GtProjectManager"
+        },
+        {
+          "Name": "GtProjectOwner"
+        },
+        {
+          "Name": "GtProjectSupport"
+        },
+        {
+          "Name": "GtGainsResponsible"
+        },
+        {
+          "Name": "GtcApplicationStatus"
+        },
+        {
+          "Name": "GtcResearchGroupOther"
+        },
+        {
+          "Name": "GtcCristinCode"
+        },
+        {
+          "Name": "GtcProjectRole"
+        },
+        {
+          "Name": "GtStartDate"
+        },
+        {
+          "Name": "GtEndDate"
+        },
+        {
+          "Name": "GtcStartupDate"
+        },
+        {
+          "Name": "GtProjectGoals"
+        },
+        {
+          "Name": "GtBudgetTotal",
+          "Hidden": true
+        },
+        {
+          "Name": "GtCostsTotal",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectForecast",
+          "Hidden": true
+        },
+        {
+          "Name": "GtBudgetLastReportDate",
+          "Hidden": true
+        },
+        {
+          "Name": "GtGroupId"
+        },
+        {
+          "Name": "GtSiteId"
+        },
+        {
+          "Name": "GtSiteUrl"
+        },
+        {
+          "Name": "GtLastSyncTime"
+        },
+        {
+          "Name": "GtProjectPhaseText"
+        },
+        {
+          "Name": "GtProjectServiceAreaText"
+        },
+        {
+          "Name": "GtProjectTypeText"
+        },
+        {
+          "Name": "GtUNSustDevGoalsText"
+        },
+        {
+          "Name": "GtcFinancierText"
+        },
+        {
+          "Name": "GtcFacultyText"
+        },
+        {
+          "Name": "GtcInstituteText"
+        },
+        {
+          "Name": "GtcResearchGroupText"
+        },
+        {
+          "Name": "GtProjectAdminRoles"
+        },
+        {
+          "Name": "GtProjectTemplate"
+        },
+        {
+          "Name": "GtParentProjects"
+        },
+        {
+          "Name": "GtChildProjects"
+        },
+        {
+          "Name": "GtIsParentProject"
+        },
+        {
+          "Name": "GtIsProgram"
+        },
+        {
+          "Name": "GtInstalledVersion"
+        },
+        {
+          "Name": "GtCurrentVersion"
+        }
+      ]
+    }
+  ],
+  "Lists": [
+    {
+      "Title": "Projects",
+      "Description": "Contains all projects in the portfolio, and the properties that are synchronized for these.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09"
+        }
+      ]
+    },
+    {
+      "Title": "Phase Checklist Research",
+      "Description": "Checklist for the Research projects.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C"
+        }
+      ],
+      "FieldRefs": [
+        {
+          "ID": "0ef193a1-84bd-4913-993e-df2751f5c827",
+          "Name": "GtcPhaseReference",
+          "DisplayName": "Reference"
+        },
+        {
+          "ID": "c70ca705-d503-4d3c-a28e-078e7d61c4c2",
+          "Name": "GtDataRowUniqueKey",
+          "DisplayName": "Unique Key"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "All Items",
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "GtcPhaseReference",
+            "Modified",
+            "Editor"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "DefaultView": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"GtSortOrder\" /></OrderBy>",
+            "JSLink": "hierarchytaskslist.js"
+          }
+        }
+      ],
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "Title": "Identify research needs",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idea phase"
+            },
+            "GtSortOrder": 100
+          },
+          {
+            "Title": "Literature review",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idea phase"
+            },
+            "GtSortOrder": 150,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/bibliotek/forskningsstotte/systematisk-litteratursok/",
+              "Description": "Systematic literature search at the University"
+            }
+          },
+          {
+            "Title": "Hypothesis formulation",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idea phase"
+            },
+            "GtSortOrder": 200
+          },
+          {
+            "Title": "Stakeholder analysis",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idea phase"
+            },
+            "GtSortOrder": 250
+          },
+          {
+            "Title": "Identify calls or funding sources",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idea phase"
+            },
+            "GtSortOrder": 300,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/bibliotek/forskningsstotte/forskningsmidler-og-prosjekter/",
+              "Description": "Research funding at the University"
+            }
+          },
+          {
+            "Title": "DECISION POINT 1: Submit One-Pager for approval",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idea phase"
+            },
+            "GtSortOrder": 350
+          },
+          {
+            "Title": "Research design",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 400
+          },
+          {
+            "Title": "Benefit realization analysis (Impact and sustainability)",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 450
+          },
+          {
+            "Title": "Ethical considerations",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 500
+          },
+          {
+            "Title": "Resource planning",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 550
+          },
+          {
+            "Title": "Uncertainty analysis",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 600
+          },
+          {
+            "Title": "Cultural study of project partners",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 650
+          },
+          {
+            "Title": "Screening of partners",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 700
+          },
+          {
+            "Title": "Develop letters of intent with partners",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 750
+          },
+          {
+            "Title": "DECISION POINT 2: Submission of project description to Dean",
+            "GtProjectPhase": {
+              "termId": "99e85650-33de-4af4-b8db-edffbc8a310b",
+              "label": "Concept phase"
+            },
+            "GtSortOrder": 800
+          },
+          {
+            "Title": "Detailed project plan",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 900
+          },
+          {
+            "Title": "Data management plan",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 950,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/bibliotek/forskningsstotte/forskningsdata/datahandteringsplan/",
+              "Description": "Data management at the University"
+            }
+          },
+          {
+            "Title": "Privacy / Data Protection",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1000,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/bibliotek/forskningsstotte/personvern-og-forskningsetikk/",
+              "Description": "Privacy in Research at the University"
+            }
+          },
+          {
+            "Title": "Identify and establish work packages and project deliverables, conduct WBS",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1050
+          },
+          {
+            "Title": "Ethical considerations",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1100,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/bibliotek/forskningsstotte/personvern-og-forskningsetikk/",
+              "Description": "Ethics in Research at the University"
+            }
+          },
+          {
+            "Title": "Budgeting",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1150,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/innafor/arbeidsstotte/okonomi-og-innkjop/",
+              "Description": "The Finance Department at the University"
+            }
+          },
+          {
+            "Title": "Team organization",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1200
+          },
+          {
+            "Title": "Communication plan",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1250
+          },
+          {
+            "Title": "Stakeholder analysis",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1300
+          },
+          {
+            "Title": "Application development",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1350
+          },
+          {
+            "Title": "DECISION POINT 3: Submission of application",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1400
+          },
+          {
+            "Title": "Continue planning after application submission",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1450
+          },
+          {
+            "Title": "Plan startup phase",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1500
+          },
+          {
+            "Title": "DECISION POINT 4: Management anchoring - Project manager's mandate and project plan, signing of GRANT/Award contract",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1550
+          },
+          {
+            "Title": "Data collection",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1600
+          },
+          {
+            "Title": "Quality control",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1650
+          },
+          {
+            "Title": "Ongoing evaluation",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1700
+          },
+          {
+            "Title": "Documentation",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1750
+          },
+          {
+            "Title": "Data analysis",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1800
+          },
+          {
+            "Title": "DECISION POINT 5: Project closure",
+            "GtProjectPhase": {
+              "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130",
+              "label": "Closing phase"
+            },
+            "GtSortOrder": 1850
+          },
+          {
+            "Title": "Reporting",
+            "GtProjectPhase": {
+              "termId": "30e03c52-8c3e-4cfe-9b18-ca71593ce130",
+              "label": "Closing phase"
+            },
+            "GtSortOrder": 1900
+          },
+          {
+            "Title": "Dissemination",
+            "GtProjectPhase": {
+              "termId": "b7ba84f0-70b9-45c4-8c50-8f73bf15bbec",
+              "label": "Realization phase"
+            },
+            "GtSortOrder": 1950
+          },
+          {
+            "Title": "Evaluation",
+            "GtProjectPhase": {
+              "termId": "b7ba84f0-70b9-45c4-8c50-8f73bf15bbec",
+              "label": "Realization phase"
+            },
+            "GtSortOrder": 2000
+          },
+          {
+            "Title": "Implementation",
+            "GtProjectPhase": {
+              "termId": "b7ba84f0-70b9-45c4-8c50-8f73bf15bbec",
+              "label": "Realization phase"
+            },
+            "GtSortOrder": 2050
+          },
+          {
+            "Title": "Follow-up",
+            "GtProjectPhase": {
+              "termId": "b7ba84f0-70b9-45c4-8c50-8f73bf15bbec",
+              "label": "Realization phase"
+            },
+            "GtSortOrder": 2100
+          },
+          {
+            "Title": "Long-term monitoring",
+            "GtProjectPhase": {
+              "termId": "b7ba84f0-70b9-45c4-8c50-8f73bf15bbec",
+              "label": "Realization phase"
+            },
+            "GtSortOrder": 2200
+          },
+          {
+            "Title": "Kick-off",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1560
+          },
+          {
+            "Title": "Conduct startup meeting for project group (Project manager, work package leaders, any advisors)",
+            "GtProjectPhase": {
+              "termId": "99d7765a-c786-4792-a1a1-866ef0f982b9",
+              "label": "Implementation phase"
+            },
+            "GtSortOrder": 1570
+          },
+          {
+            "Title": "Strategic assessment",
+            "GtProjectPhase": {
+              "termId": "6edb42ac-9aaf-4f07-9cf5-5dfdf9ab0c32",
+              "label": "Idea phase"
+            },
+            "GtSortOrder": 310
+          },
+          {
+            "Title": "Planning of Intellectual Property Rights (IPR)",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1320,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/bibliotek/forskningsstotte/immaterielle-rettigheter/",
+              "Description": "Intellectual property rights at the University"
+            }
+          },
+          {
+            "Title": "Commercialization of research results",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1330,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/bibliotek/forskningsstotte/kommersialisering-av-forskning/",
+              "Description": "Procedure for commercialization of research results at the University"
+            }
+          },
+          {
+            "Title": "Export control",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1340,
+            "GtcPhaseReference": {
+              "Url": "https://www.inn.no/om-universitetet/sikkerhet-beredskap-og-krise/eksportkontroll/",
+              "Description": "Export control in research at the University"
+            }
+          },
+          {
+            "Title": "Submit privacy notice",
+            "GtProjectPhase": {
+              "termId": "cda4f1e1-3488-4e57-8a04-6973df239689",
+              "label": "Planning phase"
+            },
+            "GtSortOrder": 1001
+          }
+        ]
+      }
+    }
+  ]
+}
