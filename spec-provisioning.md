@@ -9,78 +9,62 @@
 
 ### 1.1 Oversikt
 
-sp-js-provisioning utvides med en intern **Taxonomy-handler** som provisjonerer termsett via Microsoft Graph API. Handleren aktiveres automatisk når en template inneholder en `Taxonomy`-seksjon, og kjøres som første steg – før `SiteFields` – slik at managed metadata-felter kan referere til termsett-IDer som nettopp er opprettet.
+sp-js-provisioning har en intern **Taxonomy-handler** som provisjonerer termgruppe, termsett og termer i termlageret til standard områdesamling via **SharePoint JSOM** (`spfx-jsom`), slik at de eksplisitte termsett-/term-GUID-ene fra templaten bevares. Handleren aktiveres automatisk når en template inneholder en `Taxonomy`-seksjon, og kjøres som første steg – før `SiteFields` – slik at managed metadata-felter kan referere til termsett-IDer som nettopp er opprettet.
 
-### 1.2 API-design
+### 1.2 API
 
-```typescript
-import { provisionTemplate } from 'sp-js-provisioning';
-
-// Hub-provisjonering: taxonomy + felter + innholdstyper + lister + filer
-await provisionTemplate(hubContext, hubTemplateJson, {
-  graphClient: msGraphClient,   // MSGraphClientV3 – påkrevd når Taxonomy-seksjon finnes
-  onProgress: (message) => {
-    console.log(message);
-  }
-});
-
-// Prosjekt-provisjonering: felter + innholdstyper + lister + filer
-await provisionTemplate(projectContext, projectTemplateJson);
-```
-
-Samme `provisionTemplate()`-funksjon brukes for både hub og prosjekt. Forskjellen er kun kontekst (hub-site vs prosjektområde) og at hub-templaten typisk har en `Taxonomy`-seksjon.
-
-### 1.3 Options-utvidelse
+Hub-provisjonering kjøres via `WebProvisioner` (samme mekanisme som prosjekt-provisjonering – forskjellen er kun konteksten: hub-område vs. prosjektområde, og at hub-templaten typisk har en `Taxonomy`-seksjon):
 
 ```typescript
-interface ProvisionOptions {
-  graphClient?: MSGraphClientV3;  // Påkrevd hvis template har Taxonomy-seksjon
-  onProgress?: (message: string) => void;
-}
+import { WebProvisioner } from 'sp-js-provisioning'
+
+const provisioner = new WebProvisioner(web).setup({
+  spfxContext // SPFx-kontekst – brukes til å initialisere JSOM (SP.Taxonomy)
+})
+await provisioner.applyTemplate(hubTemplateJson, null, (handler) => {
+  console.log(`Applying handler ${handler}`)
+})
 ```
 
-Dersom `Taxonomy`-seksjon finnes i templaten men `graphClient` ikke er satt, kastes en tydelig feil.
+### 1.3 Konfigurasjon
 
-### 1.4 Underliggende API: Microsoft Graph Taxonomy
+Taxonomy-handleren bygger sin egen JSOM-kontekst fra `spfxContext` (via `initSpfxJsom(..., { loadTaxonomy: true })`) og skriver til termlageret som den innloggede brukeren har tilgang til. Det kreves **ingen** `graphClient` / Microsoft Graph-tilgang.
 
-Handleren bruker Graph Taxonomy API:
+### 1.4 Underliggende API: SharePoint JSOM (SP.Taxonomy)
+
+Handleren bruker JSOM (lastet via `spfx-jsom` med `loadTaxonomy: true`) mot termlageret i standard områdesamling, slik at termsett og termer opprettes med **faste GUID-er** fra templaten:
 
 ```
-GET    /sites/{siteId}/termStore/groups                          → Finn/opprett termgruppe
-POST   /sites/{siteId}/termStore/groups                          → Opprett termgruppe
-GET    /sites/{siteId}/termStore/groups/{groupId}/sets            → Finn eksisterende termsett
-POST   /sites/{siteId}/termStore/groups/{groupId}/sets            → Opprett termsett (med fast ID)
-GET    /sites/{siteId}/termStore/sets/{setId}/children            → List eksisterende termer
-POST   /sites/{siteId}/termStore/sets/{setId}/children            → Opprett term (med fast ID)
-PATCH  /sites/{siteId}/termStore/sets/{setId}/children/{termId}   → Oppdater term
+termStore.getGroup(id)   / termStore.createGroup(name, id)        → Finn/opprett termgruppe
+termStore.getTermSet(id) / group.createTermSet(name, id, lcid)    → Finn/opprett termsett
+termStore.getTerm(id)    / termSet.createTerm(name, lcid, id)     → Finn/opprett term
+term.setCustomProperty(...) / termSet.set_customSortOrder(...)    → Egenskaper og sortering
+termStore.commitAll() + ExecuteJsomQuery(...)                     → Utfør ventende endringer
 ```
 
-Tilgjengelig fra SPFx via `MSGraphClientV3`. Krever `TermStore.ReadWrite.All` (delegated).
+Tilgangen styres av brukerens rolle i termlageret (se [4. Tillatelser](#4-tillatelser)) — ingen Graph-scope (`TermStore.ReadWrite.All`) er nødvendig.
 
 ### 1.5 Intern flyt i Taxonomy-handleren
 
 ```
-provisionTemplate(context, template, { graphClient })
+applyTemplate(template)  // Taxonomy kjøres først (handler-rekkefølge -1)
 │
 ├─ 0. Har template Taxonomy-seksjon?
 │     Ja → kjør Taxonomy-handler (nedenfor)
 │     Nei → hopp til SiteFields som vanlig
 │
-├─ 1. Hent term store for site
-│     GET /sites/{siteId}/termStore
+├─ 1. Init JSOM + hent standard termlager (defaultTermStore), les defaultLanguage (lcid)
 │
-├─ 2. Finn eller opprett termgruppe
-│     GET  .../termStore/groups → finn by name+id
-│     POST .../termStore/groups → opprett hvis ikke finnes
+├─ 2. ensureGroup(TermGroup)
+│     getGroup(id) finnes? → bruk eksisterende
+│     ellers → createGroup(name, id) + commitAll
 │
-├─ 3. For hvert termsett i definisjonen:
-│     ├─ 3a. Sjekk om termsett finnes (by ID)
-│     ├─ 3b. Opprett hvis ikke finnes
-│     ├─ 3c. Oppdater hvis finnes og navn/beskrivelse er endret
-│     └─ 3d. Synkroniser termer (rekursivt for hierarki)
-│             ├─ Finnes med riktig ID? → Oppdater hvis endret
-│             ├─ Finnes ikke? → Opprett med definert ID
-│             └─ Finnes lokalt men ikke i pakken → Behold
+├─ 3. For hvert termsett:
+│     ├─ 3a. ensureTermSet: getTermSet(id) finnes? → bruk; ellers createTermSet(name, id, lcid)
+│     ├─ 3b. ensureTerms: for hver term – getTerm(id) finnes?
+│     │       ├─ Ja  → behold (legg evt. til manglende customProperties hvis UpdateExistingTerms)
+│     │       └─ Nei → createTerm(name, lcid, id) + customProperties
+│     └─ 3c. applySortOrder (customSortOrder fra term.SortOrder)
 │
 ├─ 4. SiteFields (standard sp-js-provisioning)
 ├─ 5. ContentTypes
@@ -95,9 +79,9 @@ provisionTemplate(context, template, { graphClient })
 Den fullstendige provisjoneringssekvensen ved malpakkeinstallasjon. Ansvaret for å kalle hub først og deretter prosjekt ligger hos SPFx-komponenten, som gir full kontroll over feilhåndtering mellom stegene.
 
 ```
-┌─ provisionTemplate(hubContext, hubTemplate) ───────────────┐
+┌─ WebProvisioner(hub).applyTemplate(hub-template) ──────────┐
 │  1. Taxonomy     → Opprett termgruppe og termsett           │
-│                    (med faste IDer, via Graph API)           │
+│                    (med faste IDer, via JSOM)                │
 │  2. Fields       → Opprett site columns                     │
 │                    (managed metadata-felter refererer        │
 │                     til termsett-IDer fra steg 1)            │
@@ -106,7 +90,7 @@ Den fullstendige provisjoneringssekvensen ved malpakkeinstallasjon. Ansvaret for
 │  5. Files        → Kopier filer til hub                     │
 └─────────────────────────────────────────────────────────────┘
          ↓  Fullført uten feil
-┌─ provisionTemplate(projectContext, template) ──────────────┐
+┌─ WebProvisioner(prosjekt).applyTemplate(template) ─────────┐
 │  6. Fields       → Opprett prosjekt-spesifikke felter       │
 │  7. ContentTypes → Opprett innholdstyper                    │
 │  8. Lists        → Opprett lister                           │
@@ -153,10 +137,9 @@ SPFx-komponenten bør sjekke tilgangsnivå før taxonomy-provisjonering starter,
 
 | Feil | Håndtering |
 |---|---|
-| Manglende `TermStore.ReadWrite.All` | Avbryt med tydelig melding: "Du trenger Term Store-tillatelser. Kontakt din IT-administrator." |
-| Bruker er ikke Term Store Admin | Avbryt med melding om manglende rettigheter |
-| Term store finnes ikke på site | Avbryt med forklaring |
-| `Taxonomy`-seksjon uten `graphClient` | Kast feil: "graphClient er påkrevd for taxonomy-provisjonering" |
+| Manglende skrivetilgang til termlageret | Avbryt med tydelig melding: "Du trenger Term Store-tillatelser. Kontakt din IT-administrator." |
+| Bruker er ikke Term Store-administrator / gruppebidragsyter | Avbryt med melding om manglende rettigheter |
+| Standard termlager finnes ikke på området | Kast feil: "No default site collection term store is available." |
 | Rate limiting (429) | Retry med eksponentiell backoff (maks 3 forsøk) |
 | Nettverksfeil | Retry en gang, deretter avbryt med feilmelding |
 | Termsett-ID-konflikt (annen termgruppe) | Logg advarsel, forsøk å bruke eksisterende |
@@ -183,27 +166,26 @@ Provisjonerer innholdstyper...
 
 ### Fase 1 – Taxonomy-handler
 
+> Implementert i `sp-js-provisioning` 1.3.12 som en JSOM-basert handler. Listen under reflekterer den faktiske implementasjonen (ikke det opprinnelige Graph-baserte utkastet).
+
 - [ ] Definere `Taxonomy`-seksjon i template JSON-format (TermGroup, TermSets, Terms med hierarki)
-- [ ] Utvide `ProvisionOptions` interface med `graphClient` og `onProgress`
-- [ ] Implementere Taxonomy-handler som første steg i `provisionTemplate()`:
-  - [ ] Hent term store for site via Graph API
-  - [ ] Finn eller opprett termgruppe (by name + id)
-  - [ ] For hvert termsett: opprett eller oppdater (by ID)
-  - [ ] Rekursiv synkronisering av termer (opprett nye, oppdater endrede, behold lokale)
+- [ ] Konfigurere handleren via `spfxContext` (JSOM) og `onProgress`-callback
+- [ ] Implementere Taxonomy-handler som kjøres først i `applyTemplate()`:
+  - [ ] Hent standard termlager (defaultTermStore) via spfx-jsom (`initSpfxJsom({ loadTaxonomy: true })`)
+  - [ ] Finn eller opprett termgruppe (by id)
+  - [ ] For hvert termsett: opprett med fast ID hvis det ikke finnes
+  - [ ] Synkronisering av termer (opprett nye med fast ID, behold eksisterende)
 - [ ] Implementere idempotens-logikk:
   - [ ] Sjekk eksistens by ID før opprettelse
-  - [ ] Oppdater kun hvis navn/beskrivelse/sortOrder/customProperties er endret
   - [ ] Aldri slett termer som finnes lokalt men ikke i pakken
 - [ ] Implementere feilhåndtering:
-  - [ ] Tillatelsessjekk før start (TermStore.ReadWrite.All)
-  - [ ] Tydelig feil ved manglende `graphClient` når `Taxonomy`-seksjon finnes
-  - [ ] Rate limiting retry med eksponentiell backoff (maks 3)
-  - [ ] Nettverksfeil retry (1 gang)
-- [ ] Implementere `onProgress`-rapportering gjennom hele provisjoneringsflyten
+  - [ ] Tillatelsessjekk før start (skrivetilgang til termlageret — gjøres i SPFx-komponenten)
+  - [ ] Tydelig feil når standard termlager mangler
+- [ ] Implementere `onProgress`-rapportering via handler-callback i `applyTemplate`
 - [ ] Skrive enhetstester for Taxonomy-handler:
   - [ ] Opprettelse av ny termgruppe og termsett
   - [ ] Oppdatering av eksisterende termsett (endret navn, nye termer)
   - [ ] Idempotens: re-kjøring uten endringer
-  - [ ] Feilscenarier (manglende tillatelser, manglende graphClient)
-- [ ] Oppdatere eksisterende `provisionTemplate()`-flyt til å sjekke for `Taxonomy`-seksjon
-- [ ] Dokumentere nytt API og Taxonomy-format i bibliotekets README
+  - [ ] Feilscenarier (manglende tillatelser, manglende termlager)
+- [ ] Oppdatere `applyTemplate()`-flyt til å kjøre Taxonomy først når `Taxonomy`-seksjon finnes
+- [ ] Dokumentere API og Taxonomy-format i bibliotekets README

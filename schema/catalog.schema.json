@@ -71,6 +71,10 @@
             },
             "uniqueItems": true
           },
+          "hidden": {
+            "type": "boolean",
+            "description": "When true, the catalog UI filters the package out of the list, filters and search (it remains in this file). Used to stage packages that aren't ready to publish. Absent = visible."
+          },
           "icon": {
             "type": "string",
             "description": "Fluent UI icon name shown next to the package title (e.g. 'Page', 'BuildDefinition')"
@@ -106,7 +110,7 @@
           },
           "downloadUrl": {
             "type": "string",
-            "description": "Full URL to download the .pppkg file (GitHub release URL)",
+            "description": "Full URL to download the .pppkg file. A raw URL into the hosting repo's dist/ folder (raw.githubusercontent.com), which is CORS-enabled — GitHub release download URLs are not, and are blocked by the browser when the SPFx catalog fetches them.",
             "format": "uri",
             "pattern": "^https?://"
           },

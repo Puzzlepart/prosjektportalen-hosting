@@ -171,7 +171,8 @@ function updateCatalog(packageName, manifest) {
   }
 
   const existingIndex = catalog.packages.findIndex(pkg => pkg.id === manifest.id);
-  
+  const existingEntry = existingIndex !== -1 ? catalog.packages[existingIndex] : undefined;
+
   const packageEntry = {
     id: manifest.id,
     name: manifest.name,
@@ -182,6 +183,7 @@ function updateCatalog(packageName, manifest) {
     requiresBestillingsportalen: manifest.requiresBestillingsportalen,
     requiresEntra: manifest.requiresEntra,
     languages: manifest.languages,
+    hidden: manifest.hidden ? true : undefined,
     icon: manifest.icon,
     author: manifest.author,
     tags: manifest.tags || [],
@@ -196,8 +198,13 @@ function updateCatalog(packageName, manifest) {
         : undefined,
     downloadUrl: `${GITHUB_DIST_BASE}/${packageName}-${manifest.version}.pppkg`,
     minPPVersion: manifest.minPPVersion,
-    publishedDate: new Date().toISOString().split('T')[0],
-    changelogUrl: manifest.changelog 
+    // Prefer the manifest-authored date; otherwise keep the existing catalog
+    // date so a rebuild doesn't reset it; fall back to today for a new package.
+    publishedDate:
+      manifest.publishedDate ||
+      (existingEntry && existingEntry.publishedDate) ||
+      new Date().toISOString().split('T')[0],
+    changelogUrl: manifest.changelog
       ? `${GITHUB_RAW_BASE}/packages/${packageName}/${manifest.changelog}`
       : undefined
   };

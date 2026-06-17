@@ -157,6 +157,7 @@
       "type": "template",
       "requiresBestillingsportalen": true,
       "requiresEntra": true,
+      "hidden": true,
       "icon": "People",
       "author": "Prosjektportalen-teamet",
       "tags": [
@@ -195,6 +196,7 @@
       "description": "Prosjektmal for smidige prosjekter med produktkø, sprintplanlegging og kontinuerlig leveranseoppfølging.",
       "version": "1.0.0",
       "type": "template",
+      "hidden": true,
       "icon": "Sprint",
       "author": "Prosjektportalen-teamet",
       "tags": [

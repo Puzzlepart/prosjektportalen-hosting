@@ -163,6 +163,21 @@ function validateReferencedFiles(packagePath, manifest) {
                 }
             }
         }
+
+        // Per-locale provisioning overrides reference their own template files,
+        // applied when the hub language matches. Validate them too so a typo'd
+        // or missing localized template is caught at build instead of silently
+        // provisioning nothing for that locale at install time.
+        if (manifest.provisioning.localized) {
+            for (const [locale, loc] of Object.entries(manifest.provisioning.localized)) {
+                if (loc.hubTemplate && !fs.existsSync(path.join(packagePath, loc.hubTemplate))) {
+                    errors.push(`Localized (${locale}) hub template not found: ${loc.hubTemplate}`);
+                }
+                if (loc.template && !fs.existsSync(path.join(packagePath, loc.template))) {
+                    errors.push(`Localized (${locale}) template not found: ${loc.template}`);
+                }
+            }
+        }
     }
 
     if (manifest.content && manifest.content.items) {

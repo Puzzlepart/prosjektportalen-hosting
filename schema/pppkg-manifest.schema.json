@@ -47,6 +47,12 @@
       "description": "Minimum required Prosjektportalen version (semver)",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
     },
+    "publishedDate": {
+      "type": "string",
+      "description": "Date this version was published (YYYY-MM-DD). Authored here so the catalog's published date is stable across rebuilds. When omitted, the build preserves the existing catalog entry's date (or uses the build date for a brand-new package).",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
     "thumbnail": {
       "type": "string",
       "description": "Relative path to thumbnail image (16:9, min 600x338px)",
@@ -102,6 +108,11 @@
         "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
       },
       "uniqueItems": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "description": "Hide the package from the catalog UI (list, filters and search) while keeping it in catalog.json. Use to stage packages that aren't ready to publish yet. Absent = visible.",
+      "default": false
     },
     "provisioning": {
       "type": "object",

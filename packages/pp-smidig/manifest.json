@@ -7,10 +7,12 @@
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.12.0",
+  "publishedDate": "2026-06-09",
   "thumbnail": "thumbnail.png",
   "icon": "Sprint",
   "tags": ["smidig", "agile", "prosjektledelse"],
   "type": "template",
+  "hidden": true,
   "provisioning": {
     "template": "provisioning/template.json"
   },
