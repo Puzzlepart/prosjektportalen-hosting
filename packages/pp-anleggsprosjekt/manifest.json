@@ -28,7 +28,7 @@
         "sourceList": "Fasesjekkliste Anlegg",
         "destinationList": "Fasesjekkliste",
         "fields": "GtSortOrder,Title,GtProjectPhase",
-        "default": true,
+        "default": false,
         "hidden": false
       },
       {
@@ -37,7 +37,7 @@
         "sourceList": "Planneroppgaver Anlegg",
         "destinationList": "Planneroppgaver",
         "fields": "GtSortOrder,Title,GtCategory,GtChecklist",
-        "default": true,
+        "default": false,
         "hidden": false
       },
       {
@@ -46,7 +46,7 @@
         "sourceList": "Standarddokumenter Anlegg",
         "destinationList": "Dokumenter",
         "fields": "Title",
-        "default": true,
+        "default": false,
         "hidden": false
       }
     ]

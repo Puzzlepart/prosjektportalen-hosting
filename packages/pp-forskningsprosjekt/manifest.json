@@ -25,7 +25,7 @@
         "sourceList": "Fasesjekkliste forskning",
         "destinationList": "Fasesjekkliste",
         "fields": "GtSortOrder,Title,GtProjectPhase",
-        "default": true,
+        "default": false,
         "hidden": false
       }
     ],
@@ -41,7 +41,7 @@
             "sourceList": "Phase Checklist Research",
             "destinationList": "Phase Checklist",
             "fields": "GtSortOrder,Title,GtProjectPhase",
-            "default": true,
+            "default": false,
             "hidden": false
           }
         ]

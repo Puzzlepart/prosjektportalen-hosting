@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-11T07:17:35.174Z",
+  "lastUpdated": "2026-06-22T13:09:22.449Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",

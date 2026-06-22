@@ -42,7 +42,7 @@
         "sourceList": "Enkel Fasesjekkliste",
         "destinationList": "Fasesjekkliste",
         "fields": "GtSortOrder,Title,GtProjectPhase",
-        "default": true,
+        "default": false,
         "hidden": false
       }
     ]
