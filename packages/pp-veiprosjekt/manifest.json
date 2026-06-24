@@ -13,6 +13,7 @@
   "tags": ["vei", "samferdsel", "anlegg", "prosjektledelse"],
   "type": "template",
   "cloudCompatible": false,
+  "cloudCompatibleReason": "Provisjonerer egne taksonomi-termsett («Fase (Vei)», «Fag (Vei)», «Emne (Vei)») til termlageret på hub-området, som ikke kan settes opp fra en skymal. Innholdstyper og listeinnhold fungerer, men taksonomien hoppes over.",
   "provisioning": {
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",

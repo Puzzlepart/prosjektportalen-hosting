@@ -54,6 +54,10 @@
             "type": "boolean",
             "description": "Whether the package can run as a skymal (cloud template). False = needs hub-side provisioning the cloud path can't reproduce; the catalog/wizard warn 'at own risk'. Absent = true."
           },
+          "cloudCompatibleReason": {
+            "type": "string",
+            "description": "Optional. Shown when cloudCompatible is false — a short, user-facing explanation (Norwegian) of what hub-side content blocks cloud use (e.g. a taxonomy term set provisioned to the term store)."
+          },
           "requiresBestillingsportalen": {
             "type": "boolean",
             "description": "Whether the package requires Bestillingsportalen for full use. Shown as a dependency tag. Absent = not required."

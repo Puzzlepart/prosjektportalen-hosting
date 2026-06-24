@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-22T13:09:22.449Z",
+  "lastUpdated": "2026-06-24T08:37:24.854Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -155,6 +155,7 @@
       "description": "Prosjektmal for leverandørsamhandling mellom byggherre og entreprenør (leverandør, konsulent, ekstern part). Støtte for formelle prosesser, dialog, godkjenninger, historikk, varsling og arkivering i overganger.",
       "version": "1.0.0",
       "type": "template",
+      "cloudCompatible": true,
       "requiresBestillingsportalen": true,
       "requiresEntra": true,
       "hidden": true,
@@ -196,6 +197,7 @@
       "description": "Prosjektmal for smidige prosjekter med produktkø, sprintplanlegging og kontinuerlig leveranseoppfølging.",
       "version": "1.0.0",
       "type": "template",
+      "cloudCompatible": true,
       "hidden": true,
       "icon": "Sprint",
       "author": "Prosjektportalen-teamet",

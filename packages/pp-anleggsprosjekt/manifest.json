@@ -17,6 +17,7 @@
   ],
   "type": "template",
   "cloudCompatible": false,
+  "cloudCompatibleReason": "Provisjonerer et taksonomi-termsett («Fase (Anlegg)») til termlageret på hub-området, som ikke kan settes opp fra en skymal. Innholdstyper og listeinnhold fungerer, men fasetaksonomien hoppes over.",
   "provisioning": {
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",

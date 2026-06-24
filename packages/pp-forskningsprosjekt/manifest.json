@@ -14,6 +14,7 @@
   "type": "template",
   "languages": ["nb-NO", "en-US"],
   "cloudCompatible": false,
+  "cloudCompatibleReason": "Provisjonerer fire taksonomi-termsett (Finansiør, Fakultet, Institutt, Forskergruppe) til termlageret på hub-området, som ikke kan settes opp fra en skymal. Innholdstyper og listeinnhold fungerer, men taksonomien hoppes over.",
   "provisioning": {
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",

@@ -12,6 +12,7 @@
   "icon": "Sprint",
   "tags": ["smidig", "agile", "prosjektledelse"],
   "type": "template",
+  "cloudCompatible": true,
   "hidden": true,
   "provisioning": {
     "template": "provisioning/template.json"

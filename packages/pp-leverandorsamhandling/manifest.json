@@ -12,6 +12,7 @@
   "icon": "People",
   "tags": ["leverandør", "samhandling", "innkjøp"],
   "type": "template",
+  "cloudCompatible": true,
   "requiresBestillingsportalen": true,
   "requiresEntra": true,
   "hidden": true,

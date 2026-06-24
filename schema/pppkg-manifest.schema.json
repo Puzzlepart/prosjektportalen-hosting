@@ -90,6 +90,10 @@
       "description": "Whether the package can run as a skymal (cloud template) — applied to a project entirely from the .pppkg with nothing provisioned to the hub. Set false for packages that need hub-side provisioning (a content type bound to the Prosjekter list, hub site columns, taxonomy, etc.). Absent = true. When false, the catalog and setup wizard warn 'at own risk' but do not block.",
       "default": false
     },
+    "cloudCompatibleReason": {
+      "type": "string",
+      "description": "Optional. Shown when cloudCompatible is false — a short, user-facing explanation (Norwegian) of what hub-side content blocks cloud use (e.g. a taxonomy term set provisioned to the term store)."
+    },
     "requiresBestillingsportalen": {
       "type": "boolean",
       "description": "Whether the package requires Bestillingsportalen to be installed for full use. Shown as a dependency tag in the catalog. Absent = not required.",
