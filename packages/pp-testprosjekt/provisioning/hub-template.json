@@ -1,0 +1,321 @@
+{
+  "Version": "1.0",
+  "Taxonomy": {
+    "TermGroup": {
+      "Name": "Prosjektportalen",
+      "Id": "c56bb677-f782-4cf6-a6d6-17685ee9f19d"
+    },
+    "TermSets": [
+      {
+        "Id": "aaa3e3cc-1b49-4b06-b9f8-37ff111407f7",
+        "Name": "Fase (Test)",
+        "Terms": [
+          {
+            "Id": "63d0305c-c7bf-4cd3-bc74-4164a4be6167",
+            "Name": "Konsept",
+            "SortOrder": 1,
+            "CustomProperties": {
+              "PhaseLetter": "K",
+              "PhaseSubText": "Idé og konseptutvikling",
+              "PhaseDescription": "Avklare behov, mål og overordnet konsept."
+            }
+          },
+          {
+            "Id": "c3a01247-45c3-4c32-9da8-2f674242ea31",
+            "Name": "Planlegge",
+            "SortOrder": 2,
+            "CustomProperties": {
+              "PhaseLetter": "P",
+              "PhaseSubText": "Detaljplanlegging",
+              "PhaseDescription": "Utarbeide prosjektplan, budsjett og milepæler."
+            }
+          },
+          {
+            "Id": "cf8d5215-6a59-46c0-b994-efde43eecf90",
+            "Name": "Gjennomføre",
+            "SortOrder": 3,
+            "CustomProperties": {
+              "PhaseLetter": "G",
+              "PhaseSubText": "Gjennomføring",
+              "PhaseDescription": "Levere prosjektets resultater iht. plan."
+            }
+          },
+          {
+            "Id": "386ce252-00e7-42d4-8701-63d2d43d3caa",
+            "Name": "Avslutte",
+            "SortOrder": 4
+          },
+          {
+            "Id": "3e02bc70-349a-4d3c-ac04-105cd3c7508f",
+            "Name": "Realisere",
+            "SortOrder": 5,
+            "CustomProperties": {
+              "PhaseLetter": "R",
+              "PhaseSubText": "Gevinstrealisering",
+              "PhaseDescription": "Følge opp og realisere gevinster."
+            }
+          }
+        ],
+        "UpdateExistingTerms": true
+      },
+      {
+        "Id": "f11ebd26-1f9e-477c-b5f5-f84b241890e7",
+        "Name": "Testkategori",
+        "Terms": [
+          {
+            "Id": "b4755449-ab3d-4fcb-b231-be8e03ad4a7c",
+            "Name": "Kategori A"
+          },
+          {
+            "Id": "031f0c6e-4a21-432f-b643-e9fe75f723dd",
+            "Name": "Kategori B"
+          },
+          {
+            "Id": "a0886a16-cf5f-4e28-a19c-4102a1b796be",
+            "Name": "Kategori C"
+          }
+        ]
+      },
+      {
+        "Id": "183cad74-32ab-4390-b270-a6ac16ca24d9",
+        "Name": "Testegenskaper",
+        "Terms": [
+          {
+            "Id": "f12357d0-c9c4-40bd-8ce3-4a9231430e4b",
+            "Name": "Egenskap Alfa",
+            "CustomProperties": {
+              "Kode": "ALFA",
+              "Ansvarlig": "Testteam"
+            }
+          },
+          {
+            "Id": "5bafaad9-9d5e-4811-bec2-b33a180b240f",
+            "Name": "Egenskap Beta",
+            "CustomProperties": {
+              "Kode": "BETA",
+              "Ansvarlig": "Testteam"
+            }
+          }
+        ],
+        "UpdateExistingTerms": true
+      }
+    ]
+  },
+  "SiteFields": [
+    "<Field DisplayName=\"Testtekst\" Description=\"Testtekstfelt for testpakken\" Name=\"GtTestText\" Type=\"Text\" ID=\"{89887e84-e3b7-4695-b2f9-dc9aaa10af9d}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestText\" />",
+    "<Field DisplayName=\"Testnotat\" Description=\"Testnotatfelt for testpakken\" Name=\"GtTestNote\" RichText=\"FALSE\" RichTextMode=\"Compatible\" Type=\"Note\" ID=\"{e7f609be-c2e6-4c8f-8dca-87fad1ce8c20}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestNote\" />",
+    "<Field DisplayName=\"Testdato\" Description=\"Testdatofelt for testpakken\" FriendlyDisplayFormat=\"Relative\" Format=\"DateOnly\" Name=\"GtTestDate\" Type=\"DateTime\" ID=\"{0c68d8fe-4a59-45ce-b2ad-ae9072130c6f}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestDate\" />",
+    "<Field DisplayName=\"Test ja/nei\" Description=\"Testfelt for ja/nei i testpakken\" Name=\"GtTestBool\" Type=\"Boolean\" ID=\"{6f6c1b8d-a48a-454a-b31e-48490ae5ba31}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestBool\"><Default>0</Default></Field>",
+    "<Field DisplayName=\"Testvalg\" Description=\"Testvalgfelt for testpakken\" Format=\"Dropdown\" Name=\"GtTestChoice\" Type=\"Choice\" ID=\"{d1f18cbf-7276-4a41-b781-87ecb13de0dd}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestChoice\"><CHOICES><CHOICE>Lav</CHOICE><CHOICE>Middels</CHOICE><CHOICE>Høy</CHOICE></CHOICES></Field>",
+    "<Field DisplayName=\"Testtall\" Description=\"Testtallfelt for testpakken\" Name=\"GtTestNumber\" Type=\"Number\" ID=\"{9b0ea480-171e-4307-b0a6-0c533135e8a0}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestNumber\" />",
+    "<Field DisplayName=\"Testlenke\" Description=\"Testlenkefelt for testpakken\" Format=\"Hyperlink\" Name=\"GtTestUrl\" Type=\"URL\" ID=\"{c846c2a3-98a9-4479-8cbc-91e13fb5a1f4}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestUrl\" />"
+  ],
+  "ContentTypes": [
+    {
+      "ID": "0x0100CBEAE584066D4D87970DD5EDFDFE7F06",
+      "Name": "Prosjekt (Test)",
+      "Description": "Innholdstype for testprosjekter",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        {
+          "Name": "Title",
+          "Hidden": true
+        },
+        {
+          "Name": "GtProjectNumber"
+        },
+        {
+          "Name": "GtProjectPhase"
+        },
+        {
+          "Name": "GtProjectManager"
+        },
+        {
+          "Name": "GtProjectOwner"
+        },
+        {
+          "Name": "GtStartDate"
+        },
+        {
+          "Name": "GtEndDate"
+        },
+        {
+          "Name": "GtProjectGoals"
+        },
+        {
+          "Name": "GtTestText"
+        },
+        {
+          "Name": "GtTestNote"
+        },
+        {
+          "Name": "GtTestDate"
+        },
+        {
+          "Name": "GtTestBool"
+        },
+        {
+          "Name": "GtTestChoice"
+        },
+        {
+          "Name": "GtTestNumber"
+        },
+        {
+          "Name": "GtTestUrl"
+        }
+      ]
+    },
+    {
+      "ID": "0x0100FFE226AE6A8C4F38A2DAB5E451711F4E",
+      "Name": "Testsjekkpunkt",
+      "Description": "Innholdstype for testsjekkpunkter",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        {
+          "Name": "Title"
+        },
+        {
+          "Name": "GtSortOrder"
+        },
+        {
+          "Name": "GtProjectPhase"
+        },
+        {
+          "Name": "GtTestText"
+        }
+      ]
+    }
+  ],
+  "Lists": [
+    {
+      "Title": "Prosjekter",
+      "Description": "Inneholder alle prosjektene i porteføljen, og egenskapene som er synkronisert for disse.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100CBEAE584066D4D87970DD5EDFDFE7F06"
+        }
+      ]
+    },
+    {
+      "Title": "Testsjekkliste",
+      "Description": "Testsjekkpunkter per prosjektfase for testpakken.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100FFE226AE6A8C4F38A2DAB5E451711F4E"
+        }
+      ],
+      "FieldRefs": [
+        {
+          "Name": "GtSortOrder"
+        },
+        {
+          "Name": "GtProjectPhase"
+        },
+        {
+          "Name": "GtTestText"
+        }
+      ],
+      "AdditionalSettings": {
+        "EnableVersioning": true
+      },
+      "Views": [
+        {
+          "Title": "Alle elementer",
+          "ViewFields": [
+            "GtSortOrder",
+            "LinkTitle",
+            "GtProjectPhase",
+            "GtTestText",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 100,
+            "Paged": true,
+            "DefaultView": true,
+            "ViewQuery": "<OrderBy><FieldRef Name=\"GtSortOrder\" /></OrderBy>"
+          }
+        }
+      ],
+      "Folders": [
+        {
+          "Name": "Eksempelmappe"
+        }
+      ],
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "Title": "Avklar prosjektidé",
+            "GtProjectPhase": {
+              "termId": "63d0305c-c7bf-4cd3-bc74-4164a4be6167",
+              "label": "Konsept"
+            },
+            "GtSortOrder": 100,
+            "GtTestText": "Eks. tekst 1"
+          },
+          {
+            "Title": "Lag prosjektplan",
+            "GtProjectPhase": {
+              "termId": "c3a01247-45c3-4c32-9da8-2f674242ea31",
+              "label": "Planlegge"
+            },
+            "GtSortOrder": 200
+          },
+          {
+            "Title": "Etabler milepæler",
+            "GtProjectPhase": {
+              "termId": "c3a01247-45c3-4c32-9da8-2f674242ea31",
+              "label": "Planlegge"
+            },
+            "GtSortOrder": 300
+          },
+          {
+            "Title": "Lever delresultat",
+            "GtProjectPhase": {
+              "termId": "cf8d5215-6a59-46c0-b994-efde43eecf90",
+              "label": "Gjennomføre"
+            },
+            "GtSortOrder": 400
+          },
+          {
+            "Title": "Avslutt og overlever",
+            "GtProjectPhase": {
+              "termId": "386ce252-00e7-42d4-8701-63d2d43d3caa",
+              "label": "Avslutte"
+            },
+            "GtSortOrder": 500
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Testbibliotek",
+      "Description": "Dokumentbibliotek for testpakken.",
+      "Template": 101,
+      "ContentTypesEnabled": false,
+      "RemoveExistingContentTypes": false
+    }
+  ],
+  "Files": [
+    {
+      "Folder": "Testbibliotek",
+      "Url": "Testdokument.txt",
+      "Overwrite": true,
+      "Src": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/provisioning/files/Testdokument.txt"
+    }
+  ],
+  "PropertyBagEntries": [
+    {
+      "Key": "GtTestPackage",
+      "Value": "pp-testprosjekt",
+      "Indexed": true
+    }
+  ]
+}

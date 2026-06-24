@@ -1,0 +1,144 @@
+{
+  "$schema": "../../schema/pppkg-manifest.schema.json",
+  "id": "pp-testprosjekt",
+  "name": "Testprosjekt",
+  "description": "Testmal som dekker alle funksjoner i pakkeformatet: taksonomi (ny fasetermset med termer og lokale egenskaper, pluss kategorier og egenskaps-termsett), sitekolonner, innholdstyper, lister med visninger og rader, filer, prosjekttillegg, listeinnhold, standardinnhold og lokalisering. Brukes til å teste hele installasjonsløypa. Ikke en reell prosjektmal.",
+  "version": "1.0.0",
+  "author": "Prosjektportalen-teamet",
+  "license": "MIT",
+  "minPPVersion": "1.12.0",
+  "publishedDate": "2026-06-24",
+  "thumbnail": "thumbnail.png",
+  "screenshots": [
+    "assets/screenshots/portfolio.png",
+    "assets/screenshots/overview.png",
+    "assets/screenshots/timeline.png"
+  ],
+  "icon": "TestBeaker",
+  "tags": ["test", "alle-funksjoner", "qa", "intern"],
+  "type": "template",
+  "languages": ["nb-NO", "en-US"],
+  "cloudCompatible": false,
+  "cloudCompatibleReason": "Provisjonerer taksonomi-termsett (Fase, Testkategori, Testegenskaper) til termlageret på hub-området, som ikke kan settes opp fra en skymal. Innholdstyper, lister og listeinnhold fungerer, men taksonomien hoppes over.",
+  "requiresBestillingsportalen": true,
+  "requiresEntra": true,
+  "hidden": false,
+  "provisioning": {
+    "hubTemplate": "provisioning/hub-template.json",
+    "template": "provisioning/template.json",
+    "projectContentTypeId": "0x0100CBEAE584066D4D87970DD5EDFDFE7F06",
+    "projectPhaseTermSetId": "aaa3e3cc-1b49-4b06-b9f8-37ff111407f7",
+    "extensions": [
+      {
+        "id": "test-forside",
+        "name": "Testforside",
+        "description": "Forenklet testforside (navigasjon)",
+        "file": "provisioning/extensions/TestForside.json",
+        "optional": true,
+        "defaultSelected": false
+      },
+      {
+        "id": "test-venstremeny",
+        "name": "Test venstremeny",
+        "description": "Testmeny i venstrekant",
+        "file": "provisioning/extensions/TestVenstremeny.json",
+        "optional": true,
+        "defaultSelected": true
+      }
+    ],
+    "listContent": [
+      {
+        "title": "Testfasesjekkpunkter",
+        "description": "Kopierer fasesjekkpunkter fra hub-listen «Testsjekkliste»",
+        "sourceList": "Testsjekkliste",
+        "destinationList": "Fasesjekkliste",
+        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "default": true,
+        "hidden": false,
+        "locked": false
+      },
+      {
+        "title": "Testfasesjekkpunkter (låst)",
+        "description": "Låst variant – kan ikke fravelges",
+        "sourceList": "Testsjekkliste",
+        "destinationList": "Fasesjekkliste",
+        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "default": true,
+        "hidden": false,
+        "locked": true
+      },
+      {
+        "title": "Testfasesjekkpunkter (skjult)",
+        "description": "Skjult variant – vises ikke i veiviseren",
+        "sourceList": "Testsjekkliste",
+        "destinationList": "Fasesjekkliste",
+        "fields": "-",
+        "default": false,
+        "hidden": true,
+        "locked": false
+      }
+    ],
+    "localized": {
+      "en-US": {
+        "name": "Test Project",
+        "description": "Test template covering every package feature: taxonomy (a new phase term set with terms and local custom properties, plus category and property term sets), site columns, content types, lists with views and rows, files, project extensions, list content, standard content and localization. Used to test the full install pipeline. Not a real project template.",
+        "hubTemplate": "provisioning/hub-template.en-US.json",
+        "template": "provisioning/template.en-US.json",
+        "listContent": [
+          {
+            "title": "Test phase checkpoints",
+            "description": "Copies phase checkpoints from the hub list \"Test Checklist\"",
+            "sourceList": "Test Checklist",
+            "destinationList": "Phase Checklist",
+            "fields": "GtSortOrder,Title,GtProjectPhase",
+            "default": true,
+            "hidden": false,
+            "locked": false
+          },
+          {
+            "title": "Test phase checkpoints (locked)",
+            "description": "Locked variant — cannot be deselected",
+            "sourceList": "Test Checklist",
+            "destinationList": "Phase Checklist",
+            "fields": "GtSortOrder,Title,GtProjectPhase",
+            "default": true,
+            "hidden": false,
+            "locked": true
+          },
+          {
+            "title": "Test phase checkpoints (hidden)",
+            "description": "Hidden variant — not shown in the wizard",
+            "sourceList": "Test Checklist",
+            "destinationList": "Phase Checklist",
+            "fields": "-",
+            "default": false,
+            "hidden": true,
+            "locked": false
+          }
+        ]
+      }
+    }
+  },
+  "content": {
+    "items": [
+      {
+        "id": "test-innhold",
+        "name": "Testinnhold",
+        "description": "Standard testrader (obligatorisk)",
+        "sourceFile": "content/test-innhold-a.json",
+        "targetList": "Testprosjektliste",
+        "optional": false
+      },
+      {
+        "id": "test-tillegg",
+        "name": "Test tilleggsinnhold",
+        "description": "Valgfrie standardrader",
+        "sourceFile": "content/test-innhold-b.json",
+        "targetList": "Usikkerhet",
+        "optional": true,
+        "defaultSelected": true
+      }
+    ]
+  },
+  "changelog": "CHANGELOG.md"
+}

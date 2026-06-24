@@ -1,0 +1,22 @@
+{
+  "Navigation": {
+    "QuickLaunch": [
+      {
+        "Url": "SitePages/Prosjekt.aspx",
+        "Title": "Hjem"
+      },
+      {
+        "Url": "Lists/Testprosjektliste/AllItems.aspx",
+        "Title": "Testliste"
+      },
+      {
+        "Url": "Lists/Usikkerhet/AllItems.aspx",
+        "Title": "Usikkerhet"
+      },
+      {
+        "Url": "SitePages/Prosjekttidslinje.aspx",
+        "Title": "Tidslinje"
+      }
+    ]
+  }
+}

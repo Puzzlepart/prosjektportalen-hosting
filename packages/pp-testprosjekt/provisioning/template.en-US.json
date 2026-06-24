@@ -1,0 +1,85 @@
+{
+  "Version": "1.0",
+  "SiteFields": [
+    "<Field DisplayName=\"Test note (project)\" Name=\"GtTestProjectNote\" RichText=\"FALSE\" RichTextMode=\"Compatible\" Type=\"Note\" ID=\"{44d0bb76-38ee-4357-8114-90882652ca19}\" Group=\"Kolonner for Prosjektportalen (Test)\" StaticName=\"GtTestProjectNote\" />"
+  ],
+  "ContentTypes": [
+    {
+      "ID": "0x01009A8EC06C79424B1B99D0FC4E61331392",
+      "Name": "Test Item",
+      "Description": "Content type for test item (project level)",
+      "Group": "Prosjektportalen innholdstyper",
+      "FieldRefs": [
+        {
+          "Name": "Title"
+        },
+        {
+          "Name": "GtTestProjectNote"
+        },
+        {
+          "Name": "GtTestChoice"
+        }
+      ]
+    }
+  ],
+  "Lists": [
+    {
+      "Title": "Test Project List",
+      "Description": "Test list at project level with example rows.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x01009A8EC06C79424B1B99D0FC4E61331392"
+        }
+      ],
+      "Views": [
+        {
+          "Title": "All items",
+          "ViewFields": [
+            "LinkTitle",
+            "GtTestChoice",
+            "GtTestProjectNote",
+            "Modified"
+          ],
+          "AdditionalSettings": {
+            "RowLimit": 50,
+            "Paged": true,
+            "DefaultView": true
+          }
+        }
+      ],
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "Title": "Example row 1",
+            "GtTestChoice": "Middels",
+            "GtTestProjectNote": "Created by test template"
+          },
+          {
+            "Title": "Example row 2",
+            "GtTestChoice": "Høy"
+          }
+        ]
+      }
+    }
+  ],
+  "Files": [
+    {
+      "Folder": "Delte dokumenter",
+      "Url": "Prosjektnotat.txt",
+      "Overwrite": true,
+      "Src": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/provisioning/files/Prosjektnotat.txt"
+    }
+  ],
+  "PropertyBagEntries": [
+    {
+      "Key": "GtTestProjectProvisioned",
+      "Value": "true",
+      "Indexed": false
+    }
+  ]
+}

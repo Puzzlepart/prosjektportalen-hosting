@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-06-24T08:37:24.854Z",
+  "lastUpdated": "2026-06-24T11:10:58.700Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -211,6 +211,38 @@
       "minPPVersion": "1.12.0",
       "publishedDate": "2026-06-09",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-smidig/CHANGELOG.md"
+    },
+    {
+      "id": "pp-testprosjekt",
+      "name": "Testprosjekt",
+      "description": "Testmal som dekker alle funksjoner i pakkeformatet: taksonomi (ny fasetermset med termer og lokale egenskaper, pluss kategorier og egenskaps-termsett), sitekolonner, innholdstyper, lister med visninger og rader, filer, prosjekttillegg, listeinnhold, standardinnhold og lokalisering. Brukes til å teste hele installasjonsløypa. Ikke en reell prosjektmal.",
+      "version": "1.0.0",
+      "type": "template",
+      "cloudCompatible": false,
+      "requiresBestillingsportalen": true,
+      "requiresEntra": true,
+      "languages": [
+        "nb-NO",
+        "en-US"
+      ],
+      "icon": "TestBeaker",
+      "author": "Prosjektportalen-teamet",
+      "tags": [
+        "test",
+        "alle-funksjoner",
+        "qa",
+        "intern"
+      ],
+      "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/thumbnail.png",
+      "screenshots": [
+        "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/assets/screenshots/portfolio.png",
+        "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/assets/screenshots/overview.png",
+        "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/assets/screenshots/timeline.png"
+      ],
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-testprosjekt-1.0.0.pppkg",
+      "minPPVersion": "1.12.0",
+      "publishedDate": "2026-06-24",
+      "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/CHANGELOG.md"
     },
     {
       "id": "pp-veiprosjekt",
