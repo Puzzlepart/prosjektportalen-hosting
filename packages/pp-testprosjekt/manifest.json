@@ -19,7 +19,7 @@
   "type": "template",
   "languages": ["nb-NO", "en-US"],
   "cloudCompatible": false,
-  "cloudCompatibleReason": "Provisjonerer taksonomi-termsett (Fase, Testkategori, Testegenskaper) til termlageret på hub-området, som ikke kan settes opp fra en skymal. Innholdstyper, lister og listeinnhold fungerer, men taksonomien hoppes over.",
+  "cloudCompatibleReason": "Provisjonerer hub-innhold som ikke settes opp ved tilgjengeliggjøring som skymal: filer, property bag-oppføringer og det frittstående biblioteket «Testbibliotek». Taksonomi, kolonner, innholdstyper og listeinnhold fungerer.",
   "requiresBestillingsportalen": true,
   "requiresEntra": true,
   "hidden": false,

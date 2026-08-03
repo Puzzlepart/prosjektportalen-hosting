@@ -16,12 +16,12 @@
     "prosjektledelse"
   ],
   "type": "template",
-  "cloudCompatible": false,
-  "cloudCompatibleReason": "Provisjonerer et taksonomi-termsett («Fase (Bygg)») til termlageret på hub-området, som ikke kan settes opp fra en skymal. Innholdstyper og listeinnhold fungerer, men fasetaksonomien hoppes over.",
+  "cloudCompatible": true,
   "provisioning": {
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",
     "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA",
+    "projectPhaseTermSetId": "ec5ceb95-7259-4282-811f-7c57304be71e",
     "listContent": [
       {
         "title": "Fasesjekkliste (bygg)",

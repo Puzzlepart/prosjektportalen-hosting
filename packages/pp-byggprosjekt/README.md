@@ -34,10 +34,13 @@ standard mappestruktur for prosjektdokumenter.
 - **Standarddokumenter Bygg** – et dokumentbibliotek med den fulle
   8-hovedmappers mappestrukturen (48 mapper) provisjoneres direkte i prosjektet.
 
-> Merk: Standarddokumenter-mappestrukturen krever sp-js-provisioning ≥ 1.4.0
-> (`Folders`-støtte). Malen definerer innholdstyper på hub-området og er derfor
-> ikke en ren skymal (`cloudCompatible: false`). Provisjoneringen forventer en
-> norsk hub (listene heter «Prosjekter», «Prosjektstatus» osv.).
+> Merk: Standarddokumenter-mappestrukturen krever sp-js-provisioning med
+> `Folders`-støtte. Malen er skykompatibel (`cloudCompatible: true`): ved
+> tilgjengeliggjøring som skymal provisjoneres hub-avhengighetene (kolonner,
+> innholdstyper og taksonomi, krever Prosjektportalen ≥ 1.14), mens
+> mappestrukturen og listeinnholdet hentes direkte fra pakken ved
+> prosjektoppsett. Provisjoneringen forventer en norsk hub (listene heter
+> «Prosjekter», «Prosjektstatus» osv.).
 >
 > Kan installeres uavhengig av `pp-anleggsprosjekt`. Pakkene deler taksonomigruppe,
 > kolonner og innholdstyper (idempotent), så begge kan installeres side om side.

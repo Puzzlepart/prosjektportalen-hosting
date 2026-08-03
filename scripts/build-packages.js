@@ -180,6 +180,7 @@ function updateCatalog(packageName, manifest) {
     version: manifest.version,
     type: manifest.type,
     cloudCompatible: manifest.cloudCompatible,
+    cloudCompatibleReason: manifest.cloudCompatibleReason,
     requiresBestillingsportalen: manifest.requiresBestillingsportalen,
     requiresEntra: manifest.requiresEntra,
     languages: manifest.languages,

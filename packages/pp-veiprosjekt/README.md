@@ -44,8 +44,10 @@ mappestruktur for prosjektdokumenter.
 
 ## Forutsetninger og begrensninger
 
-> Malen definerer innholdstype på hub-området og er derfor ikke en ren skymal
-> (`cloudCompatible: false`). Mappestrukturen krever sp-js-provisioning med `Folders`-støtte.
+> Malen er skykompatibel (`cloudCompatible: true`): ved tilgjengeliggjøring som skymal
+> provisjoneres hub-avhengighetene (innholdstype, kolonner og taksonomi, krever
+> Prosjektportalen ≥ 1.14), mens mappestrukturen og listeinnholdet hentes direkte fra
+> pakken ved prosjektoppsett. Mappestrukturen krever sp-js-provisioning med `Folders`-støtte.
 > Provisjoneringen forventer en norsk hub (listene heter «Prosjekter», «Prosjektkolonner» osv.).
 
 Følgende fra kildemodulen er **ikke** provisjonert av pakken (samme avgrensning som

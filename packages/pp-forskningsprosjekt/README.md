@@ -45,7 +45,9 @@ i begge varianter, så de er idempotente.
 
 ## Forutsetninger og begrensninger
 
-> Malen definerer innholdstype på hub-området og er derfor ikke en ren skymal (`cloudCompatible: false`).
+> Malen er skykompatibel (`cloudCompatible: true`): ved tilgjengeliggjøring som skymal provisjoneres
+> hub-avhengighetene (innholdstype, kolonner og de fire termsettene, krever Prosjektportalen ≥ 1.14),
+> mens listeinnholdet hentes direkte fra pakken ved prosjektoppsett.
 > Provisjoneringen forventer en standard Prosjektportalen-hub.
 
 Følgende fra kildemodulen er **ikke** provisjonert av pakken (samme avgrensning som bygg/anlegg/vei), og

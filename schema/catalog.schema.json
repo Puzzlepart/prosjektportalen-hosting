@@ -52,11 +52,11 @@
           },
           "cloudCompatible": {
             "type": "boolean",
-            "description": "Whether the package can run as a skymal (cloud template). False = needs hub-side provisioning the cloud path can't reproduce; the catalog/wizard warn 'at own risk'. Absent = true."
+            "description": "Whether the package can run as a skymal (cloud template). Publishing provisions the hub dependencies (site fields, content types + bindings, hub configuration rows and — feature-flag gated — taxonomy, requires Prosjektportalen ≥ 1.14). False = needs hub content beyond that (hub files, property-bag entries, standalone hub libraries); the catalog disables publishing and the wizard warns 'at own risk'. Absent = true."
           },
           "cloudCompatibleReason": {
             "type": "string",
-            "description": "Optional. Shown when cloudCompatible is false — a short, user-facing explanation (Norwegian) of what hub-side content blocks cloud use (e.g. a taxonomy term set provisioned to the term store)."
+            "description": "Optional. Shown when cloudCompatible is false — a short, user-facing explanation (Norwegian) of what hub-side content blocks cloud use (e.g. files or property-bag entries provisioned to the hub site)."
           },
           "requiresBestillingsportalen": {
             "type": "boolean",

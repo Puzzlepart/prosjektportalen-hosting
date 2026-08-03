@@ -6,8 +6,10 @@ i provisjoneringen eller hosting-katalogen kan verifiseres mot en kjent referans
 
 > [!WARNING]
 > **Dette er ikke en reell prosjektmal.** Den skal ikke brukes til faktiske prosjekter. Malen er
-> markert `cloudCompatible: false` fordi den provisjonerer taksonomi-termsett til termlageret på
-> hub-området, som ikke kan settes opp fra en skymal. Bruk den kun til testing og QA.
+> markert `cloudCompatible: false` fordi den provisjonerer hub-innhold som ikke settes opp ved
+> tilgjengeliggjøring som skymal: filer, property bag-oppføringer og det frittstående biblioteket
+> «Testbibliotek». (Taksonomi provisjoneres ved tilgjengeliggjøring fra Prosjektportalen ≥ 1.14 og
+> er ikke lenger en blokker.) Bruk den kun til testing og QA.
 
 | | |
 | --- | --- |
@@ -17,7 +19,7 @@ i provisjoneringen eller hosting-katalogen kan verifiseres mot en kjent referans
 | **Minimum PP-versjon** | 1.12.0 |
 | **Tagger** | test, alle-funksjoner, qa, intern |
 | **Språk** | Norsk (nb-NO) og engelsk (en-US) |
-| **Skykompatibel** | Nei (`cloudCompatible: false`) |
+| **Skykompatibel** | Nei (`cloudCompatible: false` — hub-filer, property bag og «Testbibliotek» settes ikke opp ved tilgjengeliggjøring) |
 
 ## Tospråklig (norsk + engelsk)
 
