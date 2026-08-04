@@ -30,10 +30,10 @@
       },
       {
         "title": "Planneroppgaver Vei",
-        "description": "Prosjektoppgaver for veiprosjekter, kopieres fra hub-listen «Planneroppgaver Vei»",
+        "description": "Prosjektoppgaver for veiprosjekter, opprettes som oppgaver i Planner-planen «Veiplan» fra hub-listen «Planneroppgaver Vei»",
         "sourceList": "Planneroppgaver Vei",
-        "destinationList": "Planneroppgaver",
-        "fields": "GtSortOrder,Title,GtCategory,GtChecklist",
+        "plannerTitle": "Veiplan",
+        "fields": "-",
         "default": false,
         "hidden": false
       },

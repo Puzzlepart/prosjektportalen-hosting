@@ -72,8 +72,15 @@ them touch the hub schema, so they are all safe to bundle into a cloud template
 - `cloudCompatible` and `cloudCompatibleReason` are declared in each package's
   `manifest.json`; `scripts/build-packages.js` copies **both** into `catalog.json` — edit
   the manifest and rebuild, never hand-edit the catalog.
-- `pp-anleggsprosjekt` and `pp-byggprosjekt` declare `provisioning.projectPhaseTermSetId`
-  (`cc6cdd18-…` / `ec5ceb95-…`) so their phase term sets are wired to `GtProjectPhaseTermId`
-  on the Maloppsett item for both import and publish.
+- Four packages declare `provisioning.projectPhaseTermSetId` so their phase term sets are
+  wired to `GtProjectPhaseTermId` on the Maloppsett item for both import and publish:
+  `pp-anleggsprosjekt` (`cc6cdd18-…`), `pp-byggprosjekt` (`ec5ceb95-…`),
+  `pp-veiprosjekt` (`7ccff67b-…`) and `pp-testprosjekt` (`aaa3e3cc-…`).
+- `listContent` entries carrying a **`plannerTitle`** are Planner task content: the rows
+  from `sourceList` become tasks in a Planner plan with that title at project setup
+  (`destinationList` is ignored). Import stamps the hub Listeinnhold item with the Planner
+  content-type variant + `GtPlannerName`; the cloud path feeds the bundled rows straight to
+  `PlannerConfiguration`. Requires Prosjektportalen ≥ 1.14 — the anlegg/bygg/vei
+  `Planneroppgaver` entries use this («Anleggsplan» / «Byggplan» / «Veiplan»).
 - If a future package ships hub `Files`, `PropertyBagEntries` or standalone hub libraries,
   declare `cloudCompatible: false` with a `cloudCompatibleReason` naming that content.

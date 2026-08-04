@@ -29,8 +29,10 @@ standard mappestruktur for prosjektdokumenter.
 
 ## Hva som settes opp i prosjektet
 
-- **Fasesjekkliste** og **Planneroppgaver** fylles fra hub-listene via listeinnhold
-  ved prosjektoppsett.
+- **Fasesjekkliste** fylles fra hub-listen via listeinnhold ved prosjektoppsett.
+- **Planneroppgaver** – oppgavene fra hub-listen «Planneroppgaver Anlegg» opprettes
+  som oppgaver i Planner-planen **«Anleggsplan»** (`plannerTitle`, krever
+  Prosjektportalen ≥ 1.14) når listeinnholdet velges ved prosjektoppsett.
 - **Standarddokumenter Anlegg** – et dokumentbibliotek med den fulle
   8-hovedmappers mappestrukturen (48 mapper) provisjoneres direkte i prosjektet.
 

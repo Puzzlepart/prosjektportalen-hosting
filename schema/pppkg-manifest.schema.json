@@ -209,6 +209,10 @@
                 "type": "string",
                 "description": "Comma-separated internal names of the columns to copy (GtLccFields), or '-' for none"
               },
+              "plannerTitle": {
+                "type": "string",
+                "description": "Optional. Marks the entry as Planner task content (GtPlannerName): the rows in sourceList become tasks in a Planner plan with this title at project setup (buckets from GtCategory, checklists from GtChecklist, order from GtSortOrder). destinationList is ignored for planner entries. Requires Prosjektportalen ≥ 1.14."
+              },
               "default": {
                 "type": "boolean",
                 "description": "Selected by default in the setup wizard (GtLccDefault)",

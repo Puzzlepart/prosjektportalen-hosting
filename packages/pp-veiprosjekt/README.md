@@ -38,8 +38,7 @@ mappestruktur for prosjektdokumenter.
 
 ## Hva som settes opp i prosjektet
 
-- **Fasesjekkliste** og **Planneroppgaver** fylles fra hub-listene via listeinnhold ved
-  prosjektoppsett.
+- **Fasesjekkliste** fylles fra hub-listen via listeinnhold ved prosjektoppsett.
 - **Standarddokumenter Vei** sin mappestruktur kopieres inn i prosjektets **Dokumenter**.
 
 ## Forutsetninger og begrensninger
@@ -62,8 +61,9 @@ bygg/anlegg-malene), og kan settes opp manuelt eller i en senere versjon:
 - **«Forankret i» (GtVeiAnchored) på prosjektets fasesjekkliste** – kolonnen og verdiene finnes
   fullt ut på hub-listen **Fasesjekkliste Vei**, men kopieres ikke til prosjektets fasesjekkliste
   (prosjektsiden bruker standardmalens kolonner).
-- **Planner-planen «Veiplan»** – oppgavene seedes som listeinnhold, men selve Planner-planen
-  opprettes ikke.
+- **Planner-planen «Veiplan»** – opprettes med oppgavene fra hub-listen
+  «Planneroppgaver Vei» (`plannerTitle`, krever Prosjektportalen ≥ 1.14) når
+  listeinnholdet velges ved prosjektoppsett.
 - **Veiprosjektets egne prosjektsider/tillegg** – prosjektstrukturen kommer fra standardmalen.
 
 ## Tilskrivelse

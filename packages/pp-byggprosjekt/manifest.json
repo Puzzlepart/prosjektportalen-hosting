@@ -34,10 +34,10 @@
       },
       {
         "title": "Planneroppgaver (bygg)",
-        "description": "Standardoppgaver for byggfasene, kopieres fra hub-listen «Planneroppgaver Bygg»",
+        "description": "Standardoppgaver for byggfasene, opprettes som oppgaver i Planner-planen «Byggplan» fra hub-listen «Planneroppgaver Bygg»",
         "sourceList": "Planneroppgaver Bygg",
-        "destinationList": "Planneroppgaver",
-        "fields": "GtSortOrder,Title,GtCategory,GtChecklist",
+        "plannerTitle": "Byggplan",
+        "fields": "-",
         "default": false,
         "hidden": false
       },

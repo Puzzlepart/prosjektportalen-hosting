@@ -34,10 +34,10 @@
       },
       {
         "title": "Planneroppgaver (anlegg)",
-        "description": "Standardoppgaver for anleggsfasene, kopieres fra hub-listen «Planneroppgaver Anlegg»",
+        "description": "Standardoppgaver for anleggsfasene, opprettes som oppgaver i Planner-planen «Anleggsplan» fra hub-listen «Planneroppgaver Anlegg»",
         "sourceList": "Planneroppgaver Anlegg",
-        "destinationList": "Planneroppgaver",
-        "fields": "GtSortOrder,Title,GtCategory,GtChecklist",
+        "plannerTitle": "Anleggsplan",
+        "fields": "-",
         "default": false,
         "hidden": false
       },
