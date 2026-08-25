@@ -13,6 +13,7 @@
   "tags": ["enkel", "prosjektledelse", "oppstart"],
   "type": "template",
   "cloudCompatible": true,
+  "hidden": true,
   "provisioning": {
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",

@@ -12,6 +12,7 @@
   "icon": "Shield",
   "tags": ["risiko", "kvalitet", "innhold"],
   "type": "content",
+  "hidden": true,
   "content": {
     "items": [
       {
