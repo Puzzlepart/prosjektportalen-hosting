@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
-  "minPPVersion": "1.7.2",
+  "minPPVersion": "1.14.0",
   "publishedDate": "2026-06-09",
   "icon": "Step",
   "tags": ["faser", "forside", "tillegg"],

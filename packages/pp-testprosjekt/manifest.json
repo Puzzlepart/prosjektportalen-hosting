@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
-  "minPPVersion": "1.12.0",
+  "minPPVersion": "1.14.0",
   "publishedDate": "2026-06-24",
   "thumbnail": "thumbnail.png",
   "screenshots": [
@@ -22,7 +22,7 @@
   "cloudCompatibleReason": "Provisjonerer hub-innhold som ikke settes opp ved tilgjengeliggjøring som skymal: filer, property bag-oppføringer og det frittstående biblioteket «Testbibliotek». Taksonomi, kolonner, innholdstyper og listeinnhold fungerer.",
   "requiresBestillingsportalen": true,
   "requiresEntra": true,
-  "hidden": false,
+  "hidden": true,
   "provisioning": {
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",
