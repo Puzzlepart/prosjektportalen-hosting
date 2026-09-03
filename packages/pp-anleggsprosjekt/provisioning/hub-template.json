@@ -100,8 +100,7 @@
     "<Field ID=\"{f73a2025-53ba-468e-a18f-3714a2a6c71e}\" Name=\"GtBAProjectStatusCase\" DisplayName=\"Status plan- og byggesak\" Type=\"Choice\" Format=\"Dropdown\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Hva er status på plan- og byggsak for prosjektet?\" FillInChoice=\"TRUE\" StaticName=\"GtBAProjectStatusCase\"><CHOICES><CHOICE>Reguleringsplan annonsert</CHOICE><CHOICE>Reguleringsplan 1.gangsbehandlet</CHOICE><CHOICE>Reguleringsplan godkjent</CHOICE><CHOICE>Forhåndskonferanse avholdt</CHOICE><CHOICE>Rammesøknad under utarbeidelse</CHOICE><CHOICE>Rammesøknad sendt</CHOICE><CHOICE>Rammetillatelse gitt</CHOICE><CHOICE>IG sendt</CHOICE><CHOICE>IG gitt</CHOICE><CHOICE>Klage under behandling</CHOICE></CHOICES></Field>",
     "<Field Type=\"Note\" DisplayName=\"Kommentar, plan- og byggesak\" Description=\"Beskriv eventuelle utfordringer knyttet til plan- og byggesak, samt planlagte tiltak for neste periode\" RichText=\"FALSE\" ID=\"{3a998841-f6a1-4445-ab71-94f650287f9c}\" StaticName=\"GtBAProjectStatusCaseComment\" Name=\"GtBAProjectStatusCaseComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />",
     "<Field ID=\"{c3cfcba3-299d-42e8-827b-a593ada04abc}\" Name=\"GtBAProjectSupport\" DisplayName=\"Status tilskudd\" Type=\"Choice\" Format=\"Dropdown\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Hva er status på eventuelle tilskuddsmuligheter for prosjektet?\" FillInChoice=\"TRUE\" StaticName=\"GtBAProjectSupport\"><CHOICES><CHOICE>Skal undersøkes/vurderes</CHOICE><CHOICE>Ikke aktuelt</CHOICE><CHOICE>Dialog med tilskuddsyter opprettet</CHOICE><CHOICE>Har søkt</CHOICE><CHOICE>Har fått tilsagn</CHOICE><CHOICE>Har fått avslag</CHOICE><CHOICE>Søkt utbetaling</CHOICE><CHOICE>Har fått utbetalt</CHOICE></CHOICES></Field>",
-    "<Field Type=\"Note\" DisplayName=\"Kommentar, tilskudd\" Description=\"Hvis relevant, beskriv hvor i søknadsprosessen prosjektet er og hva som er planlagt for neste periode\" RichText=\"FALSE\" ID=\"{b8c0ad18-467b-4e7d-8d6b-9ca37171f07b}\" StaticName=\"GtBAProjectSupportComment\" UnlimitedLengthInDocumentLibrary=\"TRUE\" Name=\"GtBAProjectSupportComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />",
-    "<Field ID=\"{dfbde199-879c-4de9-aac4-6a3f0dbb22c3}\" Name=\"GtBAStakeholderGroup\" DisplayName=\"Interessentgruppe\" Type=\"Choice\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" Description=\"Hvilken interessentgruppe tilhører interessenten?\" StaticName=\"GtBAStakeholderGroup\"><CHOICES><CHOICE>Politisk</CHOICE><CHOICE>Kommuneadministrasjon</CHOICE><CHOICE>Virksomheter</CHOICE><CHOICE>Samarbeidspartnere</CHOICE><CHOICE>Råd og utvalg</CHOICE><CHOICE>Tillitsvalgte</CHOICE><CHOICE>Foreninger (eksterne)</CHOICE><CHOICE>Offentlige myndigheter</CHOICE><CHOICE>Tilsyn og vesener</CHOICE><CHOICE>Nettleverandører</CHOICE><CHOICE>Transport</CHOICE><CHOICE>Naboer</CHOICE><CHOICE>Brukere</CHOICE><CHOICE>Andre aktører</CHOICE></CHOICES></Field>"
+    "<Field Type=\"Note\" DisplayName=\"Kommentar, tilskudd\" Description=\"Hvis relevant, beskriv hvor i søknadsprosessen prosjektet er og hva som er planlagt for neste periode\" RichText=\"FALSE\" ID=\"{b8c0ad18-467b-4e7d-8d6b-9ca37171f07b}\" StaticName=\"GtBAProjectSupportComment\" UnlimitedLengthInDocumentLibrary=\"TRUE\" Name=\"GtBAProjectSupportComment\" Group=\"Kolonner for Prosjektportalen (Bygg og anlegg)\" />"
   ],
   "ContentTypes": [
     {
@@ -568,28 +567,28 @@
         "Rows": [
           {
             "Title": "Status SHA (Ingen)",
-            "GtPortfolioColumn": 43,
+            "GtPortfolioColumn": "Status SHA",
             "GtPortfolioColumnValue": "Ingen hendelser siste måned",
             "GtPortfolioColumnColor": "#2da748",
             "GtPortfolioColumnIconName": "CircleFill"
           },
           {
             "Title": "Status SHA (Hendelse)",
-            "GtPortfolioColumn": 43,
+            "GtPortfolioColumn": "Status SHA",
             "GtPortfolioColumnValue": "Hendelse registrert siste måned",
             "GtPortfolioColumnColor": "#e9b359",
             "GtPortfolioColumnIconName": "CircleFill"
           },
           {
             "Title": "Status miljø (Ingen)",
-            "GtPortfolioColumn": 45,
+            "GtPortfolioColumn": "Status miljø",
             "GtPortfolioColumnValue": "Ingen hendelser siste måned",
             "GtPortfolioColumnColor": "#2da748",
             "GtPortfolioColumnIconName": "CircleFill"
           },
           {
             "Title": "Status miljø (Hendelse)",
-            "GtPortfolioColumn": 45,
+            "GtPortfolioColumn": "Status miljø",
             "GtPortfolioColumnValue": "Hendelse registrert siste måned",
             "GtPortfolioColumnColor": "#e9b359",
             "GtPortfolioColumnIconName": "CircleFill"
@@ -661,7 +660,8 @@
         }
       ],
       "AdditionalSettings": {
-        "EnableVersioning": true
+        "EnableVersioning": true,
+        "EnableAttachments": false
       },
       "Views": [
         {
@@ -682,7 +682,7 @@
         }
       ],
       "DataRows": {
-        "KeyColumn": "Title",
+        "KeyColumn": "GtSortOrder",
         "UpdateBehavior": "Skip",
         "Rows": [
           {
@@ -734,7 +734,7 @@
             "GtSortOrder": 60
           },
           {
-            "Title": "Er prosjektorganiseringen (oppdragsgiver/utførende) entydig? ",
+            "Title": "Er prosjektorganiseringen (oppdragsgiver/utførende) entydig?",
             "GtProjectPhase": {
               "termId": "dca0a226-0907-4c54-8624-6b51fcac7a92",
               "label": "Initiering"
@@ -1060,7 +1060,8 @@
         }
       ],
       "AdditionalSettings": {
-        "EnableVersioning": true
+        "EnableVersioning": true,
+        "EnableAttachments": false
       },
       "Views": [
         {
@@ -1084,7 +1085,7 @@
         }
       ],
       "DataRows": {
-        "KeyColumn": "Title",
+        "KeyColumn": "GtSortOrder",
         "UpdateBehavior": "Skip",
         "Rows": [
           {

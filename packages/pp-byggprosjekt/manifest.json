@@ -9,7 +9,7 @@
   "minPPVersion": "1.14.0",
   "publishedDate": "2026-06-09",
   "thumbnail": "thumbnail.png",
-  "icon": "ConstructionCone",
+  "icon": "BuildDefinition",
   "tags": [
     "bygg",
     "anlegg",
@@ -21,6 +21,7 @@
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",
     "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA",
+    "projectStatusContentTypeId": "0x010022252E35737A413FB56A1BA53862F6D5BA",
     "projectPhaseTermSetId": "ec5ceb95-7259-4282-811f-7c57304be71e",
     "listContent": [
       {
@@ -34,9 +35,9 @@
       },
       {
         "title": "Planneroppgaver (bygg)",
-        "description": "Standardoppgaver for byggfasene, opprettes som oppgaver i Planner-planen «Byggplan» fra hub-listen «Planneroppgaver Bygg»",
+        "description": "Standardoppgaver for byggfasene, opprettes som oppgaver i Planner-planen «Byggeoppgaver» fra hub-listen «Planneroppgaver Bygg»",
         "sourceList": "Planneroppgaver Bygg",
-        "plannerTitle": "Byggplan",
+        "plannerTitle": "Byggeoppgaver",
         "fields": "-",
         "default": false,
         "hidden": false

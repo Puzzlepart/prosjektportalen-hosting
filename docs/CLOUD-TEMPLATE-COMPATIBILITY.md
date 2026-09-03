@@ -76,11 +76,16 @@ them touch the hub schema, so they are all safe to bundle into a cloud template
   wired to `GtProjectPhaseTermId` on the Maloppsett item for both import and publish:
   `pp-anleggsprosjekt` (`cc6cdd18-…`), `pp-byggprosjekt` (`ec5ceb95-…`),
   `pp-veiprosjekt` (`7ccff67b-…`) and `pp-testprosjekt` (`aaa3e3cc-…`).
+- `pp-byggprosjekt` and `pp-anleggsprosjekt` declare
+  `provisioning.projectStatusContentTypeId` (`0x010022252E35737A413FB56A1BA53862F6D5BA`,
+  «Prosjektstatus (ByggAnlegg)») so it is wired to `GtProjectStatusContentType` on the
+  Maloppsett item for both import and publish. Requires a PortfolioExtensions build with
+  `projectStatusContentTypeId` support.
 - `listContent` entries carrying a **`plannerTitle`** are Planner task content: the rows
   from `sourceList` become tasks in a Planner plan with that title at project setup
   (`destinationList` is ignored). Import stamps the hub Listeinnhold item with the Planner
   content-type variant + `GtPlannerName`; the cloud path feeds the bundled rows straight to
   `PlannerConfiguration`. Requires Prosjektportalen ≥ 1.14 — the anlegg/bygg/vei
-  `Planneroppgaver` entries use this («Anleggsplan» / «Byggplan» / «Veiplan»).
+  `Planneroppgaver` entries use this («Anleggsoppgaver» / «Byggeoppgaver» / «Veiplan»).
 - If a future package ships hub `Files`, `PropertyBagEntries` or standalone hub libraries,
   declare `cloudCompatible: false` with a `cloudCompatibleReason` naming that content.

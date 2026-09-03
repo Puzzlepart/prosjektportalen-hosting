@@ -9,7 +9,7 @@
   "minPPVersion": "1.14.0",
   "publishedDate": "2026-06-09",
   "thumbnail": "thumbnail.png",
-  "icon": "ConstructionCone",
+  "icon": "DeliveryTruck",
   "tags": [
     "anlegg",
     "bygg",
@@ -21,6 +21,7 @@
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",
     "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA",
+    "projectStatusContentTypeId": "0x010022252E35737A413FB56A1BA53862F6D5BA",
     "projectPhaseTermSetId": "cc6cdd18-c7d5-42e1-8d19-a336dd78f3f2",
     "listContent": [
       {
@@ -34,9 +35,9 @@
       },
       {
         "title": "Planneroppgaver (anlegg)",
-        "description": "Standardoppgaver for anleggsfasene, opprettes som oppgaver i Planner-planen «Anleggsplan» fra hub-listen «Planneroppgaver Anlegg»",
+        "description": "Standardoppgaver for anleggsfasene, opprettes som oppgaver i Planner-planen «Anleggsoppgaver» fra hub-listen «Planneroppgaver Anlegg»",
         "sourceList": "Planneroppgaver Anlegg",
-        "plannerTitle": "Anleggsplan",
+        "plannerTitle": "Anleggsoppgaver",
         "fields": "-",
         "default": false,
         "hidden": false

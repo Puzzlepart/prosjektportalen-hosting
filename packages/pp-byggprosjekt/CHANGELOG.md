@@ -11,7 +11,7 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Prosjektmal for byggeprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365.
 - Taksonomigruppen **Prosjektportalen** med termsettet **Fase (Bygg)** (7 faser med sorteringsrekkefølge og egenskaper). Manglende egendefinerte termegenskaper (`PhaseSubText`/`PhaseDescription`) fylles inn på eksisterende termer ved import (`UpdateExistingTerms`).
-- De 15 bygg/anlegg-kolonnene (`GtBA*`) som områdekolonner, og innholdstypene **Prosjekt (ByggAnlegg)** og **Prosjektstatus (ByggAnlegg)**, knyttet til **Prosjekter**- og **Prosjektstatus**-listene.
+- De 14 bygg/anlegg-kolonnene (`GtBA*`) som områdekolonner, og innholdstypene **Prosjekt (ByggAnlegg)** og **Prosjektstatus (ByggAnlegg)**, knyttet til **Prosjekter**- og **Prosjektstatus**-listene.
 - Hub-provisjonering av **Prosjektkolonner**, **Prosjektkolonnekonfigurasjon**, **Statusseksjoner** og **Prosjektdata**-binding for bygg/anlegg-feltene.
 - Hub-listene **Fasesjekkliste Bygg** (63 sjekkpunkter) og **Planneroppgaver Bygg** (59 oppgaver), seedet via `DataRows`, og listeinnholdskonfigurasjon som kopierer dem til prosjektets **Fasesjekkliste** og **Planneroppgaver**.
 - **Standarddokumenter Bygg** – hub-bibliotek med full mappestruktur (48 mapper, via `Folders`), kopieres til prosjektets **Dokumenter** ved prosjektoppsett.

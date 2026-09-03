@@ -136,6 +136,11 @@
           "description": "Content type ID (defined by hubTemplate) to set as GtProjectContentType on the Maloppsett item when imported",
           "pattern": "^0x[0-9A-Fa-f]+$"
         },
+        "projectStatusContentTypeId": {
+          "type": "string",
+          "description": "Content type ID (defined by hubTemplate) to set as GtProjectStatusContentType on the Maloppsett item when imported or published, so status reports for projects created from this template use this content type instead of the standard one",
+          "pattern": "^0x[0-9A-Fa-f]+$"
+        },
         "projectPhaseTermSetId": {
           "type": "string",
           "description": "Term set ID (provisioned by hubTemplate) to set as GtProjectPhaseTermId on the Maloppsett item when imported, so projects created from this template use this template's phase term set instead of the standard one",

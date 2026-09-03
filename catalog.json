@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-08-25T14:49:52.828Z",
+  "lastUpdated": "2026-09-03T09:23:06.219Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -9,7 +9,7 @@
       "version": "1.0.0",
       "type": "template",
       "cloudCompatible": true,
-      "icon": "ConstructionCone",
+      "icon": "DeliveryTruck",
       "author": "Prosjektportalen-teamet",
       "tags": [
         "anlegg",
@@ -29,7 +29,7 @@
       "version": "1.0.0",
       "type": "template",
       "cloudCompatible": true,
-      "icon": "ConstructionCone",
+      "icon": "BuildDefinition",
       "author": "Prosjektportalen-teamet",
       "tags": [
         "bygg",
