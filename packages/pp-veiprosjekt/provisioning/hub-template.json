@@ -168,7 +168,9 @@
     "<Field DisplayName=\"Byggeleder\" Description=\"Byggeleder er leder for Byggefasen\" Type=\"User\" Required=\"FALSE\" List=\"UserInfo\" ID=\"{488f6e6e-29dd-42bb-b34b-de19779db581}\" StaticName=\"GtVeiConstructionManager\" Name=\"GtVeiConstructionManager\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" CustomFormatter=\"\" EnforceUniqueValues=\"FALSE\" UserSelectionMode=\"PeopleOnly\" ShowField=\"ImnName\" UserSelectionScope=\"0\" />",
     "<Field DisplayName=\"Planleggingsleder\" Description=\"Planleggingsleder er leder for Planleggingsfasen\" Type=\"User\" Required=\"FALSE\" List=\"UserInfo\" ID=\"{685c865b-0487-4a0d-8264-3a2af9e145f2}\" StaticName=\"GtVeiPlanningManager\" Name=\"GtVeiPlanningManager\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" CustomFormatter=\"\" EnforceUniqueValues=\"FALSE\" UserSelectionMode=\"PeopleOnly\" ShowField=\"ImnName\" UserSelectionScope=\"0\" />",
     "<Field DisplayName=\"Prosjekteringsleder\" Description=\"Prosjekteringsleder er leder for Prosjekteringsfasen\" Type=\"User\" Required=\"FALSE\" List=\"UserInfo\" ID=\"{0b2733be-58af-4cbf-a94c-1362d1f34134}\" StaticName=\"GtVeiProjectingManager\" Name=\"GtVeiProjectingManager\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\" CustomFormatter=\"\" EnforceUniqueValues=\"FALSE\" UserSelectionMode=\"PeopleOnly\" ShowField=\"ImnName\" UserSelectionScope=\"0\" />",
-    "<Field DisplayName=\"Unik datanøkkel\" ShowInNewForm=\"FALSE\" ShowInEditForm=\"FALSE\" Description=\"Unik nøkkel for å håndtere oppdatering av Prosjektportalen med moduler\" Type=\"Text\" Required=\"FALSE\" ID=\"{c70ca705-d503-4d3c-a28e-078e7d61c4c2}\" StaticName=\"GtDataRowUniqueKey\" Name=\"GtDataRowUniqueKey\" Group=\"Kolonner for Prosjektportalen (Portefølje)\"></Field>"
+    "<Field DisplayName=\"Unik datanøkkel\" ShowInNewForm=\"FALSE\" ShowInEditForm=\"FALSE\" Description=\"Unik nøkkel for å håndtere oppdatering av Prosjektportalen med moduler\" Type=\"Text\" Required=\"FALSE\" ID=\"{c70ca705-d503-4d3c-a28e-078e7d61c4c2}\" StaticName=\"GtDataRowUniqueKey\" Name=\"GtDataRowUniqueKey\" Group=\"Kolonner for Prosjektportalen (Portefølje)\"></Field>",
+    "<Field DisplayName=\"Fag\" Description=\"\" Type=\"TaxonomyFieldTypeMulti\" Mult=\"TRUE\" ShowField=\"Term1044\" ID=\"{8f785c45-ca9f-444c-958a-89f74a1a7143}\" StaticName=\"GtVeiSubject\" Name=\"GtVeiSubject\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\"><Customization><ArrayOfProperty><Property><Name>FilterAssemblyStrongName</Name><Value p4:type=\"q10:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q10=\"http://www.w3.org/2001/XMLSchema\">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value></Property><Property><Name>FilterClassName</Name><Value p4:type=\"q11:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q11=\"http://www.w3.org/2001/XMLSchema\">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value></Property><Property><Name>FilterJavascriptProperty</Name><Value p4:type=\"q13:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q13=\"http://www.w3.org/2001/XMLSchema\">FilteringJavascript</Value></Property><Property><Name>FilterMethodName</Name><Value p4:type=\"q12:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q12=\"http://www.w3.org/2001/XMLSchema\">GetFilteringHtml</Value></Property><Property><Name>SspId</Name><Value p4:type=\"q1:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q1=\"http://www.w3.org/2001/XMLSchema\">{sitecollectiontermstoreid}</Value></Property><Property><Name>TermSetId</Name><Value p4:type=\"q2:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q2=\"http://www.w3.org/2001/XMLSchema\">{85485162-b98a-4097-8364-34ad5468fc4f}</Value></Property></ArrayOfProperty></Customization></Field>",
+    "<Field DisplayName=\"Emne\" Description=\"\" Type=\"TaxonomyFieldTypeMulti\" Mult=\"TRUE\" ShowField=\"Term1044\" ID=\"{e5de159b-aadd-40d2-9c20-61d4604829bb}\" StaticName=\"GtVeiTopic\" Name=\"GtVeiTopic\" Group=\"Kolonner for Prosjektportalen (Prosjekt)\"><Customization><ArrayOfProperty><Property><Name>FilterAssemblyStrongName</Name><Value p4:type=\"q10:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q10=\"http://www.w3.org/2001/XMLSchema\">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value></Property><Property><Name>FilterClassName</Name><Value p4:type=\"q11:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q11=\"http://www.w3.org/2001/XMLSchema\">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value></Property><Property><Name>FilterJavascriptProperty</Name><Value p4:type=\"q13:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q13=\"http://www.w3.org/2001/XMLSchema\">FilteringJavascript</Value></Property><Property><Name>FilterMethodName</Name><Value p4:type=\"q12:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q12=\"http://www.w3.org/2001/XMLSchema\">GetFilteringHtml</Value></Property><Property><Name>SspId</Name><Value p4:type=\"q1:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q1=\"http://www.w3.org/2001/XMLSchema\">{sitecollectiontermstoreid}</Value></Property><Property><Name>TermSetId</Name><Value p4:type=\"q2:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q2=\"http://www.w3.org/2001/XMLSchema\">{f475345f-ad4e-41ae-bfc0-0cee934b3f2b}</Value></Property></ArrayOfProperty></Customization></Field>"
   ],
   "ContentTypes": [
     {
@@ -375,7 +377,7 @@
           {
             "GtSortOrder": 100,
             "Title": "Veiprosjekter",
-            "GtSearchQuery": "ContentTypeId:0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E*",
+            "GtSearchQuery": "DepartmentId:{sitecollectionid} ContentTypeId:0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E*",
             "GtPortfolioIsDefaultView": false,
             "GtPortfolioFabricIcon": "Car"
           }
@@ -838,6 +840,25 @@
             "GtChecklistStatus": "Åpen",
             "GtSortOrder": 360,
             "GtDataRowUniqueKey": "e64ef202-c95a-489a-9452-0ee5e562948b"
+          }
+        ]
+      },
+      "Security": {
+        "BreakRoleInheritance": true,
+        "CopyRoleAssignments": false,
+        "ClearSubscopes": false,
+        "RoleAssignments": [
+          {
+            "Principal": "{associatedownergroupid}",
+            "RoleDefinition": "Full kontroll"
+          },
+          {
+            "Principal": "{associatedvisitorgroupid}",
+            "RoleDefinition": "Lese"
+          },
+          {
+            "Principal": "{associatedmembergroupid}",
+            "RoleDefinition": "Lese"
           }
         ]
       }
@@ -1730,6 +1751,25 @@
             "GtDataRowUniqueKey": "e53042b0-cfee-4c58-bc8c-8b445e6ff6b0"
           }
         ]
+      },
+      "Security": {
+        "BreakRoleInheritance": true,
+        "CopyRoleAssignments": false,
+        "ClearSubscopes": false,
+        "RoleAssignments": [
+          {
+            "Principal": "{associatedownergroupid}",
+            "RoleDefinition": "Full kontroll"
+          },
+          {
+            "Principal": "{associatedvisitorgroupid}",
+            "RoleDefinition": "Lese"
+          },
+          {
+            "Principal": "{associatedmembergroupid}",
+            "RoleDefinition": "Lese"
+          }
+        ]
       }
     },
     {
@@ -1743,6 +1783,16 @@
           "ID": "325543a5-815d-485d-a9a5-e0773ad762e9",
           "Name": "GtProjectPhase",
           "DisplayName": "Fase"
+        },
+        {
+          "ID": "8f785c45-ca9f-444c-958a-89f74a1a7143",
+          "Name": "GtVeiSubject",
+          "DisplayName": "Fag"
+        },
+        {
+          "ID": "e5de159b-aadd-40d2-9c20-61d4604829bb",
+          "Name": "GtVeiTopic",
+          "DisplayName": "Emne"
         }
       ],
       "AdditionalSettings": {
@@ -1757,6 +1807,8 @@
             "LinkFilename",
             "Title",
             "GtProjectPhase",
+            "GtVeiSubject",
+            "GtVeiTopic",
             "Modified",
             "Editor"
           ],

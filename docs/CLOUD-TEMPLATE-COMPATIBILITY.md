@@ -91,15 +91,28 @@ them touch the hub schema, so they are all safe to bundle into a cloud template
   that adds «Forankret i» (`GtVeiAnchored`) to the project checklist and Fase/Fag/Emne to
   Dokumenter. Import uploads it to Prosjekttillegg and links it via `GtProjectExtensions`;
   the cloud path applies it straight from the `.pppkg`. Its checklist `listContent` copy
-  includes `GtVeiAnchored`, so the extension must stay selected. It is pre-selected for
-  Veiprosjekt through the template link (`GtProjectExtensions`) in import mode and as a
-  bundled extension in cloud mode; the manifest keeps `defaultSelected: false` because
-  `GtExtensionDefault` would pre-select it for **every** template on the hub. PP365 does not
-  yet map `optional: false` to `GtExtensionLocked`, so a user can still deselect it.
-- Hub-scoped view queries cannot be expressed in a package: `DataRows` values get no token
-  replacement in sp-js-provisioning and PackageInstaller passes no parameters, so a
-  Porteføljevisninger row cannot carry `DepartmentId:{hub}` the way OOTB views do.
-  `pp-veiprosjekt`'s «Veiprosjekter» view filters on content type only; PortfolioWebParts
-  re-scopes results to the hub for regular users but not for «Porteføljeinnsyn» members.
+  includes `GtVeiAnchored`, so the manifest marks the extension `locked: true`: PP365 maps
+  that to `GtExtensionLocked`, and a locked extension linked to its template is always
+  applied, cannot be deselected and (with `defaultSelected: false`) is hidden in the wizard,
+  mirroring the module's hidden, template-bound Veimal. `defaultSelected` stays `false`
+  because `GtExtensionDefault` would pre-select it for **every** template on the hub.
+  `locked` support ships with Prosjektportalen 1.14; earlier versions ignore the flag and show
+  the extension as a deselectable tillegg. The same `locked` flag on a `listContent` entry makes that
+  entry mandatory for its template in the same way.
+- Hub-scoped view queries and other hub-specific values are expressed with sp-js-provisioning
+  tokens in `DataRows` string values: `{sitecollectionid}` (hub site collection id) and
+  `{sitecollectiontermstoreid}` (default term store id, used in taxonomy site-column XML).
+  `pp-veiprosjekt`'s «Veiprosjekter» view uses `DepartmentId:{sitecollectionid} ContentTypeId:…`
+  like the OOTB views, and its Fag/Emne taxonomy site columns bind their term sets through the
+  term store token. Both ship with the sp-js-provisioning bundled in Prosjektportalen 1.14: on
+  earlier versions the DataRows token stays literal (the view returns nothing) and the taxonomy
+  columns fail to create, which aborts the hub import.
+- List permissions are expressed with the sp-js-provisioning `Security` element on a list
+  (`BreakRoleInheritance`, `RoleAssignments` with `{associatedownergroupid}` /
+  `{associatedmembergroupid}` / `{associatedvisitorgroupid}` and localized role names such as
+  «Full kontroll» / «Lese»). `pp-veiprosjekt`, `pp-byggprosjekt` and `pp-anleggsprosjekt`
+  use it on their Fasesjekkliste/Planneroppgaver hub lists like the OOTB lists do (owners
+  edit, members and visitors read). It ships with Prosjektportalen 1.14; earlier provisioner
+  builds ignore the element.
 - If a future package ships hub `Files`, `PropertyBagEntries` or standalone hub libraries,
   declare `cloudCompatible: false` with a `cloudCompatibleReason` naming that content.

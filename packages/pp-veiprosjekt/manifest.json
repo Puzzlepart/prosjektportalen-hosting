@@ -25,7 +25,8 @@
         "description": "Tilpasninger for veiprosjekter: kolonnen «Forankret i» på fasesjekklisten, og Fase/Fag/Emne på Dokumenter",
         "file": "provisioning/extensions/Veimal.json",
         "optional": false,
-        "defaultSelected": false
+        "defaultSelected": false,
+        "locked": true
       }
     ],
     "listContent": [

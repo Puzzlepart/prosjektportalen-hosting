@@ -174,12 +174,17 @@
               },
               "optional": {
                 "type": "boolean",
-                "description": "Whether this extension is optional for users",
+                "description": "Informational only (not read by Prosjektportalen). Use locked to make the extension mandatory for the template it belongs to",
                 "default": true
               },
               "defaultSelected": {
                 "type": "boolean",
-                "description": "Whether this extension is selected by default in wizard",
+                "description": "Whether this extension is selected by default in wizard. Note: the hub item flag (GtExtensionDefault) is hub-wide, so the extension is then pre-selected for every template, not only this package's template",
+                "default": false
+              },
+              "locked": {
+                "type": "boolean",
+                "description": "Lock the extension (GtExtensionLocked). For the template it is linked to (import: Maloppsett GtProjectExtensions, cloud: bundled in the .pppkg) it is always applied and cannot be deselected; combined with defaultSelected false it is also hidden in the setup wizard, mirroring a hidden, template-bound Prosjekttillegg item. Requires a Prosjektportalen build with locked support",
                 "default": false
               }
             }

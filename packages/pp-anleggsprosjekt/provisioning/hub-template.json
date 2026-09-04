@@ -1046,6 +1046,25 @@
             "GtSortOrder": 450
           }
         ]
+      },
+      "Security": {
+        "BreakRoleInheritance": true,
+        "CopyRoleAssignments": false,
+        "ClearSubscopes": false,
+        "RoleAssignments": [
+          {
+            "Principal": "{associatedownergroupid}",
+            "RoleDefinition": "Full kontroll"
+          },
+          {
+            "Principal": "{associatedvisitorgroupid}",
+            "RoleDefinition": "Lese"
+          },
+          {
+            "Principal": "{associatedmembergroupid}",
+            "RoleDefinition": "Lese"
+          }
+        ]
       }
     },
     {
@@ -1251,6 +1270,25 @@
             "Title": "Forvaltning, drift og vedlikehold",
             "GtCategory": "Bruks og driftsfase",
             "GtSortOrder": 310
+          }
+        ]
+      },
+      "Security": {
+        "BreakRoleInheritance": true,
+        "CopyRoleAssignments": false,
+        "ClearSubscopes": false,
+        "RoleAssignments": [
+          {
+            "Principal": "{associatedownergroupid}",
+            "RoleDefinition": "Full kontroll"
+          },
+          {
+            "Principal": "{associatedvisitorgroupid}",
+            "RoleDefinition": "Lese"
+          },
+          {
+            "Principal": "{associatedmembergroupid}",
+            "RoleDefinition": "Lese"
           }
         ]
       }

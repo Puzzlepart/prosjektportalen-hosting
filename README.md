@@ -212,7 +212,8 @@ Manifestet er pakkens sentrale konfigurasjonsfil. Den inneholder all metadata sa
         "description": "Legger til kvalitetssikringsliste og tilhørende sjekkliste",
         "file": "provisioning/extensions/extension-a.json",
         "optional": true,
-        "defaultSelected": false
+        "defaultSelected": false,
+        "locked": false
       }
     ]
   },
@@ -250,6 +251,12 @@ Manifestet er pakkens sentrale konfigurasjonsfil. Den inneholder all metadata sa
 | `template` | Komplett prosjektmal (provisjoneringsmal + evt. tillegg + innhold) |
 | `extension` | Frittstående prosjekttillegg |
 | `content` | Frittstående standardinnhold |
+
+Flaggene på et prosjekttillegg (`provisioning.extensions[]`): `defaultSelected` forhåndsvelger
+tillegget i oppsettveiviseren (merk: hub-flagget `GtExtensionDefault` gjelder alle maler, ikke bare
+malen i pakken), `locked` gjør tillegget obligatorisk for malen det er knyttet til (legges alltid på,
+kan ikke velges bort, og skjules i veiviseren når `defaultSelected` er `false`), mens `optional` kun er
+informativt. Bruk `locked: true` for tillegg som malens listeinnhold forutsetter.
 
 ### 4.3 `provisioning/hub-template.json`
 

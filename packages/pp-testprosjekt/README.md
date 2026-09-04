@@ -93,9 +93,9 @@ refererer faseverdiene gjennom standardfeltet `GtProjectPhase` (termId + label).
 
 ## Kjent begrensning – ingen egen managed metadata-sitekolonne
 
-Pakken oppretter med vilje **ingen** egen `TaxonomyFieldType`-sitekolonne. sp-js-provisioning sin
-TokenHelper har ikke et `sitecollectiontermstoreid`-token, så en managed metadata-sitekolonne kan ikke
-provisjoneres på en pålitelig måte. I stedet brukes det utprøvde mønsteret fra **veiprosjekt**:
+Pakken oppretter med vilje **ingen** egen `TaxonomyFieldType`-sitekolonne. Slike kolonner kan
+provisjoneres fra og med Prosjektportalen 1.14 (tokenet `{sitecollectiontermstoreid}`, se Fag/Emne
+i **veiprosjekt**). Denne pakken holder seg til mønsteret som også virker uten taksonomikolonner:
 
 - nye termsett opprettes av Taxonomy-handleren,
 - fasetermsettet kobles til via manifestets `projectPhaseTermSetId`,

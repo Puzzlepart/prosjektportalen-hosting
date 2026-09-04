@@ -23,7 +23,9 @@ standard mappestruktur for prosjektdokumenter.
    **Prosjektstatus (ByggAnlegg)**, og knytter dem til **Prosjekter**- og
    **Prosjektstatus**-listene.
 3. Seeder hub-listene **Fasesjekkliste Bygg** (63 sjekkpunkter) og
-   **Planneroppgaver Bygg** (59 oppgaver) via `DataRows`.
+   **Planneroppgaver Bygg** (59 oppgaver) via `DataRows`. Som for standardlistene brytes
+   tillatelsesarven på de to listene: eiere har full kontroll, medlemmer og besøkende kan lese
+   (bruker `Security`-støtten som kommer med Prosjektportalen 1.14).
 4. Skriver et Maloppsett-element der `GtProjectContentType` peker på
    **Prosjekt (ByggAnlegg)** og `GtProjectStatusContentType` peker på
    **Prosjektstatus (ByggAnlegg)** – slik at statusrapportene får bygg/anlegg-feltene

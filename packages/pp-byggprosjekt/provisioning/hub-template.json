@@ -1190,6 +1190,25 @@
             "GtSortOrder": 630
           }
         ]
+      },
+      "Security": {
+        "BreakRoleInheritance": true,
+        "CopyRoleAssignments": false,
+        "ClearSubscopes": false,
+        "RoleAssignments": [
+          {
+            "Principal": "{associatedownergroupid}",
+            "RoleDefinition": "Full kontroll"
+          },
+          {
+            "Principal": "{associatedvisitorgroupid}",
+            "RoleDefinition": "Lese"
+          },
+          {
+            "Principal": "{associatedmembergroupid}",
+            "RoleDefinition": "Lese"
+          }
+        ]
       }
     },
     {
@@ -1539,6 +1558,25 @@
             "Title": "Vedlikehold",
             "GtCategory": "Overlevering - Garantiperiode (år 2-5)",
             "GtSortOrder": 590
+          }
+        ]
+      },
+      "Security": {
+        "BreakRoleInheritance": true,
+        "CopyRoleAssignments": false,
+        "ClearSubscopes": false,
+        "RoleAssignments": [
+          {
+            "Principal": "{associatedownergroupid}",
+            "RoleDefinition": "Full kontroll"
+          },
+          {
+            "Principal": "{associatedvisitorgroupid}",
+            "RoleDefinition": "Lese"
+          },
+          {
+            "Principal": "{associatedmembergroupid}",
+            "RoleDefinition": "Lese"
           }
         ]
       }

@@ -54,8 +54,9 @@ Følgende fra kildemodulen er **ikke** provisjonert av pakken (samme avgrensning
 kan settes opp manuelt eller i en senere versjon:
 
 - **Taksonomikolonnene Fag/Institutt/Forskergruppe/Finansiør** (managed metadata): termsettene
-  provisjoneres, men selve taksonomikolonnene bindes ikke (sp-js-provisioning binder ikke termlager-ID på
-  nye taksonomifelt). De tilhørende **tekstfeltene** (`…Text`) provisjoneres i stedet.
+  provisjoneres, men selve taksonomikolonnene er ikke portert ennå. De tilhørende **tekstfeltene**
+  (`…Text`) provisjoneres i stedet. Kolonnene kan uttrykkes i pakken fra og med Prosjektportalen
+  1.14 (tokenet `{sitecollectiontermstoreid}`, se Fag/Emne i veiprosjekt).
 - **«Referanse» (GtcPhaseReference) på prosjektets fasesjekkliste**: kolonnen og verdiene finnes fullt ut på
   hub-listen, men kopieres ikke til prosjektets fasesjekkliste (prosjektsiden bruker standardmalens kolonner).
 - **Publiseringer-siden med egen webdel, Datakilder-visninger, site scripts/designs, prosjekttillegg og
