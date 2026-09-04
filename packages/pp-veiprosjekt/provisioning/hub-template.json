@@ -395,6 +395,9 @@
           "ContentTypeID": "0x0100486B1F8AEA24486FBA1C1BA9146C360C"
         }
       ],
+      "Fields": [
+        "<Field Description=\"\" DisplayName=\"Fase\" ID=\"{325543a5-815d-485d-a9a5-e0773ad762e9}\" Name=\"GtProjectPhase\" ShowField=\"Term1044\" SourceID=\"{{siteid}}\" StaticName=\"GtProjectPhase\" Type=\"TaxonomyFieldType\" WebId=\"{siteid}\"><Customization><ArrayOfProperty><Property><Name>SspId</Name><Value xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q1=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q1:string\">{sitecollectiontermstoreid}</Value></Property><Property><Name>TermSetId</Name><Value xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q2=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q2:string\">{7ccff67b-acca-4abb-8426-c6a38ec69233}</Value></Property></ArrayOfProperty></Customization></Field>"
+      ],
       "FieldRefs": [
         {
           "ID": "a37d88ef-1caa-4436-aabd-5bbd21aaaff7",
@@ -1778,12 +1781,10 @@
       "Template": 101,
       "ContentTypesEnabled": false,
       "RemoveExistingContentTypes": false,
+      "Fields": [
+        "<Field Description=\"\" DisplayName=\"Fase\" ID=\"{325543a5-815d-485d-a9a5-e0773ad762e9}\" Name=\"GtProjectPhase\" ShowField=\"Term1044\" SourceID=\"{{siteid}}\" StaticName=\"GtProjectPhase\" Type=\"TaxonomyFieldType\" WebId=\"{siteid}\"><Customization><ArrayOfProperty><Property><Name>SspId</Name><Value xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q1=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q1:string\">{sitecollectiontermstoreid}</Value></Property><Property><Name>TermSetId</Name><Value xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:q2=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q2:string\">{7ccff67b-acca-4abb-8426-c6a38ec69233}</Value></Property></ArrayOfProperty></Customization></Field>"
+      ],
       "FieldRefs": [
-        {
-          "ID": "325543a5-815d-485d-a9a5-e0773ad762e9",
-          "Name": "GtProjectPhase",
-          "DisplayName": "Fase"
-        },
         {
           "ID": "8f785c45-ca9f-444c-958a-89f74a1a7143",
           "Name": "GtVeiSubject",
