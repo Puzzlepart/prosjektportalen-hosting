@@ -13,22 +13,38 @@
           {
             "Id": "02abfd34-5d2d-4acb-b9e0-b76d3832ac9b",
             "Name": "Planlegge",
-            "SortOrder": 1
+            "SortOrder": 1,
+            "CustomProperties": {
+              "PhaseSubText": "Prosjektgrunnlag, reguleringsplan og organisering",
+              "PhaseDescription": "I denne fasen avklares prosjektets rammer og organisering, og plan- og beslutningsgrunnlaget utarbeides frem mot vedtatt reguleringsplan."
+            }
           },
           {
             "Id": "37da01eb-95dd-4d3e-9d48-44e1edb825d4",
             "Name": "Prosjektere",
-            "SortOrder": 2
+            "SortOrder": 2,
+            "CustomProperties": {
+              "PhaseSubText": "Tekniske løsninger og konkurransegrunnlag",
+              "PhaseDescription": "I denne fasen utvikles den vedtatte planen til et gjennomførbart prosjekt gjennom detaljprosjektering, kostnadsberegning, nødvendige godkjenninger og utarbeidelse av konkurransegrunnlag."
+            }
           },
           {
             "Id": "bfb5fe7c-7013-4883-a1db-1ce5b9801c2f",
             "Name": "Bygge",
-            "SortOrder": 3
+            "SortOrder": 3,
+            "CustomProperties": {
+              "PhaseSubText": "Kontrahering, utførelse og vegåpning",
+              "PhaseDescription": "I denne fasen kontraheres entreprenør, og veganlegget bygges og følges opp med vekt på kvalitet, sikkerhet, ytre miljø, fremdrift og klargjøring for vegåpning."
+            }
           },
           {
             "Id": "91a42992-cc2c-4d0f-944d-88ae39aba7cf",
             "Name": "Avslutte",
-            "SortOrder": 4
+            "SortOrder": 4,
+            "CustomProperties": {
+              "PhaseSubText": "Dokumentasjon, overtakelse og garanti",
+              "PhaseDescription": "I denne fasen ferdigstilles og overleveres dokumentasjonen, eiendom og ansvar overføres til drift og vedlikehold, og garantiperioden følges opp."
+            }
           }
         ],
         "UpdateExistingTerms": true
@@ -302,6 +318,18 @@
   "Lists": [
     {
       "Title": "Prosjekter",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E"
+        }
+      ]
+    },
+    {
+      "Title": "Prosjektdata",
       "Description": "",
       "Template": 100,
       "ContentTypesEnabled": true,

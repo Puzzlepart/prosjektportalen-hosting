@@ -27,7 +27,8 @@ Planner-plan og en standard mappestruktur for prosjektdokumenter.
 2. Provisjonerer veikolonnene (Forankret i, Planleggingsleder, Prosjekteringsleder,
    Byggeleder, Unik datanøkkel) og taksonomikolonnene **Fag** og **Emne** (bundet til
    termsettene Fag (Vei) og Emne (Vei)), samt innholdstypen **Prosjekt (Vei)**
-   (`0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E`), og knytter den til **Prosjekter**-listen.
+   (`0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E`), og knytter den til **Prosjekter**- og
+   **Prosjektdata**-listene.
 3. Seeder hub-listene **Fasesjekkliste Vei** (36 sjekkpunkter; listen får også kolonnene
    Status og Kommentar slik at radene kan skrives) og **Planneroppgaver Vei** (90 oppgaver) via
    `DataRows`, og dokumentbiblioteket **Standarddokumenter Vei** (kolonnene Fase, Fag og Emne)

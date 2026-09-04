@@ -649,6 +649,26 @@
       }
     },
     {
+      "Title": "Porteføljevisninger",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 120,
+            "Title": "Anleggsprosjekter",
+            "GtSearchQuery": "DepartmentId:{sitecollectionid} ContentTypeId:0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA* GtProjectTemplateOWSTEXT=\"Anleggsprosjekt\"",
+            "GtPortfolioIsDefaultView": false,
+            "GtPortfolioFabricIcon": "DeliveryTruck"
+          }
+        ]
+      }
+    },
+    {
       "Title": "Fasesjekkliste Anlegg",
       "Description": "Sjekkpunkter per prosjektfase.",
       "Template": 100,
