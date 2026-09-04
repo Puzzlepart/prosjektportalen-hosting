@@ -105,10 +105,13 @@ them touch the hub schema, so they are all safe to bundle into a cloud template
   `pp-veiprosjekt`'s «Veiprosjekter» view uses `DepartmentId:{sitecollectionid} ContentTypeId:…`
   like the OOTB views. «Byggprosjekter» and «Anleggsprosjekter» use the same hub scope and their
   shared BA content type, plus an exact `GtProjectTemplateOWSTEXT` filter to keep the two views
-  separate. Veiprosjekt's Fag/Emne taxonomy site columns bind their term sets through the term
-  store token. These features ship with the sp-js-provisioning bundled in Prosjektportalen 1.14:
-  on earlier versions the DataRows token stays literal (the view returns nothing) and the
-  taxonomy columns fail to create, which aborts the hub import.
+  separate. All three views express `GtPortfolioColumns` and `GtPortfolioRefiners` as title
+  arrays; the provisioner resolves those `LookupMulti` values against **Prosjektkolonner** by its
+  `Title` show field, avoiding installation-dependent item IDs. Their rows use `Overwrite` so a
+  package re-import repairs previously empty lookups. Veiprosjekt's Fag/Emne taxonomy site columns
+  bind their term sets through the term store token. These features ship with the sp-js-provisioning
+  bundled in Prosjektportalen 1.14: on earlier versions the DataRows token stays literal (the view
+  returns nothing) and the taxonomy columns fail to create, which aborts the hub import.
 - List permissions are expressed with the sp-js-provisioning `Security` element on a list
   (`BreakRoleInheritance`, `RoleAssignments` with `{associatedownergroupid}` /
   `{associatedmembergroupid}` / `{associatedvisitorgroupid}` and localized role names such as

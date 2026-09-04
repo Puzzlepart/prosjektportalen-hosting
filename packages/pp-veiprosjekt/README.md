@@ -35,7 +35,9 @@ Planner-plan og en standard mappestruktur for prosjektdokumenter.
    med en firefaset mappestruktur (35 mapper). Som i kildemodulen bryter de to listene
    tillatelsesarven: eiere har full kontroll, medlemmer og besøkende kan lese.
 4. Legger til veikolonner i **Prosjektkolonner** og en porteføljevisning **Veiprosjekter**
-   (filtrert på hub-området og Prosjekt (Vei)-innholdstypen, `DepartmentId:{sitecollectionid}`).
+   (filtrert på hub-området og Prosjekt (Vei)-innholdstypen, `DepartmentId:{sitecollectionid}`),
+   med standard prosjektfiltre og de tre faseansvarlige som kolonner. Kolonner og filtre
+   kobles til **Prosjektkolonner** med tittel, ikke installasjonsavhengige element-ID-er.
 5. Laster opp prosjekttillegget **Veimal** til **Prosjekttillegg**, låst (`locked`), og knytter
    det til malen (`GtProjectExtensions`).
 6. Skriver et Maloppsett-element der `GtProjectContentType` peker på **Prosjekt (Vei)** og

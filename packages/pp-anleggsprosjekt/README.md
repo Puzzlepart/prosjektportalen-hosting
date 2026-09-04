@@ -27,7 +27,9 @@ standard mappestruktur for prosjektdokumenter.
    tillatelsesarven på de to listene: eiere har full kontroll, medlemmer og besøkende kan lese
    (bruker `Security`-støtten som kommer med Prosjektportalen 1.14).
 4. Legger til porteføljevisningen **Anleggsprosjekter**, filtrert på hub-området,
-   **Prosjekt (ByggAnlegg)** og `GtProjectTemplateOWSTEXT="Anleggsprosjekt"`.
+   **Prosjekt (ByggAnlegg)** og `GtProjectTemplateOWSTEXT="Anleggsprosjekt"`, med
+   standard prosjektfiltre og relevante bygg/anlegg-kolonner. Kolonner og filtre
+   kobles til **Prosjektkolonner** med tittel, ikke installasjonsavhengige element-ID-er.
 5. Skriver et Maloppsett-element der `GtProjectContentType` peker på
    **Prosjekt (ByggAnlegg)** og `GtProjectStatusContentType` peker på
    **Prosjektstatus (ByggAnlegg)** – slik at statusrapportene får bygg/anlegg-feltene

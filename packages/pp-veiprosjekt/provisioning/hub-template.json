@@ -400,14 +400,34 @@
       "RemoveExistingContentTypes": false,
       "DataRows": {
         "KeyColumn": "Title",
-        "UpdateBehavior": "Skip",
+        "UpdateBehavior": "Overwrite",
         "Rows": [
           {
             "GtSortOrder": 100,
             "Title": "Veiprosjekter",
             "GtSearchQuery": "DepartmentId:{sitecollectionid} ContentTypeId:0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E*",
             "GtPortfolioIsDefaultView": false,
-            "GtPortfolioFabricIcon": "Car"
+            "GtPortfolioFabricIcon": "Car",
+            "GtPortfolioColumns": [
+              "Tittel",
+              "Prosjektnummer",
+              "Tjenesteområde",
+              "Prosjekttype",
+              "Fase",
+              "Prosjektleder",
+              "Prosjekteier",
+              "Målsetting",
+              "Planleggingsleder",
+              "Prosjekteringsleder",
+              "Byggeleder"
+            ],
+            "GtPortfolioRefiners": [
+              "Tjenesteområde",
+              "Prosjekttype",
+              "Fase",
+              "Prosjektleder",
+              "Prosjekteier"
+            ]
           }
         ]
       }

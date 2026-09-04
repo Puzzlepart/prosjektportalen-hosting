@@ -656,14 +656,35 @@
       "RemoveExistingContentTypes": false,
       "DataRows": {
         "KeyColumn": "Title",
-        "UpdateBehavior": "Skip",
+        "UpdateBehavior": "Overwrite",
         "Rows": [
           {
             "GtSortOrder": 120,
             "Title": "Anleggsprosjekter",
             "GtSearchQuery": "DepartmentId:{sitecollectionid} ContentTypeId:0x0100805E9E4FEAAB4F0EABAB2600D30DB70CBA* GtProjectTemplateOWSTEXT=\"Anleggsprosjekt\"",
             "GtPortfolioIsDefaultView": false,
-            "GtPortfolioFabricIcon": "DeliveryTruck"
+            "GtPortfolioFabricIcon": "DeliveryTruck",
+            "GtPortfolioColumns": [
+              "Tittel",
+              "Prosjektnummer",
+              "Tjenesteområde",
+              "Prosjekttype",
+              "Fase",
+              "Prosjektleder",
+              "Prosjekteier",
+              "Målsetting",
+              "Opprinnelig overtakelsesdato",
+              "Status SHA",
+              "Status miljø",
+              "Status plan- og byggesak"
+            ],
+            "GtPortfolioRefiners": [
+              "Tjenesteområde",
+              "Prosjekttype",
+              "Fase",
+              "Prosjektleder",
+              "Prosjekteier"
+            ]
           }
         ]
       }
