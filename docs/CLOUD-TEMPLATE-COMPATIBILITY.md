@@ -42,7 +42,7 @@ A template is **not** cloud-compatible only if its `hub-template.json` needs hub
 | `pp-anleggsprosjekt` | template | `true` ✓ | — (taxonomy provisions at publish; «Standarddokumenter Anlegg» folders apply from the `.pppkg` at setup) |
 | `pp-byggprosjekt` | template | `true` ✓ | — (same as anlegg) |
 | `pp-forskningsprosjekt` | template | `true` ✓ | — (its 4 term sets — Finansiør, Fakultet, Institutt, Forskergruppe — provision at publish; bilingual variants supported) |
-| `pp-veiprosjekt` | template | `true` ✓ | — (3 term sets provision at publish; «Standarddokumenter Vei» folders apply from the `.pppkg`) |
+| `pp-veiprosjekt` | template | `true` ✓ | — (3 term sets provision at publish; «Standarddokumenter Vei» folders and the «Veimal» extension apply from the `.pppkg`) |
 | `pp-enkel-prosjektmal` | template | `true` ✓ | — (no taxonomy; references the base PP phase term set) |
 | `pp-leverandorsamhandling` | template *(hidden)* | `true` ✓ | — (no `hub-template.json`) |
 | `pp-smidig` | template *(hidden)* | `true` ✓ | — (no `hub-template.json`) |
@@ -87,5 +87,19 @@ them touch the hub schema, so they are all safe to bundle into a cloud template
   content-type variant + `GtPlannerName`; the cloud path feeds the bundled rows straight to
   `PlannerConfiguration`. Requires Prosjektportalen ≥ 1.14 — the anlegg/bygg/vei
   `Planneroppgaver` entries use this («Anleggsoppgaver» / «Byggeoppgaver» / «Veiplan»).
+- `pp-veiprosjekt` ships a project extension («Veimal», `provisioning/extensions/Veimal.json`)
+  that adds «Forankret i» (`GtVeiAnchored`) to the project checklist and Fase/Fag/Emne to
+  Dokumenter. Import uploads it to Prosjekttillegg and links it via `GtProjectExtensions`;
+  the cloud path applies it straight from the `.pppkg`. Its checklist `listContent` copy
+  includes `GtVeiAnchored`, so the extension must stay selected. It is pre-selected for
+  Veiprosjekt through the template link (`GtProjectExtensions`) in import mode and as a
+  bundled extension in cloud mode; the manifest keeps `defaultSelected: false` because
+  `GtExtensionDefault` would pre-select it for **every** template on the hub. PP365 does not
+  yet map `optional: false` to `GtExtensionLocked`, so a user can still deselect it.
+- Hub-scoped view queries cannot be expressed in a package: `DataRows` values get no token
+  replacement in sp-js-provisioning and PackageInstaller passes no parameters, so a
+  Porteføljevisninger row cannot carry `DepartmentId:{hub}` the way OOTB views do.
+  `pp-veiprosjekt`'s «Veiprosjekter» view filters on content type only; PortfolioWebParts
+  re-scopes results to the hub for regular users but not for «Porteføljeinnsyn» members.
 - If a future package ships hub `Files`, `PropertyBagEntries` or standalone hub libraries,
   declare `cloudCompatible: false` with a `cloudCompatibleReason` naming that content.

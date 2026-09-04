@@ -403,6 +403,16 @@
           "ID": "c70ca705-d503-4d3c-a28e-078e7d61c4c2",
           "Name": "GtDataRowUniqueKey",
           "DisplayName": "Unik datanøkkel"
+        },
+        {
+          "ID": "249527a3-c7f9-4ea5-9c33-f942c06c9215",
+          "Name": "GtChecklistStatus",
+          "DisplayName": "Status"
+        },
+        {
+          "ID": "509a6bfe-004e-41f9-bd73-9a0e02d5c4a7",
+          "Name": "GtComment",
+          "DisplayName": "Kommentar"
         }
       ],
       "AdditionalSettings": {

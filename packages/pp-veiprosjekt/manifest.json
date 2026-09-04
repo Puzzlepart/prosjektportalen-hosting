@@ -18,13 +18,23 @@
     "template": "provisioning/template.json",
     "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E",
     "projectPhaseTermSetId": "7ccff67b-acca-4abb-8426-c6a38ec69233",
+    "extensions": [
+      {
+        "id": "veimal",
+        "name": "Veimal",
+        "description": "Tilpasninger for veiprosjekter: kolonnen «Forankret i» på fasesjekklisten, og Fase/Fag/Emne på Dokumenter",
+        "file": "provisioning/extensions/Veimal.json",
+        "optional": false,
+        "defaultSelected": false
+      }
+    ],
     "listContent": [
       {
         "title": "Fasesjekkpunkter Vei",
         "description": "Fasesjekkpunkter for veiprosjekter, kopieres fra hub-listen «Fasesjekkliste Vei»",
         "sourceList": "Fasesjekkliste Vei",
         "destinationList": "Fasesjekkliste",
-        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "fields": "GtSortOrder,Title,GtProjectPhase,GtVeiAnchored",
         "default": false,
         "hidden": false
       },
