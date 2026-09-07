@@ -418,7 +418,7 @@
         }
       ],
       "DataRows": {
-        "KeyColumn": "Title",
+        "KeyColumn": "GtSortOrder",
         "UpdateBehavior": "Skip",
         "Rows": [
           {

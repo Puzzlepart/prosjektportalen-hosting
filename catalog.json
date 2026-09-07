@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-09-07T07:36:23.301Z",
+  "lastUpdated": "2026-09-07T09:48:49.228Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -129,13 +129,12 @@
     {
       "id": "pp-forskningsprosjekt",
       "name": "Forskningsprosjekt",
-      "description": "Prosjektmal for forsknings- og utviklingsprosjekter, basert på forskningsmalen til Prosjektportalen 365 (utviklet av Høgskolen i Innlandet). Provisjonerer innholdstypen Prosjekt (Forskning), forskningskolonner og taksonomi (finansiør, fakultet, institutt, forskergruppe) på hub-området, og setter opp en fasesjekkliste for forskningsprosjekter. Tilgjengelig på norsk og engelsk.",
+      "description": "Prosjektmal for forsknings- og utviklingsprosjekter, basert på forskningsmalen til Prosjektportalen 365 (utviklet av Høgskolen i Innlandet). Provisjonerer innholdstypen Prosjekt (Forskning), forskningskolonner og taksonomi (finansiør, fakultet, institutt, forskergruppe) på hub-området, og setter opp en fasesjekkliste for forskningsprosjekter.",
       "version": "1.0.1",
       "type": "template",
       "cloudCompatible": true,
       "languages": [
-        "nb-NO",
-        "en-US"
+        "nb-NO"
       ],
       "icon": "TestPlan",
       "author": "Prosjektportalen-teamet",

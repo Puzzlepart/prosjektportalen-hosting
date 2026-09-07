@@ -372,6 +372,260 @@
       ]
     },
     {
+      "Title": "Prosjektkolonner",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "GtInternalName",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 31,
+            "Title": "Finansiør",
+            "GtInternalName": "GtcFinancierText",
+            "GtManagedProperty": "GtcFinancierTextOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 32,
+            "Title": "Finansiør (annet)",
+            "GtInternalName": "GtcFinancierOther",
+            "GtManagedProperty": "GtcFinancierOtherOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 33,
+            "Title": "Utlysning",
+            "GtInternalName": "GtcAnnouncement",
+            "GtManagedProperty": "GtcAnnouncementOWSURLH",
+            "GtFieldDataType": "URL",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 34,
+            "Title": "Søknadssum",
+            "GtInternalName": "GtcApplicationSum",
+            "GtManagedProperty": "GtcApplicationSumOWSCURR",
+            "GtFieldDataType": "Currency",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 35,
+            "Title": "Sum til universitetet",
+            "GtInternalName": "GtcProjectSum",
+            "GtManagedProperty": "GtcProjectSumOWSCURR",
+            "GtFieldDataType": "Currency",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 36,
+            "Title": "Søknadsfrist",
+            "GtInternalName": "GtcDeadline",
+            "GtManagedProperty": "GtcDeadlineOWSDATE",
+            "GtFieldDataType": "Date",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 101,
+            "Title": "Status søknad",
+            "GtInternalName": "GtcApplicationStatus",
+            "GtManagedProperty": "GtcApplicationStatusOWSCHCS",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 102,
+            "Title": "Fakultet",
+            "GtInternalName": "GtcFacultyText",
+            "GtManagedProperty": "GtcFacultyTextOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 103,
+            "Title": "Institutt",
+            "GtInternalName": "GtcInstituteText",
+            "GtManagedProperty": "GtcInstituteTextOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 104,
+            "Title": "Forskergruppe",
+            "GtInternalName": "GtcResearchGroupText",
+            "GtManagedProperty": "GtcResearchGroupTextOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 105,
+            "Title": "Forskergruppe (annet)",
+            "GtInternalName": "GtcResearchGroupOther",
+            "GtManagedProperty": "GtcResearchGroupOtherOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 106,
+            "Title": "NVA prosjektkode",
+            "GtInternalName": "GtcCristinCode",
+            "GtManagedProperty": "GtcCristinCodeOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          },
+          {
+            "GtSortOrder": 107,
+            "Title": "Rolle i prosjektet",
+            "GtInternalName": "GtcProjectRole",
+            "GtManagedProperty": "GtcProjectRoleOWSCHCS",
+            "GtFieldDataType": "Text",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 300,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": true,
+            "GtIsGroupable": true
+          },
+          {
+            "GtSortOrder": 121,
+            "Title": "Oppstartsdato",
+            "GtInternalName": "GtcStartupDate",
+            "GtManagedProperty": "GtcStartupDateOWSDATE",
+            "GtFieldDataType": "Date",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200,
+            "GtShowFieldProjectStatus": true,
+            "GtShowFieldFrontpage": true,
+            "GtShowFieldPortfolio": true,
+            "GtIsRefinable": false,
+            "GtIsGroupable": false
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Porteføljevisninger",
+      "Description": "",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Overwrite",
+        "Rows": [
+          {
+            "GtSortOrder": 120,
+            "Title": "Forskningsprosjekter",
+            "GtSearchQuery": "DepartmentId:{sitecollectionid} ContentTypeId:0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09*",
+            "GtPortfolioIsDefaultView": false,
+            "GtPortfolioFabricIcon": "TestPlan",
+            "GtPortfolioColumns": [
+              "Tittel",
+              "Prosjektnummer",
+              "Fase",
+              "Prosjektleder",
+              "Prosjekteier",
+              "Status søknad",
+              "Søknadsfrist",
+              "Søknadssum",
+              "Sum til universitetet",
+              "Fakultet",
+              "Institutt",
+              "Finansiør",
+              "Rolle i prosjektet",
+              "Oppstartsdato"
+            ],
+            "GtPortfolioRefiners": [
+              "Fase",
+              "Prosjektleder",
+              "Status søknad",
+              "Fakultet",
+              "Institutt",
+              "Finansiør",
+              "Forskergruppe",
+              "Rolle i prosjektet"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "Title": "Fasesjekkliste forskning",
       "Description": "Standard fasesjekkpunkter for forskningsprosjekter",
       "Template": 100,
@@ -418,7 +672,7 @@
         }
       ],
       "DataRows": {
-        "KeyColumn": "Title",
+        "KeyColumn": "GtSortOrder",
         "UpdateBehavior": "Skip",
         "Rows": [
           {

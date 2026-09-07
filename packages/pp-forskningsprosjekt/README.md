@@ -11,21 +11,20 @@ JSON-provisjonering.
 | **ID** | `pp-forskningsprosjekt` |
 | **Type** | template |
 | **Versjon** | 1.0.1 (følger kildemodulen) |
-| **Minimum PP-versjon** | 1.12.0 |
+| **Minimum PP-versjon** | 1.14.0 |
 | **Tagger** | forskning, FoU, prosjektledelse |
-| **Språk** | Norsk (nb-NO) og engelsk (en-US) |
+| **Språk** | Norsk (nb-NO) |
 
-## Tospråklig (norsk + engelsk)
+## Språk
 
-Pakken inneholder **to språkvarianter** av provisjoneringen:
+Pakken er **norsk (nb-NO)**. En ferdig engelsk variant av hub-provisjoneringen ligger i pakken
+(`provisioning/hub-template.en-US.json`), men den er **ikke** deklarert i manifestet og brukes derfor ikke.
 
-- `provisioning/hub-template.json` – norsk (nb-NO)
-- `provisioning/hub-template.en-US.json` – engelsk (en-US)
-
-Prosjektportalen oppdager hub-områdets språk ved import og bruker den matchende varianten (norsk hub →
-norske felt-, liste- og innholdstypenavn + norske termer + «Forskningsprosjekt» som mal; engelsk hub →
-engelske navn + engelske termer + «Research Project»). Innholdstype-ID-er og term-set-/term-ID-er er like
-i begge varianter, så de er idempotente.
+Årsaken er at bare den ene av de to leveringsveiene håndterer språkvarianter: import til hub-området
+oversetter manifestet etter hub-språket, mens prosjektoppsett fra en **skymal** leser manifestet
+uoversatt. På et engelsk hub-område ville skymalen dermed lete etter den norske hub-listen og feile.
+Den engelske varianten kan deklareres igjen når prosjektoppsettet håndterer språkvarianter på samme
+måte som importen.
 
 ## Hva «Kopier til min installasjon» gjør
 
@@ -36,7 +35,11 @@ i begge varianter, så de er idempotente.
    (`0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09`), og knytter den til **Prosjekter**-listen.
 3. Seeder hub-listen **Fasesjekkliste forskning** (48 sjekkpunkter på tvers av prosjektfasene) via
    `DataRows`, med kolonnen «Referanse» (lenke til veiledning).
-4. Skriver et Maloppsett-element der `GtProjectContentType` peker på **Prosjekt (Forskning)**. Malen bruker
+4. Registrerer de 14 forskningskolonnene i **Prosjektkolonner**, slik at de kan vises, filtreres og
+   grupperes i porteføljeoversikten, statusrapporter og på prosjektforsiden.
+5. Legger til porteføljevisningen **Forskningsprosjekter** (filtrert på hub-området og
+   Prosjekt (Forskning)-innholdstypen) med forskningskolonnene som kolonner og filtre.
+6. Skriver et Maloppsett-element der `GtProjectContentType` peker på **Prosjekt (Forskning)**. Malen bruker
    standardfasene og standard prosjektstatus-innholdstype.
 
 ## Hva som settes opp i prosjektet
@@ -50,17 +53,22 @@ i begge varianter, så de er idempotente.
 > mens listeinnholdet hentes direkte fra pakken ved prosjektoppsett.
 > Provisjoneringen forventer en standard Prosjektportalen-hub.
 
-Følgende fra kildemodulen er **ikke** provisjonert av pakken (samme avgrensning som bygg/anlegg/vei), og
-kan settes opp manuelt eller i en senere versjon:
+Følgende fra kildemodulen er **ikke** provisjonert av pakken, og kan settes opp manuelt eller i en
+senere versjon:
 
-- **Taksonomikolonnene Fag/Institutt/Forskergruppe/Finansiør** (managed metadata): termsettene
+- **Taksonomikolonnene Finansiør/Fakultet/Institutt/Forskergruppe** (managed metadata): termsettene
   provisjoneres, men selve taksonomikolonnene er ikke portert ennå. De tilhørende **tekstfeltene**
-  (`…Text`) provisjoneres i stedet. Kolonnene kan uttrykkes i pakken fra og med Prosjektportalen
-  1.14 (tokenet `{sitecollectiontermstoreid}`, se Fag/Emne i veiprosjekt).
+  (`…Text`) provisjoneres i stedet, og er de som registreres som porteføljekolonner. Taksonomikolonnene
+  kan uttrykkes i pakken fra og med Prosjektportalen 1.14 (tokenet `{sitecollectiontermstoreid}`, se
+  Fag/Emne i veiprosjekt); inntil da fylles ikke tekstfeltene av noe, og termsettene har ingen forbruker.
 - **«Referanse» (GtcPhaseReference) på prosjektets fasesjekkliste**: kolonnen og verdiene finnes fullt ut på
   hub-listen, men kopieres ikke til prosjektets fasesjekkliste (prosjektsiden bruker standardmalens kolonner).
-- **Publiseringer-siden med egen webdel, Datakilder-visninger, site scripts/designs, prosjekttillegg og
-  PowerShell-installasjon**: ikke portert; prosjektstrukturen kommer fra standardmalen.
+- **Prosjekttillegget** til kildemodulen: ikke portert. Prosjektstrukturen kommer derfor fra
+  standardmalen, og forskningsprosjekter får ikke modulens fire egne prosjektlister (blant annet
+  publiseringer og leveranser) eller dens egen prosjektforside.
+- **Publiseringer-siden med egen webdel, datakilden «Alle publiseringer», site scripts/designs og
+  PowerShell-installasjonen**: ikke portert. De seks publiseringskolonnene provisjoneres, men har
+  ingen liste eller side å brukes i før prosjekttillegget portes.
 - Termsettene er hentet fra kildeinstitusjonen (Høgskolen i Innlandet) og kan tilpasses egen organisasjon.
 
 ## Tilskrivelse
