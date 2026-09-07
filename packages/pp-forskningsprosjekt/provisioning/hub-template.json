@@ -194,7 +194,8 @@
     "<Field Decimals=\"0\" DisplayName=\"Sum til universitetet\" Description=\"Summen som går til universitetet\" Group=\"Egendefinerte kolonner for Prosjektportalen\" ID=\"{977af78d-32c1-4fff-b614-8920c07ddcaf}\" LCID=\"1044\" Min=\"0\" Name=\"GtcProjectSum\" StaticName=\"GtcProjectSum\" Type=\"Currency\" />",
     "<Field DisplayName=\"Forskergruppe (Annet)\" Description=\"Hvis forskergruppe ikke ble funnet i listen over kan du spesifisere dette her.\" Group=\"Egendefinerte kolonner for Prosjektportalen\" ID=\"{663a2150-c250-4a7b-8e49-690dca0cba3f}\" Name=\"GtcResearchGroupOther\" StaticName=\"GtcResearchGroupOther\" Type=\"Text\" />",
     "<Field DisplayName=\"Forskergruppe (tekst)\" Description=\"\" Group=\"Egendefinerte kolonner for Prosjektportalen\" ID=\"{7b4c6408-0816-421c-8d47-3b95734d162e}\" Name=\"GtcResearchGroupText\" StaticName=\"GtcResearchGroupText\" Type=\"Text\" ShowInEditForm=\"FALSE\" />",
-    "<Field ID=\"{8bce3087-6668-475c-bf00-037f6079b60b}\" Name=\"GtcStartupDate\" DisplayName=\"Oppstartsdato\" Description=\"Startdato for prosjektgjennomføring ved tildeling av midler. Merkes som milepæl på Tidslinjen.\" Type=\"DateTime\" Group=\"Egendefinerte kolonner for Prosjektportalen\" Format=\"DateOnly\" StaticName=\"GtcStartupDate\" />"
+    "<Field ID=\"{8bce3087-6668-475c-bf00-037f6079b60b}\" Name=\"GtcStartupDate\" DisplayName=\"Oppstartsdato\" Description=\"Startdato for prosjektgjennomføring ved tildeling av midler. Merkes som milepæl på Tidslinjen.\" Type=\"DateTime\" Group=\"Egendefinerte kolonner for Prosjektportalen\" Format=\"DateOnly\" StaticName=\"GtcStartupDate\" />",
+    "<Field ID=\"{18d92e18-10b6-42ea-815d-b12d7827564e}\" DisplayName=\"Prosjektstatus\" Description=\"Hvilken status har prosjektet ditt?\" Name=\"GtProjectLifecycleStatus\" Type=\"Choice\" Format=\"Dropdown\" Group=\"Kolonner for Prosjektportalen (Portefølje)\" StaticName=\"GtProjectLifecycleStatus\"><Default>Aktivt</Default><CHOICES><CHOICE>Aktivt</CHOICE><CHOICE>Avventer</CHOICE><CHOICE>Avsluttet</CHOICE><CHOICE>Terminert</CHOICE></CHOICES></Field>"
   ],
   "ContentTypes": [
     {
@@ -308,6 +309,10 @@
           "Name": "GtLastSyncTime"
         },
         {
+          "ID": "18d92e18-10b6-42ea-815d-b12d7827564e",
+          "Name": "GtProjectLifecycleStatus"
+        },
+        {
           "Name": "GtProjectPhaseText"
         },
         {
@@ -362,6 +367,18 @@
     {
       "Title": "Prosjekter",
       "Description": "Inneholder alle prosjektene i porteføljen, og egenskapene som er synkronisert for disse.",
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "ContentTypeBindings": [
+        {
+          "ContentTypeID": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09"
+        }
+      ]
+    },
+    {
+      "Title": "Prosjektdata",
+      "Description": "",
       "Template": 100,
       "ContentTypesEnabled": true,
       "RemoveExistingContentTypes": false,
@@ -580,6 +597,128 @@
       }
     },
     {
+      "Title": "Prosjektinnholdskolonner",
+      "Description": null,
+      "Url": null,
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "GtInternalName",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtSortOrder": 170,
+            "Title": "Leveransenummer",
+            "GtInternalName": "GtcDeliveryNumber",
+            "GtManagedProperty": "GtcDeliveryNumberOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtDataSourceCategory": "Leveranseoversikt",
+            "GtColMinWidth": 100,
+            "GtColMaxWidth": 200
+          },
+          {
+            "GtSortOrder": 800,
+            "Title": "Nasjonalt vitenarkiv (NVA) resultat-ID",
+            "GtInternalName": "GtcPubResultId",
+            "GtManagedProperty": "GtcPubResultIdOWSTEXT",
+            "GtFieldDataType": "Text",
+            "GtDataSourceCategory": "Publiseringer",
+            "GtColMinWidth": 100,
+            "GtColMaxWidth": 200
+          },
+          {
+            "GtSortOrder": 810,
+            "Title": "Publiseringskanal",
+            "GtInternalName": "GtcPubChannel",
+            "GtManagedProperty": "GtcPubChannelOWSMTXT",
+            "GtFieldDataType": "Note",
+            "GtDataSourceCategory": "Publiseringer",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 320
+          },
+          {
+            "GtSortOrder": 820,
+            "Title": "Rolle i publikasjonen",
+            "GtInternalName": "GtcPubRole",
+            "GtManagedProperty": "GtcPubRoleOWSMTXT",
+            "GtFieldDataType": "Note",
+            "GtDataSourceCategory": "Publiseringer",
+            "GtColMinWidth": 200,
+            "GtColMaxWidth": 320
+          },
+          {
+            "GtSortOrder": 830,
+            "Title": "Er publikasjonen publisert?",
+            "GtInternalName": "GtcPubIsPublished",
+            "GtManagedProperty": "GtcPubIsPublishedOWSBOOL",
+            "GtFieldDataType": "Boolean",
+            "GtDataSourceCategory": "Publiseringer",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 200
+          },
+          {
+            "GtSortOrder": 840,
+            "Title": "Publiseringsdato",
+            "GtInternalName": "GtcPubDate",
+            "GtManagedProperty": "GtcPubDateOWSDATE",
+            "GtFieldDataType": "Date",
+            "GtDataSourceCategory": "Publiseringer",
+            "GtColMinWidth": 120,
+            "GtColMaxWidth": 200
+          },
+          {
+            "GtSortOrder": 850,
+            "Title": "URL lenke til Nasjonalt vitenarkiv (NVA)",
+            "GtInternalName": "GtcPubLink",
+            "GtManagedProperty": "GtcPubLinkOWSURLH",
+            "GtFieldDataType": "URL",
+            "GtDataSourceCategory": "Publiseringer",
+            "GtColMinWidth": 150,
+            "GtColMaxWidth": 250
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Datakilder",
+      "Description": null,
+      "Url": null,
+      "Template": 100,
+      "ContentTypesEnabled": true,
+      "RemoveExistingContentTypes": false,
+      "DataRows": {
+        "KeyColumn": "Title",
+        "UpdateBehavior": "Skip",
+        "Rows": [
+          {
+            "GtDataSourceId": "1786c21c-6a40-4cc6-8f19-a6e10c6ca14c",
+            "Title": "Alle publiseringer",
+            "GtSearchQuery": "ContentTypeId:0x01004B2B9889EA2C462FBE9B54B0D462E96B* DepartmentId:{sitecollectionid}",
+            "GtDataSourceCategory": "Publiseringer",
+            "GtDataSourceLevel": [
+              "Portefølje"
+            ],
+            "GtIconName": "PublishCourse",
+            "GtProjectContentColumns": [
+              "Tittel",
+              "Nasjonalt vitenarkiv (NVA) resultat-ID",
+              "Publiseringskanal",
+              "Rolle i publikasjonen",
+              "Er publikasjonen publisert?",
+              "Publiseringsdato",
+              "URL lenke til Nasjonalt vitenarkiv (NVA)"
+            ],
+            "GtProjectContentRefiners": [
+              "Publiseringskanal",
+              "Rolle i publikasjonen",
+              "Er publikasjonen publisert?"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "Title": "Porteføljevisninger",
       "Description": "",
       "Template": 100,
@@ -626,7 +765,7 @@
       }
     },
     {
-      "Title": "Fasesjekkliste forskning",
+      "Title": "Fasesjekkliste Forskning",
       "Description": "Standard fasesjekkpunkter for forskningsprosjekter",
       "Template": 100,
       "ContentTypesEnabled": true,
@@ -1097,6 +1236,38 @@
           }
         ]
       }
+    }
+  ],
+  "ClientSidePages": [
+    {
+      "Name": "Publiseringer.aspx",
+      "Title": "Publiseringer",
+      "PageLayoutType": "SingleWebPartAppPage",
+      "CommentsDisabled": true,
+      "Overwrite": false,
+      "Sections": [
+        {
+          "Columns": [
+            {
+              "Factor": 12,
+              "Controls": [
+                {
+                  "Id": "6c0e484d-f6da-40d4-81fc-ec1389ef29a8",
+                  "Properties": {
+                    "dataSource": "Alle publiseringer",
+                    "dataSourceCategory": "Publiseringer",
+                    "showCommandBar": true,
+                    "showSearchBox": true,
+                    "showExcelExportButton": true,
+                    "showFilters": true,
+                    "showViewSelector": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

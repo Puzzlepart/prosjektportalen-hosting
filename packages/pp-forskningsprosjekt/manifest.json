@@ -24,13 +24,24 @@
     "hubTemplate": "provisioning/hub-template.json",
     "template": "provisioning/template.json",
     "projectContentTypeId": "0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09",
+    "extensions": [
+      {
+        "id": "forskningsmal",
+        "name": "Forskningsmal",
+        "description": "Tilpasninger for forskningsprosjekter: listene Etiske vurderinger, Prosjektorganisasjon, Work Breakdown Structure og Publiseringer, kolonnene Referanse på fasesjekklisten og Leveransenummer på prosjektleveranser, samt lenker i venstremenyen",
+        "file": "provisioning/extensions/Forskningsmal.json",
+        "optional": false,
+        "defaultSelected": false,
+        "locked": true
+      }
+    ],
     "listContent": [
       {
         "title": "Fasesjekkpunkter Forskning",
-        "description": "Fasesjekkpunkter for forskningsprosjekter, kopieres fra hub-listen «Fasesjekkliste forskning»",
-        "sourceList": "Fasesjekkliste forskning",
+        "description": "Fasesjekkpunkter for forskningsprosjekter, kopieres fra hub-listen «Fasesjekkliste Forskning»",
+        "sourceList": "Fasesjekkliste Forskning",
         "destinationList": "Fasesjekkliste",
-        "fields": "GtSortOrder,Title,GtProjectPhase",
+        "fields": "GtSortOrder,Title,GtProjectPhase,GtcPhaseReference",
         "default": false,
         "hidden": false
       }
