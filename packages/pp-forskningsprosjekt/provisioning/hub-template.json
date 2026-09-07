@@ -598,8 +598,7 @@
     },
     {
       "Title": "Prosjektinnholdskolonner",
-      "Description": null,
-      "Url": null,
+      "Description": "",
       "Template": 100,
       "ContentTypesEnabled": true,
       "RemoveExistingContentTypes": false,
@@ -682,14 +681,13 @@
     },
     {
       "Title": "Datakilder",
-      "Description": null,
-      "Url": null,
+      "Description": "",
       "Template": 100,
       "ContentTypesEnabled": true,
       "RemoveExistingContentTypes": false,
       "DataRows": {
-        "KeyColumn": "Title",
-        "UpdateBehavior": "Skip",
+        "KeyColumn": "GtDataSourceId",
+        "UpdateBehavior": "Overwrite",
         "Rows": [
           {
             "GtDataSourceId": "1786c21c-6a40-4cc6-8f19-a6e10c6ca14c",
