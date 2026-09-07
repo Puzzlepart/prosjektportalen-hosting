@@ -21,7 +21,18 @@ npm run build:packages
 
 # Bygg en spesifikk pakke
 npm run build:package -- --name=standard-prosjektmal
+
+# Bygg flere utvalgte pakker
+npm run build:package -- --name=pp-veiprosjekt,pp-byggprosjekt,pp-anleggsprosjekt
+
+# Lokal ombygging uten krav om versjonsøkning
+npm run build:package -- --name=pp-veiprosjekt,pp-byggprosjekt,pp-anleggsprosjekt --skip-version-check
 ```
+
+`--skip-version-check` hopper bare over kontrollen av versjonsøkning. Manifest,
+filreferanser, pakkearkiv og katalog valideres og bygges fortsatt. Flagget er ment
+for lokal ombygging av en ikke utgitt versjon; ordinære utgivelser skal bygges
+uten flagget.
 
 ### Hva scriptet gjør
 
@@ -33,7 +44,8 @@ npm run build:package -- --name=standard-prosjektmal
 ### Output
 
 Bygde pakker plasseres i `dist/` med følgende navneformat:
-```
+
+```text
 {pakkenavn}-{versjon}.pppkg
 ```
 
@@ -41,6 +53,6 @@ For eksempel: `standard-prosjektmal-1.2.0.pppkg`
 
 ## validate-manifest.js
 
-_(Kommer snart)_
+Kommer snart.
 
 Frittstående valideringscript for bruk i CI/CD-pipelines.

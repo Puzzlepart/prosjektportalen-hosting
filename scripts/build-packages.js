@@ -6,9 +6,10 @@
  *   npm run build:dev                                 # Build all (validate against dev)
  *   npm run build:main                                # Build all (validate against main)
  *   npm run build:package -- --name=package-name      # Build specific package
+ *   npm run build:package -- --name=pkg-a,pkg-b --skip-version-check
  * 
  * Direct usage:
- *   node scripts/build-packages.js [--name=package-name] [--base-ref=main]
+ *   node scripts/build-packages.js [--name=package-name[,package-name...]] [--base-ref=main] [--skip-version-check]
  */
 
 const fs = require('fs');
@@ -35,30 +36,46 @@ const GITHUB_DIST_BASE = `${GITHUB_RAW_BASE}/dist`;
 function parseArgs() {
   const args = process.argv.slice(2);
   const options = {
-    packageName: null,
-    baseRef: 'main'
+    packageNames: [],
+    baseRef: 'main',
+    skipVersionCheck: false
+  };
+  const addPackageNames = value => {
+    options.packageNames.push(
+      ...value.split(',').map(name => name.trim()).filter(Boolean)
+    );
   };
 
-  for (const arg of args) {
+  for (let index = 0; index < args.length; index++) {
+    const arg = args[index];
     if (arg.startsWith('--name=')) {
-      options.packageName = arg.substring('--name='.length);
-    } else if (arg.startsWith('--name')) {
-      const idx = args.indexOf(arg);
-      if (idx !== -1 && args[idx + 1]) {
-        options.packageName = args[idx + 1];
+      addPackageNames(arg.substring('--name='.length));
+    } else if (arg === '--name') {
+      const value = args[index + 1];
+      if (!value || value.startsWith('--')) {
+        console.error(chalk.red('✗ --name requires one or more package names'));
+        process.exit(1);
       }
+      addPackageNames(value);
+      index++;
     } else if (arg.startsWith('--base-ref=')) {
       options.baseRef = arg.substring('--base-ref='.length);
+    } else if (arg === '--skip-version-check') {
+      options.skipVersionCheck = true;
+    } else {
+      console.error(chalk.red(`✗ Unknown argument: ${arg}`));
+      process.exit(1);
     }
   }
 
+  options.packageNames = [...new Set(options.packageNames.filter(Boolean))];
   return options;
 }
 
 /**
  * Get list of package directories to build
  */
-function getPackagesToBuild(packageName = null) {
+function getPackagesToBuild(packageNames = []) {
   if (!fs.existsSync(PACKAGES_DIR)) {
     console.error(chalk.red(`✗ Packages directory not found: ${PACKAGES_DIR}`));
     process.exit(1);
@@ -70,13 +87,14 @@ function getPackagesToBuild(packageName = null) {
       return fs.statSync(fullPath).isDirectory() && name !== '.gitkeep';
     });
 
-  if (packageName) {
-    if (!allPackages.includes(packageName)) {
-      console.error(chalk.red(`✗ Package not found: ${packageName}`));
+  if (packageNames.length > 0) {
+    const missingPackages = packageNames.filter(name => !allPackages.includes(name));
+    if (missingPackages.length > 0) {
+      console.error(chalk.red(`✗ Package(s) not found: ${missingPackages.join(', ')}`));
       console.log(chalk.gray(`  Available packages: ${allPackages.join(', ')}`));
       process.exit(1);
     }
-    return [packageName];
+    return packageNames;
   }
 
   if (allPackages.length === 0) {
@@ -247,24 +265,28 @@ async function buildPackage(packageName, options) {
     checkReferencedFiles(packagePath, manifest);
     console.log(chalk.green('  ✓ All referenced files exist'));
 
-    console.log(chalk.gray('  ↳ Checking version bump...'));
-    const versionCheck = validator.validateVersionBump(
-      packageName,
-      packagePath,
-      manifest,
-      options.baseRef
-    );
+    if (options.skipVersionCheck) {
+      console.log(chalk.yellow('  ⚠ Version bump check skipped (--skip-version-check)'));
+    } else {
+      console.log(chalk.gray('  ↳ Checking version bump...'));
+      const versionCheck = validator.validateVersionBump(
+        packageName,
+        packagePath,
+        manifest,
+        options.baseRef
+      );
 
-    if (versionCheck.errors.length > 0) {
-      const errors = versionCheck.errors.map(err => `  - ${err}`).join('\n');
-      throw new Error(`Version validation failed:\n${errors}`);
-    }
-    console.log(chalk.green('  ✓ Version validation passed'));
+      if (versionCheck.errors.length > 0) {
+        const errors = versionCheck.errors.map(err => `  - ${err}`).join('\n');
+        throw new Error(`Version validation failed:\n${errors}`);
+      }
+      console.log(chalk.green('  ✓ Version validation passed'));
 
-    if (versionCheck.warnings.length > 0) {
-      versionCheck.warnings.forEach(warn => {
-        console.log(chalk.yellow(`  ⚠ ${warn}`));
-      });
+      if (versionCheck.warnings.length > 0) {
+        versionCheck.warnings.forEach(warn => {
+          console.log(chalk.yellow(`  ⚠ ${warn}`));
+        });
+      }
     }
 
     console.log(chalk.gray('  ↳ Creating .pppkg archive...'));
@@ -292,7 +314,7 @@ async function main() {
   console.log(chalk.bold('\n🏗️  Prosjektportalen Package Builder\n'));
 
   const options = parseArgs();
-  const packages = getPackagesToBuild(options.packageName);
+  const packages = getPackagesToBuild(options.packageNames);
 
   console.log(chalk.gray(`Building ${packages.length} package(s)...\n`));
 
