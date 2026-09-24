@@ -1,4 +1,4 @@
-# Søkekonfigurasjon for veimodulen (valgfritt)
+# Søkekonfigurasjon for Veiprosjekt (valgfritt)
 
 Veiprosjekt-malen legger til tre brukerkolonner – **Planleggingsleder**,
 **Prosjekteringsleder** og **Byggeleder**. For at disse skal kunne vises og filtreres i
@@ -13,9 +13,8 @@ porteføljevisninger må de mappes i søkeskjemaet til managed properties:
 ## Hvorfor er dette et eget steg?
 
 Søkeskjema settes på leietaker-/søketjenestenivå og krever rollen **SharePoint-administrator**.
-Det kan derfor ikke provisjoneres fra selve malpakken (sp-js-provisioning har ingen
-søke-handler). Steget er **valgfritt** – resten av malen fungerer uten det; uten mappingen
-står de tre brukerkolonnene bare tomme i porteføljen.
+Det kan derfor ikke settes opp fra selve malpakken. Steget er **valgfritt** – resten av malen
+fungerer uten det; uten mappingen står de tre brukerkolonnene bare tomme i porteføljen.
 
 ## Slik kjører du det
 
@@ -28,15 +27,15 @@ står de tre brukerkolonnene bare tomme i porteføljen.
 ```
 
 Skriptet utleder leietakerens administrasjonsområde (`<tenant>-admin.sharepoint.com`) fra
-hub-URL-en og kobler til der før importen, slik kildemodulens `Install.ps1` gjør. PnP.PowerShell
+hub-URL-en og kobler til der før importen. PnP.PowerShell
 3.x har ingen innebygd app-registrering, så `-ClientId` må peke på en Entra ID-app; standardverdien
 er den multi-tenant Prosjektportalen-appen (`da6c31a6-b557-4ac3-9994-7315da06ea3a`).
 Med `-Scope Site` kobles det i stedet til hub-URL-en, og søkeskjemaet importeres bare for den
 områdesamlingen. Bruk `-AdminUrl` hvis administrasjonsområdet ikke kan utledes (andre domener enn
 `*.sharepoint.com`).
 
-- `SearchConfiguration.xml` – søkeskjema-eksporten fra kildemodulen (aliaser, crawled/managed
-  properties og mappinger for de tre kolonnene).
+- `SearchConfiguration.xml` – søkeskjema-eksport med aliaser, crawled/managed properties og
+  mappinger for de tre kolonnene.
 - `Set-VeiSearchConfiguration.ps1` – tynn PnP.PowerShell-innpakning rundt
   `Set-PnPSearchConfiguration` (kobler til administrasjonsområdet med `-ClientId`).
 

@@ -1,92 +1,83 @@
 # Veiprosjekt
 
-Prosjektmal for veg- og samferdselsprosjekter i Prosjektportalen 365, basert på
-**veimodulen** ([Puzzlepart/pp365-veimodul](https://github.com/Puzzlepart/pp365-veimodul)).
-Veimodulen er utviklet av **Rogaland fylkeskommune**, og ekstrahert som delbar mal av
-**Puzzlepart – nå Crayon Consulting**. Denne pakken er en re-implementasjon av modulen
-for hosting-katalogens JSON-provisjonering.
+Prosjektmal for vei- og samferdselsprosjekter i Prosjektportalen 365, basert på
+veimodulen til Prosjektportalen. Veimodulen er utviklet av **Rogaland fylkeskommune**
+og forvaltes av Crayon Consulting.
 
-Malen provisjonerer egne veifaser, **Prosjekt (Vei)**-innholdstype og -kolonner på
-hub-området, prosjekttillegget **Veimal**, og setter opp prosjektets fasesjekkliste,
-Planner-plan og en standard mappestruktur for prosjektdokumenter.
+Malen gir veiprosjekter egne faser, egne felter for hvem som leder planlegging,
+prosjektering og bygging, en egen porteføljevisning, en fasesjekkliste med forankring,
+standardoppgaver i Planner, en standard mappestruktur for prosjektdokumenter og
+dokumentkolonnene Fag og Emne.
 
 | | |
 | --- | --- |
 | **ID** | `pp-veiprosjekt` |
-| **Type** | template |
-| **Versjon** | 1.1.3 (følger kildemodulen) |
+| **Type** | Prosjektmal |
+| **Versjon** | 1.1.3 |
 | **Minimum PP-versjon** | 1.14.0 |
-| **Tagger** | vei, samferdsel, anlegg, prosjektledelse |
 | **Språk** | Norsk (nb-NO) |
+| **Tagger** | vei, samferdsel, anlegg, prosjektledelse |
 
-## Hva «Kopier til min installasjon» gjør
+## Faser
 
-1. Provisjonerer taksonomigruppen **Prosjektportalen** med termsettene **Fase (Vei)**
-   (Planlegge, Prosjektere, Bygge, Avslutte), **Fag (Vei)** og **Emne (Vei)** på
-   hub-områdets termlager.
-2. Provisjonerer veikolonnene (Forankret i, Planleggingsleder, Prosjekteringsleder,
-   Byggeleder, Unik datanøkkel) og taksonomikolonnene **Fag** og **Emne** (bundet til
-   termsettene Fag (Vei) og Emne (Vei)), samt innholdstypen **Prosjekt (Vei)**
-   (`0x0100805E9E4FEAAB4F0EABAB2600D30DB70C0E`), og knytter den til **Prosjekter**- og
-   **Prosjektdata**-listene.
-3. Seeder hub-listene **Fasesjekkliste Vei** (36 sjekkpunkter; listen får også kolonnene
-   Status og Kommentar slik at radene kan skrives) og **Planneroppgaver Vei** (90 oppgaver) via
-   `DataRows`, og dokumentbiblioteket **Standarddokumenter Vei** (kolonnene Fase, Fag og Emne)
-   med en firefaset mappestruktur (35 mapper). Som i kildemodulen bryter de to listene
-   tillatelsesarven: eiere har full kontroll, medlemmer og besøkende kan lese.
-4. Legger til veikolonner i **Prosjektkolonner** og en porteføljevisning **Veiprosjekter**
-   (filtrert på hub-området og Prosjekt (Vei)-innholdstypen, `DepartmentId:{sitecollectionid}`),
-   med standard prosjektfiltre og de tre faseansvarlige som kolonner. Kolonner og filtre
-   kobles til **Prosjektkolonner** med tittel, ikke installasjonsavhengige element-ID-er.
-5. Laster opp prosjekttillegget **Veimal** til **Prosjekttillegg**, låst (`locked`), og knytter
-   det til malen (`GtProjectExtensions`).
-6. Skriver et Maloppsett-element der `GtProjectContentType` peker på **Prosjekt (Vei)** og
-   `GtProjectPhaseTermId` peker på termsettet **Fase (Vei)** – slik at veiprosjekter bruker
-   sine egne faser.
+Malen bruker sitt eget fasesett **Fase (Vei)**:
+
+1. Planlegge
+2. Prosjektere
+3. Bygge
+4. Avslutte
+
+## Hva som settes opp på hub-området
+
+Når malen kopieres til installasjonen eller tilgjengeliggjøres som skymal, settes
+følgende opp på hub-området:
+
+- Fasesettet **Fase (Vei)** og termsettene **Fag (Vei)** (20 fag) og **Emne (Vei)**
+  (9 emner) i termgruppen **Prosjektportalen**.
+- Veifeltene **Planleggingsleder**, **Prosjekteringsleder**, **Byggeleder** og
+  **Forankret i**, og dokumentkolonnene **Fag** og **Emne** koblet til termsettene.
+- Innholdstypen **Prosjekt (Vei)**, som tas i bruk i listene **Prosjekter** og
+  **Prosjektdata**.
+- De tre faseansvarlige registreres som prosjektkolonner, slik at de kan vises og
+  filtreres i porteføljen.
+- Porteføljevisningen **Veiprosjekter**, som viser veiprosjektene med standardkolonnene
+  og de tre faseansvarlige som kolonner og filtre.
+- Hub-listene **Fasesjekkliste Vei** (36 sjekkpunkter), **Planneroppgaver Vei**
+  (90 oppgaver) og **Standarddokumenter Vei** (mappestruktur med kolonnene Fase, Fag og
+  Emne). Innholdet kan tilpasses før nye prosjekter settes opp. Listene kan bare endres
+  av eierne av hub-området.
+- Prosjekttillegget **Veimal** i listen **Prosjekttillegg**, låst til malen.
+- Malen **Veiprosjekt** i **Maloppsett**, med fasesettet og innholdstypen over.
 
 ## Hva som settes opp i prosjektet
 
-- **Prosjekttillegget «Veimal»** legges alltid på for veiprosjekter (låst og knyttet til malen,
-  og derfor skjult i oppsettsveiviseren, som i kildemodulen). Det legger kolonnen
-  **Forankret i** (`GtVeiAnchored`) på innholdstypen Sjekkpunkt og på prosjektets
-  **Fasesjekkliste**, og viser den i visningene *Alle elementer*, *Arkivert* og *Etter status*.
-  På **Dokumenter** legges Fase, Fag og Emne til som kolonner og vises i visningen
-  *Alle dokumenter*; visningen *Gjeldende fase* beholder standardmalens kolonner.
-- **Fasesjekkliste** fylles fra hub-listen **Fasesjekkliste Vei** via listeinnhold
-  (sorteringsrekkefølge, tittel, fase og Forankret i).
-- **Planner-planen «Veiplan»** opprettes med de 90 oppgavene fra hub-listen
-  **Planneroppgaver Vei** (`plannerTitle`, krever Prosjektportalen ≥ 1.14).
-- **Standarddokumenter Vei** sin mappestruktur kopieres inn i prosjektets **Dokumenter**.
+Prosjekttillegget **Veimal** følger malen og legges alltid på nye veiprosjekter:
 
-De tre listeinnholdsoppføringene er knyttet til malen og derfor forhåndsvalgt i
-oppsettsveiviseren, men kan velges bort (`default: false`). Kopieringen av fasesjekklisten
-forutsetter kolonnen «Forankret i» i prosjektet; den kommer fra tillegget «Veimal», som er låst
-og derfor alltid legges på. Tillegget forutsetter i sin tur at hub-kolonnene «Forankret i», Fag og
-Emne er provisjonert, siden de kopieres inn i prosjektet ved oppsett.
+- **Fasesjekkliste** får kolonnen **Forankret i**, som vises i visningene
+  *Alle elementer*, *Arkivert* og *Etter status*.
+- **Dokumenter** får kolonnene **Fase**, **Fag** og **Emne**, som vises i visningen
+  *Alle dokumenter*.
+
+I tillegg kan følgende listeinnhold velges i oppsettveiviseren:
+
+- **Fasesjekkpunkter Vei**: sjekkpunktene fra hub-listen, inkludert **Forankret i**,
+  fylles inn i prosjektets **Fasesjekkliste**.
+- **Planneroppgaver Vei**: de 90 standardoppgavene opprettes i Planner-planen
+  **Veiplan**.
+- **Standarddokumenter Vei**: mappestrukturen kopieres inn i prosjektets
+  **Dokumenter**, med én hovedmappe per fase (Planlegge, Prosjektere, Bygge og
+  Avslutte) og undermapper.
 
 ## Forutsetninger og begrensninger
 
-> Malen er skykompatibel (`cloudCompatible: true`): ved tilgjengeliggjøring som skymal
-> provisjoneres hub-avhengighetene (innholdstype, kolonner og taksonomi, krever
-> Prosjektportalen ≥ 1.14), mens mappestrukturen, listeinnholdet og prosjekttillegget hentes
-> direkte fra pakken ved prosjektoppsett. Provisjoneringen forventer en norsk hub (listene heter
-> «Prosjekter», «Prosjektkolonner» osv., og tillatelsesnivåene «Full kontroll» og «Lese»).
->
-> Malen bruker funksjonalitet som kommer med Prosjektportalen 1.14: taksonomikolonnene Fag/Emne
-> (tokenet `{sitecollectiontermstoreid}`), hub-filteret i porteføljevisningen
-> (`{sitecollectionid}`), listetillatelsene (`Security`) og det låste tillegget (`locked`).
-> På eldre versjoner avbrytes hub-importen når Fag/Emne-kolonnene skal opprettes.
-
-Følgende fra kildemodulen er **ikke** provisjonert av pakken (samme avgrensning som
-bygg/anlegg-malene), og kan settes opp manuelt eller i en senere versjon:
-
-- **Søkekonfigurasjon** – kolonnene Planleggingsleder/Prosjekteringsleder/Byggeleder vises i
-  porteføljen via søk (`RefinableString80–82`). Søkeskjema kan ikke provisjoneres fra pakken
-  (krever SharePoint-administrator). Se [`search/`](search/) for et skript IT kan kjøre; det
-  kobler til administrasjonsområdet med Prosjektportalen-appens klient-ID, som kildemodulen.
-- **Veiprosjektets egne prosjektsider** – prosjektstrukturen kommer fra standardmalen.
-
-## Tilskrivelse
-
-Veimodulen er utviklet av Rogaland fylkeskommune, og forvaltes av Crayon Consulting.
-Originalkode: <https://github.com/Puzzlepart/pp365-veimodul>.
+- Prosjektportalen 365 versjon 1.14 eller nyere.
+- Hub-området må være på norsk (listene heter «Prosjekter», «Prosjektkolonner» osv.).
+- Malen kan både kopieres til installasjonen og tilgjengeliggjøres som skymal. Som
+  skymal settes felter, innholdstype og termsett opp på hub-området, mens
+  fasesjekkliste, oppgaver, mappestruktur og prosjekttillegg hentes fra pakken når
+  prosjektet settes opp.
+- **Søkekonfigurasjon**: for at Planleggingsleder, Prosjekteringsleder og Byggeleder
+  skal vises i porteføljevisningen, må de tre feltene kobles til søkeegenskaper i
+  søkeskjemaet. Dette krever rollen SharePoint-administrator og gjøres som et eget steg
+  etter installasjonen. Se [`search/`](search/) for veiledning og skript.
+- Veiprosjekter bruker standardsidene i Prosjektportalen.

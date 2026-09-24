@@ -9,5 +9,5 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Lagt til
 
-- Prosjekttillegg med egne prosjektforsider for fasene Konsept, Planlegge, Gjennomføre, Avslutte og Realisere, til bruk med dynamisk forside-funksjonalitet.
-- Hver fasside inneholder prosjektegenskaper, prosjektnyheter, oppgaver, møter/hendelser og dokumentbibliotek.
+- Prosjekttillegg med egne prosjektforsider for standardfasene Konsept, Planlegge, Gjennomføre, Avslutte og Realisere, til bruk med dynamisk forside.
+- Hver faseside viser prosjektegenskaper, oppgaver, møter og hendelser og prosjektets dokumenter, og kan tilpasses med eget innhold per fase.

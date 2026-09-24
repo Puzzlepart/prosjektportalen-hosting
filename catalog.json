@@ -1,11 +1,11 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-09-07T13:36:01.530Z",
+  "lastUpdated": "2026-09-09T10:57:38.089Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
       "name": "Anleggsprosjekt",
-      "description": "Prosjektmal for anleggsprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365. Provisjonerer taksonomi for anleggsfaser, bygg/anlegg-kolonner og -innholdstyper på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+      "description": "Prosjektmal for anleggsprosjekter med egne anleggsfaser, bygg- og anleggsfelter i prosjektinformasjon og statusrapport, egen porteføljevisning, fasesjekkliste, standardoppgaver i Planner og en standard mappestruktur for prosjektdokumenter. Basert på bygg- og anleggsmalen i Prosjektportalen 365.",
       "version": "1.0.0",
       "type": "template",
       "cloudCompatible": true,
@@ -25,7 +25,7 @@
     {
       "id": "pp-byggprosjekt",
       "name": "Byggprosjekt",
-      "description": "Prosjektmal for byggeprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365. Provisjonerer taksonomi for byggfaser, bygg/anlegg-kolonner og -innholdstyper på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+      "description": "Prosjektmal for byggeprosjekter med egne byggfaser, bygg- og anleggsfelter i prosjektinformasjon og statusrapport, egen porteføljevisning, fasesjekkliste, standardoppgaver i Planner og en standard mappestruktur for prosjektdokumenter. Basert på bygg- og anleggsmalen i Prosjektportalen 365.",
       "version": "1.0.0",
       "type": "template",
       "cloudCompatible": true,
@@ -45,7 +45,7 @@
     {
       "id": "pp-dokumentbibliotek-flat",
       "name": "Dokumentbibliotek – flat visning",
-      "description": "Prosjekttillegg som legger til en flat dokumentvisning (uten mapper) i biblioteket Dokumenter, med kolonnen Bane som viser mappestrukturen til hvert dokument.",
+      "description": "Prosjekttillegg som legger til visningen «Flat struktur» i biblioteket Dokumenter. Visningen viser alle dokumenter uten mapper med de sist endrede først, og kolonnen Bane viser hvilken mappe hvert dokument ligger i.",
       "version": "1.0.0",
       "type": "extension",
       "icon": "DocumentSet",
@@ -87,7 +87,7 @@
     {
       "id": "pp-fasesider",
       "name": "Fasesider",
-      "description": "Egne sider for de ulike standardfasene i Prosjektportalen til bruk sammen med dynamisk forside-funksjonaliteten. Dette tillegget inneholder sider for Konsept, Planlegge, Gjennomføre, Avslutte og Realisere.",
+      "description": "Prosjekttillegg med egne forsider for standardfasene Konsept, Planlegge, Gjennomføre, Avslutte og Realisere, til bruk sammen med dynamisk forside. Hver faseside viser prosjektegenskaper, oppgaver, møter og hendelser og dokumenter, og kan tilpasses med eget innhold per fase.",
       "version": "1.0.0",
       "type": "extension",
       "icon": "Step",
@@ -108,7 +108,7 @@
     {
       "id": "pp-forside-hurtiglenke",
       "name": "Forside med hurtiglenker",
-      "description": "Prosjekttillegg som legger til hurtiglenke-webdelen på prosjektets forside. Tilpass tillegget med dine egne lenker.",
+      "description": "Prosjekttillegg som gir prosjektet en forside med prosjektegenskaper og tre kolonner med hurtiglenker. Bytt ut eksempellenkene med organisasjonens egne lenker til maler, rutiner og verktøy.",
       "version": "1.0.0",
       "type": "extension",
       "icon": "Link",
@@ -129,7 +129,7 @@
     {
       "id": "pp-forskningsprosjekt",
       "name": "Forskningsprosjekt",
-      "description": "Prosjektmal for forsknings- og utviklingsprosjekter, basert på forskningsmalen til Prosjektportalen 365 (utviklet av Høgskolen i Innlandet). Provisjonerer innholdstypen Prosjekt (Forskning), forskningskolonner og taksonomi (finansiør, fakultet, institutt, forskergruppe) på hub-området, og setter opp en fasesjekkliste for forskningsprosjekter.",
+      "description": "Prosjektmal for forsknings- og utviklingsprosjekter (FoU), utviklet av Høgskolen i Innlandet. Gir egne forskningsfelter som finansiør, utlysning, status søknad, fakultet, institutt, forskergruppe og NVA prosjektkode, en egen fasesjekkliste med referanser til veiledning, listene Etiske vurderinger, Prosjektorganisasjon, Work Breakdown Structure og Publiseringer, og en samlet oversikt over publiseringer på porteføljenivå.",
       "version": "1.0.1",
       "type": "template",
       "cloudCompatible": true,
@@ -250,7 +250,7 @@
     {
       "id": "pp-veiprosjekt",
       "name": "Veiprosjekt",
-      "description": "Prosjektmal for veg- og samferdselsprosjekter, basert på veimodulen til Prosjektportalen 365 (utviklet av Rogaland fylkeskommune). Provisjonerer egne veifaser (Planlegge, Prosjektere, Bygge, Avslutte), Prosjekt (Vei)-innholdstype og -kolonner på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+      "description": "Prosjektmal for vei- og samferdselsprosjekter, utviklet av Rogaland fylkeskommune. Gir egne veifaser (Planlegge, Prosjektere, Bygge, Avslutte), felter for planleggings-, prosjekterings- og byggeleder, egen porteføljevisning, fasesjekkliste med forankring, standardoppgaver i Planner, en standard mappestruktur for prosjektdokumenter og dokumentkolonnene Fag og Emne.",
       "version": "1.1.3",
       "type": "template",
       "cloudCompatible": true,

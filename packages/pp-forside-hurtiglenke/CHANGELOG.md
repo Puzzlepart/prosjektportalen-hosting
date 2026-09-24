@@ -9,5 +9,5 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Lagt til
 
-- Prosjekttillegg som legger hurtiglenke-webdelen (QuickLinks) på prosjektets forside (`ProjectHome.aspx`).
-- Tre kolonner med hurtigkoblinger som kan tilpasses med egne lenker.
+- Prosjekttillegg som gir prosjektet en forside med prosjektegenskaper og tre kolonner med hurtiglenker.
+- Lenkene er eksempellenker som byttes ut med organisasjonens egne lenker.

@@ -9,5 +9,5 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Lagt til
 
-- Prosjekttillegg som legger til en flat dokumentvisning **«Flat struktur»** i biblioteket **Dokumenter** (uten mapper).
-- Kolonnen **Bane** (`FileDirRef`) som viser mappestrukturen til hvert dokument.
+- Prosjekttillegg som legger til visningen **Flat struktur** i biblioteket **Dokumenter**, der alle dokumenter vises uten mapper med de sist endrede først.
+- Kolonnen **Bane** i den nye visningen viser hvilken mappe hvert dokument ligger i.

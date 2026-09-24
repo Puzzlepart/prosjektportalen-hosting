@@ -1,99 +1,88 @@
 # Forskningsprosjekt
 
-Prosjektmal for forsknings- og utviklingsprosjekter i Prosjektportalen 365, basert på
-**forskningsmalen** ([Puzzlepart/prosjektportalen365-addons → Prosjektmaler/Forskningsmal](https://github.com/Puzzlepart/prosjektportalen365-addons/tree/master/Prosjektmaler/Forskningsmal)).
-Forskningsmalen er utviklet av **Høgskolen i Innlandet** sammen med **Puzzlepart – nå Crayon
-Consulting**. Denne pakken er en re-implementasjon av modulen for hosting-katalogens
-JSON-provisjonering.
+Prosjektmal for forsknings- og utviklingsprosjekter (FoU) i Prosjektportalen 365.
+Forskningsmalen er utviklet av **Høgskolen i Innlandet** i samarbeid med Puzzlepart,
+nå Crayon Consulting, og forvaltes av Crayon Consulting.
+
+Malen gir forskningsprosjekter egne felter for søknad, finansiering og organisatorisk
+tilhørighet, en egen fasesjekkliste med referanser til veiledning, egne lister for
+etiske vurderinger, prosjektorganisasjon, arbeidsnedbrytning og publiseringer, og en
+samlet oversikt over publiseringer på porteføljenivå.
 
 | | |
 | --- | --- |
 | **ID** | `pp-forskningsprosjekt` |
-| **Type** | template |
-| **Versjon** | 1.0.1 (følger kildemodulen) |
+| **Type** | Prosjektmal |
+| **Versjon** | 1.0.1 |
 | **Minimum PP-versjon** | 1.14.0 |
-| **Tagger** | forskning, FoU, prosjektledelse |
 | **Språk** | Norsk (nb-NO) |
+| **Tagger** | forskning, FoU, prosjektledelse |
 
-## Språk
+Malen bruker standardfasene i Prosjektportalen og standard statusrapport.
 
-Pakken er **norsk (nb-NO)**. En ferdig engelsk variant av hub-provisjoneringen ligger i pakken
-(`provisioning/hub-template.en-US.json`), men den er **ikke** deklarert i manifestet og brukes derfor ikke.
+## Hva som settes opp på hub-området
 
-Årsaken er at bare den ene av de to leveringsveiene håndterer språkvarianter: import til hub-området
-oversetter manifestet etter hub-språket, mens prosjektoppsett fra en **skymal** leser manifestet
-uoversatt. På et engelsk hub-område ville skymalen dermed lete etter den norske hub-listen og feile.
-Den engelske varianten kan deklareres igjen når prosjektoppsettet håndterer språkvarianter på samme
-måte som importen. Merk at den er **fryst** på innholdet fra før prosjekttillegget ble portert, og må
-oppdateres før den eventuelt tas i bruk igjen.
+Når malen kopieres til installasjonen eller tilgjengeliggjøres som skymal, settes
+følgende opp på hub-området:
 
-## Hva «Kopier til min installasjon» gjør
-
-1. Provisjonerer taksonomigruppen **Prosjektportalen** med termsettene **Finansiør**, **Fakultet**,
-   **Institutt** og **Forskergruppe** (norske eller engelske termnavn etter hub-språk).
-2. Provisjonerer forskningskolonnene (søknadsstatus, frist, beløp, Cristin/NVA-kode, rolle, fag-/finansiør-/
-   institutt-/forskergruppe-tekstfelt, publikasjonsfelt m.m.) og innholdstypen **Prosjekt (Forskning)**
-   (`0x0100805E9E4FEAAB4F0EABAB2600D30DB70C09`), og knytter den til **Prosjekter**- og
-   **Prosjektdata**-listene.
-3. Seeder hub-listen **Fasesjekkliste Forskning** (48 sjekkpunkter på tvers av prosjektfasene) via
-   `DataRows`, med kolonnen «Referanse» (lenke til veiledning).
-4. Registrerer de 14 forskningskolonnene i **Prosjektkolonner**, slik at de kan vises, filtreres og
-   grupperes i porteføljeoversikten, statusrapporter og på prosjektforsiden.
-5. Legger til porteføljevisningen **Forskningsprosjekter** (filtrert på hub-området og
-   Prosjekt (Forskning)-innholdstypen) med forskningskolonnene som kolonner og filtre.
-6. Registrerer publiseringskolonnene og **Leveransenummer** i **Prosjektinnholdskolonner**, og oppretter
-   datakilden **Alle publiseringer** (Portefølje-nivå) med disse kolonnene og filtrene ferdig satt.
-7. Oppretter hub-siden **Publiseringer.aspx** med den aggregerte webdelen koblet til datakilden.
-   Siden opprettes bare hvis den ikke finnes fra før, så en tilpasset side blir ikke overskrevet.
-8. Legger til prosjekttillegget **Forskningsmal** (låst til denne malen).
-9. Utvider porteføljekolonnen **Prosjektstatus** (`GtProjectLifecycleStatus`) med valget **Terminert**.
-   Kolonnen er delt på huben, så valget blir synlig for alle maler.
-10. Skriver et Maloppsett-element der `GtProjectContentType` peker på **Prosjekt (Forskning)**. Malen bruker
-   standardfasene og standard prosjektstatus-innholdstype.
+- Innholdstypen **Prosjekt (Forskning)**, som tas i bruk i listene **Prosjekter** og
+  **Prosjektdata**.
+- Forskningsfelter for prosjektinformasjonen: finansiør, finansiør (annet), utlysning,
+  søknadssum, sum til universitetet, søknadsfrist, status søknad, fakultet, institutt,
+  forskergruppe, forskergruppe (annet), NVA prosjektkode, rolle i prosjektet og
+  oppstartsdato. Feltene registreres som prosjektkolonner og kan vises, filtreres og
+  grupperes i porteføljen, i statusrapporter og på prosjektforsiden.
+- Porteføljevisningen **Forskningsprosjekter**, som viser forskningsprosjektene med
+  forskningsfeltene som kolonner og filtre.
+- Hub-listen **Fasesjekkliste Forskning** med 48 sjekkpunkter fordelt på
+  prosjektfasene, hver med kolonnen **Referanse** som lenker til veiledning. Innholdet
+  kan tilpasses før nye prosjekter settes opp.
+- Publiseringskolonnene (publiseringskanal, publiseringsdato, om publikasjonen er
+  publisert, rolle i publikasjonen, NVA resultat-ID og lenke til NVA) og
+  **Leveransenummer** som prosjektinnholdskolonner.
+- Datakilden **Alle publiseringer** og hub-siden **Publiseringer**, som viser alle
+  publiseringer registrert i forskningsprosjektene samlet, med kolonner og filtre
+  ferdig satt opp. Siden opprettes bare hvis den ikke finnes fra før.
+- Termsettene **Finansiør**, **Fakultet**, **Institutt** og **Forskergruppe** i
+  termgruppen **Prosjektportalen**. Termene er hentet fra Høgskolen i Innlandet og kan
+  tilpasses egen organisasjon.
+- Valget **Terminert** i porteføljekolonnen **Prosjektstatus**. Kolonnen er felles for
+  alle maler på hub-området, så valget blir tilgjengelig for alle prosjekter.
+- Prosjekttillegget **Forskningsmal** i listen **Prosjekttillegg**, låst til malen.
+- Malen **Forskningsprosjekt** i **Maloppsett**.
 
 ## Hva som settes opp i prosjektet
 
-Prosjekttillegget **Forskningsmal** er låst til malen og kjøres alltid når et forskningsprosjekt settes opp:
+Prosjekttillegget **Forskningsmal** følger malen og legges alltid på nye
+forskningsprosjekter:
 
-- Fire nye lister: **Etiske vurderinger**, **Prosjektorganisasjon**, **Work Breakdown Structure** og
-  **Publiseringer** (sistnevnte med innholdstypen Publiseringelement).
-- **Fasesjekkliste** utvides med kolonnen **Referanse**, som også vises i de tre visningene.
-- **Prosjektleveranser** utvides med **Leveransenummer**.
-- Venstremenyen får lenker til de fire nye listene. Menyen bygges som standardmalens meny **pluss** de
-  nye lenkene, slik at Nytteoversikt, Ressursallokering og Notatblokk beholdes.
-- **Fasesjekkliste** fylles fra hub-listen via listeinnhold ved prosjektoppsett, inkludert «Referanse».
+- Fire nye lister: **Etiske vurderinger**, **Prosjektorganisasjon**,
+  **Work Breakdown Structure** og **Publiseringer**. Publiseringer som registreres i
+  prosjektet vises også i den samlede oversikten på hub-området.
+- **Fasesjekkliste** får kolonnen **Referanse**, som vises i alle visningene av listen.
+- **Prosjektleveranser** får kolonnen **Leveransenummer**.
+- Venstremenyen grupperes i **Obligatoriske funksjoner**, **Planlegging og styring**,
+  **Administrasjon**, **FoU Verktøy** og **Generelt**, med lenker til de nye listene i
+  tillegg til standardinnholdet i prosjektet.
+
+I tillegg kan følgende listeinnhold velges i oppsettveiviseren:
+
+- **Fasesjekkpunkter Forskning**: sjekkpunktene fra hub-listen, inkludert
+  **Referanse**, fylles inn i prosjektets **Fasesjekkliste**.
 
 ## Forutsetninger og begrensninger
 
-> Malen er skykompatibel (`cloudCompatible: true`): ved tilgjengeliggjøring som skymal provisjoneres
-> hub-avhengighetene (innholdstype, kolonner og de fire termsettene, krever Prosjektportalen ≥ 1.14),
-> mens listeinnholdet hentes direkte fra pakken ved prosjektoppsett.
-> Provisjoneringen forventer en standard Prosjektportalen-hub.
-
-Følgende fra kildemodulen er **ikke** provisjonert av pakken, og kan settes opp manuelt eller i en
-senere versjon:
-
-- **Taksonomikolonnene Finansiør/Fakultet/Institutt/Forskergruppe** (managed metadata): termsettene
-  provisjoneres, men selve taksonomikolonnene er ikke portert ennå. De tilhørende **tekstfeltene**
-  (`…Text`) provisjoneres i stedet, og er de som registreres som porteføljekolonner. Taksonomikolonnene
-  kan uttrykkes i pakken fra og med Prosjektportalen 1.14 (tokenet `{sitecollectiontermstoreid}`, se
-  Fag/Emne i veiprosjekt); inntil da fylles ikke tekstfeltene av noe, og termsettene har ingen forbruker.
-- **Site script og områdedesign** (`Innholdstype - Publiseringelement`): ikke portert. Dette er
-  leietaker-scopet og settes opp av kildemodulens `Install.ps1`; det kan ikke uttrykkes i en pakke.
-  Publiseringslisten opprettes uansett av prosjekttillegget, så scriptet er ikke nødvendig for at
-  malen skal fungere.
-- **Publiseringer-siden ved skymal**: siden opprettes bare ved import til hub-området. Skymal-flyten
-  filtrerer hub-malen ned til kolonner, innholdstyper, lister og taksonomi, så `ClientSidePages`
-  faller bort der. Siden må da opprettes manuelt.
-- **Prosjektforsiden fra kildemodulen**: ikke portert. Modulens `Hjem.aspx` er en kopi av
-  prosjektforsiden fra før 1.14, og standardmalens `ProjectHome.aspx` er nyere. Forskningsprosjekter
-  bruker derfor standardforsiden.
-- **Menygrupperingen fra kildemodulen** (Obligatoriske funksjoner / Planlegging og styring /
-  Administrasjon / FoU Verktøy / Generelt): ikke portert, fordi navigasjonshåndtereren erstatter hele
-  menyen og modulens meny mangler flere standardoppføringer.
-- Termsettene er hentet fra kildeinstitusjonen (Høgskolen i Innlandet) og kan tilpasses egen organisasjon.
-
-## Tilskrivelse
-
-Forskningsmalen er utviklet av Høgskolen i Innlandet, og forvaltes av Crayon Consulting.
-Originalkode: <https://github.com/Puzzlepart/prosjektportalen365-addons/tree/master/Prosjektmaler/Forskningsmal>.
+- Prosjektportalen 365 versjon 1.14 eller nyere.
+- Hub-området må være på norsk (listene heter «Prosjekter», «Prosjektkolonner» osv.).
+  Malen er ikke tilgjengelig på engelsk i denne versjonen.
+- Malen kan både kopieres til installasjonen og tilgjengeliggjøres som skymal. Som
+  skymal settes felter, innholdstype og termsett opp på hub-området, mens
+  fasesjekklisten og prosjekttillegget hentes fra pakken når prosjektet settes opp.
+  Siden **Publiseringer** på hub-området opprettes bare når malen kopieres til
+  installasjonen, og må opprettes manuelt hvis malen bare brukes som skymal.
+- Finansiør, fakultet, institutt og forskergruppe registreres som tekstfelter i denne
+  versjonen. Termsettene settes opp på hub-området, men er ikke koblet til egne
+  taksonomikolonner.
+- Forskningsprosjekter bruker standardforsiden i Prosjektportalen.
+- Menypunktet **Ressursallokering** fra standardmalen er ikke med i venstremenyen til
+  forskningsprosjekter.

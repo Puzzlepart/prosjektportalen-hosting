@@ -2,7 +2,7 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-forskningsprosjekt",
   "name": "Forskningsprosjekt",
-  "description": "Prosjektmal for forsknings- og utviklingsprosjekter, basert på forskningsmalen til Prosjektportalen 365 (utviklet av Høgskolen i Innlandet). Provisjonerer innholdstypen Prosjekt (Forskning), forskningskolonner og taksonomi (finansiør, fakultet, institutt, forskergruppe) på hub-området, og setter opp en fasesjekkliste for forskningsprosjekter.",
+  "description": "Prosjektmal for forsknings- og utviklingsprosjekter (FoU), utviklet av Høgskolen i Innlandet. Gir egne forskningsfelter som finansiør, utlysning, status søknad, fakultet, institutt, forskergruppe og NVA prosjektkode, en egen fasesjekkliste med referanser til veiledning, listene Etiske vurderinger, Prosjektorganisasjon, Work Breakdown Structure og Publiseringer, og en samlet oversikt over publiseringer på porteføljenivå.",
   "version": "1.0.1",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",

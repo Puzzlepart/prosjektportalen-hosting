@@ -2,15 +2,21 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-forside-hurtiglenke",
   "name": "Forside med hurtiglenker",
-  "description": "Prosjekttillegg som legger til hurtiglenke-webdelen på prosjektets forside. Tilpass tillegget med dine egne lenker.",
+  "description": "Prosjekttillegg som gir prosjektet en forside med prosjektegenskaper og tre kolonner med hurtiglenker. Bytt ut eksempellenkene med organisasjonens egne lenker til maler, rutiner og verktøy.",
   "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
   "publishedDate": "2026-06-09",
   "icon": "Link",
-  "tags": ["forside", "navigasjon", "tillegg"],
-  "screenshots": ["assets/screenshots/hurtiglenker.png"],
+  "tags": [
+    "forside",
+    "navigasjon",
+    "tillegg"
+  ],
+  "screenshots": [
+    "assets/screenshots/hurtiglenker.png"
+  ],
   "type": "extension",
   "provisioning": {
     "extensions": [

@@ -2,16 +2,22 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-fasesider",
   "name": "Fasesider",
-  "description": "Egne sider for de ulike standardfasene i Prosjektportalen til bruk sammen med dynamisk forside-funksjonaliteten. Dette tillegget inneholder sider for Konsept, Planlegge, Gjennomføre, Avslutte og Realisere.",
+  "description": "Prosjekttillegg med egne forsider for standardfasene Konsept, Planlegge, Gjennomføre, Avslutte og Realisere, til bruk sammen med dynamisk forside. Hver faseside viser prosjektegenskaper, oppgaver, møter og hendelser og dokumenter, og kan tilpasses med eget innhold per fase.",
   "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
   "publishedDate": "2026-06-09",
   "icon": "Step",
-  "tags": ["faser", "forside", "tillegg"],
+  "tags": [
+    "faser",
+    "forside",
+    "tillegg"
+  ],
   "type": "extension",
-  "screenshots": ["assets/screenshots/fasesider.png"],
+  "screenshots": [
+    "assets/screenshots/fasesider.png"
+  ],
   "provisioning": {
     "extensions": [
       {

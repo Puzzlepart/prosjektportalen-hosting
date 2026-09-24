@@ -2,7 +2,7 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-anleggsprosjekt",
   "name": "Anleggsprosjekt",
-  "description": "Prosjektmal for anleggsprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365. Provisjonerer taksonomi for anleggsfaser, bygg/anlegg-kolonner og -innholdstyper på hub-området, og setter opp fasesjekkliste, planneroppgaver og en standard mappestruktur for prosjektdokumenter.",
+  "description": "Prosjektmal for anleggsprosjekter med egne anleggsfaser, bygg- og anleggsfelter i prosjektinformasjon og statusrapport, egen porteføljevisning, fasesjekkliste, standardoppgaver i Planner og en standard mappestruktur for prosjektdokumenter. Basert på bygg- og anleggsmalen i Prosjektportalen 365.",
   "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",

@@ -2,15 +2,21 @@
   "$schema": "../../schema/pppkg-manifest.schema.json",
   "id": "pp-dokumentbibliotek-flat",
   "name": "Dokumentbibliotek – flat visning",
-  "description": "Prosjekttillegg som legger til en flat dokumentvisning (uten mapper) i biblioteket Dokumenter, med kolonnen Bane som viser mappestrukturen til hvert dokument.",
+  "description": "Prosjekttillegg som legger til visningen «Flat struktur» i biblioteket Dokumenter. Visningen viser alle dokumenter uten mapper med de sist endrede først, og kolonnen Bane viser hvilken mappe hvert dokument ligger i.",
   "version": "1.0.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
   "publishedDate": "2026-06-09",
   "icon": "DocumentSet",
-  "tags": ["dokumenter", "visning", "tillegg"],
-  "screenshots": ["assets/screenshots/flatdokument.png"],
+  "tags": [
+    "dokumenter",
+    "visning",
+    "tillegg"
+  ],
+  "screenshots": [
+    "assets/screenshots/flatdokument.png"
+  ],
   "type": "extension",
   "provisioning": {
     "extensions": [

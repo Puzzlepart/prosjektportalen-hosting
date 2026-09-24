@@ -10,10 +10,10 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Lagt til
 
 - Prosjektmal for anleggsprosjekter, basert på bygg- og anleggsmalen i Prosjektportalen 365.
-- Taksonomigruppen **Prosjektportalen** med termsettet **Fase (Anlegg)** (7 faser med sorteringsrekkefølge og egenskaper). Manglende egendefinerte termegenskaper (`PhaseSubText`/`PhaseDescription`) fylles inn på eksisterende termer ved import (`UpdateExistingTerms`).
-- De 14 bygg/anlegg-kolonnene (`GtBA*`) som områdekolonner, og innholdstypene **Prosjekt (ByggAnlegg)** og **Prosjektstatus (ByggAnlegg)**, knyttet til **Prosjekter**- og **Prosjektstatus**-listene.
-- Hub-provisjonering av **Prosjektkolonner**, **Prosjektkolonnekonfigurasjon**, **Statusseksjoner** og **Prosjektdata**-binding for bygg/anlegg-feltene.
-- Hub-listene **Fasesjekkliste Anlegg** (45 sjekkpunkter) og **Planneroppgaver Anlegg** (31 oppgaver), seedet via `DataRows`, og listeinnholdskonfigurasjon som kopierer dem til prosjektets **Fasesjekkliste** og **Planneroppgaver**.
-- **Standarddokumenter Anlegg** – hub-bibliotek med full mappestruktur (48 mapper, via `Folders`), kopieres til prosjektets **Dokumenter** ved prosjektoppsett.
-
-> Merk: Krever sp-js-provisioning med `DataRows`- og `Folders`-støtte og at taksonomi-provisjonering er aktivert. Deler taksonomigruppe, kolonner og innholdstyper med `pp-byggprosjekt` (idempotent), så pakkene kan installeres hver for seg eller side om side.
+- Egne anleggsfaser: Idé, Flere faser, Initiering, Prosjektering og kontrahering, Anleggsfase, Overtakelse og overlevering og Bruks og driftsfase.
+- Bygg- og anleggsfelter for prosjektinformasjon og statusrapport, blant annet HP-fase, siste politiske vedtak, tilskudd, SHA, miljø og plan- og byggesak.
+- Egne seksjoner for tilskudd, SHA, miljø og plan- og byggesak i statusrapporten.
+- Porteføljevisningen **Anleggsprosjekter** med bygg- og anleggsfeltene som kolonner og filtre.
+- **Fasesjekkliste** med 45 sjekkpunkter fordelt på anleggsfasene.
+- **Planner-oppgaver** med 31 standardoppgaver som opprettes i Planner-planen «Anleggsoppgaver».
+- Standard mappestruktur for prosjektdokumenter med 8 hovedmapper og 48 mapper totalt.
