@@ -11,7 +11,7 @@ Veimodulen er utviklet av Rogaland fylkeskommune og forvaltes av Crayon Consulti
 
 ### Rettet
 
-- Når malen er tilgjengeliggjort som skymal, kopieres listeinnholdet **Fasesjekkpunkter Vei** igjen til prosjektets **Fasesjekkliste** med Prosjektportalen 1.15, og sjekkpunktene legges ikke til to ganger når oppsettet kjøres på nytt. Prosjektportalen 1.15 kjenner igjen sjekkpunktene på nøkkelkolonnen malen oppgir. Den var **Unik datanøkkel**, som bare finnes på hub-området, så hvert sjekkpunkt feilet. Nå er den **Sorteringsrekkefølge**, som prosjektets **Fasesjekkliste** også har.
+- Når malen er tilgjengeliggjort som skymal, legges sjekkpunktene i **Fasesjekkpunkter Vei** ikke lenger til to ganger i prosjektets **Fasesjekkliste** når oppsettet kjøres på nytt (Prosjektportalen 1.14 og nyere). Oppsettet kjenner igjen sjekkpunktene på nøkkelkolonnen malen oppgir. Den var **Unik datanøkkel**, som bare finnes på hub-området, så sjekkpunktene ble aldri kjent igjen. Nå er den **Sorteringsrekkefølge**, som prosjektets **Fasesjekkliste** også har.
 - En ny import eller oppdatering av malen tømmer ikke lenger beskrivelsen av listene **Prosjekter**, **Prosjektdata**, **Prosjektkolonner** og **Porteføljevisninger** på hub-området.
 - En ny import eller oppdatering beholder formatering som er lagt på kolonnene **Planleggingsleder**, **Prosjekteringsleder** og **Byggeleder**, og beskrivelser som er lagt på **Fag** og **Emne**, på hub-området.
 - En ny import eller oppdatering beholder en beskrivelse som er lagt på kolonnen **Fase** i hub-listene **Fasesjekkliste Vei** og **Standarddokumenter Vei**.

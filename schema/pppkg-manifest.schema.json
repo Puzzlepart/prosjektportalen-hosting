@@ -217,7 +217,7 @@
               },
               "fields": {
                 "type": "string",
-                "description": "Comma-separated internal names of the columns to copy (GtLccFields), or '-' for none. When columns are listed, include the KeyColumn of the source list's DataRows (Title when it sets none): a cloud template's setup matches existing project items by it, Prosjektportalen before 1.15 drops a key that is not listed (so every setup run adds the rows again), and 1.15 adds it, so the destination list needs that column (without it every row fails). npm run validate warns when it is missing."
+                "description": "Comma-separated internal names of the columns to copy (GtLccFields), or '-' for none. When columns are listed, include the KeyColumn of the source list's DataRows (Title when it sets none): a cloud template's setup matches existing project items by it, Prosjektportalen before 1.15 drops a key that is not listed (so every setup run adds the rows again), and 1.15 adds it when the destination list has that column (otherwise the rows are copied without the key, added again on every run, with a warning). npm run validate warns when it is missing."
               },
               "plannerTitle": {
                 "type": "string",

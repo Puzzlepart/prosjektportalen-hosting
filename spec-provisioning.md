@@ -211,7 +211,7 @@ En rad matches mot elementene i listen på `KeyColumn`, med tokens erstattet ([s
 | **Advarsel** | En rad uten verdi i nøkkelkolonnen: den legges til ved hver kjøring. Flere elementer med samme nøkkel: det første oppdateres. |
 | **Feil** | En rad SharePoint avviser (de andre radene legges inn). En oppslags- eller personverdi som ikke finnes: et nytt element får verdiene som ble funnet. En termverdi uten `termId` eller `label`. |
 
-**Standardinnhold i en skymal.** Oppsettveiviseren kopierer radene fra pakken med `DataRows` på prosjektområdet, så nøkkelen gjelder der også. Har `fields` i `listContent` en liste med kolonner, må nøkkelkolonnen (`KeyColumn`, ellers `Title`) være med: Prosjektportalen før 1.15 tar bare med kolonnene i `fields`, og da legges radene til på nytt hver gang oppsettveiviseren kjøres. Fra 1.15 tas nøkkelen alltid med, og da må prosjektlisten ha kolonnen. Ellers avviser SharePoint oppslaget på nøkkelen, og hver rad logges som feil og kopieres ikke. `npm run validate` advarer når nøkkelen mangler.
+**Standardinnhold i en skymal.** Oppsettveiviseren kopierer radene fra pakken med `DataRows` på prosjektområdet, så nøkkelen gjelder der også. Har `fields` i `listContent` en liste med kolonner, må nøkkelkolonnen (`KeyColumn`, ellers `Title`) være med: Prosjektportalen før 1.15 tar bare med kolonnene i `fields`, og da legges radene til på nytt hver gang oppsettveiviseren kjøres. Fra 1.15 tas nøkkelen alltid med når prosjektlisten har kolonnen. Har den ikke det, kopieres radene uten nøkkel (de legges til på nytt ved hver kjøring, som før 1.15), og oppsettet logger en advarsel som navngir listen og kolonnen. Nøkkelkolonnen bør derfor finnes både i `fields` og på prosjektlisten. `npm run validate` advarer når nøkkelen mangler i `fields`.
 
 ### 3.5 Navigasjon (`Navigation`)
 
@@ -227,6 +227,28 @@ Menyen stemmes av mot templaten der den står, i stedet for å slettes og legges
 - Titlene matches på språket til kontoen som kjører oppsettet. SharePoints egne `Hjem` og `Dokumenter` matcher en norsk mal bare for en konto med norsk språk; ellers legges malens punkt til og SharePoints slettes. Et punkt motoren har lagt til, har samme tittel på alle språk.
 - Prosjektportalen 1.15: Har et valgt prosjekttillegg sin egen `QuickLaunch` eller `TopNavigationBar`, legges ikke malens tilsvarende meny på før tillegget. `Kjør oppsettveiviser` legger tilbake menypunktene eierne hadde lagt til selv.
 - Ikke legg `Navigation` i `hub-template.json`: motoren ville stemt av hubens meny mot pakkens punkter og slettet resten. Toppnavigasjonen på en hub er hubnavigasjonen for alle tilknyttede områder.
+
+### 3.6 Én pakke, flere versjoner av Prosjektportalen (`minPPVersion`)
+
+En pakke inneholder bare maler. Motoren som tolker dem, følger med Prosjektportalen, og katalogen hentes fra `catalog.json` på `main` i dette repoet. En ny pakkeversjon er derfor straks tilgjengelig for alle installasjoner med minst pakkens `minPPVersion`, og hver installasjon legger den på med sin egen motor:
+
+| Prosjektportalen | sp-js-provisioning |
+|---|---|
+| 1.14.x | 1.3.15 |
+| 1.15 | 1.5.0 |
+
+Tommelfingerregelen for pakkeforfattere:
+
+- **En pakke med `minPPVersion: 1.14.0` må virke med motoren i 1.14 (1.3.15).** Den kan godt dra nytte av det 1.5.0 gjør bedre, men den kan ikke være avhengig av det. Det som bare virker fra 1.15:
+  - at et attributt eller en listeinnstilling templaten ikke oppgir, beholdes (1.3.15 skriver hele områdekolonnen og listeinnstillingene på nytt ved hver import);
+  - at listefelter oppdateres der de står (1.3.15 sletter og oppretter dem på nytt, og verdiene går tapt);
+  - `{listid:X}` i en områdekolonne som peker på en liste i samme template (1.3.15 lagrer tokenet som tekst ved første kjøring);
+  - `IgnoreExisting` og regelen om lagret adresse på undernoder i menyen (1.3.15 bruker dem bare på øverste nivå, sletter hele menyen og legger den inn på nytt ved hver kjøring);
+  - at `RemoveExistingViews` og `RemoveExistingContentTypes` bare virker på lister opprettet i samme oppsett (1.3.15 fjerner visningene og innholdstypene ved hver kjøring);
+  - at en områdekolonne, et listefelt eller en rad SharePoint avviser, logges og hoppes over (i 1.3.15 stopper en områdekolonne som feiler, hele kjøringen).
+- **Trenger pakken noe av dette for å virke riktig, settes `minPPVersion: 1.15.0`.** Da viser katalogen i 1.14 merket «Krever Prosjektportalen 1.15.0» på pakken, og filteret for kompatible pakker skjuler den.
+- **Unngå det som er skadelig i begge versjonene:** tomme attributter og innstillinger (`Description=""`, `CustomFormatter=""`, `"Description": ""`) tømmer det en administrator har satt, ved hver import. En `KeyColumn` som prosjektlisten ikke har, eller som mangler i `listContent`-feltet `fields`, gjør at standardinnholdet legges til på nytt ved hver kjøring av oppsettveiviseren. `Files` og `PropertyBagEntries` i `hub-template.json` stopper importen i begge versjonene (se `docs/CLOUD-TEMPLATE-COMPATIBILITY.md`).
+- **Skriv i pakkens CHANGELOG hvilken versjon av Prosjektportalen en rettelse gjelder fra**, når den bare virker med den nyere motoren.
 
 ---
 

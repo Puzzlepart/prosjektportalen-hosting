@@ -128,8 +128,9 @@ them touch the hub schema, so they are all safe to bundle into a cloud template
   `DataRows` (`Title` when none is set). At setup the bundled rows go through sp-js-provisioning's
   `DataRows`, which matches existing project items by that key. Prosjektportalen before 1.15
   projects the rows to `fields` only, so without the key every setup run adds the rows again;
-  1.15 always adds the key, so the destination project list needs that column: without it
-  SharePoint refuses the lookup by the key, and every row is logged as an error and not copied.
-  `npm run validate` warns when the key is missing.
+  1.15 adds the key when the destination project list has that column. When it does not, 1.15
+  copies the rows without the key (added again on every run, as before) and logs a warning
+  naming the list and the column, so the key column belongs both in `fields` and on the project
+  list. `npm run validate` warns when the key is missing from `fields`.
 - If a future package ships hub `Files`, `PropertyBagEntries` or standalone hub libraries,
   declare `cloudCompatible: false` with a `cloudCompatibleReason` naming that content.

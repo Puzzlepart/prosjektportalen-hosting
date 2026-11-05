@@ -207,10 +207,10 @@ function validateReferencedFiles(packagePath, manifest) {
  * A cloud template's setup copies the bundled rows with sp-js-provisioning's
  * DataRows, which matches existing project items by that key. Prosjektportalen
  * before 1.15 projects each row to `fields` only, so without the key every setup
- * run adds the rows again. From 1.15 the key is added to the projection, so the
- * destination list needs the column: sp-js-provisioning 1.5.0 filters the list by
- * it, and SharePoint refuses the query, so each row is logged as an error and none
- * is copied.
+ * run adds the rows again. From 1.15 the key is added to the projection when the
+ * destination list has the column (sp-js-provisioning 1.5.0 filters the list by
+ * it); when the list lacks it, the rows are copied without the key, added again on
+ * every run, and the setup logs a warning.
  *
  * Skipped: `fields` empty or '-' (all columns are copied), Planner entries
  * (`plannerTitle`, not projected), and source lists without DataRows rows
@@ -273,7 +273,7 @@ function validateListContentKeys(packagePath, manifest) {
             warnings.push(
                 `${set.label} "${entry.title}": fields "${entry.fields}" omit ${keyText} in "${entry.sourceList}" (${set.hubTemplate}). ` +
                 `A cloud setup matches existing rows by it: Prosjektportalen before 1.15 drops it and adds the rows again on every run; ` +
-                `1.15 adds it, so the destination list "${destinationList}" needs that column, or every row fails.`
+                `1.15 adds it when the destination list "${destinationList}" has that column, else the rows are added again on every run too.`
             );
         }
     }
