@@ -3,11 +3,11 @@
   "id": "pp-forskningsprosjekt",
   "name": "Forskningsprosjekt",
   "description": "Prosjektmal for forsknings- og utviklingsprosjekter (FoU), utviklet av Høgskolen i Innlandet. Gir egne forskningsfelter som finansiør, utlysning, status søknad, fakultet, institutt, forskergruppe og NVA prosjektkode, en egen fasesjekkliste med referanser til veiledning, listene Etiske vurderinger, Prosjektorganisasjon, Work Breakdown Structure og Publiseringer, og en samlet oversikt over publiseringer på porteføljenivå.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
-  "publishedDate": "2026-06-11",
+  "publishedDate": "2026-11-05",
   "thumbnail": "thumbnail.png",
   "icon": "TestPlan",
   "tags": [

@@ -2,7 +2,7 @@
 
 > **Om:** Spesifikasjon for sentral hosting av malpakker i Prosjektportalen
 > **Status:** Utkast v6
-> **Sist oppdatert:** 2026-04-10
+> **Sist oppdatert:** 2026-11-05
 > **Repo:** [prosjektportalen-hosting](https://github.com/Puzzlepart/prosjektportalen-hosting)
 
 Dette dokumentet er den felles innledningen og overordnede spesifikasjonen. Detaljerte oppgaver og teknisk spesifikasjon per repo/system finnes i egne dokumenter:
@@ -11,7 +11,7 @@ Dette dokumentet er den felles innledningen og overordnede spesifikasjonen. Deta
 |---|---|---|
 | [spec-hosting.md](spec-hosting.md) | `prosjektportalen-hosting` | Repostruktur, katalog, build-script, JSON Schema, CI |
 | [spec-pp365.md](spec-pp365.md) | `prosjektportalen365` | SPFx-komponenter (katalog-UI, veiviser), Maloppsett-utvidelser, stempling |
-| [spec-provisioning.md](spec-provisioning.md) | `sp-js-provisioning` | Taxonomy-handler, provisjoneringssekvens, idempotens, tillatelser |
+| [spec-provisioning.md](spec-provisioning.md) | `sp-js-provisioning` | Taxonomy-handler, provisjoneringssekvens, rekkefølge, feil og avbrudd, oppdatering av eksisterende innhold, tillatelser |
 | [spec-web.md](spec-web.md) | `prosjektportalen.no` | Offentlig forhåndsvisning av tilgjengelige malpakker |
 
 ---
@@ -60,11 +60,11 @@ flowchart TB
 
     subgraph PROV["🧩 sp-js-provisioning"]
         direction LR
-        PT["provisionTemplate()<br/>Taxonomy, Fields, CT, Lists, Files"]
+        PT["WebProvisioner.applyTemplate()<br/>Taxonomy, SiteFields, ContentTypes,<br/>Features, Security, Lists, Files, …"]
         TAX["Taxonomy-handler"]
-        GRAPH["☁️ MS Graph<br/>termStore API"]
+        JSOM["🏷️ SharePoint JSOM<br/>termlager (SP.Taxonomy)"]
         PT --> TAX
-        TAX -->|termsett m/ faste IDer| GRAPH
+        TAX -->|termsett m/ faste IDer| JSOM
     end
 
     PKG ~~~ WIZARDCAT
@@ -78,13 +78,13 @@ flowchart TB
     classDef host fill:#e8f1fb,stroke:#1f6feb,color:#0b3d91;
     classDef spfx fill:#eafaf0,stroke:#1a7f37,color:#0f5323;
     classDef prov fill:#fff4e5,stroke:#d97706,color:#7a4100;
-    classDef msgraph fill:#f3effb,stroke:#8250df,color:#4b277f;
+    classDef jsom fill:#f3effb,stroke:#8250df,color:#4b277f;
     classDef web fill:#eef9fb,stroke:#0a7ea4,color:#08566e;
 
     class PKG,SCHEMA,VALIDATE,BUILD,DIST,CAT,PAGES,CI host;
     class WIZARDCAT,MALOPP,SETUP,SITE spfx;
     class PT,TAX prov;
-    class GRAPH msgraph;
+    class JSOM jsom;
     class PREVIEW web;
 
     style HOST fill:#f5f9ff,stroke:#1f6feb,stroke-width:2px;
@@ -260,9 +260,9 @@ informativt. Bruk `locked: true` for tillegg som malens listeinnhold forutsetter
 
 ### 4.3 `provisioning/hub-template.json`
 
-Hub-templaten samler **alt** som skal provisjoneres på hub-nivå i en sp-js-provisioning-fil: taxonomy (termsett), felter, innholdstyper, lister og filer. Ved å bruke standard sp-js-provisioning-format kan `provisionTemplate()` gjenbrukes direkte.
+Hub-templaten samler **alt** som skal provisjoneres på hub-nivå i en sp-js-provisioning-fil: taxonomy (termsett), felter, innholdstyper, lister og filer. Ved å bruke standard sp-js-provisioning-format kan `WebProvisioner.applyTemplate()` gjenbrukes direkte.
 
-Templaten utvider sp-js-provisioning-formatet med en ny `Taxonomy`-seksjon. `provisionTemplate()` håndterer denne internt og kjører den **før** felter, slik at managed metadata-felter kan referere til termsett-IDer fra steg 1.
+Templaten bruker `Taxonomy`-seksjonen i sp-js-provisioning (fra 1.3.12). `WebProvisioner.applyTemplate()` håndterer denne internt og kjører den **før** områdekolonnene (`SiteFields`), slik at managed metadata-felter kan referere til termsett-IDer fra steg 1. Rekkefølgen på resten, og hvilke feil som stopper kjøringen, står i [spec-provisioning.md](spec-provisioning.md#21-rekkefølgen-i-motoren).
 
 ```json
 {
@@ -327,7 +327,7 @@ Alle termsett og termer har forhåndsdefinerte IDer i pakken. Dette sikrer:
 ### Fase 1 – Fundament
 
 - Definere og implementere `.pppkg`-format og JSON Schema for manifest
-- Utvide sp-js-provisioning med Taxonomy-handler (Graph API, intern i `provisionTemplate()`)
+- Utvide sp-js-provisioning med Taxonomy-handler (SharePoint JSOM, intern i `WebProvisioner.applyTemplate()`; levert i 1.3.12)
 - Sette opp mappestruktur i hosting-repoet
 - Lage lokale build-script (`build:packages`)
 - Publisere `catalog.json` og første malpakke(r) med `hub-template.json` og `template.json`
@@ -367,7 +367,7 @@ Alle termsett og termer har forhåndsdefinerte IDer i pakken. Dette sikrer:
 | 1 | **Begrepsavklaring maltyper** – Er Lokal / Importert / Sentral de riktige navnene? | Ja, navnene beholdes som de er. |
 | 2 | **Granularitet av files.json** – Trenger vi mer enn ren kopiering? | Hold det enkelt – kun kopiering, men med `overwrite`-flagg (`true`/`false`) per fil. |
 | 3 | **CDN/proxy for sentrale maler** – Mellomtjeneste foran GitHub? | Nei, gå direkte mot raw.githubusercontent.com. |
-| 4 | **Oppdateringsstrategi for importerte maler** – Overskriv alt eller merge/diff? | Overskriv alt ved oppdatering. |
+| 4 | **Oppdateringsstrategi for importerte maler** – Overskriv alt eller merge/diff? | Overskriv alt ved oppdatering. *Presisering (sp-js-provisioning 1.5.0):* «Overskriv» gjelder pakkefilene: malfilen, prosjekttilleggene i Prosjekttillegg og Maloppsett-elementet. Hub-skjemaet (`hub-template.json`) overskrives ikke, men flettes fra sp-js-provisioning 1.5.0 (Prosjektportalen 1.15) inn i det som finnes på huben: områdekolonner og listefelter oppdateres der de står og beholder verdiene og det pakken ikke oppgir, listeinnstillinger pakken ikke oppgir, blir stående, og `DataRows` matches på `KeyColumn`. Det pakken oppgir, også tomme attributter som `Description=""` og hele valglister (`CHOICES`), vinner ved hver oppdatering. Se [spec-provisioning.md, kapittel 3](spec-provisioning.md#3-idempotens-og-oppdatering). |
 | 5 | **Tilgangsstyring for sentrale maler** – Begrense per tenant? | Ikke aktuelt per nå. |
 | 6 | **Taxonomy-konflikter** – Hva om to pakker definerer samme termsett ulikt? | Lukes ut i byggeprosessen. Flere maler kan peke på samme termsett, men en pakke kan ikke definere samme ID for ulike navn eller omvendt. |
 | 7 | **Eksisterende termsett** – Migreringsmekanisme for eksisterende kunder? | Ikke nødvendig – vi har kontroll på alle termsett og IDer. Ved import sjekkes om termsettet allerede finnes; hvis ja, hoppes det over. |

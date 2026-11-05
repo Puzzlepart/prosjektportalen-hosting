@@ -189,7 +189,7 @@
   "Lists": [
     {
       "Title": "Projects",
-      "Description": "Contains all the projects in the portfolio, and the properties synchronized for them.",
+      "Description": "Contains all projects in the portfolio, and the properties that are synchronized for these.",
       "Template": 100,
       "ContentTypesEnabled": true,
       "RemoveExistingContentTypes": false,

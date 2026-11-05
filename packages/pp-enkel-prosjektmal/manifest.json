@@ -3,11 +3,11 @@
   "id": "pp-enkel-prosjektmal",
   "name": "Enkel prosjektmal",
   "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer egne, forenklede prosjekt- og prosjektstatus-innholdstyper på hub-området, en enkel fasesjekkliste med ferdige sjekkpunkter, prosjektsider (status, oppgaver, tidslinje) og lister (Usikkerhet, Fasesjekkliste), og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
-  "publishedDate": "2026-06-09",
+  "publishedDate": "2026-11-05",
   "thumbnail": "thumbnail.png",
   "icon": "Page",
   "tags": ["enkel", "prosjektledelse", "oppstart"],
@@ -22,7 +22,7 @@
       {
         "id": "enkelt-prosjekt",
         "name": "Enkelt prosjekt",
-        "description": "Forenklet prosjektforside og venstremeny for enkle prosjekter",
+        "description": "Forenklet prosjektforside og venstremeny for enkle prosjekter. Gir samme venstremeny som «Enkel venstremeny», så det holder å velge ett av dem.",
         "file": "provisioning/extensions/EnkeltProsjekt.json",
         "optional": true,
         "defaultSelected": false
@@ -30,7 +30,7 @@
       {
         "id": "enkel-venstremeny",
         "name": "Enkel venstremeny",
-        "description": "Forenklet venstremeny med de viktigste prosjektkoblingene",
+        "description": "Forenklet venstremeny med de viktigste prosjektkoblingene. Velg «Enkelt prosjekt» i stedet for å også få en forenklet prosjektforside.",
         "file": "provisioning/extensions/EnkelVenstremeny.json",
         "optional": true,
         "defaultSelected": true

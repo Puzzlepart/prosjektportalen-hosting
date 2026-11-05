@@ -3,14 +3,15 @@
     "QuickLaunch": [
       {
         "Url": "SitePages/Prosjekt.aspx",
-        "Title": "Hjem"
+        "Title": "Hjem",
+        "IgnoreExisting": true
       },
       {
         "Url": "SitePages/Prosjektstatus.aspx",
         "Title": "Prosjektstatus"
       },
       {
-        "Url": "Dokumenter/Forms/AllItems.aspx",
+        "Url": "Delte dokumenter/Forms/AllItems.aspx",
         "Title": "Dokumenter"
       },
       {

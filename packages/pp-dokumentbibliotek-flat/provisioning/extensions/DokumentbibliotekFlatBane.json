@@ -2,9 +2,7 @@
   "Lists": [
     {
       "Title": "Dokumenter",
-      "Description": "",
       "Template": 101,
-      "ContentTypesEnabled": false,
       "AdditionalSettings": {
         "EnableVersioning": true
       },

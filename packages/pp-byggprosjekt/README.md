@@ -74,3 +74,22 @@ plan- og byggesak.
   fasesjekkliste, oppgaver og mappestruktur hentes fra pakken når prosjektet settes opp.
 - Malen kan brukes sammen med malen **Anleggsprosjekt**. De to malene deler felter og
   innholdstyper, og kan installeres hver for seg eller side om side.
+
+## Hub-områder som fikk malen før 4. september 2026
+
+Før 4. september 2026 fikk hub-listen **Fasesjekkliste Bygg** kolonnen **Fase** fra
+innholdstypen **Sjekkpunkt** i Prosjektportalen, koblet til standardfasene i stedet for
+til fasesettet **Fase (Bygg)**. Feilen ble rettet i pakken uten nytt versjonsnummer.
+En ny import eller oppdatering av malen kobler ikke om en kolonne som allerede finnes i
+listen, så på hub-områder som fikk malen før rettelsen, må kolonnen kobles om for hånd.
+
+Åpne listeinnstillingene for **Fasesjekkliste Bygg** og velg kolonnen **Fase**. Er den
+koblet til et annet termsett enn **Fase (Bygg)**, gjør ett av følgende:
+
+- Koble kolonnen til termsettet **Fase (Bygg)** i termgruppen **Prosjektportalen**, og
+  lagre. Kontroller deretter fasen på sjekkpunktene i listen.
+- Slett kolonnen **Fase** fra listen, og oppdater malen eller kopier den til
+  installasjonen på nytt. Kolonnen opprettes da på nytt, koblet til **Fase (Bygg)**.
+  Fasen som var satt på elementene i listen, slettes sammen med kolonnen, og
+  sjekkpunktene som finnes fra før, får den ikke tilbake fra malen. Den må settes på
+  nytt for hånd.

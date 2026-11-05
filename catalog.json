@@ -1,12 +1,12 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-09-09T10:57:38.089Z",
+  "lastUpdated": "2026-11-05T13:28:00.475Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
       "name": "Anleggsprosjekt",
       "description": "Prosjektmal for anleggsprosjekter med egne anleggsfaser, bygg- og anleggsfelter i prosjektinformasjon og statusrapport, egen porteføljevisning, fasesjekkliste, standardoppgaver i Planner og en standard mappestruktur for prosjektdokumenter. Basert på bygg- og anleggsmalen i Prosjektportalen 365.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "template",
       "cloudCompatible": true,
       "icon": "DeliveryTruck",
@@ -17,16 +17,16 @@
         "prosjektledelse"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-anleggsprosjekt/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-anleggsprosjekt-1.0.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-anleggsprosjekt-1.0.1.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-06-09",
+      "publishedDate": "2026-11-05",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-anleggsprosjekt/CHANGELOG.md"
     },
     {
       "id": "pp-byggprosjekt",
       "name": "Byggprosjekt",
       "description": "Prosjektmal for byggeprosjekter med egne byggfaser, bygg- og anleggsfelter i prosjektinformasjon og statusrapport, egen porteføljevisning, fasesjekkliste, standardoppgaver i Planner og en standard mappestruktur for prosjektdokumenter. Basert på bygg- og anleggsmalen i Prosjektportalen 365.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "template",
       "cloudCompatible": true,
       "icon": "BuildDefinition",
@@ -37,16 +37,16 @@
         "prosjektledelse"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-byggprosjekt/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-byggprosjekt-1.0.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-byggprosjekt-1.0.1.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-06-09",
+      "publishedDate": "2026-11-05",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-byggprosjekt/CHANGELOG.md"
     },
     {
       "id": "pp-dokumentbibliotek-flat",
       "name": "Dokumentbibliotek – flat visning",
       "description": "Prosjekttillegg som legger til visningen «Flat struktur» i biblioteket Dokumenter. Visningen viser alle dokumenter uten mapper med de sist endrede først, og kolonnen Bane viser hvilken mappe hvert dokument ligger i.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "extension",
       "icon": "DocumentSet",
       "author": "Prosjektportalen-teamet",
@@ -58,16 +58,16 @@
       "screenshots": [
         "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/assets/screenshots/flatdokument.png"
       ],
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-dokumentbibliotek-flat-1.0.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-dokumentbibliotek-flat-1.0.1.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-06-09",
+      "publishedDate": "2026-11-05",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-dokumentbibliotek-flat/CHANGELOG.md"
     },
     {
       "id": "pp-enkel-prosjektmal",
       "name": "Enkel prosjektmal",
       "description": "En enkel prosjektmal for oppstart av små prosjekter. Definerer egne, forenklede prosjekt- og prosjektstatus-innholdstyper på hub-området, en enkel fasesjekkliste med ferdige sjekkpunkter, prosjektsider (status, oppgaver, tidslinje) og lister (Usikkerhet, Fasesjekkliste), og inkluderer prosjekttilleggene «Enkelt prosjekt» og «Enkel venstremeny».",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "template",
       "cloudCompatible": true,
       "hidden": true,
@@ -79,9 +79,9 @@
         "oppstart"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-enkel-prosjektmal-1.0.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-enkel-prosjektmal-1.0.1.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-06-09",
+      "publishedDate": "2026-11-05",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-enkel-prosjektmal/CHANGELOG.md"
     },
     {
@@ -130,7 +130,7 @@
       "id": "pp-forskningsprosjekt",
       "name": "Forskningsprosjekt",
       "description": "Prosjektmal for forsknings- og utviklingsprosjekter (FoU), utviklet av Høgskolen i Innlandet. Gir egne forskningsfelter som finansiør, utlysning, status søknad, fakultet, institutt, forskergruppe og NVA prosjektkode, en egen fasesjekkliste med referanser til veiledning, listene Etiske vurderinger, Prosjektorganisasjon, Work Breakdown Structure og Publiseringer, og en samlet oversikt over publiseringer på porteføljenivå.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "type": "template",
       "cloudCompatible": true,
       "languages": [
@@ -144,9 +144,9 @@
         "prosjektledelse"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forskningsprosjekt/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forskningsprosjekt-1.0.1.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-forskningsprosjekt-1.0.2.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-06-11",
+      "publishedDate": "2026-11-05",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-forskningsprosjekt/CHANGELOG.md"
     },
     {
@@ -217,7 +217,7 @@
       "id": "pp-testprosjekt",
       "name": "Testprosjekt",
       "description": "Testmal som dekker alle funksjoner i pakkeformatet: taksonomi (ny fasetermset med termer og lokale egenskaper, pluss kategorier og egenskaps-termsett), sitekolonner, innholdstyper, lister med visninger og rader, filer, prosjekttillegg, listeinnhold, standardinnhold og lokalisering. Brukes til å teste hele installasjonsløypa. Ikke en reell prosjektmal.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "template",
       "cloudCompatible": false,
       "cloudCompatibleReason": "Provisjonerer hub-innhold som ikke settes opp ved tilgjengeliggjøring som skymal: filer, property bag-oppføringer og det frittstående biblioteket «Testbibliotek». Taksonomi, kolonner, innholdstyper og listeinnhold fungerer.",
@@ -242,16 +242,16 @@
         "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/assets/screenshots/overview.png",
         "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/assets/screenshots/timeline.png"
       ],
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-testprosjekt-1.0.0.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-testprosjekt-1.1.0.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-06-24",
+      "publishedDate": "2026-11-05",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/CHANGELOG.md"
     },
     {
       "id": "pp-veiprosjekt",
       "name": "Veiprosjekt",
       "description": "Prosjektmal for vei- og samferdselsprosjekter, utviklet av Rogaland fylkeskommune. Gir egne veifaser (Planlegge, Prosjektere, Bygge, Avslutte), felter for planleggings-, prosjekterings- og byggeleder, egen porteføljevisning, fasesjekkliste med forankring, standardoppgaver i Planner, en standard mappestruktur for prosjektdokumenter og dokumentkolonnene Fag og Emne.",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "type": "template",
       "cloudCompatible": true,
       "icon": "Car",
@@ -263,9 +263,9 @@
         "prosjektledelse"
       ],
       "thumbnail": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-veiprosjekt/thumbnail.png",
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-veiprosjekt-1.1.3.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-veiprosjekt-1.1.4.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-06-10",
+      "publishedDate": "2026-11-05",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-veiprosjekt/CHANGELOG.md"
     }
   ]

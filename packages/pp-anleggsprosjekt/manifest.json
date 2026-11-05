@@ -3,11 +3,11 @@
   "id": "pp-anleggsprosjekt",
   "name": "Anleggsprosjekt",
   "description": "Prosjektmal for anleggsprosjekter med egne anleggsfaser, bygg- og anleggsfelter i prosjektinformasjon og statusrapport, egen porteføljevisning, fasesjekkliste, standardoppgaver i Planner og en standard mappestruktur for prosjektdokumenter. Basert på bygg- og anleggsmalen i Prosjektportalen 365.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
-  "publishedDate": "2026-06-09",
+  "publishedDate": "2026-11-05",
   "thumbnail": "thumbnail.png",
   "icon": "DeliveryTruck",
   "tags": [

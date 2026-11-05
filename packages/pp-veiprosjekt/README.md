@@ -13,7 +13,7 @@ dokumentkolonnene Fag og Emne.
 | --- | --- |
 | **ID** | `pp-veiprosjekt` |
 | **Type** | Prosjektmal |
-| **Versjon** | 1.1.3 |
+| **Versjon** | 1.1.4 |
 | **Minimum PP-versjon** | 1.14.0 |
 | **Språk** | Norsk (nb-NO) |
 | **Tagger** | vei, samferdsel, anlegg, prosjektledelse |
@@ -81,3 +81,21 @@ I tillegg kan følgende listeinnhold velges i oppsettveiviseren:
   søkeskjemaet. Dette krever rollen SharePoint-administrator og gjøres som et eget steg
   etter installasjonen. Se [`search/`](search/) for veiledning og skript.
 - Veiprosjekter bruker standardsidene i Prosjektportalen.
+
+## Hub-områder som fikk malen før 4. september 2026
+
+Før 4. september 2026 ble kolonnen **Fase** i hub-listene **Fasesjekkliste Vei** og
+**Standarddokumenter Vei** koblet til standardfasene i Prosjektportalen i stedet for til
+fasesettet **Fase (Vei)**. Feilen ble rettet i pakken uten nytt versjonsnummer. En ny
+import eller oppdatering av malen kobler ikke om en kolonne som allerede finnes i
+listen, så på hub-områder som fikk malen før rettelsen, må kolonnen kobles om for hånd.
+
+Åpne listeinnstillingene for hver av de to listene og velg kolonnen **Fase**. Er den
+koblet til et annet termsett enn **Fase (Vei)**, gjør ett av følgende:
+
+- Koble kolonnen til termsettet **Fase (Vei)** i termgruppen **Prosjektportalen**, og
+  lagre. Kontroller deretter fasen på sjekkpunktene i **Fasesjekkliste Vei**.
+- Slett kolonnen **Fase** fra listen, og oppdater malen eller kopier den til
+  installasjonen på nytt. Kolonnen opprettes da på nytt, koblet til **Fase (Vei)**. Fasen
+  som var satt på elementene i listen, slettes sammen med kolonnen, og sjekkpunktene
+  som finnes fra før, får den ikke tilbake fra malen. Den må settes på nytt for hånd.

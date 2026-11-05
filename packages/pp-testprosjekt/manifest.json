@@ -3,11 +3,11 @@
   "id": "pp-testprosjekt",
   "name": "Testprosjekt",
   "description": "Testmal som dekker alle funksjoner i pakkeformatet: taksonomi (ny fasetermset med termer og lokale egenskaper, pluss kategorier og egenskaps-termsett), sitekolonner, innholdstyper, lister med visninger og rader, filer, prosjekttillegg, listeinnhold, standardinnhold og lokalisering. Brukes til å teste hele installasjonsløypa. Ikke en reell prosjektmal.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
-  "publishedDate": "2026-06-24",
+  "publishedDate": "2026-11-05",
   "thumbnail": "thumbnail.png",
   "screenshots": [
     "assets/screenshots/portfolio.png",
@@ -32,7 +32,7 @@
       {
         "id": "test-forside",
         "name": "Testforside",
-        "description": "Forenklet testforside (navigasjon)",
+        "description": "Samme testmeny som «Test venstremeny», uten IgnoreExisting: menypunkter som finnes fra før, beholder adressen (navigasjon)",
         "file": "provisioning/extensions/TestForside.json",
         "optional": true,
         "defaultSelected": false
@@ -40,7 +40,7 @@
       {
         "id": "test-venstremeny",
         "name": "Test venstremeny",
-        "description": "Testmeny i venstrekant",
+        "description": "Testmeny i venstrekant med et undernivå og IgnoreExisting (navigasjon)",
         "file": "provisioning/extensions/TestVenstremeny.json",
         "optional": true,
         "defaultSelected": true

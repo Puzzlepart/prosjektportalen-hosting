@@ -2,7 +2,7 @@
   "Navigation": {
     "QuickLaunch": [
       {
-        "Url": "SitePages/ProjectHome.aspx",
+        "Url": "",
         "Title": "Hjem"
       },
       {
@@ -10,7 +10,7 @@
         "Title": "Prosjektstatus"
       },
       {
-        "Url": "Dokumenter/Forms/AllItems.aspx",
+        "Url": "Delte dokumenter/Forms/AllItems.aspx",
         "Title": "Dokumenter"
       },
       {

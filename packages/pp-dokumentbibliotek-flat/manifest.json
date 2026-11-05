@@ -3,11 +3,11 @@
   "id": "pp-dokumentbibliotek-flat",
   "name": "Dokumentbibliotek – flat visning",
   "description": "Prosjekttillegg som legger til visningen «Flat struktur» i biblioteket Dokumenter. Visningen viser alle dokumenter uten mapper med de sist endrede først, og kolonnen Bane viser hvilken mappe hvert dokument ligger i.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Prosjektportalen-teamet",
   "license": "MIT",
   "minPPVersion": "1.14.0",
-  "publishedDate": "2026-06-09",
+  "publishedDate": "2026-11-05",
   "icon": "DocumentSet",
   "tags": [
     "dokumenter",

@@ -13,7 +13,7 @@ samlet oversikt over publiseringer på porteføljenivå.
 | --- | --- |
 | **ID** | `pp-forskningsprosjekt` |
 | **Type** | Prosjektmal |
-| **Versjon** | 1.0.1 |
+| **Versjon** | 1.0.2 |
 | **Minimum PP-versjon** | 1.14.0 |
 | **Språk** | Norsk (nb-NO) |
 | **Tagger** | forskning, FoU, prosjektledelse |
@@ -46,8 +46,9 @@ følgende opp på hub-området:
 - Termsettene **Finansiør**, **Fakultet**, **Institutt** og **Forskergruppe** i
   termgruppen **Prosjektportalen**. Termene er hentet fra Høgskolen i Innlandet og kan
   tilpasses egen organisasjon.
-- Valget **Terminert** i porteføljekolonnen **Prosjektstatus**. Kolonnen er felles for
-  alle maler på hub-området, så valget blir tilgjengelig for alle prosjekter.
+- Valget **Terminert** i porteføljekolonnen **Prosjektstatus**, som dermed har valgene
+  Aktivt, Avventer, Avsluttet og Terminert. Kolonnen er felles for alle maler på
+  hub-området, så valget blir tilgjengelig for alle prosjekter.
 - Prosjekttillegget **Forskningsmal** i listen **Prosjekttillegg**, låst til malen.
 - Malen **Forskningsprosjekt** i **Maloppsett**.
 
@@ -86,3 +87,10 @@ I tillegg kan følgende listeinnhold velges i oppsettveiviseren:
 - Forskningsprosjekter bruker standardforsiden i Prosjektportalen.
 - Menypunktet **Ressursallokering** fra standardmalen er ikke med i venstremenyen til
   forskningsprosjekter.
+- Pakken setter hele valglisten i **Prosjektstatus**, ikke bare **Terminert**. Hver gang
+  malen kopieres til installasjonen, oppdateres eller tilgjengeliggjøres som skymal,
+  settes valgene i kolonnen på hub-området tilbake til **Aktivt**, **Avventer**,
+  **Avsluttet** og **Terminert**, med **Aktivt** som standardverdi. Valg som en
+  administrator eller en annen malpakke har lagt til i kolonnen, fjernes da og må legges
+  til igjen etterpå. Prosjekter som allerede har et slikt valg, beholder verdien, og
+  lister som allerede har kolonnen, for eksempel **Prosjekter**, beholder valgene sine.

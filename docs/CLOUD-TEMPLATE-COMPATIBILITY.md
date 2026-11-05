@@ -35,6 +35,11 @@ A template is **not** cloud-compatible only if its `hub-template.json` needs hub
 - Standalone hub lists/libraries with neither `ContentTypeBindings` nor `DataRows` that are
   not list-content sources (nothing delivers them)
 
+Hub `Files` and `PropertyBagEntries` also stop a full import: sp-js-provisioning refuses both
+handlers when it runs with an SPFx context, as Prosjektportalen runs it, and the run ends there
+with a `ProvisioningError` (the handlers before them have run). See
+[spec-provisioning.md §2.2](../spec-provisioning.md#22-feil-som-logges-og-feil-som-stopper-kjøringen).
+
 ## Scorecard
 
 | Package | Type | Declared | Blocker |
@@ -119,5 +124,12 @@ them touch the hub schema, so they are all safe to bundle into a cloud template
   use it on their Fasesjekkliste/Planneroppgaver hub lists like the OOTB lists do (owners
   edit, members and visitors read). It ships with Prosjektportalen 1.14; earlier provisioner
   builds ignore the element.
+- A `listContent` entry that lists `fields` must include the `KeyColumn` of its source list's
+  `DataRows` (`Title` when none is set). At setup the bundled rows go through sp-js-provisioning's
+  `DataRows`, which matches existing project items by that key. Prosjektportalen before 1.15
+  projects the rows to `fields` only, so without the key every setup run adds the rows again;
+  1.15 always adds the key, so the destination project list needs that column: without it
+  SharePoint refuses the lookup by the key, and every row is logged as an error and not copied.
+  `npm run validate` warns when the key is missing.
 - If a future package ships hub `Files`, `PropertyBagEntries` or standalone hub libraries,
   declare `cloudCompatible: false` with a `cloudCompatibleReason` naming that content.

@@ -7,6 +7,22 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 Veimodulen er utviklet av Rogaland fylkeskommune og forvaltes av Crayon Consulting.
 
+## [1.1.4] - 2026-11-05
+
+### Rettet
+
+- Når malen er tilgjengeliggjort som skymal, kopieres listeinnholdet **Fasesjekkpunkter Vei** igjen til prosjektets **Fasesjekkliste** med Prosjektportalen 1.15, og sjekkpunktene legges ikke til to ganger når oppsettet kjøres på nytt. Prosjektportalen 1.15 kjenner igjen sjekkpunktene på nøkkelkolonnen malen oppgir. Den var **Unik datanøkkel**, som bare finnes på hub-området, så hvert sjekkpunkt feilet. Nå er den **Sorteringsrekkefølge**, som prosjektets **Fasesjekkliste** også har.
+- En ny import eller oppdatering av malen tømmer ikke lenger beskrivelsen av listene **Prosjekter**, **Prosjektdata**, **Prosjektkolonner** og **Porteføljevisninger** på hub-området.
+- En ny import eller oppdatering beholder formatering som er lagt på kolonnene **Planleggingsleder**, **Prosjekteringsleder** og **Byggeleder**, og beskrivelser som er lagt på **Fag** og **Emne**, på hub-området.
+- En ny import eller oppdatering beholder en beskrivelse som er lagt på kolonnen **Fase** i hub-listene **Fasesjekkliste Vei** og **Standarddokumenter Vei**.
+- Prosjekttillegget **Veimal** setter ikke lenger beskrivelsen og innholdstypeinnstillingen til biblioteket **Dokumenter**. De styres av prosjektmalen.
+
+Rettelsene av beskrivelser og innstillinger gjelder fra Prosjektportalen 1.15. Eldre versjoner av Prosjektportalen setter fortsatt disse innstillingene tilbake.
+
+> Merk: En ny import eller oppdatering kjenner nå også igjen sjekkpunktene i hub-listen **Fasesjekkliste Vei** på **Sorteringsrekkefølge**. Har dere endret sorteringsrekkefølgen på et av malens sjekkpunkter der, legges sjekkpunktet til på nytt med den opprinnelige verdien.
+
+> Merk: På hub-områder som fikk malen før 4. september 2026, er kolonnen **Fase** i **Fasesjekkliste Vei** og **Standarddokumenter Vei** koblet til standardfasene i stedet for **Fase (Vei)**. En ny import eller oppdatering retter ikke dette. Avsnittet «Hub-områder som fikk malen før 4. september 2026» i README forklarer hvordan kolonnen kobles om.
+
 ## [1.1.3] - 2025-11-17
 
 ### Endret

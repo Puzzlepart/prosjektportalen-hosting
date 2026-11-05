@@ -7,6 +7,19 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 Forskningsmalen er utviklet av Høgskolen i Innlandet og forvaltes av Crayon Consulting.
 
+## [1.0.2] - 2026-11-05
+
+### Endret
+
+- Kolonnen for interessenter i **Prosjektleveranser** heter nå **Leveranseinteressenter**, som i standardmalen i Prosjektportalen. Prosjekttillegget **Forskningsmal** ga den tidligere navnet «Interessent(er)».
+
+### Rettet
+
+- En ny import eller oppdatering av malen tømmer ikke lenger beskrivelsen av listene **Prosjektdata**, **Prosjektinnholdskolonner**, **Datakilder** og **Porteføljevisninger** på hub-området.
+- En ny import eller oppdatering beholder beskrivelser som er lagt på kolonnene **Nasjonalt vitenarkiv (NVA) prosjektkode**, **Leveransenummer**, **Fakultet (tekst)**, **Finansiør (tekst)**, **Institutt (tekst)** og **Forskergruppe (tekst)** på hub-området.
+
+Rettelsene gjelder fra Prosjektportalen 1.15. Eldre versjoner av Prosjektportalen setter fortsatt disse innstillingene tilbake.
+
 ## [1.0.1] - 2026-01-07
 
 ### Endret

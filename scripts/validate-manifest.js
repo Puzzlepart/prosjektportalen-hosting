@@ -6,7 +6,8 @@
  * - Referenced files exist
  * - Version is bumped if content changed
  * - CHANGELOG.md is updated when version changes
- * 
+ * - listContent fields include the source list's DataRows KeyColumn (warning only)
+ *
  * Usage:
  *   npm run validate                                    # Validate all packages
  *   npm run validate:dev                                # Compare against dev branch
@@ -200,6 +201,87 @@ function validateReferencedFiles(packagePath, manifest) {
 }
 
 /**
+ * Warn when a listContent entry lists columns (`fields`) without the KeyColumn of
+ * its source list's DataRows (Title when the DataRows set none).
+ *
+ * A cloud template's setup copies the bundled rows with sp-js-provisioning's
+ * DataRows, which matches existing project items by that key. Prosjektportalen
+ * before 1.15 projects each row to `fields` only, so without the key every setup
+ * run adds the rows again. From 1.15 the key is added to the projection, so the
+ * destination list needs the column: sp-js-provisioning 1.5.0 filters the list by
+ * it, and SharePoint refuses the query, so each row is logged as an error and none
+ * is copied.
+ *
+ * Skipped: `fields` empty or '-' (all columns are copied), Planner entries
+ * (`plannerTitle`, not projected), and source lists without DataRows rows
+ * (folders only). Base entries are looked up in `provisioning.hubTemplate`,
+ * localized entries in their own hubTemplate, else the base one. Returns warnings,
+ * never errors.
+ */
+function validateListContentKeys(packagePath, manifest) {
+    const warnings = [];
+    const provisioning = manifest.provisioning || {};
+    const sets = [{
+        label: 'listContent',
+        listContent: provisioning.listContent,
+        hubTemplate: provisioning.hubTemplate
+    }];
+    for (const [locale, loc] of Object.entries(provisioning.localized || {})) {
+        sets.push({
+            label: `localized.${locale}.listContent`,
+            listContent: loc.listContent,
+            hubTemplate: loc.hubTemplate || provisioning.hubTemplate
+        });
+    }
+
+    const hubLists = new Map();
+    const readHubLists = relPath => {
+        if (!hubLists.has(relPath)) {
+            let lists = null;
+            const fullPath = path.join(packagePath, relPath);
+            // A missing hub template is reported by validateReferencedFiles.
+            if (fs.existsSync(fullPath)) {
+                try {
+                    const schema = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+                    lists = Array.isArray(schema.Lists) ? schema.Lists : [];
+                } catch (error) {
+                    warnings.push(`Could not read ${relPath} to check the listContent keys: ${error.message}`);
+                }
+            }
+            hubLists.set(relPath, lists);
+        }
+        return hubLists.get(relPath);
+    };
+
+    for (const set of sets) {
+        if (!Array.isArray(set.listContent) || set.listContent.length === 0 || !set.hubTemplate) continue;
+        const lists = readHubLists(set.hubTemplate);
+        if (!lists) continue;
+        for (const entry of set.listContent) {
+            if (entry.plannerTitle) continue;
+            const fields = (entry.fields || '').split(',').map(name => name.trim()).filter(Boolean);
+            if (fields.length === 0 || (fields.length === 1 && fields[0] === '-')) continue;
+            const source = lists.find(list => list && list.Title === entry.sourceList);
+            const dataRows = source && source.DataRows;
+            if (!dataRows || !Array.isArray(dataRows.Rows) || dataRows.Rows.length === 0) continue;
+            const keyColumn = dataRows.KeyColumn || 'Title';
+            if (fields.includes(keyColumn)) continue;
+            const destinationList = entry.destinationList || entry.sourceList;
+            const keyText = dataRows.KeyColumn
+                ? `${keyColumn}, the KeyColumn of the DataRows`
+                : `${keyColumn}, the key used for DataRows without a KeyColumn,`;
+            warnings.push(
+                `${set.label} "${entry.title}": fields "${entry.fields}" omit ${keyText} in "${entry.sourceList}" (${set.hubTemplate}). ` +
+                `A cloud setup matches existing rows by it: Prosjektportalen before 1.15 drops it and adds the rows again on every run; ` +
+                `1.15 adds it, so the destination list "${destinationList}" needs that column, or every row fails.`
+            );
+        }
+    }
+
+    return warnings;
+}
+
+/**
  * Get changed files in package since base ref
  */
 function getChangedFiles(packagePath, baseRef) {
@@ -377,6 +459,17 @@ function validatePackage(packageName, options) {
         console.log(chalk.green('  ✓ All referenced files exist'));
     }
 
+    console.log(chalk.gray('  ↳ Checking listContent keys...'));
+    const keyWarnings = validateListContentKeys(packagePath, manifestValidation.manifest);
+    if (keyWarnings.length > 0) {
+        results.warnings.push(...keyWarnings);
+        keyWarnings.forEach(warn => {
+            console.log(chalk.yellow(`  ⚠ ${warn}`));
+        });
+    } else {
+        console.log(chalk.green('  ✓ listContent keys checked'));
+    }
+
     if (!options.skipGitCheck) {
         console.log(chalk.gray('  ↳ Checking version bump...'));
         const versionCheck = validateVersionBump(
@@ -458,6 +551,7 @@ if (require.main === module) {
 module.exports = {
     validateManifest,
     validateReferencedFiles,
+    validateListContentKeys,
     validateVersionBump,
     validatePackage
 };

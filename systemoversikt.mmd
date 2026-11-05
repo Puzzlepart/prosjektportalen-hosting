@@ -37,11 +37,11 @@ flowchart TB
 
     subgraph PROV["🧩 sp-js-provisioning"]
         direction LR
-        PT["provisionTemplate()<br/>Taxonomy, Fields, CT, Lists, Files"]
+        PT["WebProvisioner.applyTemplate()<br/>Taxonomy, SiteFields, ContentTypes,<br/>Features, Security, Lists, Files, …"]
         TAX["Taxonomy-handler"]
-        GRAPH["☁️ MS Graph<br/>termStore API"]
+        JSOM["🏷️ SharePoint JSOM<br/>termlager (SP.Taxonomy)"]
         PT --> TAX
-        TAX -->|termsett m/ faste IDer| GRAPH
+        TAX -->|termsett m/ faste IDer| JSOM
     end
 
     PKG ~~~ WIZARDCAT
@@ -55,13 +55,13 @@ flowchart TB
     classDef host fill:#e8f1fb,stroke:#1f6feb,color:#0b3d91;
     classDef spfx fill:#eafaf0,stroke:#1a7f37,color:#0f5323;
     classDef prov fill:#fff4e5,stroke:#d97706,color:#7a4100;
-    classDef msgraph fill:#f3effb,stroke:#8250df,color:#4b277f;
+    classDef jsom fill:#f3effb,stroke:#8250df,color:#4b277f;
     classDef web fill:#eef9fb,stroke:#0a7ea4,color:#08566e;
 
     class PKG,SCHEMA,VALIDATE,BUILD,DIST,CAT,PAGES,CI host;
     class WIZARDCAT,MALOPP,SETUP,SITE spfx;
     class PT,TAX prov;
-    class GRAPH msgraph;
+    class JSOM jsom;
     class PREVIEW web;
 
     style HOST fill:#f5f9ff,stroke:#1f6feb,stroke-width:2px;

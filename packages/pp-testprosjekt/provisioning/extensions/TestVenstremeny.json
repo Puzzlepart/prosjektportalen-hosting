@@ -2,20 +2,28 @@
   "Navigation": {
     "QuickLaunch": [
       {
-        "Url": "SitePages/Prosjekt.aspx",
+        "Url": "",
         "Title": "Hjem"
       },
       {
-        "Url": "Lists/Testprosjektliste/AllItems.aspx",
-        "Title": "Testliste"
+        "Url": "http://linkless.header/",
+        "Title": "Testlenker",
+        "Children": [
+          {
+            "Url": "https://github.com/Puzzlepart/prosjektportalen-hosting/tree/main/packages/pp-testprosjekt",
+            "Title": "Testpakken",
+            "IgnoreExisting": true
+          },
+          {
+            "Url": "SitePages",
+            "Title": "Områdesider"
+          }
+        ]
       },
       {
-        "Url": "Lists/Usikkerhet/AllItems.aspx",
-        "Title": "Usikkerhet"
-      },
-      {
-        "Url": "SitePages/Prosjekttidslinje.aspx",
-        "Title": "Tidslinje"
+        "Url": "_layouts/15/viewlsts.aspx",
+        "Title": "Områdeinnhold",
+        "IgnoreExisting": true
       }
     ]
   }
