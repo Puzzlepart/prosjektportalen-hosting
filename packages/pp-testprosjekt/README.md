@@ -17,7 +17,7 @@ prosjekter (se [Hva pakken tester i Prosjektportalen 1.15](#hva-pakken-tester-i-
 | --- | --- |
 | **ID** | `pp-testprosjekt` |
 | **Type** | template |
-| **Versjon** | 1.1.0 |
+| **Versjon** | 1.1.1 |
 | **Minimum PP-versjon** | 1.14.0 |
 | **Tagger** | test, alle-funksjoner, qa, intern |
 | **Språk** | Norsk (nb-NO) og engelsk (en-US); prosjekttilleggene har norske titler på begge |

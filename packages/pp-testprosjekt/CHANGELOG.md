@@ -1,5 +1,11 @@
 # Endringslogg
 
+## [1.1.1] - 2026-11-10
+
+### Rettet
+
+- Listen **Testsjekkliste** (**Test Checklist** i den engelske hub-malen) har ikke lenger tre feltreferanser (`FieldRefs`) uten `ID`: `GtSortOrder`, `GtProjectPhase` og `GtTestText`. sp-js-provisioning finner en feltreferanse på en liste bare på `ID`, så hver av dem ga en feil i loggen ved hver import («Field ref 'undefined' (GtSortOrder) for list Testsjekkliste: no column with that id on the list or the web»). Fra Prosjektportalen 1.15 vises slike feil i den avanserte loggen. Kolonnene kommer på listen gjennom innholdstypen **Testsjekkpunkt**, som før, så listen blir den samme.
+
 ## [1.1.0] - 2026-11-05
 
 ### Endret

@@ -210,17 +210,6 @@
           "ContentTypeID": "0x0100FFE226AE6A8C4F38A2DAB5E451711F4E"
         }
       ],
-      "FieldRefs": [
-        {
-          "Name": "GtSortOrder"
-        },
-        {
-          "Name": "GtProjectPhase"
-        },
-        {
-          "Name": "GtTestText"
-        }
-      ],
       "AdditionalSettings": {
         "EnableVersioning": true
       },
