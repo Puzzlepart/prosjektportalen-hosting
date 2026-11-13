@@ -13,7 +13,7 @@ samlet oversikt over publiseringer på porteføljenivå.
 | --- | --- |
 | **ID** | `pp-forskningsprosjekt` |
 | **Type** | Prosjektmal |
-| **Versjon** | 1.0.2 |
+| **Versjon** | 1.0.3 |
 | **Minimum PP-versjon** | 1.14.0 |
 | **Språk** | Norsk (nb-NO) |
 | **Tagger** | forskning, FoU, prosjektledelse |
@@ -82,8 +82,13 @@ I tillegg kan følgende listeinnhold velges i oppsettveiviseren:
   Siden **Publiseringer** på hub-området opprettes bare når malen kopieres til
   installasjonen, og må opprettes manuelt hvis malen bare brukes som skymal.
 - Finansiør, fakultet, institutt og forskergruppe registreres som tekstfelter i denne
-  versjonen. Termsettene settes opp på hub-området, men er ikke koblet til egne
-  taksonomikolonner.
+  versjonen, og fylles inn i prosjektinformasjonen. Termsettene settes opp på
+  hub-området, men er ikke koblet til egne taksonomikolonner.
+- Sju av sjekkpunktene i **Fasesjekkliste Forskning** hører til fasen **Idé**, som ikke
+  vises i fasevelgeren på prosjektforsiden. Sjekkpunktene finnes i prosjektets
+  fasesjekkliste, men kommer ikke opp når prosjektet bytter fase. Har installasjonen
+  vært i bruk siden før Prosjektportalen 1.12, kan fasen fortsatt hete **Ingen fase** i
+  termlageret, og sjekkpunktene vises da med det navnet.
 - Forskningsprosjekter bruker standardforsiden i Prosjektportalen.
 - Menypunktet **Ressursallokering** fra standardmalen er ikke med i venstremenyen til
   forskningsprosjekter.

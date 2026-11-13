@@ -7,6 +7,13 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 Forskningsmalen er utviklet av Høgskolen i Innlandet og forvaltes av Crayon Consulting.
 
+## [1.0.3] - 2026-11-13
+
+### Rettet
+
+- **Fakultet**, **Institutt**, **Finansiør** og **Forskergruppe** kan nå fylles inn i prosjektinformasjonen. Kolonnene var skjult i alle redigeringsskjemaer, så de var alltid tomme i porteføljevisningen **Forskningsprosjekter** og kunne ikke brukes som filtre. Prosjekter som ble satt opp før denne versjonen, beholder kolonnene skjult i sitt eget skjema.
+- Import av malen gir ikke lenger «importert med feil» på hub-områder som ikke har malen Veiprosjekt. **Fasesjekkliste Forskning** viste til kolonnen «Unik nøkkel», som bare Veiprosjekt setter opp, og som forskningsmalen ikke bruker.
+
 ## [1.0.2] - 2026-11-05
 
 ### Endret
