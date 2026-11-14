@@ -13,7 +13,7 @@ samlet oversikt over publiseringer på porteføljenivå.
 | --- | --- |
 | **ID** | `pp-forskningsprosjekt` |
 | **Type** | Prosjektmal |
-| **Versjon** | 1.0.3 |
+| **Versjon** | 1.1.0 |
 | **Minimum PP-versjon** | 1.14.0 |
 | **Språk** | Norsk (nb-NO) |
 | **Tagger** | forskning, FoU, prosjektledelse |
@@ -31,7 +31,9 @@ følgende opp på hub-området:
   søknadssum, sum til universitetet, søknadsfrist, status søknad, fakultet, institutt,
   forskergruppe, forskergruppe (annet), NVA prosjektkode, rolle i prosjektet og
   oppstartsdato. Feltene registreres som prosjektkolonner og kan vises, filtreres og
-  grupperes i porteføljen, i statusrapporter og på prosjektforsiden.
+  grupperes i porteføljen, i statusrapporter og på prosjektforsiden. Finansiør, fakultet,
+  institutt og forskergruppe velges fra termsettene med samme navn. Finnes ikke
+  finansiøren eller forskergruppen i termsettet, brukes feltet med «(annet)».
 - Porteføljevisningen **Forskningsprosjekter**, som viser forskningsprosjektene med
   forskningsfeltene som kolonner og filtre.
 - Hub-listen **Fasesjekkliste Forskning** med 48 sjekkpunkter fordelt på
@@ -44,8 +46,8 @@ følgende opp på hub-området:
   publiseringer registrert i forskningsprosjektene samlet, med kolonner og filtre
   ferdig satt opp. Siden opprettes bare hvis den ikke finnes fra før.
 - Termsettene **Finansiør**, **Fakultet**, **Institutt** og **Forskergruppe** i
-  termgruppen **Prosjektportalen**. Termene er hentet fra Høgskolen i Innlandet og kan
-  tilpasses egen organisasjon.
+  termgruppen **Prosjektportalen**, som feltene over velger fra. Termene er hentet fra
+  Høgskolen i Innlandet og bør tilpasses egen organisasjon før prosjekter settes opp.
 - Valget **Terminert** i porteføljekolonnen **Prosjektstatus**, som dermed har valgene
   Aktivt, Avventer, Avsluttet og Terminert. Kolonnen er felles for alle maler på
   hub-området, så valget blir tilgjengelig for alle prosjekter.
@@ -64,7 +66,8 @@ forskningsprosjekter:
 - **Prosjektleveranser** får kolonnen **Leveransenummer**.
 - Venstremenyen grupperes i **Obligatoriske funksjoner**, **Planlegging og styring**,
   **Administrasjon**, **FoU Verktøy** og **Generelt**, med lenker til de nye listene i
-  tillegg til standardinnholdet i prosjektet.
+  tillegg til standardinnholdet i prosjektet, blant annet **Ressursallokering** og
+  **Notatblokk**.
 
 I tillegg kan følgende listeinnhold velges i oppsettveiviseren:
 
@@ -81,17 +84,12 @@ I tillegg kan følgende listeinnhold velges i oppsettveiviseren:
   fasesjekklisten og prosjekttillegget hentes fra pakken når prosjektet settes opp.
   Siden **Publiseringer** på hub-området opprettes bare når malen kopieres til
   installasjonen, og må opprettes manuelt hvis malen bare brukes som skymal.
-- Finansiør, fakultet, institutt og forskergruppe registreres som tekstfelter i denne
-  versjonen, og fylles inn i prosjektinformasjonen. Termsettene settes opp på
-  hub-området, men er ikke koblet til egne taksonomikolonner.
 - Sju av sjekkpunktene i **Fasesjekkliste Forskning** hører til fasen **Idé**, som ikke
   vises i fasevelgeren på prosjektforsiden. Sjekkpunktene finnes i prosjektets
   fasesjekkliste, men kommer ikke opp når prosjektet bytter fase. Har installasjonen
   vært i bruk siden før Prosjektportalen 1.12, kan fasen fortsatt hete **Ingen fase** i
   termlageret, og sjekkpunktene vises da med det navnet.
 - Forskningsprosjekter bruker standardforsiden i Prosjektportalen.
-- Menypunktet **Ressursallokering** fra standardmalen er ikke med i venstremenyen til
-  forskningsprosjekter.
 - Pakken setter hele valglisten i **Prosjektstatus**, ikke bare **Terminert**. Hver gang
   malen kopieres til installasjonen, oppdateres eller tilgjengeliggjøres som skymal,
   settes valgene i kolonnen på hub-området tilbake til **Aktivt**, **Avventer**,

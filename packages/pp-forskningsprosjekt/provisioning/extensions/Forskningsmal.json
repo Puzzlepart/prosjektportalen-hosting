@@ -483,6 +483,10 @@
         "Title": "Prosjektleveranser"
       },
       {
+        "Url": "Lists/Ressursallokering/AllItems.aspx",
+        "Title": "Ressursallokering"
+      },
+      {
         "Url": "SitePages/Prosjekttidslinje.aspx",
         "Title": "Prosjekttidslinje"
       },
@@ -523,6 +527,10 @@
       {
         "Url": "_layouts/15/groupstatus.aspx?Target=NOTEBOOK",
         "Title": "Møtereferat"
+      },
+      {
+        "Url": "_layouts/15/groupstatus.aspx?Target=NOTEBOOK",
+        "Title": "Notatblokk"
       },
       {
         "Url": "Lists/Prosjektorganisasjon/AllItems.aspx",

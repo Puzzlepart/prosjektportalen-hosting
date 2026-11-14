@@ -7,6 +7,17 @@ og denne pakken følger [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 Forskningsmalen er utviklet av Høgskolen i Innlandet og forvaltes av Crayon Consulting.
 
+## [1.1.0] - 2026-11-14
+
+### Lagt til
+
+- **Finansiør**, **Fakultet**, **Institutt** og **Forskergruppe** velges fra termsettene med samme navn, som i forskningsmalen fra Høgskolen i Innlandet. Verdiene vises og kan filtreres og grupperes i porteføljevisningen **Forskningsprosjekter**. Finnes ikke finansiøren eller forskergruppen i termsettet, fylles **Finansiør (annet)** eller **Forskergruppe (annet)** ut.
+- Venstremenyen i forskningsprosjekter har igjen **Ressursallokering** under **Planlegging og styring** og **Notatblokk** under **Administrasjon**, som i standardmalen.
+
+### Endret
+
+- Tekstkolonnene **Fakultet (tekst)**, **Institutt (tekst)**, **Finansiør (tekst)** og **Forskergruppe (tekst)** fylles automatisk fra de nye kolonnene når prosjektinformasjonen lagres, og vises ikke lenger i skjemaene.
+
 ## [1.0.3] - 2026-11-13
 
 ### Rettet
