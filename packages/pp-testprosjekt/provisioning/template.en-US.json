@@ -69,7 +69,7 @@
   ],
   "Files": [
     {
-      "Folder": "Delte dokumenter",
+      "Folder": "Shared Documents",
       "Url": "Prosjektnotat.txt",
       "Overwrite": true,
       "Src": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/provisioning/files/Prosjektnotat.txt"

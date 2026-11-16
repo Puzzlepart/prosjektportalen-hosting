@@ -1,6 +1,6 @@
 {
   "$schema": "./schema/catalog.schema.json",
-  "lastUpdated": "2026-11-14T09:59:42.343Z",
+  "lastUpdated": "2026-11-16T10:12:57.403Z",
   "packages": [
     {
       "id": "pp-anleggsprosjekt",
@@ -217,7 +217,7 @@
       "id": "pp-testprosjekt",
       "name": "Testprosjekt",
       "description": "Testmal som dekker alle funksjoner i pakkeformatet: taksonomi (ny fasetermset med termer og lokale egenskaper, pluss kategorier og egenskaps-termsett), sitekolonner, innholdstyper, lister med visninger og rader, filer, prosjekttillegg, listeinnhold, standardinnhold og lokalisering. Brukes til å teste hele installasjonsløypa. Ikke en reell prosjektmal.",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "type": "template",
       "cloudCompatible": false,
       "cloudCompatibleReason": "Provisjonerer hub-innhold som ikke settes opp ved tilgjengeliggjøring som skymal: filer, property bag-oppføringer og det frittstående biblioteket «Testbibliotek». Taksonomi, kolonner, innholdstyper og listeinnhold fungerer.",
@@ -242,9 +242,9 @@
         "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/assets/screenshots/overview.png",
         "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/assets/screenshots/timeline.png"
       ],
-      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-testprosjekt-1.1.1.pppkg",
+      "downloadUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/dist/pp-testprosjekt-1.1.2.pppkg",
       "minPPVersion": "1.14.0",
-      "publishedDate": "2026-11-10",
+      "publishedDate": "2026-11-16",
       "changelogUrl": "https://raw.githubusercontent.com/Puzzlepart/prosjektportalen-hosting/main/packages/pp-testprosjekt/CHANGELOG.md"
     },
     {

@@ -1,5 +1,12 @@
 # Endringslogg
 
+## [1.1.2] - 2026-11-16
+
+### Rettet
+
+- Den engelske prosjektmalen (`template.en-US.json`) legger `Prosjektnotat.txt` i **Shared Documents**, dokumentbiblioteket på et engelsk område. Den la filen i **Delte dokumenter**, som bare finnes på et norsk område, og fra sp-js-provisioning 1.6.0 logger motoren en feil for en fil den ikke kan legge på, og går videre.
+- README beskriver importen i Prosjektportalen 1.15 med sp-js-provisioning 1.6.0: den går hele veien, med én advarsel når SharePoint avviser property bag-oppføringen på et område der egendefinerte skript er blokkert, og legger prosjekttilleggene, listeinnholdet og malen i **Maloppsett**. Før stoppet importen ved hub-filene. README sier også at oppsettet med malen Testprosjekt stopper i steget for prosjektegenskaper (`GtIsProgram`), og at importen gjør testmenyen og testsjekkpunktene til standardvalg for alle maler på hub-området.
+
 ## [1.1.1] - 2026-11-10
 
 ### Rettet
